@@ -1,0 +1,23 @@
+{
+  "name": "onshape-typescript-fetch",
+  "version": "1.0.0",
+  "description": "Onshape Typescript-fetch library",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toebes/onshape-typescript-fetch.git"
+  },
+  "keywords": [
+    "onshape",
+    "typescript"
+  ],
+  "author": "",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/toebes/onshape-typescript-fetch/issues"
+  },
+  "homepage": "https://github.com/toebes/onshape-typescript-fetch#readme"
+}
