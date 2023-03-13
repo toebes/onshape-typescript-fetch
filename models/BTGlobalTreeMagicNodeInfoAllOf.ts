@@ -13,6 +13,13 @@
  */
 
 import { exists, mapValues } from '../runtime';
+import type { BTThumbnailInfo } from './BTThumbnailInfo';
+import {
+    BTThumbnailInfoFromJSON,
+    BTThumbnailInfoFromJSONTyped,
+    BTThumbnailInfoToJSON,
+} from './BTThumbnailInfo';
+
 /**
  * 
  * @export
@@ -25,6 +32,12 @@ export interface BTGlobalTreeMagicNodeInfoAllOf {
      * @memberof BTGlobalTreeMagicNodeInfoAllOf
      */
     subType?: number;
+    /**
+     * 
+     * @type {BTThumbnailInfo}
+     * @memberof BTGlobalTreeMagicNodeInfoAllOf
+     */
+    thumbnail?: BTThumbnailInfo;
 }
 
 /**
@@ -47,6 +60,7 @@ export function BTGlobalTreeMagicNodeInfoAllOfFromJSONTyped(json: any, ignoreDis
     return {
         
         'subType': !exists(json, 'subType') ? undefined : json['subType'],
+        'thumbnail': !exists(json, 'thumbnail') ? undefined : BTThumbnailInfoFromJSON(json['thumbnail']),
     };
 }
 
@@ -60,6 +74,7 @@ export function BTGlobalTreeMagicNodeInfoAllOfToJSON(value?: BTGlobalTreeMagicNo
     return {
         
         'subType': value.subType,
+        'thumbnail': BTThumbnailInfoToJSON(value.thumbnail),
     };
 }
 

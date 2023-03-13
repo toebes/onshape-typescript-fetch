@@ -33891,6 +33891,9 @@
               "subType": {
                 "type": "integer",
                 "format": "int32"
+              },
+              "thumbnail": {
+                "$ref": "#/components/schemas/BTThumbnailInfo"
               }
             }
           }

@@ -409,6 +409,22 @@
                         "$ref": "#/components/schemas/BTTeamInfo"
                     }
                 }
+            },
+            {
+                "key": "components.schemas['BTGlobalTreeMagicNodeInfo'].allOf[1]",
+                "type": "update",
+                "value": {
+                    "type": "object",
+                    "properties": {
+                        "subType": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "thumbnail": {
+                            "$ref": "#/components/schemas/BTThumbnailInfo"
+                        }
+                    }
+                }
             }
         ]
     }

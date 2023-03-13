@@ -25,6 +25,12 @@ import {
     BTOwnerInfoFromJSONTyped,
     BTOwnerInfoToJSON,
 } from './BTOwnerInfo';
+import type { BTThumbnailInfo } from './BTThumbnailInfo';
+import {
+    BTThumbnailInfoFromJSON,
+    BTThumbnailInfoFromJSONTyped,
+    BTThumbnailInfoToJSON,
+} from './BTThumbnailInfo';
 import type { BTUserBasicSummaryInfo } from './BTUserBasicSummaryInfo';
 import {
     BTUserBasicSummaryInfoFromJSON,
@@ -44,6 +50,12 @@ export interface BTGlobalTreeMagicNodeInfo extends BTGlobalTreeNodeInfo {
      * @memberof BTGlobalTreeMagicNodeInfo
      */
     subType?: number;
+    /**
+     * 
+     * @type {BTThumbnailInfo}
+     * @memberof BTGlobalTreeMagicNodeInfo
+     */
+    thumbnail?: BTThumbnailInfo;
 }
 
 /**
@@ -66,6 +78,7 @@ export function BTGlobalTreeMagicNodeInfoFromJSONTyped(json: any, ignoreDiscrimi
     return {
         ...BTGlobalTreeNodeInfoFromJSONTyped(json, ignoreDiscriminator),
         'subType': !exists(json, 'subType') ? undefined : json['subType'],
+        'thumbnail': !exists(json, 'thumbnail') ? undefined : BTThumbnailInfoFromJSON(json['thumbnail']),
     };
 }
 
@@ -79,6 +92,7 @@ export function BTGlobalTreeMagicNodeInfoToJSON(value?: BTGlobalTreeMagicNodeInf
     return {
         ...BTGlobalTreeNodeInfoToJSON(value),
         'subType': value.subType,
+        'thumbnail': BTThumbnailInfoToJSON(value.thumbnail),
     };
 }
 
