@@ -21,10 +21,9 @@
     "url": "https://github.com/toebes/onshape-typescript-fetch/issues"
   },
   "homepage": "https://github.com/toebes/onshape-typescript-fetch#readme",
-  "dependencies": {
-    "@openapitools/openapi-generator-cli": "^2.5.2"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "json": "^11.0.0"
+    "json": "^11.0.0",
+    "@openapitools/openapi-generator-cli": "^2.5.2"
   }
 }
