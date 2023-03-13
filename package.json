@@ -4,6 +4,7 @@
   "description": "Onshape Typescript-fetch library",
   "main": "index.ts",
   "scripts": {
+    "build": "npm install && bash buildlocal.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
