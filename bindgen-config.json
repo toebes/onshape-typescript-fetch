@@ -1,0 +1,415 @@
+{
+    "fetch": {
+        "url": "https://cad.onshape.com/api/v5/openapi?includeDeprecated=false&onlyDeprecated=false",
+        "versionAlias": null,
+        "userRole": "PUBLIC",
+        "operationIds": null
+    },
+    "generate": {
+        "generatorUrl": "https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/6.0.0/openapi-generator-cli-6.0.0.jar",
+        "customGeneratorUrl": "https://github.com/onshape-public/openapi-utilities/raw/main/go-oapi-codegen/release/go-oapi-codegen-latest.jar",
+        "preprocess": [
+            {
+                "key": "paths['/appelements/d/{did}/w/{wid}/e/{eid}/blob/{bid}'].post.requestBody.content['multipart/form-data'].schema.properties.file.type",
+                "type": "update",
+                "value": "string"
+            },
+            {
+                "key": "components.schemas['BTMetadataPropertyInfo'].properties.value",
+                "type": "update",
+                "value": {}
+            },
+            {
+                "key": "components.schemas['BTMetadataPropertyInfo'].properties.defaultValue",
+                "type": "update",
+                "value": {}
+            },
+            {
+                "key": "components.schemas['BTJEditInsert-2523'].allOf[1].properties.value.additionalProperties",
+                "type": "update",
+                "value": true
+            },
+            {
+                "key": "components.schemas['BTGetJsonResponse-2137'].properties.tree.additionalProperties",
+                "type": "update",
+                "value": true
+            },
+            {
+                "key": "components.schemas['BTJEditChange-2636'].allOf[1].properties.value.additionalProperties",
+                "type": "update",
+                "value": true
+            },
+            {
+                "key": "components.schemas['BTEventParams']",
+                "type": "update",
+                "value": {
+                    "type": "object",
+                    "discriminator": {
+                        "propertyName": "jsonType",
+                        "mapping": {
+                            "DocumentOpenEventInfo": "#/components/schemas/BTDocumentOpenEventParams"
+                        }
+                    },
+                    "properties": {
+                        "jsonType": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            {
+                "key": "components.schemas['BTDocumentOpenEventParams']",
+                "type": "update",
+                "value": {
+                    "type": "object",
+                    "allOf": [
+                        {
+                            "$ref": "#/components/schemas/BTEventParams"
+                        },
+                        {
+                            "type": "object",
+                            "properties": {
+                                "documentId": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "key": "paths['/events']",
+                "type": "update",
+                "value": {
+                    "post": {
+                        "tags": [
+                            "Event"
+                        ],
+                        "summary": "Fire an asynchronous event.",
+                        "operationId": "fireEvent",
+                        "requestBody": {
+                            "content": {
+                                "application/vnd.onshape.v2+json;charset=UTF-8;qs=0.2": {
+                                    "schema": {
+                                        "$ref": "#/components/schemas/BTEventParams"
+                                    }
+                                }
+                            }
+                        },
+                        "responses": {
+                            "default": {
+                                "description": "default response",
+                                "content": {
+                                    "application/vnd.onshape.v2+json;charset=UTF-8;qs=0.2": {
+                                        "schema": {
+                                            "type": "object"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "deprecated": false,
+                        "security": [
+                            {
+                                "OAuth2": [
+                                    "OAuth2Read"
+                                ],
+                                "BasicAuth": [
+                                    "OAuth2Read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "key": "paths['/api/globaltreenodes/folder/{fid}']",
+                "type": "update",
+                "value": {
+                    "get": {
+                        "deprecated": false,
+                        "operationId": "globalTreeNodesFolder",
+                        "parameters": [
+                            {
+                                "description": "ID of the folder to traverse.",
+                                "explode": false,
+                                "in": "path",
+                                "name": "fid",
+                                "required": true,
+                                "schema": {
+                                    "type": "string"
+                                },
+                                "style": "simple"
+                            },
+                            {
+                                "description": "When true, requests that the path of all nodes up to the root are to be returned.",
+                                "explode": true,
+                                "in": "query",
+                                "name": "getPathToRoot",
+                                "required": false,
+                                "schema": {
+                                    "default": false,
+                                    "type": "boolean"
+                                },
+                                "style": "form"
+                            },
+                            {
+                                "description": "Starting offset in the sorted list of items to return.",
+                                "explode": true,
+                                "in": "query",
+                                "name": "offset",
+                                "required": false,
+                                "schema": {
+                                    "default": 0,
+                                    "format": "int32",
+                                    "type": "integer"
+                                },
+                                "style": "form"
+                            },
+                            {
+                                "description": "Maximum number of items in the list to return.",
+                                "explode": true,
+                                "in": "query",
+                                "name": "limit",
+                                "required": false,
+                                "schema": {
+                                    "default": 20,
+                                    "format": "int32",
+                                    "type": "integer"
+                                },
+                                "style": "form"
+                            },
+                            {
+                                "description": "Field to sort the items in the list by.",
+                                "explode": true,
+                                "in": "query",
+                                "name": "sortColumn",
+                                "required": false,
+                                "schema": {
+                                    "default": "modifiedAt",
+                                    "type": "string"
+                                },
+                                "style": "form"
+                            },
+                            {
+                                "description": "Which way to sort the list (asc/desc).  Defaults to asc.",
+                                "explode": true,
+                                "in": "query",
+                                "name": "sortOrder",
+                                "required": false,
+                                "schema": {
+                                    "default": "asc",
+                                    "type": "string"
+                                },
+                                "style": "form"
+                            }
+                        ],
+                        "responses": {
+                            "default": {
+                                "content": {
+                                    "application/vnd.onshape.v1+json;charset=UTF-8;qs=0.1": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/BTGlobalTreeNodeInfo"
+                                        }
+                                    }
+                                },
+                                "description": "default response"
+                            }
+                        },
+                        "summary": "Get Tree Node List",
+                        "tags": [
+                            "Global Tree Nodes"
+                        ],
+                        "x-BTVisibility": "PRODUCTION"
+                    }
+                }
+            },
+            {
+                "key": "paths['/api/globaltreenodes/magic/{mid}']",
+                "type": "update",
+                "value": {
+                    "get": {
+                        "deprecated": false,
+                        "description": "Returns a list of all the elements in one of several globally defined lists. Known values include:\n| MAGIC ID | TITLE | USAGE |\n|-|-|-|\n| 0 | Recently Opened | Most recently opened documents |\n| 1 | My Onshape | Root folder and contents |\n| 2 | Created by Me | Documents created by the logged in user |\n| 3 | Public | All public documents (a very long list) |\n| 4 | Trash | Trashcan for the logged in user |\n| 5 | Tutorials & Samples | Desktop Tutorials |\n| 6 | FeatureScript samples |  FeatureScript samples (found when you select Other documents while adding a custom feature) |\n| 7 | Community spotlight | Community spotlight (found when you select Other documents while adding a custom feature) |\n| 8 | Tutorials | IOS Tutorials |\n| 9 | Tutorials | Android Tutorials |\n| 10 | Labels | Labels created by the user  |\n| 11 | Teams | Teams that the user is connected to |\n| 12 | Shared with me | Documents shared with the user |\n| 13 | Cloud Storage | Visual list of cloud accounts associated with the logged in user |\n| 14 | Custom table samples | Custom table samples (found when you select Other documents while adding a custom table) |\n",
+                        "operationId": "globalTreeNodesMagic",
+                        "parameters": [
+                            {
+                                "description": "Magic ID of list to return.",
+                                "explode": false,
+                                "in": "path",
+                                "name": "mid",
+                                "required": true,
+                                "schema": {
+                                    "type": "string"
+                                },
+                                "style": "simple"
+                            },
+                            {
+                                "description": "When true, requests that the path of all nodes up to the root are to be returned.",
+                                "explode": true,
+                                "in": "query",
+                                "name": "getPathToRoot",
+                                "required": false,
+                                "schema": {
+                                    "default": false,
+                                    "type": "boolean"
+                                },
+                                "style": "form"
+                            },
+                            {
+                                "description": "Starting offset in the sorted list of items to return.",
+                                "explode": true,
+                                "in": "query",
+                                "name": "offset",
+                                "required": false,
+                                "schema": {
+                                    "default": 0,
+                                    "format": "int32",
+                                    "type": "integer"
+                                },
+                                "style": "form"
+                            },
+                            {
+                                "description": "Maximum number of items in the list to return.",
+                                "explode": true,
+                                "in": "query",
+                                "name": "limit",
+                                "required": false,
+                                "schema": {
+                                    "default": 20,
+                                    "format": "int32",
+                                    "type": "integer"
+                                },
+                                "style": "form"
+                            },
+                            {
+                                "description": "Field to sort the items in the list by.",
+                                "explode": true,
+                                "in": "query",
+                                "name": "sortColumn",
+                                "required": false,
+                                "schema": {
+                                    "default": "modifiedAt",
+                                    "type": "string"
+                                },
+                                "style": "form"
+                            },
+                            {
+                                "description": "Which way to sort the list (asc/desc).  Defaults to asc.",
+                                "explode": true,
+                                "in": "query",
+                                "name": "sortOrder",
+                                "required": false,
+                                "schema": {
+                                    "default": "asc",
+                                    "type": "string"
+                                },
+                                "style": "form"
+                            }
+                        ],
+                        "responses": {
+                            "default": {
+                                "content": {
+                                    "application/vnd.onshape.v1+json;charset=UTF-8;qs=0.1": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/BTGlobalTreeNodeInfo"
+                                        }
+                                    }
+                                },
+                                "description": "default response"
+                            }
+                        },
+                        "summary": "Get Tree Node List",
+                        "tags": [
+                            "Global Tree Nodes"
+                        ],
+                        "x-BTVisibility": "PRODUCTION"
+                    }
+                }
+            },
+            {
+                "key": "paths['/api/globaltreenodes/']",
+                "type": "update",
+                "value": {
+                    "get": {
+                        "deprecated": false,
+                        "operationId": "globalTreeNodes",
+                        "parameters": [],
+                        "responses": {
+                            "default": {
+                                "content": {
+                                    "application/vnd.onshape.v1+json;charset=UTF-8;qs=0.1": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/BTGlobalTreeNodesInfo"
+                                        }
+                                    }
+                                },
+                                "description": "default response"
+                            }
+                        },
+                        "summary": "Get Searchable Trees",
+                        "tags": [
+                            "Global Tree Nodes"
+                        ],
+                        "x-BTVisibility": "PRODUCTION"
+                    }
+                }
+            },
+            {
+                "key": "components.schemas['BTGlobalTreeNodesInfo']",
+                "type": "update",
+                "value": {
+                    "type": "object",
+                    "properties": {
+                        "permissionSet": {
+                            "items": {
+                                "title": "Permission Name",
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        "pathToRoot": {
+                            "items": {
+                                "$ref": "#/components/schemas/BTGlobalTreeNodeInfo"
+                            },
+                            "type": "array"
+                        },
+                        "next": {
+                            "type": "string"
+                        },
+                        "href": {
+                            "format": "uri",
+                            "type": "string"
+                        },
+                        "items": {
+                            "items": {
+                                "$ref": "#/components/schemas/BTGlobalTreeMagicNodeInfo"
+                            },
+                            "type": "array"
+                        }
+                    }
+                }
+            },
+            {
+                "key": "components.schemas['BTGlobalTreeNodeListResponse'].properties.items",
+                "type": "update",
+                "value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/components/schemas/BTGlobalTreeNodeInfo"
+                    }
+                }
+            },
+            {
+                "key": "components.schemas['BTGlobalTreeNodeListResponseBTTeamInfo'].properties.items",
+                "type": "update",
+                "value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/components/schemas/BTTeamInfo"
+                    }
+                }
+            }
+        ]
+    }
+}
