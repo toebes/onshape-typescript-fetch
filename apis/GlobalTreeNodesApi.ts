@@ -15,12 +15,9 @@
 
 import * as runtime from '../runtime';
 import type {
-  BTGlobalTreeNodeInfo,
   BTGlobalTreeNodesInfo,
 } from '../models';
 import {
-    BTGlobalTreeNodeInfoFromJSON,
-    BTGlobalTreeNodeInfoToJSON,
     BTGlobalTreeNodesInfoFromJSON,
     BTGlobalTreeNodesInfoToJSON,
 } from '../models';
@@ -80,7 +77,7 @@ export class GlobalTreeNodesApi extends runtime.BaseAPI {
     /**
      * Get Tree Node List
      */
-    async globalTreeNodesFolderRaw(requestParameters: GlobalTreeNodesFolderRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BTGlobalTreeNodeInfo>> {
+    async globalTreeNodesFolderRaw(requestParameters: GlobalTreeNodesFolderRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BTGlobalTreeNodesInfo>> {
         if (requestParameters.fid === null || requestParameters.fid === undefined) {
             throw new runtime.RequiredError('fid','Required parameter requestParameters.fid was null or undefined when calling globalTreeNodesFolder.');
         }
@@ -119,13 +116,13 @@ export class GlobalTreeNodesApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => BTGlobalTreeNodeInfoFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => BTGlobalTreeNodesInfoFromJSON(jsonValue));
     }
 
     /**
      * Get Tree Node List
      */
-    async globalTreeNodesFolder(requestParameters: GlobalTreeNodesFolderRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BTGlobalTreeNodeInfo> {
+    async globalTreeNodesFolder(requestParameters: GlobalTreeNodesFolderRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BTGlobalTreeNodesInfo> {
         const response = await this.globalTreeNodesFolderRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -134,7 +131,7 @@ export class GlobalTreeNodesApi extends runtime.BaseAPI {
      * Returns a list of all the elements in one of several globally defined lists. Known values include: | MAGIC ID | TITLE | USAGE | |-|-|-| | 0 | Recently Opened | Most recently opened documents | | 1 | My Onshape | Root folder and contents | | 2 | Created by Me | Documents created by the logged in user | | 3 | Public | All public documents (a very long list) | | 4 | Trash | Trashcan for the logged in user | | 5 | Tutorials & Samples | Desktop Tutorials | | 6 | FeatureScript samples |  FeatureScript samples (found when you select Other documents while adding a custom feature) | | 7 | Community spotlight | Community spotlight (found when you select Other documents while adding a custom feature) | | 8 | Tutorials | IOS Tutorials | | 9 | Tutorials | Android Tutorials | | 10 | Labels | Labels created by the user  | | 11 | Teams | Teams that the user is connected to | | 12 | Shared with me | Documents shared with the user | | 13 | Cloud Storage | Visual list of cloud accounts associated with the logged in user | | 14 | Custom table samples | Custom table samples (found when you select Other documents while adding a custom table) | 
      * Get Tree Node List
      */
-    async globalTreeNodesMagicRaw(requestParameters: GlobalTreeNodesMagicRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BTGlobalTreeNodeInfo>> {
+    async globalTreeNodesMagicRaw(requestParameters: GlobalTreeNodesMagicRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BTGlobalTreeNodesInfo>> {
         if (requestParameters.mid === null || requestParameters.mid === undefined) {
             throw new runtime.RequiredError('mid','Required parameter requestParameters.mid was null or undefined when calling globalTreeNodesMagic.');
         }
@@ -173,14 +170,14 @@ export class GlobalTreeNodesApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => BTGlobalTreeNodeInfoFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => BTGlobalTreeNodesInfoFromJSON(jsonValue));
     }
 
     /**
      * Returns a list of all the elements in one of several globally defined lists. Known values include: | MAGIC ID | TITLE | USAGE | |-|-|-| | 0 | Recently Opened | Most recently opened documents | | 1 | My Onshape | Root folder and contents | | 2 | Created by Me | Documents created by the logged in user | | 3 | Public | All public documents (a very long list) | | 4 | Trash | Trashcan for the logged in user | | 5 | Tutorials & Samples | Desktop Tutorials | | 6 | FeatureScript samples |  FeatureScript samples (found when you select Other documents while adding a custom feature) | | 7 | Community spotlight | Community spotlight (found when you select Other documents while adding a custom feature) | | 8 | Tutorials | IOS Tutorials | | 9 | Tutorials | Android Tutorials | | 10 | Labels | Labels created by the user  | | 11 | Teams | Teams that the user is connected to | | 12 | Shared with me | Documents shared with the user | | 13 | Cloud Storage | Visual list of cloud accounts associated with the logged in user | | 14 | Custom table samples | Custom table samples (found when you select Other documents while adding a custom table) | 
      * Get Tree Node List
      */
-    async globalTreeNodesMagic(requestParameters: GlobalTreeNodesMagicRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BTGlobalTreeNodeInfo> {
+    async globalTreeNodesMagic(requestParameters: GlobalTreeNodesMagicRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BTGlobalTreeNodesInfo> {
         const response = await this.globalTreeNodesMagicRaw(requestParameters, initOverrides);
         return await response.value();
     }

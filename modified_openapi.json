@@ -20811,7 +20811,7 @@
             "content": {
               "application/vnd.onshape.v1+json;charset=UTF-8;qs=0.1": {
                 "schema": {
-                  "$ref": "#/components/schemas/BTGlobalTreeNodeInfo"
+                  "$ref": "#/components/schemas/BTGlobalTreeNodesInfo"
                 }
               }
             },
@@ -20910,7 +20910,7 @@
             "content": {
               "application/vnd.onshape.v1+json;charset=UTF-8;qs=0.1": {
                 "schema": {
-                  "$ref": "#/components/schemas/BTGlobalTreeNodeInfo"
+                  "$ref": "#/components/schemas/BTGlobalTreeNodesInfo"
                 }
               }
             },
