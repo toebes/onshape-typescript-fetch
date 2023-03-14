@@ -60,29 +60,17 @@ npx @openapitools/openapi-generator-cli generate -i ${updatedapiSpec} -g ${gener
 #   Property 'btType' is optional in type 'BTFSValueTooBig1247' but required in type 'BTFSValue1888'.                        -- FIXED by adding required btType
 #   Property 'btType' is optional in type 'BTFSValueUndefined2003' but required in type 'BTFSValue1888'.                     -- FIXED by adding required btType
 #   Property 'btType' is optional in type 'BTFSValueWithUnits1817' but required in type 'BTFSValue1888'.                     -- FIXED by adding required btType
-#       TS2440: Import declaration conflicts with local declaration of 'BTInnerArrayParameterLocation2368FromJSONTyped'.
 #       TS2307: Cannot find module './BTJEdit3734' or its corresponding type declarations.                                   -- FIXED by adding required btType and btType
-#       TS2440: Import declaration conflicts with local declaration of 'BTMSketchCurveSegment155FromJSONTyped'.
 #       TS2307: Cannot find module './BTParameterVisibilityCondition177' or its corresponding type declarations.             -- FIXED by adding required btType and btType
-#       TS2440: Import declaration conflicts with local declaration of 'BTParameterVisibilityOnMateDOFType2114FromJSONTyped'.
-# webpack compiled with 48 errors
-
-
-#   Property 'btType' is optional in type 'BTFSValueArray1499' but required in type 'BTFSValue1888'.
-#       TS2430: Interface 'BTFSValueArray1499' incorrectly extends interface 'BTFSValue1888'.
-#       TS2345: Argument of type 'BTFSValueArray1499' is not assignable to parameter of type 'BTFSValue1888'.
+#   Property 'btType' is optional in type 'BTJEditChange2636' but required in type 'BTJEdit3734'.                            -- FIXED by adding required btType
+#   Property 'btType' is optional in type 'BTJEditDelete1992' but required in type 'BTJEdit3734'.                            -- FIXED by adding required btType
+#   Property 'btType' is optional in type 'BTJEditInsert2523' but required in type 'BTJEdit3734'.                            -- FIXED by adding required btType
+#   Property 'btType' is optional in type 'BTJEditList2707' but required in type 'BTJEdit3734'.                              -- FIXED by adding required btType
+#   Property 'btType' is optional in type 'BTJEditMove3245' but required in type 'BTJEdit3734'.                              -- FIXED by adding required btType
+#       TS2741: Property 'jsonType' is missing in type 'BTDocumentInfo' but required in type 'BTDocumentSummaryInfo'.        -- FIXED by adding required jsonType and jsonType
+#   Property 'btType' is optional in type 'BTParameterVisibilityAlwaysHidden176' but required in type 'BTParameterVisibilityCondition177'. -- FIXED by adding required btType
+#   Property 'btType' is optional in type 'BTParameterVisibilityLogical178' but required in type 'BTParameterVisibilityCondition177'.      -- FIXED by adding required btType
+#   Property 'btType' is optional in type 'BTParameterVisibilityOnEqual180' but required in type 'BTParameterVisibilityCondition177'.      -- FIXED by adding required btType
 #       TS2440: Import declaration conflicts with local declaration of 'BTInnerArrayParameterLocation2368FromJSONTyped'.
-#       TS2307: Cannot find module './BTJEdit3734' or its corresponding type declarations.
-#       TS2307: Cannot find module './BTJEdit3734' or its corresponding type declarations.
-#       TS2307: Cannot find module './BTJEdit3734' or its corresponding type declarations.
-#       TS2307: Cannot find module './BTJEdit3734' or its corresponding type declarations.
-#       TS2307: Cannot find module './BTJEdit3734' or its corresponding type declarations.
-#       TS2307: Cannot find module './BTJEdit3734' or its corresponding type declarations.
-#       TS2307: Cannot find module './BTJEdit3734' or its corresponding type declarations.
-#       TS2307: Cannot find module './BTJEdit3734' or its corresponding type declarations.
-#       TS2307: Cannot find module './BTParameterVisibilityCondition177' or its corresponding type declarations.
-#       TS2307: Cannot find module './BTParameterVisibilityCondition177' or its corresponding type declarations.
-#       TS2307: Cannot find module './BTParameterVisibilityCondition177' or its corresponding type declarations.
-#       TS2307: Cannot find module './BTParameterVisibilityCondition177' or its corresponding type declarations.
-#       TS2307: Cannot find module './BTParameterVisibilityCondition177' or its corresponding type declarations.
+#       TS2440: Import declaration conflicts with local declaration of 'BTMSketchCurveSegment155FromJSONTyped'.
 #       TS2440: Import declaration conflicts with local declaration of 'BTParameterVisibilityOnMateDOFType2114FromJSONTyped'.

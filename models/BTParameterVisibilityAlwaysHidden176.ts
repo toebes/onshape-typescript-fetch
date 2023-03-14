@@ -31,7 +31,7 @@ export interface BTParameterVisibilityAlwaysHidden176 extends BTParameterVisibil
      * @type {string}
      * @memberof BTParameterVisibilityAlwaysHidden176
      */
-    btType?: string;
+    btType: string;
 }
 
 /**
@@ -39,6 +39,7 @@ export interface BTParameterVisibilityAlwaysHidden176 extends BTParameterVisibil
  */
 export function instanceOfBTParameterVisibilityAlwaysHidden176(value: object): boolean {
     let isInstance = true;
+    isInstance = isInstance && "btType" in value;
 
     return isInstance;
 }
@@ -53,7 +54,7 @@ export function BTParameterVisibilityAlwaysHidden176FromJSONTyped(json: any, ign
     }
     return {
         ...BTParameterVisibilityCondition177FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
+        'btType': json['btType'],
     };
 }
 

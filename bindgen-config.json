@@ -666,6 +666,27 @@
                 "value": [
                     "btType"
                 ]
+            },
+            {
+                "key": "components.schemas['BTParameterVisibilityAlwaysHidden-176'].required",
+                "type": "update",
+                "value": [
+                    "btType"
+                ]
+            },
+            {
+                "key": "components.schemas['BTParameterVisibilityLogical-178'].required",
+                "type": "update",
+                "value": [
+                    "btType"
+                ]
+            },
+            {
+                "key": "components.schemas['BTParameterVisibilityOnEqual-180'].required",
+                "type": "update",
+                "value": [
+                    "btType"
+                ]
             }
         ]
     }

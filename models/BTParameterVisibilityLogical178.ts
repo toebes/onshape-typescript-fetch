@@ -31,7 +31,7 @@ export interface BTParameterVisibilityLogical178 extends BTParameterVisibilityCo
      * @type {string}
      * @memberof BTParameterVisibilityLogical178
      */
-    btType?: string;
+    btType: string;
     /**
      * 
      * @type {Array<BTParameterVisibilityCondition177>}
@@ -64,6 +64,7 @@ export type BTParameterVisibilityLogical178OperationEnum = typeof BTParameterVis
  */
 export function instanceOfBTParameterVisibilityLogical178(value: object): boolean {
     let isInstance = true;
+    isInstance = isInstance && "btType" in value;
 
     return isInstance;
 }
@@ -78,7 +79,7 @@ export function BTParameterVisibilityLogical178FromJSONTyped(json: any, ignoreDi
     }
     return {
         ...BTParameterVisibilityCondition177FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
+        'btType': json['btType'],
         'children': !exists(json, 'children') ? undefined : ((json['children'] as Array<any>).map(BTParameterVisibilityCondition177FromJSON)),
         'operation': !exists(json, 'operation') ? undefined : json['operation'],
     };

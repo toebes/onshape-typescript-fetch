@@ -35,7 +35,7 @@ export interface BTParameterVisibilityOnEqual180 extends BTParameterVisibilityCo
      * @type {string}
      * @memberof BTParameterVisibilityOnEqual180
      */
-    btType?: string;
+    btType: string;
     /**
      * 
      * @type {boolean}
@@ -61,6 +61,7 @@ export interface BTParameterVisibilityOnEqual180 extends BTParameterVisibilityCo
  */
 export function instanceOfBTParameterVisibilityOnEqual180(value: object): boolean {
     let isInstance = true;
+    isInstance = isInstance && "btType" in value;
 
     return isInstance;
 }
@@ -80,7 +81,7 @@ export function BTParameterVisibilityOnEqual180FromJSONTyped(json: any, ignoreDi
     }
     return {
         ...BTParameterVisibilityCondition177FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
+        'btType': json['btType'],
         'inArray': !exists(json, 'inArray') ? undefined : json['inArray'],
         'parameterId': !exists(json, 'parameterId') ? undefined : json['parameterId'],
         'value': !exists(json, 'value') ? undefined : json['value'],

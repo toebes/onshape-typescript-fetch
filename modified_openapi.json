@@ -45940,6 +45940,9 @@
               }
             }
           }
+        ],
+        "required": [
+          "btType"
         ]
       },
       "BTParameterVisibilityCondition-177": {
@@ -45990,6 +45993,9 @@
               }
             }
           }
+        ],
+        "required": [
+          "btType"
         ]
       },
       "BTParameterVisibilityOnEqual-180": {
@@ -46021,6 +46027,9 @@
               }
             }
           }
+        ],
+        "required": [
+          "btType"
         ]
       },
       "BTParameterVisibilityOnMateDOFType-2114": {
