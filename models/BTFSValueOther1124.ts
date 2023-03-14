@@ -31,7 +31,7 @@ export interface BTFSValueOther1124 extends BTFSValue1888 {
      * @type {string}
      * @memberof BTFSValueOther1124
      */
-    btType?: string;
+    btType: string;
     /**
      * 
      * @type {string}
@@ -64,6 +64,7 @@ export type BTFSValueOther1124TypeEnum = typeof BTFSValueOther1124TypeEnum[keyof
  */
 export function instanceOfBTFSValueOther1124(value: object): boolean {
     let isInstance = true;
+    isInstance = isInstance && "btType" in value;
 
     return isInstance;
 }
@@ -78,7 +79,7 @@ export function BTFSValueOther1124FromJSONTyped(json: any, ignoreDiscriminator: 
     }
     return {
         ...BTFSValue1888FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
+        'btType': json['btType'],
         'type': !exists(json, 'type') ? undefined : json['type'],
     };
 }

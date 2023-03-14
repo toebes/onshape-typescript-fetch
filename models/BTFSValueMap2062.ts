@@ -13,13 +13,6 @@
  */
 
 import { exists, mapValues } from '../runtime';
-import type { BTFSValueMapEntry2077 } from './BTFSValueMapEntry2077';
-import {
-    BTFSValueMapEntry2077FromJSON,
-    BTFSValueMapEntry2077FromJSONTyped,
-    BTFSValueMapEntry2077ToJSON,
-} from './BTFSValueMapEntry2077';
-
 /**
  * 
  * @export
@@ -31,13 +24,7 @@ export interface BTFSValueMap2062 {
      * @type {string}
      * @memberof BTFSValueMap2062
      */
-    typeTag?: string;
-    /**
-     * 
-     * @type {Array<BTFSValueMapEntry2077>}
-     * @memberof BTFSValueMap2062
-     */
-    value?: Array<BTFSValueMapEntry2077>;
+    btType: string;
 }
 
 /**
@@ -45,6 +32,7 @@ export interface BTFSValueMap2062 {
  */
 export function instanceOfBTFSValueMap2062(value: object): boolean {
     let isInstance = true;
+    isInstance = isInstance && "btType" in value;
 
     return isInstance;
 }
@@ -59,8 +47,7 @@ export function BTFSValueMap2062FromJSONTyped(json: any, ignoreDiscriminator: bo
     }
     return {
         
-        'typeTag': !exists(json, 'typeTag') ? undefined : json['typeTag'],
-        'value': !exists(json, 'value') ? undefined : ((json['value'] as Array<any>).map(BTFSValueMapEntry2077FromJSON)),
+        'btType': json['btType'],
     };
 }
 
@@ -73,8 +60,7 @@ export function BTFSValueMap2062ToJSON(value?: BTFSValueMap2062 | null): any {
     }
     return {
         
-        'typeTag': value.typeTag,
-        'value': value.value === undefined ? undefined : ((value.value as Array<any>).map(BTFSValueMapEntry2077ToJSON)),
+        'btType': value.btType,
     };
 }
 

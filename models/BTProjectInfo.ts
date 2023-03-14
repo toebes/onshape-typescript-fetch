@@ -176,6 +176,12 @@ export interface BTProjectInfo {
      * @memberof BTProjectInfo
      */
     viewRef?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BTProjectInfo
+     */
+    jsonType?: string;
 }
 
 /**
@@ -219,6 +225,7 @@ export function BTProjectInfoFromJSONTyped(json: any, ignoreDiscriminator: boole
         'treeHref': !exists(json, 'treeHref') ? undefined : json['treeHref'],
         'unparentHref': !exists(json, 'unparentHref') ? undefined : json['unparentHref'],
         'viewRef': !exists(json, 'viewRef') ? undefined : json['viewRef'],
+        'jsonType': !exists(json, 'jsonType') ? undefined : json['jsonType'],
     };
 }
 
@@ -253,6 +260,7 @@ export function BTProjectInfoToJSON(value?: BTProjectInfo | null): any {
         'treeHref': value.treeHref,
         'unparentHref': value.unparentHref,
         'viewRef': value.viewRef,
+        'jsonType': value.jsonType,
     };
 }
 

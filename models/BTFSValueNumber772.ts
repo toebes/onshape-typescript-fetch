@@ -31,7 +31,7 @@ export interface BTFSValueNumber772 extends BTFSValue1888 {
      * @type {string}
      * @memberof BTFSValueNumber772
      */
-    btType?: string;
+    btType: string;
     /**
      * 
      * @type {number}
@@ -45,6 +45,7 @@ export interface BTFSValueNumber772 extends BTFSValue1888 {
  */
 export function instanceOfBTFSValueNumber772(value: object): boolean {
     let isInstance = true;
+    isInstance = isInstance && "btType" in value;
 
     return isInstance;
 }
@@ -59,7 +60,7 @@ export function BTFSValueNumber772FromJSONTyped(json: any, ignoreDiscriminator: 
     }
     return {
         ...BTFSValue1888FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
+        'btType': json['btType'],
         'value': !exists(json, 'value') ? undefined : json['value'],
     };
 }

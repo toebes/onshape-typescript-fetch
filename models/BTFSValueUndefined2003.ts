@@ -31,7 +31,7 @@ export interface BTFSValueUndefined2003 extends BTFSValue1888 {
      * @type {string}
      * @memberof BTFSValueUndefined2003
      */
-    btType?: string;
+    btType: string;
 }
 
 /**
@@ -39,6 +39,7 @@ export interface BTFSValueUndefined2003 extends BTFSValue1888 {
  */
 export function instanceOfBTFSValueUndefined2003(value: object): boolean {
     let isInstance = true;
+    isInstance = isInstance && "btType" in value;
 
     return isInstance;
 }
@@ -53,7 +54,7 @@ export function BTFSValueUndefined2003FromJSONTyped(json: any, ignoreDiscriminat
     }
     return {
         ...BTFSValue1888FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
+        'btType': json['btType'],
     };
 }
 

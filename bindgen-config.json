@@ -425,6 +425,106 @@
                         }
                     }
                 }
+            },
+            {
+                "key": "components.schemas['BTDocumentSummaryInfo'].properties.jsonType",
+                "type": "update",
+                "value": {
+                    "type": "string"
+                }
+            },
+            {
+                "key": "components.schemas['BTDocumentLabelInfo'].properties.jsonType",
+                "type": "update",
+                "value": {
+                    "type": "string"
+                }
+            },
+            {
+                "key": "components.schemas['BTProjectInfo'].properties.jsonType",
+                "type": "update",
+                "value": {
+                    "type": "string"
+                }
+            },
+            {
+                "key": "components.schemas['BTTeamSummaryInfo'].properties.jsonType",
+                "type": "update",
+                "value": {
+                    "type": "string"
+                }
+            },
+            {
+                "key": "components.schemas['BTFSValue-1888'].required",
+                "type": "update",
+                "value": [
+                    "btType"
+                ]
+            },
+            {
+                "key": "components.schemas['BTFSValueBoolean-1195'].required",
+                "type": "update",
+                "value": [
+                    "btType"
+                ]
+            },
+            {
+                "key": "components.schemas['BTFSValueNumber-772'].required",
+                "type": "update",
+                "value": [
+                    "btType"
+                ]
+            },
+            {
+                "key": "components.schemas['BTFSValueOther-1124'].required",
+                "type": "update",
+                "value": [
+                    "btType"
+                ]
+            },
+            {
+                "key": "components.schemas['BTFSValueString-1422'].required",
+                "type": "update",
+                "value": [
+                    "btType"
+                ]
+            },
+            {
+                "key": "components.schemas['BTFSValueTooBig-1247'].required",
+                "type": "update",
+                "value": [
+                    "btType"
+                ]
+            },
+            {
+                "key": "components.schemas['BTFSValueUndefined-2003'].required",
+                "type": "update",
+                "value": [
+                    "btType"
+                ]
+            },
+            {
+                "key": "components.schemas['BTFSValueWithUnits-1817'].required",
+                "type": "update",
+                "value": [
+                    "btType"
+                ]
+            },
+            {
+                "key": "components.schemas['BTFSValueMap-2062'].required",
+                "type": "update",
+                "value": [
+                    "btType"
+                ]
+            },
+            {
+                "key": "components.schemas['BTFSValueMap-2062'].properties",
+                "type": "update",
+                "value": {
+                    "btType": {
+                        "type": "string"
+                    }
+                }
             }
         ]
     }

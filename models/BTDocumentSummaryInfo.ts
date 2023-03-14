@@ -361,6 +361,12 @@ export interface BTDocumentSummaryInfo {
      * @memberof BTDocumentSummaryInfo
      */
     viewRef?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BTDocumentSummaryInfo
+     */
+    jsonType?: string;
 }
 
 
@@ -458,6 +464,7 @@ export function BTDocumentSummaryInfoFromJSONTyped(json: any, ignoreDiscriminato
         'unparentHref': !exists(json, 'unparentHref') ? undefined : json['unparentHref'],
         'userAccountLimitsBreached': !exists(json, 'userAccountLimitsBreached') ? undefined : json['userAccountLimitsBreached'],
         'viewRef': !exists(json, 'viewRef') ? undefined : json['viewRef'],
+        'jsonType': !exists(json, 'jsonType') ? undefined : json['jsonType'],
     };
 }
 
@@ -520,6 +527,7 @@ export function BTDocumentSummaryInfoToJSON(value?: BTDocumentSummaryInfo | null
         'unparentHref': value.unparentHref,
         'userAccountLimitsBreached': value.userAccountLimitsBreached,
         'viewRef': value.viewRef,
+        'jsonType': value.jsonType,
     };
 }
 

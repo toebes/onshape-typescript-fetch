@@ -152,6 +152,12 @@ export interface BTDocumentLabelInfo {
      * @memberof BTDocumentLabelInfo
      */
     viewRef?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BTDocumentLabelInfo
+     */
+    jsonType?: string;
 }
 
 /**
@@ -193,6 +199,7 @@ export function BTDocumentLabelInfoFromJSONTyped(json: any, ignoreDiscriminator:
         'treeHref': !exists(json, 'treeHref') ? undefined : json['treeHref'],
         'unparentHref': !exists(json, 'unparentHref') ? undefined : json['unparentHref'],
         'viewRef': !exists(json, 'viewRef') ? undefined : json['viewRef'],
+        'jsonType': !exists(json, 'jsonType') ? undefined : json['jsonType'],
     };
 }
 
@@ -225,6 +232,7 @@ export function BTDocumentLabelInfoToJSON(value?: BTDocumentLabelInfo | null): a
         'treeHref': value.treeHref,
         'unparentHref': value.unparentHref,
         'viewRef': value.viewRef,
+        'jsonType': value.jsonType,
     };
 }
 

@@ -31,7 +31,7 @@ export interface BTFSValueBoolean1195 extends BTFSValue1888 {
      * @type {string}
      * @memberof BTFSValueBoolean1195
      */
-    btType?: string;
+    btType: string;
     /**
      * 
      * @type {boolean}
@@ -45,6 +45,7 @@ export interface BTFSValueBoolean1195 extends BTFSValue1888 {
  */
 export function instanceOfBTFSValueBoolean1195(value: object): boolean {
     let isInstance = true;
+    isInstance = isInstance && "btType" in value;
 
     return isInstance;
 }
@@ -59,7 +60,7 @@ export function BTFSValueBoolean1195FromJSONTyped(json: any, ignoreDiscriminator
     }
     return {
         ...BTFSValue1888FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
+        'btType': json['btType'],
         'value': !exists(json, 'value') ? undefined : json['value'],
     };
 }

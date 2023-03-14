@@ -31,7 +31,7 @@ export interface BTFSValueTooBig1247 extends BTFSValue1888 {
      * @type {string}
      * @memberof BTFSValueTooBig1247
      */
-    btType?: string;
+    btType: string;
 }
 
 /**
@@ -39,6 +39,7 @@ export interface BTFSValueTooBig1247 extends BTFSValue1888 {
  */
 export function instanceOfBTFSValueTooBig1247(value: object): boolean {
     let isInstance = true;
+    isInstance = isInstance && "btType" in value;
 
     return isInstance;
 }
@@ -53,7 +54,7 @@ export function BTFSValueTooBig1247FromJSONTyped(json: any, ignoreDiscriminator:
     }
     return {
         ...BTFSValue1888FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
+        'btType': json['btType'],
     };
 }
 

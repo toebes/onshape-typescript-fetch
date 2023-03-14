@@ -31,7 +31,7 @@ export interface BTFSValueWithUnits1817 extends BTFSValue1888 {
      * @type {string}
      * @memberof BTFSValueWithUnits1817
      */
-    btType?: string;
+    btType: string;
     /**
      * 
      * @type {{ [key: string]: number; }}
@@ -51,6 +51,7 @@ export interface BTFSValueWithUnits1817 extends BTFSValue1888 {
  */
 export function instanceOfBTFSValueWithUnits1817(value: object): boolean {
     let isInstance = true;
+    isInstance = isInstance && "btType" in value;
 
     return isInstance;
 }
@@ -65,7 +66,7 @@ export function BTFSValueWithUnits1817FromJSONTyped(json: any, ignoreDiscriminat
     }
     return {
         ...BTFSValue1888FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
+        'btType': json['btType'],
         'unitToPower': !exists(json, 'unitToPower') ? undefined : json['unitToPower'],
         'value': !exists(json, 'value') ? undefined : json['value'],
     };

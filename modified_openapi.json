@@ -26840,6 +26840,9 @@
             "type": "string",
             "description": "URI to visualize the resource in a webclient if applicable.",
             "format": "uri"
+          },
+          "jsonType": {
+            "type": "string"
           }
         }
       },
@@ -27333,6 +27336,9 @@
             "type": "string",
             "description": "URI to visualize the resource in a webclient if applicable.",
             "format": "uri"
+          },
+          "jsonType": {
+            "type": "string"
           }
         },
         "discriminator": {
@@ -32830,21 +32836,21 @@
               }
             }
           }
+        ],
+        "required": [
+          "btType"
         ]
       },
       "BTFSValueMap-2062": {
         "type": "object",
         "properties": {
-          "typeTag": {
+          "btType": {
             "type": "string"
-          },
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BTFSValueMapEntry-2077"
-            }
           }
-        }
+        },
+        "required": [
+          "btType"
+        ]
       },
       "BTFSValueMapEntry-2077": {
         "type": "object",
@@ -32875,6 +32881,9 @@
               }
             }
           }
+        ],
+        "required": [
+          "btType"
         ]
       },
       "BTFSValueOther-1124": {
@@ -32906,6 +32915,9 @@
               }
             }
           }
+        ],
+        "required": [
+          "btType"
         ]
       },
       "BTFSValueString-1422": {
@@ -32925,6 +32937,9 @@
               }
             }
           }
+        ],
+        "required": [
+          "btType"
         ]
       },
       "BTFSValueTooBig-1247": {
@@ -32941,6 +32956,9 @@
               }
             }
           }
+        ],
+        "required": [
+          "btType"
         ]
       },
       "BTFSValueUndefined-2003": {
@@ -32957,6 +32975,9 @@
               }
             }
           }
+        ],
+        "required": [
+          "btType"
         ]
       },
       "BTFSValueWithUnits-1817": {
@@ -32984,6 +33005,9 @@
               }
             }
           }
+        ],
+        "required": [
+          "btType"
         ]
       },
       "BTFeatureApiBase-1430": {
@@ -47068,6 +47092,9 @@
             "type": "string",
             "description": "URI to visualize the resource in a webclient if applicable.",
             "format": "uri"
+          },
+          "jsonType": {
+            "type": "string"
           }
         }
       },
@@ -51709,6 +51736,9 @@
             "type": "string",
             "description": "URI to visualize the resource in a webclient if applicable.",
             "format": "uri"
+          },
+          "jsonType": {
+            "type": "string"
           }
         },
         "discriminator": {

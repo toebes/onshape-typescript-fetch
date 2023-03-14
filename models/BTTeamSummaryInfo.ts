@@ -162,6 +162,12 @@ export interface BTTeamSummaryInfo {
      * @memberof BTTeamSummaryInfo
      */
     viewRef?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BTTeamSummaryInfo
+     */
+    jsonType?: string;
 }
 
 /**
@@ -209,6 +215,7 @@ export function BTTeamSummaryInfoFromJSONTyped(json: any, ignoreDiscriminator: b
         'treeHref': !exists(json, 'treeHref') ? undefined : json['treeHref'],
         'unparentHref': !exists(json, 'unparentHref') ? undefined : json['unparentHref'],
         'viewRef': !exists(json, 'viewRef') ? undefined : json['viewRef'],
+        'jsonType': !exists(json, 'jsonType') ? undefined : json['jsonType'],
     };
 }
 
@@ -242,6 +249,7 @@ export function BTTeamSummaryInfoToJSON(value?: BTTeamSummaryInfo | null): any {
         'treeHref': value.treeHref,
         'unparentHref': value.unparentHref,
         'viewRef': value.viewRef,
+        'jsonType': value.jsonType,
     };
 }
 
