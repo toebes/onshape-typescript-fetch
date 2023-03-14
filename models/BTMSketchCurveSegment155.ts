@@ -32,10 +32,6 @@ import {
     BTMSketchCurve4ToJSON,
 } from './BTMSketchCurve4';
 
-import {
-     BTMSketchCurveSegment155FromJSONTyped
-} from './';
-
 /**
  * 
  * @export
@@ -90,11 +86,6 @@ export function BTMSketchCurveSegment155FromJSON(json: any): BTMSketchCurveSegme
 export function BTMSketchCurveSegment155FromJSONTyped(json: any, ignoreDiscriminator: boolean): BTMSketchCurveSegment155 {
     if ((json === undefined) || (json === null)) {
         return json;
-    }
-    if (!ignoreDiscriminator) {
-        if (json['btType'] === 'BTMSketchCurveSegment') {
-            return BTMSketchCurveSegment155FromJSONTyped(json, true);
-        }
     }
     return {
         ...BTMSketchCurve4FromJSONTyped(json, ignoreDiscriminator),

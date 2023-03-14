@@ -702,6 +702,10 @@
             {
                 "key": "components.schemas['BTInnerArrayParameterLocation-2368'].discriminator",
                 "type": "remove"
+            },
+            {
+                "key": "components.schemas['BTMSketchCurveSegment-155'].discriminator",
+                "type": "remove"
             }
         ]
     }

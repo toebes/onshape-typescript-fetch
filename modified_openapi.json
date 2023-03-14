@@ -40272,12 +40272,6 @@
       },
       "BTMSketchCurveSegment-155": {
         "type": "object",
-        "discriminator": {
-          "propertyName": "btType",
-          "mapping": {
-            "BTMSketchCurveSegment": "#/components/schemas/BTMSketchCurveSegment-155"
-          }
-        },
         "allOf": [
           {
             "$ref": "#/components/schemas/BTMSketchCurve-4"

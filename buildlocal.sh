@@ -72,6 +72,7 @@ npx @openapitools/openapi-generator-cli generate -i ${updatedapiSpec} -g ${gener
 #   Property 'btType' is optional in type 'BTParameterVisibilityLogical178' but required in type 'BTParameterVisibilityCondition177'.      -- FIXED by adding required btType
 #   Property 'btType' is optional in type 'BTParameterVisibilityOnEqual180' but required in type 'BTParameterVisibilityCondition177'.      -- FIXED by adding required btType
 #   Property 'btType' is optional in type 'BTParameterVisibilityOnMateDOFType2114' but required in type 'BTParameterVisibilityOnEqual180'.  -- FIXED by adding required btType
-#       TS2440: Import declaration conflicts with local declaration of 'BTInnerArrayParameterLocation2368FromJSONTyped'.
-#       TS2440: Import declaration conflicts with local declaration of 'BTMSketchCurveSegment155FromJSONTyped'.
-#       TS2440: Import declaration conflicts with local declaration of 'BTParameterVisibilityOnMateDOFType2114FromJSONTyped'.
+#       TS2440: Import declaration conflicts with local declaration of 'BTInnerArrayParameterLocation2368FromJSONTyped'.     -- Fixed by deleting discriminator
+#       TS2440: Import declaration conflicts with local declaration of 'BTMSketchCurveSegment155FromJSONTyped'.              -- Fixed by deleting discriminator
+#       TS2440: Import declaration conflicts with local declaration of 'BTParameterVisibilityOnMateDOFType2114FromJSONTyped'.-- Fixed by deleting discriminator
+
