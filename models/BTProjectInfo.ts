@@ -181,7 +181,7 @@ export interface BTProjectInfo {
      * @type {string}
      * @memberof BTProjectInfo
      */
-    jsonType?: string;
+    jsonType: string;
 }
 
 /**
@@ -189,6 +189,7 @@ export interface BTProjectInfo {
  */
 export function instanceOfBTProjectInfo(value: object): boolean {
     let isInstance = true;
+    isInstance = isInstance && "jsonType" in value;
 
     return isInstance;
 }
@@ -225,7 +226,7 @@ export function BTProjectInfoFromJSONTyped(json: any, ignoreDiscriminator: boole
         'treeHref': !exists(json, 'treeHref') ? undefined : json['treeHref'],
         'unparentHref': !exists(json, 'unparentHref') ? undefined : json['unparentHref'],
         'viewRef': !exists(json, 'viewRef') ? undefined : json['viewRef'],
-        'jsonType': !exists(json, 'jsonType') ? undefined : json['jsonType'],
+        'jsonType': json['jsonType'],
     };
 }
 

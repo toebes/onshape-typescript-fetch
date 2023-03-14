@@ -157,7 +157,7 @@ export interface BTDocumentLabelInfo {
      * @type {string}
      * @memberof BTDocumentLabelInfo
      */
-    jsonType?: string;
+    jsonType: string;
 }
 
 /**
@@ -165,6 +165,7 @@ export interface BTDocumentLabelInfo {
  */
 export function instanceOfBTDocumentLabelInfo(value: object): boolean {
     let isInstance = true;
+    isInstance = isInstance && "jsonType" in value;
 
     return isInstance;
 }
@@ -199,7 +200,7 @@ export function BTDocumentLabelInfoFromJSONTyped(json: any, ignoreDiscriminator:
         'treeHref': !exists(json, 'treeHref') ? undefined : json['treeHref'],
         'unparentHref': !exists(json, 'unparentHref') ? undefined : json['unparentHref'],
         'viewRef': !exists(json, 'viewRef') ? undefined : json['viewRef'],
-        'jsonType': !exists(json, 'jsonType') ? undefined : json['jsonType'],
+        'jsonType': json['jsonType'],
     };
 }
 

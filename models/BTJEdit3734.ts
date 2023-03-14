@@ -13,58 +13,70 @@
  */
 
 import { exists, mapValues } from '../runtime';
-import type { BTJEdit3734 } from './BTJEdit3734';
 import {
-    BTJEdit3734FromJSON,
-    BTJEdit3734FromJSONTyped,
-    BTJEdit3734ToJSON,
-} from './BTJEdit3734';
+     BTJEditChange2636FromJSONTyped,
+     BTJEditDelete1992FromJSONTyped,
+     BTJEditInsert2523FromJSONTyped,
+     BTJEditList2707FromJSONTyped,
+     BTJEditMove3245FromJSONTyped
+} from './';
 
 /**
- * A list of edits that will be applied in order.
+ * An edit that will be applied to the application element's json data.
  * @export
- * @interface BTJEditList2707
+ * @interface BTJEdit3734
  */
-export interface BTJEditList2707 extends BTJEdit3734 {
+export interface BTJEdit3734 {
     /**
      * 
      * @type {string}
-     * @memberof BTJEditList2707
+     * @memberof BTJEdit3734
      */
-    btType?: string;
-    /**
-     * 
-     * @type {Array<BTJEdit3734>}
-     * @memberof BTJEditList2707
-     */
-    edits?: Array<BTJEdit3734>;
+    btType: string;
 }
 
 /**
- * Check if a given object implements the BTJEditList2707 interface.
+ * Check if a given object implements the BTJEdit3734 interface.
  */
-export function instanceOfBTJEditList2707(value: object): boolean {
+export function instanceOfBTJEdit3734(value: object): boolean {
     let isInstance = true;
+    isInstance = isInstance && "btType" in value;
 
     return isInstance;
 }
 
-export function BTJEditList2707FromJSON(json: any): BTJEditList2707 {
-    return BTJEditList2707FromJSONTyped(json, false);
+export function BTJEdit3734FromJSON(json: any): BTJEdit3734 {
+    return BTJEdit3734FromJSONTyped(json, false);
 }
 
-export function BTJEditList2707FromJSONTyped(json: any, ignoreDiscriminator: boolean): BTJEditList2707 {
+export function BTJEdit3734FromJSONTyped(json: any, ignoreDiscriminator: boolean): BTJEdit3734 {
     if ((json === undefined) || (json === null)) {
         return json;
     }
+    if (!ignoreDiscriminator) {
+        if (json['btType'] === 'BTJEditChange-2636') {
+            return BTJEditChange2636FromJSONTyped(json, true);
+        }
+        if (json['btType'] === 'BTJEditDelete-1992') {
+            return BTJEditDelete1992FromJSONTyped(json, true);
+        }
+        if (json['btType'] === 'BTJEditInsert-2523') {
+            return BTJEditInsert2523FromJSONTyped(json, true);
+        }
+        if (json['btType'] === 'BTJEditList-2707') {
+            return BTJEditList2707FromJSONTyped(json, true);
+        }
+        if (json['btType'] === 'BTJEditMove-3245') {
+            return BTJEditMove3245FromJSONTyped(json, true);
+        }
+    }
     return {
-        ...BTJEdit3734FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
-        'edits': !exists(json, 'edits') ? undefined : ((json['edits'] as Array<any>).map(BTJEdit3734FromJSON)),
+        
+        'btType': json['btType'],
     };
 }
 
-export function BTJEditList2707ToJSON(value?: BTJEditList2707 | null): any {
+export function BTJEdit3734ToJSON(value?: BTJEdit3734 | null): any {
     if (value === undefined) {
         return undefined;
     }
@@ -72,9 +84,8 @@ export function BTJEditList2707ToJSON(value?: BTJEditList2707 | null): any {
         return null;
     }
     return {
-        ...BTJEdit3734ToJSON(value),
+        
         'btType': value.btType,
-        'edits': value.edits === undefined ? undefined : ((value.edits as Array<any>).map(BTJEdit3734ToJSON)),
     };
 }
 

@@ -382,6 +382,7 @@ export * from './BTInstanceFolder3627';
 export * from './BTInstanceFolder3627AllOf';
 export * from './BTInstanceStandardContentData2081';
 export * from './BTInstanceStandardContentData2081AllOf';
+export * from './BTJEdit3734';
 export * from './BTJEditChange2636';
 export * from './BTJEditChange2636AllOf';
 export * from './BTJEditDelete1992';

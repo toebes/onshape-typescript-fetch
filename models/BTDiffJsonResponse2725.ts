@@ -19,6 +19,12 @@ import {
     BTDiffJsonResponse2725PatchFromJSONTyped,
     BTDiffJsonResponse2725PatchToJSON,
 } from './BTDiffJsonResponse2725Patch';
+import type { BTJEdit3734 } from './BTJEdit3734';
+import {
+    BTJEdit3734FromJSON,
+    BTJEdit3734FromJSONTyped,
+    BTJEdit3734ToJSON,
+} from './BTJEdit3734';
 
 /**
  * 
@@ -27,11 +33,11 @@ import {
  */
 export interface BTDiffJsonResponse2725 {
     /**
-     * An edit that will be applied to the application element's json data.
-     * @type {object}
+     * 
+     * @type {BTJEdit3734}
      * @memberof BTDiffJsonResponse2725
      */
-    change?: object;
+    change?: BTJEdit3734;
     /**
      * 
      * @type {BTDiffJsonResponse2725Patch}
@@ -71,7 +77,7 @@ export function BTDiffJsonResponse2725FromJSONTyped(json: any, ignoreDiscriminat
     }
     return {
         
-        'change': !exists(json, 'change') ? undefined : json['change'],
+        'change': !exists(json, 'change') ? undefined : BTJEdit3734FromJSON(json['change']),
         'patch': !exists(json, 'patch') ? undefined : BTDiffJsonResponse2725PatchFromJSON(json['patch']),
         'sourceChangeId': !exists(json, 'sourceChangeId') ? undefined : json['sourceChangeId'],
         'targetChangeId': !exists(json, 'targetChangeId') ? undefined : json['targetChangeId'],
@@ -87,7 +93,7 @@ export function BTDiffJsonResponse2725ToJSON(value?: BTDiffJsonResponse2725 | nu
     }
     return {
         
-        'change': value.change,
+        'change': BTJEdit3734ToJSON(value.change),
         'patch': BTDiffJsonResponse2725PatchToJSON(value.patch),
         'sourceChangeId': value.sourceChangeId,
         'targetChangeId': value.targetChangeId,

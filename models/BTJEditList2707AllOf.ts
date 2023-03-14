@@ -13,6 +13,13 @@
  */
 
 import { exists, mapValues } from '../runtime';
+import type { BTJEdit3734 } from './BTJEdit3734';
+import {
+    BTJEdit3734FromJSON,
+    BTJEdit3734FromJSONTyped,
+    BTJEdit3734ToJSON,
+} from './BTJEdit3734';
+
 /**
  * 
  * @export
@@ -27,10 +34,10 @@ export interface BTJEditList2707AllOf {
     btType?: string;
     /**
      * 
-     * @type {Array<object>}
+     * @type {Array<BTJEdit3734>}
      * @memberof BTJEditList2707AllOf
      */
-    edits?: Array<object>;
+    edits?: Array<BTJEdit3734>;
 }
 
 /**
@@ -53,7 +60,7 @@ export function BTJEditList2707AllOfFromJSONTyped(json: any, ignoreDiscriminator
     return {
         
         'btType': !exists(json, 'btType') ? undefined : json['btType'],
-        'edits': !exists(json, 'edits') ? undefined : json['edits'],
+        'edits': !exists(json, 'edits') ? undefined : ((json['edits'] as Array<any>).map(BTJEdit3734FromJSON)),
     };
 }
 
@@ -67,7 +74,7 @@ export function BTJEditList2707AllOfToJSON(value?: BTJEditList2707AllOf | null):
     return {
         
         'btType': value.btType,
-        'edits': value.edits,
+        'edits': value.edits === undefined ? undefined : ((value.edits as Array<any>).map(BTJEdit3734ToJSON)),
     };
 }
 

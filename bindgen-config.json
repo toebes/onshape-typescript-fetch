@@ -434,11 +434,25 @@
                 }
             },
             {
+                "key": "components.schemas['BTDocumentSummaryInfo'].required",
+                "type": "update",
+                "value": [
+                    "jsonType"
+                ]
+            },
+            {
                 "key": "components.schemas['BTDocumentLabelInfo'].properties.jsonType",
                 "type": "update",
                 "value": {
                     "type": "string"
                 }
+            },
+            {
+                "key": "components.schemas['BTDocumentLabelInfo'].required",
+                "type": "update",
+                "value": [
+                    "jsonType"
+                ]
             },
             {
                 "key": "components.schemas['BTProjectInfo'].properties.jsonType",
@@ -448,6 +462,13 @@
                 }
             },
             {
+                "key": "components.schemas['BTProjectInfo'].required",
+                "type": "update",
+                "value": [
+                    "jsonType"
+                ]
+            },
+            {
                 "key": "components.schemas['BTTeamSummaryInfo'].properties.jsonType",
                 "type": "update",
                 "value": {
@@ -455,7 +476,62 @@
                 }
             },
             {
+                "key": "components.schemas['BTTeamSummaryInfo'].required",
+                "type": "update",
+                "value": [
+                    "jsonType"
+                ]
+            },
+            {
                 "key": "components.schemas['BTFSValue-1888'].required",
+                "type": "update",
+                "value": [
+                    "btType"
+                ]
+            },
+            {
+                "key": "components.schemas['BTJEdit-3734'].required",
+                "type": "update",
+                "value": [
+                    "btType"
+                ]
+            },
+            {
+                "key": "components.schemas['BTJEdit-3734'].properties",
+                "type": "update",
+                "value": {
+                    "btType": {
+                        "type": "string"
+                    }
+                }
+            },
+            {
+                "key": "components.schemas['BTFSValueArray-1499'].properties",
+                "type": "update",
+                "value": {
+                    "btType": {
+                        "type": "string"
+                    }
+                }
+            },
+            {
+                "key": "components.schemas['BTFSValueArray-1499'].required",
+                "type": "update",
+                "value": [
+                    "btType"
+                ]
+            },
+            {
+                "key": "components.schemas['BTParameterVisibilityCondition-177'].properties",
+                "type": "update",
+                "value": {
+                    "btType": {
+                        "type": "string"
+                    }
+                }
+            },
+            {
+                "key": "components.schemas['BTParameterVisibilityCondition-177'].required",
                 "type": "update",
                 "value": [
                     "btType"

@@ -19,6 +19,12 @@ import {
     BTAppElementChangeParamsFromJSONTyped,
     BTAppElementChangeParamsToJSON,
 } from './BTAppElementChangeParams';
+import type { BTJEdit3734 } from './BTJEdit3734';
+import {
+    BTJEdit3734FromJSON,
+    BTJEdit3734FromJSONTyped,
+    BTJEdit3734ToJSON,
+} from './BTJEdit3734';
 import type { BTMetadataPropertyUpdateParams } from './BTMetadataPropertyUpdateParams';
 import {
     BTMetadataPropertyUpdateParamsFromJSON,
@@ -51,11 +57,11 @@ export interface BTAppElementUpdateParams {
      */
     jsonPatch?: string;
     /**
-     * An edit that will be applied to the application element's json data.
-     * @type {object}
+     * 
+     * @type {BTJEdit3734}
      * @memberof BTAppElementUpdateParams
      */
-    jsonTreeEdit?: object;
+    jsonTreeEdit?: BTJEdit3734;
     /**
      * The id of the last change made to this application element. This can be retrieved from the response for any app element modification endpoint.
      * @type {string}
@@ -122,7 +128,7 @@ export function BTAppElementUpdateParamsFromJSONTyped(json: any, ignoreDiscrimin
         'changes': !exists(json, 'changes') ? undefined : ((json['changes'] as Array<any>).map(BTAppElementChangeParamsFromJSON)),
         'description': !exists(json, 'description') ? undefined : json['description'],
         'jsonPatch': !exists(json, 'jsonPatch') ? undefined : json['jsonPatch'],
-        'jsonTreeEdit': !exists(json, 'jsonTreeEdit') ? undefined : json['jsonTreeEdit'],
+        'jsonTreeEdit': !exists(json, 'jsonTreeEdit') ? undefined : BTJEdit3734FromJSON(json['jsonTreeEdit']),
         'parentChangeId': !exists(json, 'parentChangeId') ? undefined : json['parentChangeId'],
         'propertyUpdates': !exists(json, 'propertyUpdates') ? undefined : ((json['propertyUpdates'] as Array<any>).map(BTMetadataPropertyUpdateParamsFromJSON)),
         'returnError': !exists(json, 'returnError') ? undefined : json['returnError'],
@@ -143,7 +149,7 @@ export function BTAppElementUpdateParamsToJSON(value?: BTAppElementUpdateParams 
         'changes': value.changes === undefined ? undefined : ((value.changes as Array<any>).map(BTAppElementChangeParamsToJSON)),
         'description': value.description,
         'jsonPatch': value.jsonPatch,
-        'jsonTreeEdit': value.jsonTreeEdit,
+        'jsonTreeEdit': BTJEdit3734ToJSON(value.jsonTreeEdit),
         'parentChangeId': value.parentChangeId,
         'propertyUpdates': value.propertyUpdates === undefined ? undefined : ((value.propertyUpdates as Array<any>).map(BTMetadataPropertyUpdateParamsToJSON)),
         'returnError': value.returnError,

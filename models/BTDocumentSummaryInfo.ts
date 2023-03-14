@@ -366,7 +366,7 @@ export interface BTDocumentSummaryInfo {
      * @type {string}
      * @memberof BTDocumentSummaryInfo
      */
-    jsonType?: string;
+    jsonType: string;
 }
 
 
@@ -392,6 +392,7 @@ export type BTDocumentSummaryInfoPermissionEnum = typeof BTDocumentSummaryInfoPe
  */
 export function instanceOfBTDocumentSummaryInfo(value: object): boolean {
     let isInstance = true;
+    isInstance = isInstance && "jsonType" in value;
 
     return isInstance;
 }
@@ -464,7 +465,7 @@ export function BTDocumentSummaryInfoFromJSONTyped(json: any, ignoreDiscriminato
         'unparentHref': !exists(json, 'unparentHref') ? undefined : json['unparentHref'],
         'userAccountLimitsBreached': !exists(json, 'userAccountLimitsBreached') ? undefined : json['userAccountLimitsBreached'],
         'viewRef': !exists(json, 'viewRef') ? undefined : json['viewRef'],
-        'jsonType': !exists(json, 'jsonType') ? undefined : json['jsonType'],
+        'jsonType': json['jsonType'],
     };
 }
 

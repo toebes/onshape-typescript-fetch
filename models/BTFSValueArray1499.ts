@@ -31,7 +31,7 @@ export interface BTFSValueArray1499 extends BTFSValue1888 {
      * @type {string}
      * @memberof BTFSValueArray1499
      */
-    btType?: string;
+    btType: string;
     /**
      * 
      * @type {Array<BTFSValue1888>}
@@ -45,6 +45,7 @@ export interface BTFSValueArray1499 extends BTFSValue1888 {
  */
 export function instanceOfBTFSValueArray1499(value: object): boolean {
     let isInstance = true;
+    isInstance = isInstance && "btType" in value;
 
     return isInstance;
 }
@@ -59,7 +60,7 @@ export function BTFSValueArray1499FromJSONTyped(json: any, ignoreDiscriminator: 
     }
     return {
         ...BTFSValue1888FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
+        'btType': json['btType'],
         'value': !exists(json, 'value') ? undefined : ((json['value'] as Array<any>).map(BTFSValue1888FromJSON)),
     };
 }

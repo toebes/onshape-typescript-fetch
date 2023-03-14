@@ -26844,7 +26844,10 @@
           "jsonType": {
             "type": "string"
           }
-        }
+        },
+        "required": [
+          "jsonType"
+        ]
       },
       "BTDocumentMergeInfo": {
         "type": "object",
@@ -27347,7 +27350,10 @@
             "document": "#/components/schemas/BTDocumentInfo",
             "document-summary-search": "#/components/schemas/BTDocumentSummarySearchInfo"
           }
-        }
+        },
+        "required": [
+          "jsonType"
+        ]
       },
       "BTDocumentSummarySearchInfo": {
         "type": "object",
@@ -32817,6 +32823,14 @@
               }
             }
           }
+        ],
+        "properties": {
+          "btType": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "btType"
         ]
       },
       "BTFSValueBoolean-1195": {
@@ -34926,6 +34940,14 @@
             "BTJEditInsert-2523": "#/components/schemas/BTJEditInsert-2523",
             "BTJEditList-2707": "#/components/schemas/BTJEditList-2707",
             "BTJEditMove-3245": "#/components/schemas/BTJEditMove-3245"
+          }
+        },
+        "required": [
+          "btType"
+        ],
+        "properties": {
+          "btType": {
+            "type": "string"
           }
         }
       },
@@ -47096,7 +47118,10 @@
           "jsonType": {
             "type": "string"
           }
-        }
+        },
+        "required": [
+          "jsonType"
+        ]
       },
       "BTPropertyTableColumnInfo-2161": {
         "type": "object",
@@ -51746,7 +51771,10 @@
           "mapping": {
             "team": "#/components/schemas/BTTeamInfo"
           }
-        }
+        },
+        "required": [
+          "jsonType"
+        ]
       },
       "BTTessellatedGeometry-2576": {
         "type": "object",
