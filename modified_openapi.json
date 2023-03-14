@@ -34394,13 +34394,6 @@
       },
       "BTInnerArrayParameterLocation-2368": {
         "type": "object",
-        "discriminator": {
-          "propertyName": "@type",
-          "mapping": {
-            "BTInnerArrayParameterLocation": "#/components/schemas/BTInnerArrayParameterLocation-2368",
-            "BTInnerDerivedParameterLocation": "#/components/schemas/BTInnerDerivedParameterLocation-591"
-          }
-        },
         "allOf": [
           {
             "$ref": "#/components/schemas/BTInnerParameterLocation-1715"
@@ -46034,12 +46027,6 @@
       },
       "BTParameterVisibilityOnMateDOFType-2114": {
         "type": "object",
-        "discriminator": {
-          "propertyName": "@type",
-          "mapping": {
-            "BTParameterVisibilityOnMateDOFType": "#/components/schemas/BTParameterVisibilityOnMateDOFType-2114"
-          }
-        },
         "allOf": [
           {
             "$ref": "#/components/schemas/BTParameterVisibilityOnEqual-180"

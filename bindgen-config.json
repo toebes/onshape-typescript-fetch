@@ -694,6 +694,14 @@
                 "value": [
                     "btType"
                 ]
+            },
+            {
+                "key": "components.schemas['BTParameterVisibilityOnMateDOFType-2114'].discriminator",
+                "type": "remove"
+            },
+            {
+                "key": "components.schemas['BTInnerArrayParameterLocation-2368'].discriminator",
+                "type": "remove"
             }
         ]
     }

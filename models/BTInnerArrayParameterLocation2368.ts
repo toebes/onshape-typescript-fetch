@@ -20,11 +20,6 @@ import {
     BTInnerParameterLocation1715ToJSON,
 } from './BTInnerParameterLocation1715';
 
-import {
-     BTInnerArrayParameterLocation2368FromJSONTyped,
-     BTInnerDerivedParameterLocation591FromJSONTyped
-} from './';
-
 /**
  * 
  * @export
@@ -67,14 +62,6 @@ export function BTInnerArrayParameterLocation2368FromJSON(json: any): BTInnerArr
 export function BTInnerArrayParameterLocation2368FromJSONTyped(json: any, ignoreDiscriminator: boolean): BTInnerArrayParameterLocation2368 {
     if ((json === undefined) || (json === null)) {
         return json;
-    }
-    if (!ignoreDiscriminator) {
-        if (json['type'] === 'BTInnerArrayParameterLocation') {
-            return BTInnerArrayParameterLocation2368FromJSONTyped(json, true);
-        }
-        if (json['type'] === 'BTInnerDerivedParameterLocation') {
-            return BTInnerDerivedParameterLocation591FromJSONTyped(json, true);
-        }
     }
     return {
         ...BTInnerParameterLocation1715FromJSONTyped(json, ignoreDiscriminator),

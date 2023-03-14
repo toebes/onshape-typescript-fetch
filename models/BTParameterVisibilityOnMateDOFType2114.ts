@@ -20,10 +20,6 @@ import {
     BTParameterVisibilityOnEqual180ToJSON,
 } from './BTParameterVisibilityOnEqual180';
 
-import {
-     BTParameterVisibilityOnMateDOFType2114FromJSONTyped
-} from './';
-
 /**
  * 
  * @export
@@ -55,11 +51,6 @@ export function BTParameterVisibilityOnMateDOFType2114FromJSON(json: any): BTPar
 export function BTParameterVisibilityOnMateDOFType2114FromJSONTyped(json: any, ignoreDiscriminator: boolean): BTParameterVisibilityOnMateDOFType2114 {
     if ((json === undefined) || (json === null)) {
         return json;
-    }
-    if (!ignoreDiscriminator) {
-        if (json['type'] === 'BTParameterVisibilityOnMateDOFType') {
-            return BTParameterVisibilityOnMateDOFType2114FromJSONTyped(json, true);
-        }
     }
     return {
         ...BTParameterVisibilityOnEqual180FromJSONTyped(json, ignoreDiscriminator),
