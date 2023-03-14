@@ -37,7 +37,7 @@ export interface BTJEditChange2636 extends BTJEdit3734 {
      * @type {string}
      * @memberof BTJEditChange2636
      */
-    btType?: string;
+    btType: string;
     /**
      * 
      * @type {BTJPath3073}
@@ -49,7 +49,7 @@ export interface BTJEditChange2636 extends BTJEdit3734 {
      * @type {{ [key: string]: any; }}
      * @memberof BTJEditChange2636
      */
-    value: { [key: string]: any; };
+    value?: { [key: string]: any; };
 }
 
 /**
@@ -57,7 +57,7 @@ export interface BTJEditChange2636 extends BTJEdit3734 {
  */
 export function instanceOfBTJEditChange2636(value: object): boolean {
     let isInstance = true;
-    isInstance = isInstance && "value" in value;
+    isInstance = isInstance && "btType" in value;
 
     return isInstance;
 }
@@ -72,9 +72,9 @@ export function BTJEditChange2636FromJSONTyped(json: any, ignoreDiscriminator: b
     }
     return {
         ...BTJEdit3734FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
+        'btType': json['btType'],
         'path': !exists(json, 'path') ? undefined : BTJPath3073FromJSON(json['path']),
-        'value': json['value'],
+        'value': !exists(json, 'value') ? undefined : json['value'],
     };
 }
 

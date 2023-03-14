@@ -37,7 +37,7 @@ export interface BTJEditDelete1992 extends BTJEdit3734 {
      * @type {string}
      * @memberof BTJEditDelete1992
      */
-    btType?: string;
+    btType: string;
     /**
      * 
      * @type {BTJPath3073}
@@ -51,6 +51,7 @@ export interface BTJEditDelete1992 extends BTJEdit3734 {
  */
 export function instanceOfBTJEditDelete1992(value: object): boolean {
     let isInstance = true;
+    isInstance = isInstance && "btType" in value;
 
     return isInstance;
 }
@@ -65,7 +66,7 @@ export function BTJEditDelete1992FromJSONTyped(json: any, ignoreDiscriminator: b
     }
     return {
         ...BTJEdit3734FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
+        'btType': json['btType'],
         'path': !exists(json, 'path') ? undefined : BTJPath3073FromJSON(json['path']),
     };
 }

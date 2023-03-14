@@ -31,7 +31,7 @@ export interface BTJEditList2707 extends BTJEdit3734 {
      * @type {string}
      * @memberof BTJEditList2707
      */
-    btType?: string;
+    btType: string;
     /**
      * 
      * @type {Array<BTJEdit3734>}
@@ -45,6 +45,7 @@ export interface BTJEditList2707 extends BTJEdit3734 {
  */
 export function instanceOfBTJEditList2707(value: object): boolean {
     let isInstance = true;
+    isInstance = isInstance && "btType" in value;
 
     return isInstance;
 }
@@ -59,7 +60,7 @@ export function BTJEditList2707FromJSONTyped(json: any, ignoreDiscriminator: boo
     }
     return {
         ...BTJEdit3734FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
+        'btType': json['btType'],
         'edits': !exists(json, 'edits') ? undefined : ((json['edits'] as Array<any>).map(BTJEdit3734FromJSON)),
     };
 }

@@ -441,6 +441,20 @@
                 ]
             },
             {
+                "key": "components.schemas['BTDocumentInfo'].properties.jsonType",
+                "type": "update",
+                "value": {
+                    "type": "string"
+                }
+            },
+            {
+                "key": "components.schemas['BTDocumentInfo'].required",
+                "type": "update",
+                "value": [
+                    "jsonType"
+                ]
+            },
+            {
                 "key": "components.schemas['BTDocumentLabelInfo'].properties.jsonType",
                 "type": "update",
                 "value": {
@@ -601,6 +615,57 @@
                         "type": "string"
                     }
                 }
+            },
+            {
+                "key": "components.schemas['BTParameterVisibilityCondition-177'].required",
+                "type": "update",
+                "value": [
+                    "btType"
+                ]
+            },
+            {
+                "key": "components.schemas['BTParameterVisibilityCondition-177'].properties",
+                "type": "update",
+                "value": {
+                    "btType": {
+                        "type": "string"
+                    }
+                }
+            },
+            {
+                "key": "components.schemas['BTJEditChange-2636'].required",
+                "type": "update",
+                "value": [
+                    "btType"
+                ]
+            },
+            {
+                "key": "components.schemas['BTJEditDelete-1992'].required",
+                "type": "update",
+                "value": [
+                    "btType"
+                ]
+            },
+            {
+                "key": "components.schemas['BTJEditInsert-2523'].required",
+                "type": "update",
+                "value": [
+                    "btType"
+                ]
+            },
+            {
+                "key": "components.schemas['BTJEditList-2707'].required",
+                "type": "update",
+                "value": [
+                    "btType"
+                ]
+            },
+            {
+                "key": "components.schemas['BTJEditMove-3245'].required",
+                "type": "update",
+                "value": [
+                    "btType"
+                ]
             }
         ]
     }

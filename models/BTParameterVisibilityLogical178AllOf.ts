@@ -13,6 +13,13 @@
  */
 
 import { exists, mapValues } from '../runtime';
+import type { BTParameterVisibilityCondition177 } from './BTParameterVisibilityCondition177';
+import {
+    BTParameterVisibilityCondition177FromJSON,
+    BTParameterVisibilityCondition177FromJSONTyped,
+    BTParameterVisibilityCondition177ToJSON,
+} from './BTParameterVisibilityCondition177';
+
 /**
  * 
  * @export
@@ -27,10 +34,10 @@ export interface BTParameterVisibilityLogical178AllOf {
     btType?: string;
     /**
      * 
-     * @type {Array<object>}
+     * @type {Array<BTParameterVisibilityCondition177>}
      * @memberof BTParameterVisibilityLogical178AllOf
      */
-    children?: Array<object>;
+    children?: Array<BTParameterVisibilityCondition177>;
     /**
      * 
      * @type {string}
@@ -72,7 +79,7 @@ export function BTParameterVisibilityLogical178AllOfFromJSONTyped(json: any, ign
     return {
         
         'btType': !exists(json, 'btType') ? undefined : json['btType'],
-        'children': !exists(json, 'children') ? undefined : json['children'],
+        'children': !exists(json, 'children') ? undefined : ((json['children'] as Array<any>).map(BTParameterVisibilityCondition177FromJSON)),
         'operation': !exists(json, 'operation') ? undefined : json['operation'],
     };
 }
@@ -87,7 +94,7 @@ export function BTParameterVisibilityLogical178AllOfToJSON(value?: BTParameterVi
     return {
         
         'btType': value.btType,
-        'children': value.children,
+        'children': value.children === undefined ? undefined : ((value.children as Array<any>).map(BTParameterVisibilityCondition177ToJSON)),
         'operation': value.operation,
     };
 }

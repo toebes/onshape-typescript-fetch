@@ -19,6 +19,12 @@ import {
     BTMParameter1FromJSONTyped,
     BTMParameter1ToJSON,
 } from './BTMParameter1';
+import type { BTParameterVisibilityCondition177 } from './BTParameterVisibilityCondition177';
+import {
+    BTParameterVisibilityCondition177FromJSON,
+    BTParameterVisibilityCondition177FromJSONTyped,
+    BTParameterVisibilityCondition177ToJSON,
+} from './BTParameterVisibilityCondition177';
 import type { BTReadOnlyParameterSpec1889 } from './BTReadOnlyParameterSpec1889';
 import {
     BTReadOnlyParameterSpec1889FromJSON,

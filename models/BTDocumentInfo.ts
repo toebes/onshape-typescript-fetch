@@ -390,6 +390,12 @@ export interface BTDocumentInfo {
      * @memberof BTDocumentInfo
      */
     viewRef?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BTDocumentInfo
+     */
+    jsonType: string;
 }
 
 
@@ -415,6 +421,7 @@ export type BTDocumentInfoPermissionEnum = typeof BTDocumentInfoPermissionEnum[k
  */
 export function instanceOfBTDocumentInfo(value: object): boolean {
     let isInstance = true;
+    isInstance = isInstance && "jsonType" in value;
 
     return isInstance;
 }
@@ -489,6 +496,7 @@ export function BTDocumentInfoFromJSONTyped(json: any, ignoreDiscriminator: bool
         'unparentHref': !exists(json, 'unparentHref') ? undefined : json['unparentHref'],
         'userAccountLimitsBreached': !exists(json, 'userAccountLimitsBreached') ? undefined : json['userAccountLimitsBreached'],
         'viewRef': !exists(json, 'viewRef') ? undefined : json['viewRef'],
+        'jsonType': json['jsonType'],
     };
 }
 
@@ -556,6 +564,7 @@ export function BTDocumentInfoToJSON(value?: BTDocumentInfo | null): any {
         'unparentHref': value.unparentHref,
         'userAccountLimitsBreached': value.userAccountLimitsBreached,
         'viewRef': value.viewRef,
+        'jsonType': value.jsonType,
     };
 }
 

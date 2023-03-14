@@ -19,6 +19,12 @@ import {
     BTMParameter1FromJSONTyped,
     BTMParameter1ToJSON,
 } from './BTMParameter1';
+import type { BTParameterVisibilityCondition177 } from './BTParameterVisibilityCondition177';
+import {
+    BTParameterVisibilityCondition177FromJSON,
+    BTParameterVisibilityCondition177FromJSONTyped,
+    BTParameterVisibilityCondition177ToJSON,
+} from './BTParameterVisibilityCondition177';
 
 import {
      BTParameterSpecAppearance1740FromJSONTyped,
@@ -119,10 +125,10 @@ export interface BTParameterSpec6 {
     uiHints?: Array<BTParameterSpec6UiHintsEnum>;
     /**
      * 
-     * @type {object}
+     * @type {BTParameterVisibilityCondition177}
      * @memberof BTParameterSpec6
      */
-    visibilityCondition?: object;
+    visibilityCondition?: BTParameterVisibilityCondition177;
 }
 
 
@@ -244,7 +250,7 @@ export function BTParameterSpec6FromJSONTyped(json: any, ignoreDiscriminator: bo
         'stringsToLocalize': !exists(json, 'stringsToLocalize') ? undefined : json['stringsToLocalize'],
         'uiHint': !exists(json, 'uiHint') ? undefined : json['uiHint'],
         'uiHints': !exists(json, 'uiHints') ? undefined : json['uiHints'],
-        'visibilityCondition': !exists(json, 'visibilityCondition') ? undefined : json['visibilityCondition'],
+        'visibilityCondition': !exists(json, 'visibilityCondition') ? undefined : BTParameterVisibilityCondition177FromJSON(json['visibilityCondition']),
     };
 }
 
@@ -269,7 +275,7 @@ export function BTParameterSpec6ToJSON(value?: BTParameterSpec6 | null): any {
         'stringsToLocalize': value.stringsToLocalize,
         'uiHint': value.uiHint,
         'uiHints': value.uiHints,
-        'visibilityCondition': value.visibilityCondition,
+        'visibilityCondition': BTParameterVisibilityCondition177ToJSON(value.visibilityCondition),
     };
 }
 

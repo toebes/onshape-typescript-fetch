@@ -25,6 +25,12 @@ import {
     BTParameterSpec6FromJSONTyped,
     BTParameterSpec6ToJSON,
 } from './BTParameterSpec6';
+import type { BTParameterVisibilityCondition177 } from './BTParameterVisibilityCondition177';
+import {
+    BTParameterVisibilityCondition177FromJSON,
+    BTParameterVisibilityCondition177FromJSONTyped,
+    BTParameterVisibilityCondition177ToJSON,
+} from './BTParameterVisibilityCondition177';
 
 /**
  * 
@@ -46,10 +52,10 @@ export interface BTParameterSpecEnum171 extends BTParameterSpec6 {
     enumName?: string;
     /**
      * 
-     * @type {{ [key: string]: object; }}
+     * @type {{ [key: string]: BTParameterVisibilityCondition177; }}
      * @memberof BTParameterSpecEnum171
      */
-    enumValueToVisibilityCondition?: { [key: string]: object; };
+    enumValueToVisibilityCondition?: { [key: string]: BTParameterVisibilityCondition177; };
     /**
      * 
      * @type {string}
@@ -93,7 +99,7 @@ export function BTParameterSpecEnum171FromJSONTyped(json: any, ignoreDiscriminat
         ...BTParameterSpec6FromJSONTyped(json, ignoreDiscriminator),
         'btType': !exists(json, 'btType') ? undefined : json['btType'],
         'enumName': !exists(json, 'enumName') ? undefined : json['enumName'],
-        'enumValueToVisibilityCondition': !exists(json, 'enumValueToVisibilityCondition') ? undefined : json['enumValueToVisibilityCondition'],
+        'enumValueToVisibilityCondition': !exists(json, 'enumValueToVisibilityCondition') ? undefined : (mapValues(json['enumValueToVisibilityCondition'], BTParameterVisibilityCondition177FromJSON)),
         'namespace': !exists(json, 'namespace') ? undefined : json['namespace'],
         'optionNames': !exists(json, 'optionNames') ? undefined : json['optionNames'],
         'options': !exists(json, 'options') ? undefined : json['options'],
@@ -111,7 +117,7 @@ export function BTParameterSpecEnum171ToJSON(value?: BTParameterSpecEnum171 | nu
         ...BTParameterSpec6ToJSON(value),
         'btType': value.btType,
         'enumName': value.enumName,
-        'enumValueToVisibilityCondition': value.enumValueToVisibilityCondition,
+        'enumValueToVisibilityCondition': value.enumValueToVisibilityCondition === undefined ? undefined : (mapValues(value.enumValueToVisibilityCondition, BTParameterVisibilityCondition177ToJSON)),
         'namespace': value.namespace,
         'optionNames': value.optionNames,
         'options': value.options,

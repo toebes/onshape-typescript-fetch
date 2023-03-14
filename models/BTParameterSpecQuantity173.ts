@@ -25,6 +25,12 @@ import {
     BTParameterSpec6FromJSONTyped,
     BTParameterSpec6ToJSON,
 } from './BTParameterSpec6';
+import type { BTParameterVisibilityCondition177 } from './BTParameterVisibilityCondition177';
+import {
+    BTParameterVisibilityCondition177FromJSON,
+    BTParameterVisibilityCondition177FromJSONTyped,
+    BTParameterVisibilityCondition177ToJSON,
+} from './BTParameterVisibilityCondition177';
 import type { BTQuantityRange181 } from './BTQuantityRange181';
 import {
     BTQuantityRange181FromJSON,

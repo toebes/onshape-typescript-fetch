@@ -37,6 +37,12 @@ import {
     BTParameterSpecReference2789FromJSONTyped,
     BTParameterSpecReference2789ToJSON,
 } from './BTParameterSpecReference2789';
+import type { BTParameterVisibilityCondition177 } from './BTParameterVisibilityCondition177';
+import {
+    BTParameterVisibilityCondition177FromJSON,
+    BTParameterVisibilityCondition177FromJSONTyped,
+    BTParameterVisibilityCondition177ToJSON,
+} from './BTParameterVisibilityCondition177';
 
 /**
  * 

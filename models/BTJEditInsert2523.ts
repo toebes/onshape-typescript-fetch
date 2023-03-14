@@ -37,7 +37,7 @@ export interface BTJEditInsert2523 extends BTJEdit3734 {
      * @type {string}
      * @memberof BTJEditInsert2523
      */
-    btType?: string;
+    btType: string;
     /**
      * 
      * @type {BTJPath3073}
@@ -57,6 +57,7 @@ export interface BTJEditInsert2523 extends BTJEdit3734 {
  */
 export function instanceOfBTJEditInsert2523(value: object): boolean {
     let isInstance = true;
+    isInstance = isInstance && "btType" in value;
 
     return isInstance;
 }
@@ -71,7 +72,7 @@ export function BTJEditInsert2523FromJSONTyped(json: any, ignoreDiscriminator: b
     }
     return {
         ...BTJEdit3734FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
+        'btType': json['btType'],
         'path': !exists(json, 'path') ? undefined : BTJPath3073FromJSON(json['path']),
         'value': !exists(json, 'value') ? undefined : json['value'],
     };

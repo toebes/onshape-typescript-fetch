@@ -34,10 +34,10 @@ export interface BTParameterVisibilityLogical178 extends BTParameterVisibilityCo
     btType?: string;
     /**
      * 
-     * @type {Array<object>}
+     * @type {Array<BTParameterVisibilityCondition177>}
      * @memberof BTParameterVisibilityLogical178
      */
-    children?: Array<object>;
+    children?: Array<BTParameterVisibilityCondition177>;
     /**
      * 
      * @type {string}
@@ -79,7 +79,7 @@ export function BTParameterVisibilityLogical178FromJSONTyped(json: any, ignoreDi
     return {
         ...BTParameterVisibilityCondition177FromJSONTyped(json, ignoreDiscriminator),
         'btType': !exists(json, 'btType') ? undefined : json['btType'],
-        'children': !exists(json, 'children') ? undefined : json['children'],
+        'children': !exists(json, 'children') ? undefined : ((json['children'] as Array<any>).map(BTParameterVisibilityCondition177FromJSON)),
         'operation': !exists(json, 'operation') ? undefined : json['operation'],
     };
 }
@@ -94,7 +94,7 @@ export function BTParameterVisibilityLogical178ToJSON(value?: BTParameterVisibil
     return {
         ...BTParameterVisibilityCondition177ToJSON(value),
         'btType': value.btType,
-        'children': value.children,
+        'children': value.children === undefined ? undefined : ((value.children as Array<any>).map(BTParameterVisibilityCondition177ToJSON)),
         'operation': value.operation,
     };
 }

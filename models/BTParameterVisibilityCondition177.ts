@@ -13,71 +13,62 @@
  */
 
 import { exists, mapValues } from '../runtime';
-import type { BTElementLibraryPurpose3353 } from './BTElementLibraryPurpose3353';
 import {
-    BTElementLibraryPurpose3353FromJSON,
-    BTElementLibraryPurpose3353FromJSONTyped,
-    BTElementLibraryPurpose3353ToJSON,
-} from './BTElementLibraryPurpose3353';
-import type { BTMParameter1 } from './BTMParameter1';
-import {
-    BTMParameter1FromJSON,
-    BTMParameter1FromJSONTyped,
-    BTMParameter1ToJSON,
-} from './BTMParameter1';
-import type { BTParameterSpecReferenceBlob1367 } from './BTParameterSpecReferenceBlob1367';
-import {
-    BTParameterSpecReferenceBlob1367FromJSON,
-    BTParameterSpecReferenceBlob1367FromJSONTyped,
-    BTParameterSpecReferenceBlob1367ToJSON,
-} from './BTParameterSpecReferenceBlob1367';
-import type { BTParameterVisibilityCondition177 } from './BTParameterVisibilityCondition177';
-import {
-    BTParameterVisibilityCondition177FromJSON,
-    BTParameterVisibilityCondition177FromJSONTyped,
-    BTParameterVisibilityCondition177ToJSON,
-} from './BTParameterVisibilityCondition177';
+     BTParameterVisibilityAlwaysHidden176FromJSONTyped,
+     BTParameterVisibilityLogical178FromJSONTyped,
+     BTParameterVisibilityOnEqual180FromJSONTyped
+} from './';
 
 /**
  * 
  * @export
- * @interface BTParameterSpecReferenceCADImport1792
+ * @interface BTParameterVisibilityCondition177
  */
-export interface BTParameterSpecReferenceCADImport1792 extends BTParameterSpecReferenceBlob1367 {
+export interface BTParameterVisibilityCondition177 {
     /**
      * 
      * @type {string}
-     * @memberof BTParameterSpecReferenceCADImport1792
+     * @memberof BTParameterVisibilityCondition177
      */
-    btType?: string;
+    btType: string;
 }
 
-
-
 /**
- * Check if a given object implements the BTParameterSpecReferenceCADImport1792 interface.
+ * Check if a given object implements the BTParameterVisibilityCondition177 interface.
  */
-export function instanceOfBTParameterSpecReferenceCADImport1792(value: object): boolean {
+export function instanceOfBTParameterVisibilityCondition177(value: object): boolean {
     let isInstance = true;
+    isInstance = isInstance && "btType" in value;
 
     return isInstance;
 }
 
-export function BTParameterSpecReferenceCADImport1792FromJSON(json: any): BTParameterSpecReferenceCADImport1792 {
-    return BTParameterSpecReferenceCADImport1792FromJSONTyped(json, false);
+export function BTParameterVisibilityCondition177FromJSON(json: any): BTParameterVisibilityCondition177 {
+    return BTParameterVisibilityCondition177FromJSONTyped(json, false);
 }
 
-export function BTParameterSpecReferenceCADImport1792FromJSONTyped(json: any, ignoreDiscriminator: boolean): BTParameterSpecReferenceCADImport1792 {
+export function BTParameterVisibilityCondition177FromJSONTyped(json: any, ignoreDiscriminator: boolean): BTParameterVisibilityCondition177 {
     if ((json === undefined) || (json === null)) {
         return json;
     }
+    if (!ignoreDiscriminator) {
+        if (json['btType'] === 'BTParameterVisibilityAlwaysHidden-176') {
+            return BTParameterVisibilityAlwaysHidden176FromJSONTyped(json, true);
+        }
+        if (json['btType'] === 'BTParameterVisibilityLogical-178') {
+            return BTParameterVisibilityLogical178FromJSONTyped(json, true);
+        }
+        if (json['btType'] === 'BTParameterVisibilityOnEqual-180') {
+            return BTParameterVisibilityOnEqual180FromJSONTyped(json, true);
+        }
+    }
     return {
-        ...BTParameterSpecReferenceBlob1367FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
+        
+        'btType': json['btType'],
     };
 }
 
-export function BTParameterSpecReferenceCADImport1792ToJSON(value?: BTParameterSpecReferenceCADImport1792 | null): any {
+export function BTParameterVisibilityCondition177ToJSON(value?: BTParameterVisibilityCondition177 | null): any {
     if (value === undefined) {
         return undefined;
     }
@@ -85,7 +76,7 @@ export function BTParameterSpecReferenceCADImport1792ToJSON(value?: BTParameterS
         return null;
     }
     return {
-        ...BTParameterSpecReferenceBlob1367ToJSON(value),
+        
         'btType': value.btType,
     };
 }

@@ -26761,6 +26761,9 @@
             "type": "string",
             "description": "URI to visualize the resource in a webclient if applicable.",
             "format": "uri"
+          },
+          "jsonType": {
+            "type": "string"
           }
         },
         "discriminator": {
@@ -26768,7 +26771,10 @@
           "mapping": {
             "document-processing": "#/components/schemas/BTDocumentProcessingInfo"
           }
-        }
+        },
+        "required": [
+          "jsonType"
+        ]
       },
       "BTDocumentLabelInfo": {
         "type": "object",
@@ -34953,7 +34959,7 @@
       },
       "BTJEditChange-2636": {
         "required": [
-          "value"
+          "btType"
         ],
         "type": "object",
         "description": "Change the value of a node.",
@@ -35003,6 +35009,9 @@
               }
             }
           }
+        ],
+        "required": [
+          "btType"
         ]
       },
       "BTJEditInsert-2523": {
@@ -35033,6 +35042,9 @@
               }
             }
           }
+        ],
+        "required": [
+          "btType"
         ]
       },
       "BTJEditList-2707": {
@@ -35056,6 +35068,9 @@
               }
             }
           }
+        ],
+        "required": [
+          "btType"
         ]
       },
       "BTJEditMove-3245": {
@@ -35080,6 +35095,9 @@
               }
             }
           }
+        ],
+        "required": [
+          "btType"
         ]
       },
       "BTJPath-3073": {
@@ -45933,7 +45951,15 @@
             "BTParameterVisibilityLogical-178": "#/components/schemas/BTParameterVisibilityLogical-178",
             "BTParameterVisibilityOnEqual-180": "#/components/schemas/BTParameterVisibilityOnEqual-180"
           }
-        }
+        },
+        "properties": {
+          "btType": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "btType"
+        ]
       },
       "BTParameterVisibilityLogical-178": {
         "type": "object",
