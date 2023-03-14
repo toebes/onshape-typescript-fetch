@@ -687,6 +687,13 @@
                 "value": [
                     "btType"
                 ]
+            },
+            {
+                "key": "components.schemas['BTParameterVisibilityOnMateDOFType-2114'].required",
+                "type": "update",
+                "value": [
+                    "btType"
+                ]
             }
         ]
     }

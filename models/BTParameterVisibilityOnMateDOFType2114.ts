@@ -35,7 +35,7 @@ export interface BTParameterVisibilityOnMateDOFType2114 extends BTParameterVisib
      * @type {string}
      * @memberof BTParameterVisibilityOnMateDOFType2114
      */
-    btType?: string;
+    btType: string;
 }
 
 /**
@@ -43,6 +43,7 @@ export interface BTParameterVisibilityOnMateDOFType2114 extends BTParameterVisib
  */
 export function instanceOfBTParameterVisibilityOnMateDOFType2114(value: object): boolean {
     let isInstance = true;
+    isInstance = isInstance && "btType" in value;
 
     return isInstance;
 }
@@ -62,7 +63,7 @@ export function BTParameterVisibilityOnMateDOFType2114FromJSONTyped(json: any, i
     }
     return {
         ...BTParameterVisibilityOnEqual180FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
+        'btType': json['btType'],
     };
 }
 

@@ -46052,6 +46052,9 @@
               }
             }
           }
+        ],
+        "required": [
+          "btType"
         ]
       },
       "BTParametricInstance-2641": {
