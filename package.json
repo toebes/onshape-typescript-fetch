@@ -1,6 +1,6 @@
 {
   "name": "onshape-typescript-fetch",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Onshape Typescript-fetch library",
   "main": "index.ts",
   "scripts": {
