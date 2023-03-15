@@ -155,6 +155,10 @@
     {
       "name": "Workflow",
       "description": "Access Release Management workflows."
+    },
+    {
+      "name": "GlobalTreeNodes",
+      "description": "Global Tree Node Operations"
     }
   ],
   "paths": {
@@ -20809,7 +20813,7 @@
         "responses": {
           "default": {
             "content": {
-              "application/vnd.onshape.v1+json;charset=UTF-8;qs=0.1": {
+              "application/json;charset=UTF-8; qs=0.09": {
                 "schema": {
                   "$ref": "#/components/schemas/BTGlobalTreeNodesInfo"
                 }
@@ -20819,8 +20823,18 @@
           }
         },
         "summary": "Get Tree Node List",
+        "security": [
+          {
+            "OAuth2": [
+              "OAuth2Read"
+            ],
+            "BasicAuth": [
+              "OAuth2Read"
+            ]
+          }
+        ],
         "tags": [
-          "Global Tree Nodes"
+          "GlobalTreeNodes"
         ],
         "x-BTVisibility": "PRODUCTION"
       }
@@ -20908,7 +20922,7 @@
         "responses": {
           "default": {
             "content": {
-              "application/vnd.onshape.v1+json;charset=UTF-8;qs=0.1": {
+              "application/json;charset=UTF-8; qs=0.09": {
                 "schema": {
                   "$ref": "#/components/schemas/BTGlobalTreeNodesInfo"
                 }
@@ -20919,7 +20933,17 @@
         },
         "summary": "Get Tree Node List",
         "tags": [
-          "Global Tree Nodes"
+          "GlobalTreeNodes"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "OAuth2Read"
+            ],
+            "BasicAuth": [
+              "OAuth2Read"
+            ]
+          }
         ],
         "x-BTVisibility": "PRODUCTION"
       }
@@ -20932,7 +20956,7 @@
         "responses": {
           "default": {
             "content": {
-              "application/vnd.onshape.v1+json;charset=UTF-8;qs=0.1": {
+              "application/json;charset=UTF-8; qs=0.09": {
                 "schema": {
                   "$ref": "#/components/schemas/BTGlobalTreeNodesInfo"
                 }
@@ -20943,7 +20967,17 @@
         },
         "summary": "Get Searchable Trees",
         "tags": [
-          "Global Tree Nodes"
+          "GlobalTreeNodes"
+        ],
+        "security": [
+          {
+            "OAuth2": [
+              "OAuth2Read"
+            ],
+            "BasicAuth": [
+              "OAuth2Read"
+            ]
+          }
         ],
         "x-BTVisibility": "PRODUCTION"
       }
