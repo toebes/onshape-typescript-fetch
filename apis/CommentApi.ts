@@ -30,7 +30,7 @@ import {
 
 export interface AddAttachmentRequest {
     cid: string;
-    file: object;
+    file: Blob;
 }
 
 export interface CreateCommentRequest {
@@ -116,6 +116,8 @@ export class CommentApi extends runtime.BaseAPI {
 
         let formParams: { append(param: string, value: any): any };
         let useForm = false;
+        // use FormData to transmit files using content-type "multipart/form-data"
+        useForm = canConsumeForm;
         if (useForm) {
             formParams = new FormData();
         } else {
@@ -123,8 +125,8 @@ export class CommentApi extends runtime.BaseAPI {
         }
 
         if (requestParameters.file !== undefined) {
-            formParams.append('file', new Blob([JSON.stringify(objectToJSON(requestParameters.file))], { type: "application/json", }));
-                    }
+            formParams.append('file', requestParameters.file as any);
+        }
 
         const response = await this.request({
             path: `/comments/{cid}/attachment`.replace(`{${"cid"}}`, encodeURIComponent(String(requestParameters.cid))),

@@ -744,6 +744,42 @@
             {
                 "key": "components.schemas['BTMSketchCurveSegment-155'].discriminator",
                 "type": "remove"
+            },
+            {
+                "key": "paths['/blobelements/d/{did}/w/{wid}'].post.requestBody.content['multipart/form-data'].schema.properties.file",
+                "type": "update",
+                "value": {
+                    "type": "string",
+                    "description": "File to upload.",
+                    "format": "binary"
+                }
+            },
+            {
+                "key": "paths['/blobelements/d/{did}/w/{wid}/e/{eid}'].post.requestBody.content['multipart/form-data'].schema.properties.file",
+                "type": "update",
+                "value": {
+                    "type": "string",
+                    "description": "File to upload.",
+                    "format": "binary"
+                }
+            },
+            {
+                "key": "paths['/comments/{cid}/attachment'].post.requestBody.content['multipart/form-data'].schema.properties.file",
+                "type": "update",
+                "value": {
+                    "type": "string",
+                    "description": "File to upload.",
+                    "format": "binary"
+                }
+            },
+            {
+                "key": "paths['/translations/d/{did}/w/{wid}'].post.requestBody.content['multipart/form-data'].schema.properties.file",
+                "type": "update",
+                "value": {
+                    "type": "string",
+                    "description": "File to upload.",
+                    "format": "binary"
+                }
             }
         ]
     }

@@ -58,7 +58,7 @@ export interface UpdateUnitsRequest {
 export interface UploadFileCreateElementRequest {
     did: string;
     wid: string;
-    file?: object;
+    file?: Blob;
     allowFaultyParts?: boolean;
     createComposite?: boolean;
     createDrawingIfPossible?: boolean;
@@ -91,7 +91,7 @@ export interface UploadFileUpdateElementRequest {
     eid: string;
     wid: string;
     parentChangeId?: string;
-    file?: object;
+    file?: Blob;
     allowFaultyParts?: boolean;
     createComposite?: boolean;
     createDrawingIfPossible?: boolean;
@@ -322,6 +322,8 @@ export class BlobElementApi extends runtime.BaseAPI {
 
         let formParams: { append(param: string, value: any): any };
         let useForm = false;
+        // use FormData to transmit files using content-type "multipart/form-data"
+        useForm = canConsumeForm;
         if (useForm) {
             formParams = new FormData();
         } else {
@@ -329,8 +331,8 @@ export class BlobElementApi extends runtime.BaseAPI {
         }
 
         if (requestParameters.file !== undefined) {
-            formParams.append('file', new Blob([JSON.stringify(objectToJSON(requestParameters.file))], { type: "application/json", }));
-                    }
+            formParams.append('file', requestParameters.file as any);
+        }
 
         if (requestParameters.allowFaultyParts !== undefined) {
             formParams.append('allowFaultyParts', requestParameters.allowFaultyParts as any);
@@ -491,6 +493,8 @@ export class BlobElementApi extends runtime.BaseAPI {
 
         let formParams: { append(param: string, value: any): any };
         let useForm = false;
+        // use FormData to transmit files using content-type "multipart/form-data"
+        useForm = canConsumeForm;
         if (useForm) {
             formParams = new FormData();
         } else {
@@ -498,8 +502,8 @@ export class BlobElementApi extends runtime.BaseAPI {
         }
 
         if (requestParameters.file !== undefined) {
-            formParams.append('file', new Blob([JSON.stringify(objectToJSON(requestParameters.file))], { type: "application/json", }));
-                    }
+            formParams.append('file', requestParameters.file as any);
+        }
 
         if (requestParameters.allowFaultyParts !== undefined) {
             formParams.append('allowFaultyParts', requestParameters.allowFaultyParts as any);

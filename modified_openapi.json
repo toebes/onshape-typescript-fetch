@@ -5582,8 +5582,9 @@
                 "type": "object",
                 "properties": {
                   "file": {
-                    "type": "object",
-                    "description": "The file to upload."
+                    "type": "string",
+                    "description": "File to upload.",
+                    "format": "binary"
                   },
                   "allowFaultyParts": {
                     "type": "boolean"
@@ -5829,8 +5830,9 @@
                 "type": "object",
                 "properties": {
                   "file": {
-                    "type": "object",
-                    "description": "The file to upload."
+                    "type": "string",
+                    "description": "File to upload.",
+                    "format": "binary"
                   },
                   "allowFaultyParts": {
                     "type": "boolean"
@@ -6401,8 +6403,9 @@
                 "type": "object",
                 "properties": {
                   "file": {
-                    "type": "object",
-                    "description": "The file to upload."
+                    "type": "string",
+                    "description": "File to upload.",
+                    "format": "binary"
                   }
                 }
               }
@@ -18692,8 +18695,9 @@
                 "type": "object",
                 "properties": {
                   "file": {
-                    "type": "object",
-                    "description": "The file to upload."
+                    "type": "string",
+                    "description": "File to upload.",
+                    "format": "binary"
                   },
                   "allowFaultyParts": {
                     "type": "boolean"

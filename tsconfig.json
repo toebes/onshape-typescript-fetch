@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "lib": [
+            "ES2015",
+            "ES6",
+            "DOM",
+            "ES2021"
+        ],
+        "moduleResolution": "node",
+        "baseUrl": "."
+    },
+    "include": [
+        "runtime.ts",
+        "index.ts",
+        "apis/**/*",
+        "models/**/*"
+    ],
+}
