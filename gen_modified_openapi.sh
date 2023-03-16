@@ -41,17 +41,15 @@ do
     fi
 done
 changedVersion=$(cat ${openapiSpec} | json info.version)
-echo '::set-output name=change::'"${changedVersion}"
-echo '::set-output name=random-ext::'"${RANDOM}"
 
-npx @openapitools/openapi-generator-cli generate -i ${updatedapiSpec} -g ${generatorType} -o . >openapi.out
+#npx @openapitools/openapi-generator-cli generate -i ${updatedapiSpec} -g ${generatorType} -o . >openapi.out
 
 # Errors in openAPI Generator to work around
 #       TS2741: Property 'jsonType' is missing in type 'BTDocumentSummaryInfo' but required in type 'BTGlobalTreeNodeInfo'.  -- FIXED by adding required jsonType and jsonType
 #       TS2741: Property 'jsonType' is missing in type 'BTDocumentLabelInfo' but required in type 'BTGlobalTreeNodeInfo'.    -- FIXED by adding required jsonType and jsonType
 #       TS2741: Property 'jsonType' is missing in type 'BTProjectInfo' but required in type 'BTGlobalTreeNodeInfo'.          -- FIXED by adding required jsonType and jsonType
 #       TS2741: Property 'jsonType' is missing in type 'BTTeamSummaryInfo' but required in type 'BTGlobalTreeNodeInfo'.      -- FIXED by adding required jsonType and jsonType
-#   Property 'btType' is optional in type 'BTFSValueArray1499' but required in type 'BTFSValue1888'.                         -- FIXED by adding required btType 
+#   Property 'btType' is optional in type 'BTFSValueArray1499' but required in type 'BTFSValue1888'.                         -- FIXED by adding required btType
 #   Property 'btType' is optional in type 'BTFSValueBoolean1195' but required in type 'BTFSValue1888'.                       -- FIXED by adding required btType
 #       TS2741: Property 'btType' is missing in type 'BTFSValueMap2062' but required in type 'BTFSValue1888'.                -- FIXED by adding required btType and btType
 #   Property 'btType' is optional in type 'BTFSValueNumber772' but required in type 'BTFSValue1888'.                         -- FIXED by adding required btType

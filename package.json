@@ -4,7 +4,9 @@
   "description": "Onshape Typescript-fetch library",
   "main": "index.ts",
   "scripts": {
-    "build": "npm install && bash buildlocal.sh",
+    "build": "npm install && npm run genmodspec && npm run compilespec",
+    "genmodspec": "node gen_modified_openapi.js",
+    "compilespec": "npx @openapitools/openapi-generator-cli generate -i modified_openapi.json -g typescript-fetch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "docs": "npx typedoc --out docs index.ts"
   },
