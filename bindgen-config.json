@@ -131,7 +131,7 @@
                 }
             },
             {
-                "key": "paths['/api/globaltreenodes/folder/{fid}']",
+                "key": "paths['/globaltreenodes/folder/{fid}']",
                 "type": "update",
                 "value": {
                     "get": {
@@ -243,7 +243,7 @@
                 }
             },
             {
-                "key": "paths['/api/globaltreenodes/magic/{mid}']",
+                "key": "paths['/globaltreenodes/magic/{mid}']",
                 "type": "update",
                 "value": {
                     "get": {
@@ -356,7 +356,7 @@
                 }
             },
             {
-                "key": "paths['/api/globaltreenodes/']",
+                "key": "paths['/globaltreenodes/']",
                 "type": "update",
                 "value": {
                     "get": {

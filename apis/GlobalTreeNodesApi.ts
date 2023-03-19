@@ -62,7 +62,7 @@ export class GlobalTreeNodesApi extends runtime.BaseAPI {
             headerParameters["Authorization"] = "Basic " + btoa(this.configuration.username + ":" + this.configuration.password);
         }
         const response = await this.request({
-            path: `/api/globaltreenodes/`,
+            path: `/globaltreenodes/`,
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -120,7 +120,7 @@ export class GlobalTreeNodesApi extends runtime.BaseAPI {
             headerParameters["Authorization"] = "Basic " + btoa(this.configuration.username + ":" + this.configuration.password);
         }
         const response = await this.request({
-            path: `/api/globaltreenodes/folder/{fid}`.replace(`{${"fid"}}`, encodeURIComponent(String(requestParameters.fid))),
+            path: `/globaltreenodes/folder/{fid}`.replace(`{${"fid"}}`, encodeURIComponent(String(requestParameters.fid))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -179,7 +179,7 @@ export class GlobalTreeNodesApi extends runtime.BaseAPI {
             headerParameters["Authorization"] = "Basic " + btoa(this.configuration.username + ":" + this.configuration.password);
         }
         const response = await this.request({
-            path: `/api/globaltreenodes/magic/{mid}`.replace(`{${"mid"}}`, encodeURIComponent(String(requestParameters.mid))),
+            path: `/globaltreenodes/magic/{mid}`.replace(`{${"mid"}}`, encodeURIComponent(String(requestParameters.mid))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
