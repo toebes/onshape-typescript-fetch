@@ -20,7 +20,7 @@
 <ul class="tsd-hierarchy">
 <li><span class="target">GetOpenApiRequest</span></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/toebes/onshape-typescript-fetch/blob/842f23b8/apis/OpenApiApi.ts#L18">apis/OpenApiApi.ts:18</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/toebes/onshape-typescript-fetch/blob/e11663b8/apis/OpenApiApi.ts#L31">apis/OpenApiApi.ts:31</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -34,6 +34,7 @@
 <a href="GetOpenApiRequest.html#forceReload" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>force<wbr/>Reload?</span></a>
 <a href="GetOpenApiRequest.html#includeDeprecated" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>include<wbr/>Deprecated?</span></a>
 <a href="GetOpenApiRequest.html#includedTags" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>included<wbr/>Tags?</span></a>
+<a href="GetOpenApiRequest.html#noFilter" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>no<wbr/>Filter?</span></a>
 <a href="GetOpenApiRequest.html#onlyDeprecated" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>only<wbr/>Deprecated?</span></a>
 <a href="GetOpenApiRequest.html#operationIds" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>operation<wbr/>Ids?</span></a>
 <a href="GetOpenApiRequest.html#restUserRole" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>rest<wbr/>User<wbr/>Role?</span></a>
@@ -44,59 +45,64 @@
 <h2>Properties</h2>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="documentationStatuses" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>documentation<wbr/>Statuses</span><a href="#documentationStatuses" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" id="icon-anchor-a"></path><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" id="icon-anchor-b"></path><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" id="icon-anchor-c"></path></svg></a></h3>
-<div class="tsd-signature">documentation<wbr/>Statuses<span class="tsd-signature-symbol">?:</span> <a href="../variables/GetOpenApiDocumentationStatusesEnum-1.html" class="tsd-signature-type" data-tsd-kind="Variable">GetOpenApiDocumentationStatusesEnum</a><span class="tsd-signature-symbol">[]</span></div><aside class="tsd-sources">
+<div class="tsd-signature">documentation<wbr/>Statuses<span class="tsd-signature-symbol">?:</span> <a href="../variables/Status-1.html" class="tsd-signature-type" data-tsd-kind="Variable">Status</a><span class="tsd-signature-symbol">[]</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/toebes/onshape-typescript-fetch/blob/842f23b8/apis/OpenApiApi.ts#L26">apis/OpenApiApi.ts:26</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/toebes/onshape-typescript-fetch/blob/e11663b8/apis/OpenApiApi.ts#L40">apis/OpenApiApi.ts:40</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="excludedOperationIds" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>excluded<wbr/>Operation<wbr/>Ids</span><a href="#excludedOperationIds" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">excluded<wbr/>Operation<wbr/>Ids<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/toebes/onshape-typescript-fetch/blob/842f23b8/apis/OpenApiApi.ts#L29">apis/OpenApiApi.ts:29</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/toebes/onshape-typescript-fetch/blob/e11663b8/apis/OpenApiApi.ts#L43">apis/OpenApiApi.ts:43</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="excludedTags" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>excluded<wbr/>Tags</span><a href="#excludedTags" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">excluded<wbr/>Tags<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/toebes/onshape-typescript-fetch/blob/842f23b8/apis/OpenApiApi.ts#L23">apis/OpenApiApi.ts:23</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/toebes/onshape-typescript-fetch/blob/e11663b8/apis/OpenApiApi.ts#L37">apis/OpenApiApi.ts:37</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="forceReload" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>force<wbr/>Reload</span><a href="#forceReload" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">force<wbr/>Reload<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/toebes/onshape-typescript-fetch/blob/842f23b8/apis/OpenApiApi.ts#L19">apis/OpenApiApi.ts:19</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/toebes/onshape-typescript-fetch/blob/e11663b8/apis/OpenApiApi.ts#L32">apis/OpenApiApi.ts:32</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="includeDeprecated" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>include<wbr/>Deprecated</span><a href="#includeDeprecated" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">include<wbr/>Deprecated<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/toebes/onshape-typescript-fetch/blob/842f23b8/apis/OpenApiApi.ts#L24">apis/OpenApiApi.ts:24</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/toebes/onshape-typescript-fetch/blob/e11663b8/apis/OpenApiApi.ts#L38">apis/OpenApiApi.ts:38</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="includedTags" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>included<wbr/>Tags</span><a href="#includedTags" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">included<wbr/>Tags<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/toebes/onshape-typescript-fetch/blob/842f23b8/apis/OpenApiApi.ts#L22">apis/OpenApiApi.ts:22</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/toebes/onshape-typescript-fetch/blob/e11663b8/apis/OpenApiApi.ts#L36">apis/OpenApiApi.ts:36</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="noFilter" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>no<wbr/>Filter</span><a href="#noFilter" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">no<wbr/>Filter<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/toebes/onshape-typescript-fetch/blob/e11663b8/apis/OpenApiApi.ts#L35">apis/OpenApiApi.ts:35</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="onlyDeprecated" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>only<wbr/>Deprecated</span><a href="#onlyDeprecated" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">only<wbr/>Deprecated<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/toebes/onshape-typescript-fetch/blob/842f23b8/apis/OpenApiApi.ts#L25">apis/OpenApiApi.ts:25</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/toebes/onshape-typescript-fetch/blob/e11663b8/apis/OpenApiApi.ts#L39">apis/OpenApiApi.ts:39</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="operationIds" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>operation<wbr/>Ids</span><a href="#operationIds" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">operation<wbr/>Ids<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/toebes/onshape-typescript-fetch/blob/842f23b8/apis/OpenApiApi.ts#L28">apis/OpenApiApi.ts:28</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/toebes/onshape-typescript-fetch/blob/e11663b8/apis/OpenApiApi.ts#L42">apis/OpenApiApi.ts:42</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="restUserRole" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>rest<wbr/>User<wbr/>Role</span><a href="#restUserRole" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<div class="tsd-signature">rest<wbr/>User<wbr/>Role<span class="tsd-signature-symbol">?:</span> <a href="../variables/GetOpenApiRestUserRoleEnum-1.html" class="tsd-signature-type" data-tsd-kind="Variable">GetOpenApiRestUserRoleEnum</a></div><aside class="tsd-sources">
+<div class="tsd-signature">rest<wbr/>User<wbr/>Role<span class="tsd-signature-symbol">?:</span> <a href="../variables/BTRestUserRole-1.html" class="tsd-signature-type" data-tsd-kind="Variable">BTRestUserRole</a></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/toebes/onshape-typescript-fetch/blob/842f23b8/apis/OpenApiApi.ts#L27">apis/OpenApiApi.ts:27</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/toebes/onshape-typescript-fetch/blob/e11663b8/apis/OpenApiApi.ts#L41">apis/OpenApiApi.ts:41</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="version" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>version</span><a href="#version" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">version<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/toebes/onshape-typescript-fetch/blob/842f23b8/apis/OpenApiApi.ts#L20">apis/OpenApiApi.ts:20</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/toebes/onshape-typescript-fetch/blob/e11663b8/apis/OpenApiApi.ts#L33">apis/OpenApiApi.ts:33</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="versionAlias" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>version<wbr/>Alias</span><a href="#versionAlias" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
-<div class="tsd-signature">version<wbr/>Alias<span class="tsd-signature-symbol">?:</span> <a href="../variables/GetOpenApiVersionAliasEnum-1.html" class="tsd-signature-type" data-tsd-kind="Variable">GetOpenApiVersionAliasEnum</a></div><aside class="tsd-sources">
+<div class="tsd-signature">version<wbr/>Alias<span class="tsd-signature-symbol">?:</span> <a href="../variables/VersionAlias-1.html" class="tsd-signature-type" data-tsd-kind="Variable">VersionAlias</a></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/toebes/onshape-typescript-fetch/blob/842f23b8/apis/OpenApiApi.ts#L21">apis/OpenApiApi.ts:21</a></li></ul></aside></section></section></div>
+<li>Defined in <a href="https://github.com/toebes/onshape-typescript-fetch/blob/e11663b8/apis/OpenApiApi.ts#L34">apis/OpenApiApi.ts:34</a></li></ul></aside></section></section></div>
 <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 <div class="tsd-navigation settings">
 <details class="tsd-index-accordion"><summary class="tsd-accordion-summary">
@@ -128,6 +134,7 @@
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="GetOpenApiRequest.html#forceReload" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>force<wbr/>Reload?</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="GetOpenApiRequest.html#includeDeprecated" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>include<wbr/>Deprecated?</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="GetOpenApiRequest.html#includedTags" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>included<wbr/>Tags?</a></li>
+<li class="tsd-kind-property tsd-parent-kind-interface"><a href="GetOpenApiRequest.html#noFilter" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>no<wbr/>Filter?</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="GetOpenApiRequest.html#onlyDeprecated" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>only<wbr/>Deprecated?</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="GetOpenApiRequest.html#operationIds" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>operation<wbr/>Ids?</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="GetOpenApiRequest.html#restUserRole" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>rest<wbr/>User<wbr/>Role?</a></li>
