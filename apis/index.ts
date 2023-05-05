@@ -25,6 +25,7 @@ export * from './OpenApiApi';
 export * from './PartApi';
 export * from './PartNumberApi';
 export * from './PartStudioApi';
+export * from './PropertiesTableTemplateApi';
 export * from './PublicationApi';
 export * from './ReleasePackageApi';
 export * from './RevisionApi';
