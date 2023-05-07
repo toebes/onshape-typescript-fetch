@@ -625,14 +625,14 @@
                         ],
                         "responses": {
                             "default": {
-                                "description": "default response",
                                 "content": {
                                     "application/json;charset=UTF-8; qs=0.09": {
                                         "schema": {
-                                            "$ref": "#/components/schemas/BTInsertablesListResponse"
+                                            "$ref": "#/components/schemas/BTGlobalTreeNodesInfo"
                                         }
                                     }
-                                }
+                                },
+                                "description": "default response"
                             }
                         },
                         "deprecated": false,
@@ -922,14 +922,14 @@
                         ],
                         "responses": {
                             "default": {
-                                "description": "default response",
                                 "content": {
                                     "application/json;charset=UTF-8; qs=0.09": {
                                         "schema": {
-                                            "$ref": "#/components/schemas/BTInsertablesListResponse"
+                                            "$ref": "#/components/schemas/BTGlobalTreeNodesInfo"
                                         }
                                     }
-                                }
+                                },
+                                "description": "default response"
                             }
                         },
                         "deprecated": false,

@@ -16,13 +16,10 @@
 import * as runtime from '../runtime';
 import type {
   BTGlobalTreeNodesInfo,
-  BTInsertablesListResponse,
 } from '../models';
 import {
     BTGlobalTreeNodesInfoFromJSON,
     BTGlobalTreeNodesInfoToJSON,
-    BTInsertablesListResponseFromJSON,
-    BTInsertablesListResponseToJSON,
 } from '../models';
 
 export interface GlobalTreeNodesFolderRequest {
@@ -207,7 +204,7 @@ export class GlobalTreeNodesApi extends runtime.BaseAPI {
     /**
      * Retrieve insertables by folder id.
      */
-    async globalTreeNodesFolderInsertablesRaw(requestParameters: GlobalTreeNodesFolderInsertablesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BTInsertablesListResponse>> {
+    async globalTreeNodesFolderInsertablesRaw(requestParameters: GlobalTreeNodesFolderInsertablesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BTGlobalTreeNodesInfo>> {
         if (requestParameters.fid === null || requestParameters.fid === undefined) {
             throw new runtime.RequiredError('fid','Required parameter requestParameters.fid was null or undefined when calling globalTreeNodesFolderInsertables.');
         }
@@ -343,13 +340,13 @@ export class GlobalTreeNodesApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => BTInsertablesListResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => BTGlobalTreeNodesInfoFromJSON(jsonValue));
     }
 
     /**
      * Retrieve insertables by folder id.
      */
-    async globalTreeNodesFolderInsertables(requestParameters: GlobalTreeNodesFolderInsertablesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BTInsertablesListResponse> {
+    async globalTreeNodesFolderInsertables(requestParameters: GlobalTreeNodesFolderInsertablesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BTGlobalTreeNodesInfo> {
         const response = await this.globalTreeNodesFolderInsertablesRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -417,7 +414,7 @@ export class GlobalTreeNodesApi extends runtime.BaseAPI {
     /**
      * Retrieve insertables by Team id.
      */
-    async globalTreeNodesTeamInsertablesRaw(requestParameters: GlobalTreeNodesTeamInsertablesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BTInsertablesListResponse>> {
+    async globalTreeNodesTeamInsertablesRaw(requestParameters: GlobalTreeNodesTeamInsertablesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BTGlobalTreeNodesInfo>> {
         if (requestParameters.teamId === null || requestParameters.teamId === undefined) {
             throw new runtime.RequiredError('teamId','Required parameter requestParameters.teamId was null or undefined when calling globalTreeNodesTeamInsertables.');
         }
@@ -553,13 +550,13 @@ export class GlobalTreeNodesApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => BTInsertablesListResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => BTGlobalTreeNodesInfoFromJSON(jsonValue));
     }
 
     /**
      * Retrieve insertables by Team id.
      */
-    async globalTreeNodesTeamInsertables(requestParameters: GlobalTreeNodesTeamInsertablesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BTInsertablesListResponse> {
+    async globalTreeNodesTeamInsertables(requestParameters: GlobalTreeNodesTeamInsertablesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BTGlobalTreeNodesInfo> {
         const response = await this.globalTreeNodesTeamInsertablesRaw(requestParameters, initOverrides);
         return await response.value();
     }
