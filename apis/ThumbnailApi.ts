@@ -33,6 +33,13 @@ export interface DeleteApplicationThumbnailsRequest {
     linkDocumentId?: string;
 }
 
+export interface GetDocumentDefaultThumbnailWithSizeRequest {
+    did: string;
+    sz: string;
+    t?: string;
+    skipDefaultImage?: string;
+}
+
 export interface GetDocumentThumbnailRequest {
     did: string;
     wid: string;
@@ -163,6 +170,56 @@ export class ThumbnailApi extends runtime.BaseAPI {
      */
     async deleteApplicationThumbnails(requestParameters: DeleteApplicationThumbnailsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
         const response = await this.deleteApplicationThumbnailsRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Retrieve default thumbnail information for a document, with a specified size in pixels by document ID.
+     */
+    async getDocumentDefaultThumbnailWithSizeRaw(requestParameters: GetDocumentDefaultThumbnailWithSizeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
+        if (requestParameters.did === null || requestParameters.did === undefined) {
+            throw new runtime.RequiredError('did','Required parameter requestParameters.did was null or undefined when calling getDocumentDefaultThumbnailWithSize.');
+        }
+
+        if (requestParameters.sz === null || requestParameters.sz === undefined) {
+            throw new runtime.RequiredError('sz','Required parameter requestParameters.sz was null or undefined when calling getDocumentDefaultThumbnailWithSize.');
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters.t !== undefined) {
+            queryParameters['t'] = requestParameters.t;
+        }
+
+        if (requestParameters.skipDefaultImage !== undefined) {
+            queryParameters['skipDefaultImage'] = requestParameters.skipDefaultImage;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.accessToken) {
+            // oauth required
+            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", ["OAuth2Read"]);
+        }
+
+        if (this.configuration && (this.configuration.username !== undefined || this.configuration.password !== undefined)) {
+            headerParameters["Authorization"] = "Basic " + btoa(this.configuration.username + ":" + this.configuration.password);
+        }
+        const response = await this.request({
+            path: `/thumbnails/d/{did}/s/{sz}`.replace(`{${"did"}}`, encodeURIComponent(String(requestParameters.did))).replace(`{${"sz"}}`, encodeURIComponent(String(requestParameters.sz))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse<any>(response);
+    }
+
+    /**
+     * Retrieve default thumbnail information for a document, with a specified size in pixels by document ID.
+     */
+    async getDocumentDefaultThumbnailWithSize(requestParameters: GetDocumentDefaultThumbnailWithSizeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
+        const response = await this.getDocumentDefaultThumbnailWithSizeRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

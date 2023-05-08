@@ -21951,6 +21951,87 @@
         "x-BTVisibility": "PRODUCTION"
       }
     },
+    "/thumbnails/d/{did}/s/{sz}": {
+      "get": {
+        "tags": [
+          "Thumbnail"
+        ],
+        "summary": "Retrieve default thumbnail information for a document, with a specified size in pixels by document ID.",
+        "operationId": "getDocumentDefaultThumbnailWithSize",
+        "parameters": [
+          {
+            "name": "did",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sz",
+            "in": "path",
+            "description": "the generated thumbnail size in pixels, widthxheigth",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "300x300"
+          },
+          {
+            "name": "t",
+            "in": "query",
+            "description": "Cache Control key. If specified, the response header returned will tell the client to use cached thumbnails.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "skipDefaultImage",
+            "in": "query",
+            "description": "Controls the return of the default image, if thumbnail is not available",
+            "schema": {
+              "type": "string",
+              "default": ""
+            },
+            "examples": {
+              "By default return the default thumbnail, if the thumbnail is not found or generated": {
+                "summary": "Get the default image, if the thumbnail is not found",
+                "description": "By default return the default thumbnail, if the thumbnail is not found or generated"
+              },
+              "Setting skipDefaultImage=true, returns a 404 if the thumbnail is not found": {
+                "summary": "Skip the default image, if the thumbnail does not exist.",
+                "description": "Setting skipDefaultImage=true, returns a 404 if the thumbnail is not found",
+                "value": true
+              }
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default response",
+            "content": {
+              "image/*": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "OAuth2": [
+              "OAuth2Read"
+            ],
+            "BasicAuth": [
+              "OAuth2Read"
+            ]
+          }
+        ],
+        "x-BTVisibility": "PRODUCTION"
+      }
+    },
     "/globaltreenodes/magic/{mid}": {
       "get": {
         "deprecated": false,
