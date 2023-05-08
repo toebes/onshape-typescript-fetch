@@ -948,6 +948,16 @@
                 }
             },
             {
+                "key": "paths['/thumbnails/document/{did}'].get.deprecated",
+                "type": "update",
+                "value": true
+            },
+            {
+                "key": "paths['/thumbnails/document/{did}/version/{vid}'].get.deprecated",
+                "type": "update",
+                "value": true
+            },
+            {
                 "key": "paths['/thumbnails/d/{did}/s/{sz}']",
                 "type": "update",
                 "value": {

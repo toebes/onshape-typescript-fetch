@@ -19040,7 +19040,7 @@
             }
           }
         },
-        "deprecated": false,
+        "deprecated": true,
         "security": [
           {
             "OAuth2": [
@@ -19091,7 +19091,7 @@
             }
           }
         },
-        "deprecated": false,
+        "deprecated": true,
         "security": [
           {
             "OAuth2": [
