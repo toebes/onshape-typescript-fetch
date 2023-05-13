@@ -243,7 +243,7 @@
                 }
             },
             {
-                "key": "paths[/globaltreenodes/team/{teamId}']",
+                "key": "paths['/globaltreenodes/team/{teamId}']",
                 "type": "update",
                 "value": {
                     "get": {
@@ -1543,6 +1543,10 @@
             },
             {
                 "key": "components.schemas['BTMSketchCurveSegment-155'].discriminator",
+                "type": "remove"
+            },
+            {
+                "key": "paths['/assemblies/d/{did}/w/{wid}/e/{eid}/instances'].post.responses['200'].content",
                 "type": "remove"
             },
             {
