@@ -4102,17 +4102,7 @@
         },
         "responses": {
           "200": {
-            "description": "Success!",
-            "content": {
-              "application/json;charset=UTF-8; qs=0.09": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/BTOccurrence-74"
-                  }
-                }
-              }
-            }
+            "description": "Success!"
           }
         },
         "deprecated": false,
@@ -5686,8 +5676,9 @@
                 "type": "object",
                 "properties": {
                   "file": {
-                    "type": "object",
-                    "description": "The file to upload."
+                    "type": "string",
+                    "description": "File to upload.",
+                    "format": "binary"
                   },
                   "allowFaultyParts": {
                     "type": "boolean",
@@ -5953,8 +5944,9 @@
                 "type": "object",
                 "properties": {
                   "file": {
-                    "type": "object",
-                    "description": "The file to upload."
+                    "type": "string",
+                    "description": "File to upload.",
+                    "format": "binary"
                   },
                   "allowFaultyParts": {
                     "type": "boolean",
@@ -6558,8 +6550,9 @@
                 "type": "object",
                 "properties": {
                   "file": {
-                    "type": "object",
-                    "description": "The file to upload."
+                    "type": "string",
+                    "description": "File to upload.",
+                    "format": "binary"
                   }
                 }
               }
@@ -19198,8 +19191,9 @@
                 "type": "object",
                 "properties": {
                   "file": {
-                    "type": "object",
-                    "description": "The file to upload."
+                    "type": "string",
+                    "description": "File to upload.",
+                    "format": "binary"
                   },
                   "allowFaultyParts": {
                     "type": "boolean",
@@ -32139,13 +32133,6 @@
             "type": "string"
           }
         },
-        "discriminator": {
-          "propertyName": "@type",
-          "mapping": {
-            "BTInnerArrayParameterLocation": "#/components/schemas/BTInnerArrayParameterLocation-2368",
-            "BTInnerDerivedParameterLocation": "#/components/schemas/BTInnerDerivedParameterLocation-591"
-          }
-        },
         "allOf": [
           {
             "$ref": "#/components/schemas/BTInnerParameterLocation-1715"
@@ -32706,7 +32693,7 @@
       },
       "BTJEditChange-2636": {
         "required": [
-          "value"
+          "btType"
         ],
         "type": "object",
         "properties": {
@@ -32766,6 +32753,9 @@
               }
             }
           }
+        ],
+        "required": [
+          "btType"
         ]
       },
       "BTJEditInsert-2523": {
@@ -32801,6 +32791,9 @@
               }
             }
           }
+        ],
+        "required": [
+          "btType"
         ]
       },
       "BTJEditList-2707": {
@@ -32829,6 +32822,9 @@
               }
             }
           }
+        ],
+        "required": [
+          "btType"
         ]
       },
       "BTJEditMove-3245": {
@@ -32858,6 +32854,9 @@
               }
             }
           }
+        ],
+        "required": [
+          "btType"
         ]
       },
       "BTJPath-3073": {
@@ -36317,12 +36316,6 @@
         "properties": {
           "btType": {
             "type": "string"
-          }
-        },
-        "discriminator": {
-          "propertyName": "btType",
-          "mapping": {
-            "BTMSketchCurveSegment": "#/components/schemas/BTMSketchCurveSegment-155"
           }
         },
         "allOf": [
@@ -42082,6 +42075,9 @@
               }
             }
           }
+        ],
+        "required": [
+          "btType"
         ]
       },
       "BTParameterVisibilityCondition-177": {
@@ -42131,6 +42127,9 @@
               }
             }
           }
+        ],
+        "required": [
+          "btType"
         ]
       },
       "BTParameterVisibilityOnEqual-180": {
@@ -42167,6 +42166,9 @@
               }
             }
           }
+        ],
+        "required": [
+          "btType"
         ]
       },
       "BTParameterVisibilityOnMateDOFType-2114": {
@@ -42174,12 +42176,6 @@
         "properties": {
           "btType": {
             "type": "string"
-          }
-        },
-        "discriminator": {
-          "propertyName": "@type",
-          "mapping": {
-            "BTParameterVisibilityOnMateDOFType": "#/components/schemas/BTParameterVisibilityOnMateDOFType-2114"
           }
         },
         "allOf": [
@@ -42194,6 +42190,9 @@
               }
             }
           }
+        ],
+        "required": [
+          "btType"
         ]
       },
       "BTParametricInstance-2641": {
