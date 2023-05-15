@@ -70,6 +70,29 @@ export interface GlobalTreeNodesMagicRequest {
     limit?: number;
     sortColumn?: string;
     sortOrder?: string;
+    includeParts?: boolean;
+    includeSurfaces?: boolean;
+    includeSketches?: boolean;
+    includeReferenceFeatures?: boolean;
+    includeAssemblies?: boolean;
+    includeFeatureStudios?: boolean;
+    includeBlobs?: boolean;
+    allowedBlobMimeTypes?: string;
+    includePartStudios?: boolean;
+    includeFeatures?: boolean;
+    includeWires?: boolean;
+    includeFlattenedBodies?: boolean;
+    includeApplications?: boolean;
+    allowedApplicationMimeTypes?: string;
+    includeFSTables?: boolean;
+    includeFSComputedPartPropertyFunctions?: boolean;
+    includeVariables?: boolean;
+    includeVariableStudios?: boolean;
+    allowedBlobExtensions?: string;
+    excludeNewerFSVersions?: boolean;
+    maxFeatureScriptVersion?: number;
+    includeMeshes?: boolean;
+    includeCompositeParts?: boolean;
 }
 
 export interface GlobalTreeNodesTeamRequest {
@@ -389,6 +412,98 @@ export class GlobalTreeNodesApi extends runtime.BaseAPI {
 
         if (requestParameters.sortOrder !== undefined) {
             queryParameters['sortOrder'] = requestParameters.sortOrder;
+        }
+
+        if (requestParameters.includeParts !== undefined) {
+            queryParameters['includeParts'] = requestParameters.includeParts;
+        }
+
+        if (requestParameters.includeSurfaces !== undefined) {
+            queryParameters['includeSurfaces'] = requestParameters.includeSurfaces;
+        }
+
+        if (requestParameters.includeSketches !== undefined) {
+            queryParameters['includeSketches'] = requestParameters.includeSketches;
+        }
+
+        if (requestParameters.includeReferenceFeatures !== undefined) {
+            queryParameters['includeReferenceFeatures'] = requestParameters.includeReferenceFeatures;
+        }
+
+        if (requestParameters.includeAssemblies !== undefined) {
+            queryParameters['includeAssemblies'] = requestParameters.includeAssemblies;
+        }
+
+        if (requestParameters.includeFeatureStudios !== undefined) {
+            queryParameters['includeFeatureStudios'] = requestParameters.includeFeatureStudios;
+        }
+
+        if (requestParameters.includeBlobs !== undefined) {
+            queryParameters['includeBlobs'] = requestParameters.includeBlobs;
+        }
+
+        if (requestParameters.allowedBlobMimeTypes !== undefined) {
+            queryParameters['allowedBlobMimeTypes'] = requestParameters.allowedBlobMimeTypes;
+        }
+
+        if (requestParameters.includePartStudios !== undefined) {
+            queryParameters['includePartStudios'] = requestParameters.includePartStudios;
+        }
+
+        if (requestParameters.includeFeatures !== undefined) {
+            queryParameters['includeFeatures'] = requestParameters.includeFeatures;
+        }
+
+        if (requestParameters.includeWires !== undefined) {
+            queryParameters['includeWires'] = requestParameters.includeWires;
+        }
+
+        if (requestParameters.includeFlattenedBodies !== undefined) {
+            queryParameters['includeFlattenedBodies'] = requestParameters.includeFlattenedBodies;
+        }
+
+        if (requestParameters.includeApplications !== undefined) {
+            queryParameters['includeApplications'] = requestParameters.includeApplications;
+        }
+
+        if (requestParameters.allowedApplicationMimeTypes !== undefined) {
+            queryParameters['allowedApplicationMimeTypes'] = requestParameters.allowedApplicationMimeTypes;
+        }
+
+        if (requestParameters.includeFSTables !== undefined) {
+            queryParameters['includeFSTables'] = requestParameters.includeFSTables;
+        }
+
+        if (requestParameters.includeFSComputedPartPropertyFunctions !== undefined) {
+            queryParameters['includeFSComputedPartPropertyFunctions'] = requestParameters.includeFSComputedPartPropertyFunctions;
+        }
+
+        if (requestParameters.includeVariables !== undefined) {
+            queryParameters['includeVariables'] = requestParameters.includeVariables;
+        }
+
+        if (requestParameters.includeVariableStudios !== undefined) {
+            queryParameters['includeVariableStudios'] = requestParameters.includeVariableStudios;
+        }
+
+        if (requestParameters.allowedBlobExtensions !== undefined) {
+            queryParameters['allowedBlobExtensions'] = requestParameters.allowedBlobExtensions;
+        }
+
+        if (requestParameters.excludeNewerFSVersions !== undefined) {
+            queryParameters['excludeNewerFSVersions'] = requestParameters.excludeNewerFSVersions;
+        }
+
+        if (requestParameters.maxFeatureScriptVersion !== undefined) {
+            queryParameters['maxFeatureScriptVersion'] = requestParameters.maxFeatureScriptVersion;
+        }
+
+        if (requestParameters.includeMeshes !== undefined) {
+            queryParameters['includeMeshes'] = requestParameters.includeMeshes;
+        }
+
+        if (requestParameters.includeCompositeParts !== undefined) {
+            queryParameters['includeCompositeParts'] = requestParameters.includeCompositeParts;
         }
 
         const headerParameters: runtime.HTTPHeaders = {};
