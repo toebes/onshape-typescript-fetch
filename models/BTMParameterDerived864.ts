@@ -19,7 +19,7 @@ import {
     BTMImport136FromJSONTyped,
     BTMImport136ToJSON,
 } from './BTMImport136';
-import type { BTMParameter1 } from './BTMParameter1';
+import { BTMParameter1, BTMParameter1SuperToJSON } from './BTMParameter1';
 import {
     BTMParameter1FromJSON,
     BTMParameter1FromJSONTyped,
@@ -33,31 +33,31 @@ import {
 } from './BTPModuleId235';
 
 /**
- * 
+ *
  * @export
  * @interface BTMParameterDerived864
  */
 export interface BTMParameterDerived864 extends BTMParameter1 {
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTMParameterDerived864
      */
     btType?: string;
     /**
-     * 
+     *
      * @type {Array<BTMImport136>}
      * @memberof BTMParameterDerived864
      */
     imports?: Array<BTMImport136>;
     /**
-     * 
+     *
      * @type {BTPModuleId235}
      * @memberof BTMParameterDerived864
      */
     moduleId?: BTPModuleId235;
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTMParameterDerived864
      */
@@ -73,24 +73,35 @@ export function instanceOfBTMParameterDerived864(value: object): boolean {
     return isInstance;
 }
 
-export function BTMParameterDerived864FromJSON(json: any): BTMParameterDerived864 {
+export function BTMParameterDerived864FromJSON(
+    json: any
+): BTMParameterDerived864 {
     return BTMParameterDerived864FromJSONTyped(json, false);
 }
 
-export function BTMParameterDerived864FromJSONTyped(json: any, ignoreDiscriminator: boolean): BTMParameterDerived864 {
-    if ((json === undefined) || (json === null)) {
+export function BTMParameterDerived864FromJSONTyped(
+    json: any,
+    ignoreDiscriminator: boolean
+): BTMParameterDerived864 {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
         ...BTMParameter1FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
-        'imports': !exists(json, 'imports') ? undefined : ((json['imports'] as Array<any>).map(BTMImport136FromJSON)),
-        'moduleId': !exists(json, 'moduleId') ? undefined : BTPModuleId235FromJSON(json['moduleId']),
-        'namespace': !exists(json, 'namespace') ? undefined : json['namespace'],
+        btType: !exists(json, 'btType') ? undefined : json['btType'],
+        imports: !exists(json, 'imports')
+            ? undefined
+            : (json['imports'] as Array<any>).map(BTMImport136FromJSON),
+        moduleId: !exists(json, 'moduleId')
+            ? undefined
+            : BTPModuleId235FromJSON(json['moduleId']),
+        namespace: !exists(json, 'namespace') ? undefined : json['namespace'],
     };
 }
 
-export function BTMParameterDerived864ToJSON(value?: BTMParameterDerived864 | null): any {
+export function BTMParameterDerived864ToJSON(
+    value?: BTMParameterDerived864 | null
+): any {
     if (value === undefined) {
         return undefined;
     }
@@ -98,11 +109,13 @@ export function BTMParameterDerived864ToJSON(value?: BTMParameterDerived864 | nu
         return null;
     }
     return {
-        ...BTMParameter1ToJSON(value),
-        'btType': value.btType,
-        'imports': value.imports === undefined ? undefined : ((value.imports as Array<any>).map(BTMImport136ToJSON)),
-        'moduleId': BTPModuleId235ToJSON(value.moduleId),
-        'namespace': value.namespace,
+        ...BTMParameter1SuperToJSON(value),
+        btType: value.btType,
+        imports:
+            value.imports === undefined
+                ? undefined
+                : (value.imports as Array<any>).map(BTMImport136ToJSON),
+        moduleId: BTPModuleId235ToJSON(value.moduleId),
+        namespace: value.namespace,
     };
 }
-

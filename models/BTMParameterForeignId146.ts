@@ -19,7 +19,7 @@ import {
     BTForeignDataResponse1070FromJSONTyped,
     BTForeignDataResponse1070ToJSON,
 } from './BTForeignDataResponse1070';
-import type { BTMParameter1 } from './BTMParameter1';
+import { BTMParameter1, BTMParameter1SuperToJSON } from './BTMParameter1';
 import {
     BTMParameter1FromJSON,
     BTMParameter1FromJSONTyped,
@@ -27,31 +27,31 @@ import {
 } from './BTMParameter1';
 
 /**
- * 
+ *
  * @export
  * @interface BTMParameterForeignId146
  */
 export interface BTMParameterForeignId146 extends BTMParameter1 {
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTMParameterForeignId146
      */
     btType?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTMParameterForeignId146
      */
     foreignId?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTMParameterForeignId146
      */
     foreignName?: string;
     /**
-     * 
+     *
      * @type {BTForeignDataResponse1070}
      * @memberof BTMParameterForeignId146
      */
@@ -67,24 +67,35 @@ export function instanceOfBTMParameterForeignId146(value: object): boolean {
     return isInstance;
 }
 
-export function BTMParameterForeignId146FromJSON(json: any): BTMParameterForeignId146 {
+export function BTMParameterForeignId146FromJSON(
+    json: any
+): BTMParameterForeignId146 {
     return BTMParameterForeignId146FromJSONTyped(json, false);
 }
 
-export function BTMParameterForeignId146FromJSONTyped(json: any, ignoreDiscriminator: boolean): BTMParameterForeignId146 {
-    if ((json === undefined) || (json === null)) {
+export function BTMParameterForeignId146FromJSONTyped(
+    json: any,
+    ignoreDiscriminator: boolean
+): BTMParameterForeignId146 {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
         ...BTMParameter1FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
-        'foreignId': !exists(json, 'foreignId') ? undefined : json['foreignId'],
-        'foreignName': !exists(json, 'foreignName') ? undefined : json['foreignName'],
-        'locationInfo': !exists(json, 'locationInfo') ? undefined : BTForeignDataResponse1070FromJSON(json['locationInfo']),
+        btType: !exists(json, 'btType') ? undefined : json['btType'],
+        foreignId: !exists(json, 'foreignId') ? undefined : json['foreignId'],
+        foreignName: !exists(json, 'foreignName')
+            ? undefined
+            : json['foreignName'],
+        locationInfo: !exists(json, 'locationInfo')
+            ? undefined
+            : BTForeignDataResponse1070FromJSON(json['locationInfo']),
     };
 }
 
-export function BTMParameterForeignId146ToJSON(value?: BTMParameterForeignId146 | null): any {
+export function BTMParameterForeignId146ToJSON(
+    value?: BTMParameterForeignId146 | null
+): any {
     if (value === undefined) {
         return undefined;
     }
@@ -92,11 +103,10 @@ export function BTMParameterForeignId146ToJSON(value?: BTMParameterForeignId146 
         return null;
     }
     return {
-        ...BTMParameter1ToJSON(value),
-        'btType': value.btType,
-        'foreignId': value.foreignId,
-        'foreignName': value.foreignName,
-        'locationInfo': BTForeignDataResponse1070ToJSON(value.locationInfo),
+        ...BTMParameter1SuperToJSON(value),
+        btType: value.btType,
+        foreignId: value.foreignId,
+        foreignName: value.foreignName,
+        locationInfo: BTForeignDataResponse1070ToJSON(value.locationInfo),
     };
 }
-

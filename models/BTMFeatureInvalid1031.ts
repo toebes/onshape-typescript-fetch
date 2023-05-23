@@ -13,7 +13,7 @@
  */
 
 import { exists, mapValues } from '../runtime';
-import type { BTMFeature134 } from './BTMFeature134';
+import { BTMFeature134, BTMFeature134SuperToJSON } from './BTMFeature134';
 import {
     BTMFeature134FromJSON,
     BTMFeature134FromJSONTyped,
@@ -27,13 +27,13 @@ import {
 } from './BTMParameter1';
 
 /**
- * 
+ *
  * @export
  * @interface BTMFeatureInvalid1031
  */
 export interface BTMFeatureInvalid1031 extends BTMFeature134 {
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTMFeatureInvalid1031
      */
@@ -49,21 +49,28 @@ export function instanceOfBTMFeatureInvalid1031(value: object): boolean {
     return isInstance;
 }
 
-export function BTMFeatureInvalid1031FromJSON(json: any): BTMFeatureInvalid1031 {
+export function BTMFeatureInvalid1031FromJSON(
+    json: any
+): BTMFeatureInvalid1031 {
     return BTMFeatureInvalid1031FromJSONTyped(json, false);
 }
 
-export function BTMFeatureInvalid1031FromJSONTyped(json: any, ignoreDiscriminator: boolean): BTMFeatureInvalid1031 {
-    if ((json === undefined) || (json === null)) {
+export function BTMFeatureInvalid1031FromJSONTyped(
+    json: any,
+    ignoreDiscriminator: boolean
+): BTMFeatureInvalid1031 {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
         ...BTMFeature134FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
+        btType: !exists(json, 'btType') ? undefined : json['btType'],
     };
 }
 
-export function BTMFeatureInvalid1031ToJSON(value?: BTMFeatureInvalid1031 | null): any {
+export function BTMFeatureInvalid1031ToJSON(
+    value?: BTMFeatureInvalid1031 | null
+): any {
     if (value === undefined) {
         return undefined;
     }
@@ -71,8 +78,7 @@ export function BTMFeatureInvalid1031ToJSON(value?: BTMFeatureInvalid1031 | null
         return null;
     }
     return {
-        ...BTMFeature134ToJSON(value),
-        'btType': value.btType,
+        ...BTMFeature134SuperToJSON(value),
+        btType: value.btType,
     };
 }
-

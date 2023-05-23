@@ -13,7 +13,7 @@
  */
 
 import { exists, mapValues } from '../runtime';
-import type { BTMFeature134 } from './BTMFeature134';
+import { BTMFeature134, BTMFeature134SuperToJSON } from './BTMFeature134';
 import {
     BTMFeature134FromJSON,
     BTMFeature134FromJSONTyped,
@@ -39,25 +39,25 @@ import {
 } from './BTMSketchGeomEntity5';
 
 /**
- * 
+ *
  * @export
  * @interface BTMSketch151
  */
 export interface BTMSketch151 extends BTMFeature134 {
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTMSketch151
      */
     btType?: string;
     /**
-     * 
+     *
      * @type {Array<BTMSketchConstraint2>}
      * @memberof BTMSketch151
      */
     constraints?: Array<BTMSketchConstraint2>;
     /**
-     * 
+     *
      * @type {Array<BTMSketchGeomEntity5>}
      * @memberof BTMSketch151
      */
@@ -77,15 +77,26 @@ export function BTMSketch151FromJSON(json: any): BTMSketch151 {
     return BTMSketch151FromJSONTyped(json, false);
 }
 
-export function BTMSketch151FromJSONTyped(json: any, ignoreDiscriminator: boolean): BTMSketch151 {
-    if ((json === undefined) || (json === null)) {
+export function BTMSketch151FromJSONTyped(
+    json: any,
+    ignoreDiscriminator: boolean
+): BTMSketch151 {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
         ...BTMFeature134FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
-        'constraints': !exists(json, 'constraints') ? undefined : ((json['constraints'] as Array<any>).map(BTMSketchConstraint2FromJSON)),
-        'entities': !exists(json, 'entities') ? undefined : ((json['entities'] as Array<any>).map(BTMSketchGeomEntity5FromJSON)),
+        btType: !exists(json, 'btType') ? undefined : json['btType'],
+        constraints: !exists(json, 'constraints')
+            ? undefined
+            : (json['constraints'] as Array<any>).map(
+                  BTMSketchConstraint2FromJSON
+              ),
+        entities: !exists(json, 'entities')
+            ? undefined
+            : (json['entities'] as Array<any>).map(
+                  BTMSketchGeomEntity5FromJSON
+              ),
     };
 }
 
@@ -97,10 +108,19 @@ export function BTMSketch151ToJSON(value?: BTMSketch151 | null): any {
         return null;
     }
     return {
-        ...BTMFeature134ToJSON(value),
-        'btType': value.btType,
-        'constraints': value.constraints === undefined ? undefined : ((value.constraints as Array<any>).map(BTMSketchConstraint2ToJSON)),
-        'entities': value.entities === undefined ? undefined : ((value.entities as Array<any>).map(BTMSketchGeomEntity5ToJSON)),
+        ...BTMFeature134SuperToJSON(value),
+        btType: value.btType,
+        constraints:
+            value.constraints === undefined
+                ? undefined
+                : (value.constraints as Array<any>).map(
+                      BTMSketchConstraint2ToJSON
+                  ),
+        entities:
+            value.entities === undefined
+                ? undefined
+                : (value.entities as Array<any>).map(
+                      BTMSketchGeomEntity5ToJSON
+                  ),
     };
 }
-

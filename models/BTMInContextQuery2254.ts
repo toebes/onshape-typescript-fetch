@@ -13,7 +13,10 @@
  */
 
 import { exists, mapValues } from '../runtime';
-import type { BTMIndividualQueryBase139 } from './BTMIndividualQueryBase139';
+import {
+    BTMIndividualQueryBase139,
+    BTMIndividualQuerySuper139ToJSON,
+} from './BTMIndividualQueryBase139';
 import {
     BTMIndividualQueryBase139FromJSON,
     BTMIndividualQueryBase139FromJSONTyped,
@@ -21,19 +24,19 @@ import {
 } from './BTMIndividualQueryBase139';
 
 /**
- * 
+ *
  * @export
  * @interface BTMInContextQuery2254
  */
 export interface BTMInContextQuery2254 extends BTMIndividualQueryBase139 {
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTMInContextQuery2254
      */
     btType?: string;
     /**
-     * 
+     *
      * @type {Array<string>}
      * @memberof BTMInContextQuery2254
      */
@@ -49,22 +52,29 @@ export function instanceOfBTMInContextQuery2254(value: object): boolean {
     return isInstance;
 }
 
-export function BTMInContextQuery2254FromJSON(json: any): BTMInContextQuery2254 {
+export function BTMInContextQuery2254FromJSON(
+    json: any
+): BTMInContextQuery2254 {
     return BTMInContextQuery2254FromJSONTyped(json, false);
 }
 
-export function BTMInContextQuery2254FromJSONTyped(json: any, ignoreDiscriminator: boolean): BTMInContextQuery2254 {
-    if ((json === undefined) || (json === null)) {
+export function BTMInContextQuery2254FromJSONTyped(
+    json: any,
+    ignoreDiscriminator: boolean
+): BTMInContextQuery2254 {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
         ...BTMIndividualQueryBase139FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
-        'path': !exists(json, 'path') ? undefined : json['path'],
+        btType: !exists(json, 'btType') ? undefined : json['btType'],
+        path: !exists(json, 'path') ? undefined : json['path'],
     };
 }
 
-export function BTMInContextQuery2254ToJSON(value?: BTMInContextQuery2254 | null): any {
+export function BTMInContextQuery2254ToJSON(
+    value?: BTMInContextQuery2254 | null
+): any {
     if (value === undefined) {
         return undefined;
     }
@@ -72,9 +82,8 @@ export function BTMInContextQuery2254ToJSON(value?: BTMInContextQuery2254 | null
         return null;
     }
     return {
-        ...BTMIndividualQueryBase139ToJSON(value),
-        'btType': value.btType,
-        'path': value.path,
+        ...BTMIndividualQuerySuper139ToJSON(value),
+        btType: value.btType,
+        path: value.path,
     };
 }
-

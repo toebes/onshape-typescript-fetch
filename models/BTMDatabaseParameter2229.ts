@@ -13,7 +13,7 @@
  */
 
 import { exists, mapValues } from '../runtime';
-import type { BTMParameter1 } from './BTMParameter1';
+import { BTMParameter1, BTMParameter1SuperToJSON } from './BTMParameter1';
 import {
     BTMParameter1FromJSON,
     BTMParameter1FromJSONTyped,
@@ -21,19 +21,19 @@ import {
 } from './BTMParameter1';
 
 /**
- * 
+ *
  * @export
  * @interface BTMDatabaseParameter2229
  */
 export interface BTMDatabaseParameter2229 extends BTMParameter1 {
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTMDatabaseParameter2229
      */
     btType?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTMDatabaseParameter2229
      */
@@ -49,22 +49,31 @@ export function instanceOfBTMDatabaseParameter2229(value: object): boolean {
     return isInstance;
 }
 
-export function BTMDatabaseParameter2229FromJSON(json: any): BTMDatabaseParameter2229 {
+export function BTMDatabaseParameter2229FromJSON(
+    json: any
+): BTMDatabaseParameter2229 {
     return BTMDatabaseParameter2229FromJSONTyped(json, false);
 }
 
-export function BTMDatabaseParameter2229FromJSONTyped(json: any, ignoreDiscriminator: boolean): BTMDatabaseParameter2229 {
-    if ((json === undefined) || (json === null)) {
+export function BTMDatabaseParameter2229FromJSONTyped(
+    json: any,
+    ignoreDiscriminator: boolean
+): BTMDatabaseParameter2229 {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
         ...BTMParameter1FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
-        'databaseId': !exists(json, 'databaseId') ? undefined : json['databaseId'],
+        btType: !exists(json, 'btType') ? undefined : json['btType'],
+        databaseId: !exists(json, 'databaseId')
+            ? undefined
+            : json['databaseId'],
     };
 }
 
-export function BTMDatabaseParameter2229ToJSON(value?: BTMDatabaseParameter2229 | null): any {
+export function BTMDatabaseParameter2229ToJSON(
+    value?: BTMDatabaseParameter2229 | null
+): any {
     if (value === undefined) {
         return undefined;
     }
@@ -72,9 +81,8 @@ export function BTMDatabaseParameter2229ToJSON(value?: BTMDatabaseParameter2229 
         return null;
     }
     return {
-        ...BTMParameter1ToJSON(value),
-        'btType': value.btType,
-        'databaseId': value.databaseId,
+        ...BTMParameter1SuperToJSON(value),
+        btType: value.btType,
+        databaseId: value.databaseId,
     };
 }
-

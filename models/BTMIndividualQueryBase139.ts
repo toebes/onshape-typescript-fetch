@@ -129,7 +129,7 @@ export function BTMIndividualQueryBase139FromJSONTyped(
     };
 }
 
-export function BTMIndividualQueryBase139BaseToJSON(
+export function BTMIndividualQuerySuper139ToJSON(
     value?: BTMIndividualQueryBase139 | null
 ): any {
     if (value === undefined) {
@@ -171,5 +171,5 @@ export function BTMIndividualQueryBase139ToJSON(
         return BTMIndividualQueryWithOccurrenceBase904ToJSON(value);
     }
 
-    return BTMIndividualQueryBase139BaseToJSON(value);
+    return BTMIndividualQuerySuper139ToJSON(value);
 }

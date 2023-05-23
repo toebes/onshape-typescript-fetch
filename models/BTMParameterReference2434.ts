@@ -19,7 +19,7 @@ import {
     BTElementLibraryReferenceData3133FromJSONTyped,
     BTElementLibraryReferenceData3133ToJSON,
 } from './BTElementLibraryReferenceData3133';
-import type { BTMParameter1 } from './BTMParameter1';
+import { BTMParameter1, BTMParameter1SuperToJSON } from './BTMParameter1';
 import {
     BTMParameter1FromJSON,
     BTMParameter1FromJSONTyped,
@@ -27,66 +27,66 @@ import {
 } from './BTMParameter1';
 
 import {
-     BTMParameterReferenceBlob3281FromJSONTyped,
-     BTMParameterReferenceWithConfiguration3028FromJSONTyped
+    BTMParameterReferenceBlob3281FromJSONTyped,
+    BTMParameterReferenceWithConfiguration3028FromJSONTyped,
 } from './';
 
 /**
- * 
+ *
  * @export
  * @interface BTMParameterReference2434
  */
 export interface BTMParameterReference2434 extends BTMParameter1 {
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTMParameterReference2434
      */
     btType?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTMParameterReference2434
      */
     documentId?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTMParameterReference2434
      */
     documentVersionId?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTMParameterReference2434
      */
     elementId?: string;
     /**
-     * 
+     *
      * @type {BTElementLibraryReferenceData3133}
      * @memberof BTMParameterReference2434
      */
     elementLibraryData?: BTElementLibraryReferenceData3133;
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTMParameterReference2434
      */
     featureScriptType?: string;
     /**
-     * 
+     *
      * @type {Array<string>}
      * @memberof BTMParameterReference2434
      */
     ids?: Array<string>;
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTMParameterReference2434
      */
     microversioId?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTMParameterReference2434
      */
@@ -102,12 +102,17 @@ export function instanceOfBTMParameterReference2434(value: object): boolean {
     return isInstance;
 }
 
-export function BTMParameterReference2434FromJSON(json: any): BTMParameterReference2434 {
+export function BTMParameterReference2434FromJSON(
+    json: any
+): BTMParameterReference2434 {
     return BTMParameterReference2434FromJSONTyped(json, false);
 }
 
-export function BTMParameterReference2434FromJSONTyped(json: any, ignoreDiscriminator: boolean): BTMParameterReference2434 {
-    if ((json === undefined) || (json === null)) {
+export function BTMParameterReference2434FromJSONTyped(
+    json: any,
+    ignoreDiscriminator: boolean
+): BTMParameterReference2434 {
+    if (json === undefined || json === null) {
         return json;
     }
     if (!ignoreDiscriminator) {
@@ -115,24 +120,41 @@ export function BTMParameterReference2434FromJSONTyped(json: any, ignoreDiscrimi
             return BTMParameterReferenceBlob3281FromJSONTyped(json, true);
         }
         if (json['btType'] === 'BTMParameterReferenceWithConfiguration-3028') {
-            return BTMParameterReferenceWithConfiguration3028FromJSONTyped(json, true);
+            return BTMParameterReferenceWithConfiguration3028FromJSONTyped(
+                json,
+                true
+            );
         }
     }
     return {
         ...BTMParameter1FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
-        'documentId': !exists(json, 'documentId') ? undefined : json['documentId'],
-        'documentVersionId': !exists(json, 'documentVersionId') ? undefined : json['documentVersionId'],
-        'elementId': !exists(json, 'elementId') ? undefined : json['elementId'],
-        'elementLibraryData': !exists(json, 'elementLibraryData') ? undefined : BTElementLibraryReferenceData3133FromJSON(json['elementLibraryData']),
-        'featureScriptType': !exists(json, 'featureScriptType') ? undefined : json['featureScriptType'],
-        'ids': !exists(json, 'ids') ? undefined : json['ids'],
-        'microversioId': !exists(json, 'microversioId') ? undefined : json['microversioId'],
-        'namespace': !exists(json, 'namespace') ? undefined : json['namespace'],
+        btType: !exists(json, 'btType') ? undefined : json['btType'],
+        documentId: !exists(json, 'documentId')
+            ? undefined
+            : json['documentId'],
+        documentVersionId: !exists(json, 'documentVersionId')
+            ? undefined
+            : json['documentVersionId'],
+        elementId: !exists(json, 'elementId') ? undefined : json['elementId'],
+        elementLibraryData: !exists(json, 'elementLibraryData')
+            ? undefined
+            : BTElementLibraryReferenceData3133FromJSON(
+                  json['elementLibraryData']
+              ),
+        featureScriptType: !exists(json, 'featureScriptType')
+            ? undefined
+            : json['featureScriptType'],
+        ids: !exists(json, 'ids') ? undefined : json['ids'],
+        microversioId: !exists(json, 'microversioId')
+            ? undefined
+            : json['microversioId'],
+        namespace: !exists(json, 'namespace') ? undefined : json['namespace'],
     };
 }
 
-export function BTMParameterReference2434ToJSON(value?: BTMParameterReference2434 | null): any {
+export function BTMParameterReference2434ToJSON(
+    value?: BTMParameterReference2434 | null
+): any {
     if (value === undefined) {
         return undefined;
     }
@@ -140,16 +162,17 @@ export function BTMParameterReference2434ToJSON(value?: BTMParameterReference243
         return null;
     }
     return {
-        ...BTMParameter1ToJSON(value),
-        'btType': value.btType,
-        'documentId': value.documentId,
-        'documentVersionId': value.documentVersionId,
-        'elementId': value.elementId,
-        'elementLibraryData': BTElementLibraryReferenceData3133ToJSON(value.elementLibraryData),
-        'featureScriptType': value.featureScriptType,
-        'ids': value.ids,
-        'microversioId': value.microversioId,
-        'namespace': value.namespace,
+        ...BTMParameter1SuperToJSON(value),
+        btType: value.btType,
+        documentId: value.documentId,
+        documentVersionId: value.documentVersionId,
+        elementId: value.elementId,
+        elementLibraryData: BTElementLibraryReferenceData3133ToJSON(
+            value.elementLibraryData
+        ),
+        featureScriptType: value.featureScriptType,
+        ids: value.ids,
+        microversioId: value.microversioId,
+        namespace: value.namespace,
     };
 }
-

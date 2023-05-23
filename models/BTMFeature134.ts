@@ -184,7 +184,7 @@ export function BTMFeature134FromJSONTyped(
     };
 }
 
-export function BTMFeature134BaseToJSON(value?: BTMFeature134 | null): any {
+export function BTMFeature134SuperToJSON(value?: BTMFeature134 | null): any {
     if (value === undefined) {
         return undefined;
     }
@@ -234,5 +234,5 @@ export function BTMFeature134ToJSON(value?: BTMFeature134 | null): any {
     if (value.btType === 'BTMVariableStudioReference-2764') {
         return BTMVariableStudioReference2764ToJSON(value);
     }
-    return BTMFeature134BaseToJSON(value);
+    return BTMFeature134SuperToJSON(value);
 }

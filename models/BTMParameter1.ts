@@ -180,7 +180,7 @@ export function BTMParameter1FromJSONTyped(
     };
 }
 
-export function BTMParameter1ToJSONBase(value?: BTMParameter1 | null): any {
+export function BTMParameter1SuperToJSON(value?: BTMParameter1 | null): any {
     if (value === undefined) {
         return undefined;
     }
@@ -259,5 +259,5 @@ export function BTMParameter1ToJSON(value?: BTMParameter1 | null): any {
     if (value.btType === 'BTMReadOnlyParameter-3800') {
         return BTMReadOnlyParameter3800ToJSON(value);
     }
-    return BTMParameter1ToJSONBase(value);
+    return BTMParameter1SuperToJSON(value);
 }

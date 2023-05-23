@@ -13,7 +13,7 @@
  */
 
 import { exists, mapValues } from '../runtime';
-import type { BTMParameter1 } from './BTMParameter1';
+import { BTMParameter1, BTMParameter1SuperToJSON } from './BTMParameter1';
 import {
     BTMParameter1FromJSON,
     BTMParameter1FromJSONTyped,
@@ -21,19 +21,19 @@ import {
 } from './BTMParameter1';
 
 /**
- * 
+ *
  * @export
  * @interface BTMParameterString149
  */
 export interface BTMParameterString149 extends BTMParameter1 {
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTMParameterString149
      */
     btType?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTMParameterString149
      */
@@ -49,22 +49,29 @@ export function instanceOfBTMParameterString149(value: object): boolean {
     return isInstance;
 }
 
-export function BTMParameterString149FromJSON(json: any): BTMParameterString149 {
+export function BTMParameterString149FromJSON(
+    json: any
+): BTMParameterString149 {
     return BTMParameterString149FromJSONTyped(json, false);
 }
 
-export function BTMParameterString149FromJSONTyped(json: any, ignoreDiscriminator: boolean): BTMParameterString149 {
-    if ((json === undefined) || (json === null)) {
+export function BTMParameterString149FromJSONTyped(
+    json: any,
+    ignoreDiscriminator: boolean
+): BTMParameterString149 {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
         ...BTMParameter1FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
-        'value': !exists(json, 'value') ? undefined : json['value'],
+        btType: !exists(json, 'btType') ? undefined : json['btType'],
+        value: !exists(json, 'value') ? undefined : json['value'],
     };
 }
 
-export function BTMParameterString149ToJSON(value?: BTMParameterString149 | null): any {
+export function BTMParameterString149ToJSON(
+    value?: BTMParameterString149 | null
+): any {
     if (value === undefined) {
         return undefined;
     }
@@ -72,9 +79,8 @@ export function BTMParameterString149ToJSON(value?: BTMParameterString149 | null
         return null;
     }
     return {
-        ...BTMParameter1ToJSON(value),
-        'btType': value.btType,
-        'value': value.value,
+        ...BTMParameter1SuperToJSON(value),
+        btType: value.btType,
+        value: value.value,
     };
 }
-

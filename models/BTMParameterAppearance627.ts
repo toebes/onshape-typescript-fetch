@@ -19,7 +19,7 @@ import {
     BTGraphicsAppearance1152FromJSONTyped,
     BTGraphicsAppearance1152ToJSON,
 } from './BTGraphicsAppearance1152';
-import type { BTMParameter1 } from './BTMParameter1';
+import { BTMParameter1, BTMParameter1SuperToJSON } from './BTMParameter1';
 import {
     BTMParameter1FromJSON,
     BTMParameter1FromJSONTyped,
@@ -27,19 +27,19 @@ import {
 } from './BTMParameter1';
 
 /**
- * 
+ *
  * @export
  * @interface BTMParameterAppearance627
  */
 export interface BTMParameterAppearance627 extends BTMParameter1 {
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTMParameterAppearance627
      */
     btType?: string;
     /**
-     * 
+     *
      * @type {BTGraphicsAppearance1152}
      * @memberof BTMParameterAppearance627
      */
@@ -55,22 +55,31 @@ export function instanceOfBTMParameterAppearance627(value: object): boolean {
     return isInstance;
 }
 
-export function BTMParameterAppearance627FromJSON(json: any): BTMParameterAppearance627 {
+export function BTMParameterAppearance627FromJSON(
+    json: any
+): BTMParameterAppearance627 {
     return BTMParameterAppearance627FromJSONTyped(json, false);
 }
 
-export function BTMParameterAppearance627FromJSONTyped(json: any, ignoreDiscriminator: boolean): BTMParameterAppearance627 {
-    if ((json === undefined) || (json === null)) {
+export function BTMParameterAppearance627FromJSONTyped(
+    json: any,
+    ignoreDiscriminator: boolean
+): BTMParameterAppearance627 {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
         ...BTMParameter1FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
-        'appearance': !exists(json, 'appearance') ? undefined : BTGraphicsAppearance1152FromJSON(json['appearance']),
+        btType: !exists(json, 'btType') ? undefined : json['btType'],
+        appearance: !exists(json, 'appearance')
+            ? undefined
+            : BTGraphicsAppearance1152FromJSON(json['appearance']),
     };
 }
 
-export function BTMParameterAppearance627ToJSON(value?: BTMParameterAppearance627 | null): any {
+export function BTMParameterAppearance627ToJSON(
+    value?: BTMParameterAppearance627 | null
+): any {
     if (value === undefined) {
         return undefined;
     }
@@ -78,9 +87,8 @@ export function BTMParameterAppearance627ToJSON(value?: BTMParameterAppearance62
         return null;
     }
     return {
-        ...BTMParameter1ToJSON(value),
-        'btType': value.btType,
-        'appearance': BTGraphicsAppearance1152ToJSON(value.appearance),
+        ...BTMParameter1SuperToJSON(value),
+        btType: value.btType,
+        appearance: BTGraphicsAppearance1152ToJSON(value.appearance),
     };
 }
-

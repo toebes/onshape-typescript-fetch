@@ -13,7 +13,7 @@
  */
 
 import { exists, mapValues } from '../runtime';
-import type { BTMFeature134 } from './BTMFeature134';
+import { BTMFeature134, BTMFeature134SuperToJSON } from './BTMFeature134';
 import {
     BTMFeature134FromJSON,
     BTMFeature134FromJSONTyped,
@@ -33,73 +33,73 @@ import {
 } from './BTMParameter1';
 
 import {
-     BTAssemblySimulation2246FromJSONTyped,
-     BTExplosion2754FromJSONTyped,
-     BTExplosionStepFeature3008FromJSONTyped,
-     BTMAssemblyFeature12218FromJSONTyped,
-     BTMAssemblyFeature21022FromJSONTyped,
-     BTMAssemblyFeatureFolder2543FromJSONTyped,
-     BTMAssemblyPatternFeature2241FromJSONTyped,
-     BTMAssemblyReplicateFeature1351FromJSONTyped,
-     BTMGeometryMate1260FromJSONTyped,
-     BTMLoad3538FromJSONTyped,
-     BTMMate64FromJSONTyped,
-     BTMMateConnector66FromJSONTyped,
-     BTMMateGroup65FromJSONTyped,
-     BTMMateRelation1412FromJSONTyped,
-     BTMNonGeometricItem1864FromJSONTyped
+    BTAssemblySimulation2246FromJSONTyped,
+    BTExplosion2754FromJSONTyped,
+    BTExplosionStepFeature3008FromJSONTyped,
+    BTMAssemblyFeature12218FromJSONTyped,
+    BTMAssemblyFeature21022FromJSONTyped,
+    BTMAssemblyFeatureFolder2543FromJSONTyped,
+    BTMAssemblyPatternFeature2241FromJSONTyped,
+    BTMAssemblyReplicateFeature1351FromJSONTyped,
+    BTMGeometryMate1260FromJSONTyped,
+    BTMLoad3538FromJSONTyped,
+    BTMMate64FromJSONTyped,
+    BTMMateConnector66FromJSONTyped,
+    BTMMateGroup65FromJSONTyped,
+    BTMMateRelation1412FromJSONTyped,
+    BTMNonGeometricItem1864FromJSONTyped,
 } from './';
 
 /**
- * 
+ *
  * @export
  * @interface BTMAssemblyFeature887
  */
 export interface BTMAssemblyFeature887 extends BTMFeature134 {
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTMAssemblyFeature887
      */
     btType?: string;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof BTMAssemblyFeature887
      */
     auxiliaryTreeFeature?: boolean;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof BTMAssemblyFeature887
      */
     featureFolder?: boolean;
     /**
-     * 
+     *
      * @type {number}
      * @memberof BTMAssemblyFeature887
      */
     featureListFieldIndex?: number;
     /**
-     * 
+     *
      * @type {number}
      * @memberof BTMAssemblyFeature887
      */
     fieldIndexForOwnedMateConnectors?: number;
     /**
-     * 
+     *
      * @type {Array<BTMIndividualQueryWithOccurrenceBase904>}
      * @memberof BTMAssemblyFeature887
      */
     occurrenceQueriesFromAllConfigurations?: Array<BTMIndividualQueryWithOccurrenceBase904>;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof BTMAssemblyFeature887
      */
     parametricInstanceFeature?: boolean;
     /**
-     * 
+     *
      * @type {number}
      * @memberof BTMAssemblyFeature887
      */
@@ -115,12 +115,17 @@ export function instanceOfBTMAssemblyFeature887(value: object): boolean {
     return isInstance;
 }
 
-export function BTMAssemblyFeature887FromJSON(json: any): BTMAssemblyFeature887 {
+export function BTMAssemblyFeature887FromJSON(
+    json: any
+): BTMAssemblyFeature887 {
     return BTMAssemblyFeature887FromJSONTyped(json, false);
 }
 
-export function BTMAssemblyFeature887FromJSONTyped(json: any, ignoreDiscriminator: boolean): BTMAssemblyFeature887 {
-    if ((json === undefined) || (json === null)) {
+export function BTMAssemblyFeature887FromJSONTyped(
+    json: any,
+    ignoreDiscriminator: boolean
+): BTMAssemblyFeature887 {
+    if (json === undefined || json === null) {
         return json;
     }
     if (!ignoreDiscriminator) {
@@ -172,18 +177,40 @@ export function BTMAssemblyFeature887FromJSONTyped(json: any, ignoreDiscriminato
     }
     return {
         ...BTMFeature134FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
-        'auxiliaryTreeFeature': !exists(json, 'auxiliaryTreeFeature') ? undefined : json['auxiliaryTreeFeature'],
-        'featureFolder': !exists(json, 'featureFolder') ? undefined : json['featureFolder'],
-        'featureListFieldIndex': !exists(json, 'featureListFieldIndex') ? undefined : json['featureListFieldIndex'],
-        'fieldIndexForOwnedMateConnectors': !exists(json, 'fieldIndexForOwnedMateConnectors') ? undefined : json['fieldIndexForOwnedMateConnectors'],
-        'occurrenceQueriesFromAllConfigurations': !exists(json, 'occurrenceQueriesFromAllConfigurations') ? undefined : ((json['occurrenceQueriesFromAllConfigurations'] as Array<any>).map(BTMIndividualQueryWithOccurrenceBase904FromJSON)),
-        'parametricInstanceFeature': !exists(json, 'parametricInstanceFeature') ? undefined : json['parametricInstanceFeature'],
-        'version': !exists(json, 'version') ? undefined : json['version'],
+        btType: !exists(json, 'btType') ? undefined : json['btType'],
+        auxiliaryTreeFeature: !exists(json, 'auxiliaryTreeFeature')
+            ? undefined
+            : json['auxiliaryTreeFeature'],
+        featureFolder: !exists(json, 'featureFolder')
+            ? undefined
+            : json['featureFolder'],
+        featureListFieldIndex: !exists(json, 'featureListFieldIndex')
+            ? undefined
+            : json['featureListFieldIndex'],
+        fieldIndexForOwnedMateConnectors: !exists(
+            json,
+            'fieldIndexForOwnedMateConnectors'
+        )
+            ? undefined
+            : json['fieldIndexForOwnedMateConnectors'],
+        occurrenceQueriesFromAllConfigurations: !exists(
+            json,
+            'occurrenceQueriesFromAllConfigurations'
+        )
+            ? undefined
+            : (
+                  json['occurrenceQueriesFromAllConfigurations'] as Array<any>
+              ).map(BTMIndividualQueryWithOccurrenceBase904FromJSON),
+        parametricInstanceFeature: !exists(json, 'parametricInstanceFeature')
+            ? undefined
+            : json['parametricInstanceFeature'],
+        version: !exists(json, 'version') ? undefined : json['version'],
     };
 }
 
-export function BTMAssemblyFeature887ToJSON(value?: BTMAssemblyFeature887 | null): any {
+export function BTMAssemblyFeature887ToJSON(
+    value?: BTMAssemblyFeature887 | null
+): any {
     if (value === undefined) {
         return undefined;
     }
@@ -191,15 +218,20 @@ export function BTMAssemblyFeature887ToJSON(value?: BTMAssemblyFeature887 | null
         return null;
     }
     return {
-        ...BTMFeature134ToJSON(value),
-        'btType': value.btType,
-        'auxiliaryTreeFeature': value.auxiliaryTreeFeature,
-        'featureFolder': value.featureFolder,
-        'featureListFieldIndex': value.featureListFieldIndex,
-        'fieldIndexForOwnedMateConnectors': value.fieldIndexForOwnedMateConnectors,
-        'occurrenceQueriesFromAllConfigurations': value.occurrenceQueriesFromAllConfigurations === undefined ? undefined : ((value.occurrenceQueriesFromAllConfigurations as Array<any>).map(BTMIndividualQueryWithOccurrenceBase904ToJSON)),
-        'parametricInstanceFeature': value.parametricInstanceFeature,
-        'version': value.version,
+        ...BTMFeature134SuperToJSON(value),
+        btType: value.btType,
+        auxiliaryTreeFeature: value.auxiliaryTreeFeature,
+        featureFolder: value.featureFolder,
+        featureListFieldIndex: value.featureListFieldIndex,
+        fieldIndexForOwnedMateConnectors:
+            value.fieldIndexForOwnedMateConnectors,
+        occurrenceQueriesFromAllConfigurations:
+            value.occurrenceQueriesFromAllConfigurations === undefined
+                ? undefined
+                : (
+                      value.occurrenceQueriesFromAllConfigurations as Array<any>
+                  ).map(BTMIndividualQueryWithOccurrenceBase904ToJSON),
+        parametricInstanceFeature: value.parametricInstanceFeature,
+        version: value.version,
     };
 }
-

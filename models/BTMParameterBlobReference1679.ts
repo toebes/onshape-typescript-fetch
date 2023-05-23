@@ -19,7 +19,7 @@ import {
     BTMImport136FromJSONTyped,
     BTMImport136ToJSON,
 } from './BTMImport136';
-import type { BTMParameter1 } from './BTMParameter1';
+import { BTMParameter1, BTMParameter1SuperToJSON } from './BTMParameter1';
 import {
     BTMParameter1FromJSON,
     BTMParameter1FromJSONTyped,
@@ -27,25 +27,25 @@ import {
 } from './BTMParameter1';
 
 /**
- * 
+ *
  * @export
  * @interface BTMParameterBlobReference1679
  */
 export interface BTMParameterBlobReference1679 extends BTMParameter1 {
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTMParameterBlobReference1679
      */
     btType?: string;
     /**
-     * 
+     *
      * @type {BTMImport136}
      * @memberof BTMParameterBlobReference1679
      */
     blobImport?: BTMImport136;
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTMParameterBlobReference1679
      */
@@ -55,29 +55,40 @@ export interface BTMParameterBlobReference1679 extends BTMParameter1 {
 /**
  * Check if a given object implements the BTMParameterBlobReference1679 interface.
  */
-export function instanceOfBTMParameterBlobReference1679(value: object): boolean {
+export function instanceOfBTMParameterBlobReference1679(
+    value: object
+): boolean {
     let isInstance = true;
 
     return isInstance;
 }
 
-export function BTMParameterBlobReference1679FromJSON(json: any): BTMParameterBlobReference1679 {
+export function BTMParameterBlobReference1679FromJSON(
+    json: any
+): BTMParameterBlobReference1679 {
     return BTMParameterBlobReference1679FromJSONTyped(json, false);
 }
 
-export function BTMParameterBlobReference1679FromJSONTyped(json: any, ignoreDiscriminator: boolean): BTMParameterBlobReference1679 {
-    if ((json === undefined) || (json === null)) {
+export function BTMParameterBlobReference1679FromJSONTyped(
+    json: any,
+    ignoreDiscriminator: boolean
+): BTMParameterBlobReference1679 {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
         ...BTMParameter1FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
-        'blobImport': !exists(json, 'blobImport') ? undefined : BTMImport136FromJSON(json['blobImport']),
-        'namespace': !exists(json, 'namespace') ? undefined : json['namespace'],
+        btType: !exists(json, 'btType') ? undefined : json['btType'],
+        blobImport: !exists(json, 'blobImport')
+            ? undefined
+            : BTMImport136FromJSON(json['blobImport']),
+        namespace: !exists(json, 'namespace') ? undefined : json['namespace'],
     };
 }
 
-export function BTMParameterBlobReference1679ToJSON(value?: BTMParameterBlobReference1679 | null): any {
+export function BTMParameterBlobReference1679ToJSON(
+    value?: BTMParameterBlobReference1679 | null
+): any {
     if (value === undefined) {
         return undefined;
     }
@@ -85,10 +96,9 @@ export function BTMParameterBlobReference1679ToJSON(value?: BTMParameterBlobRefe
         return null;
     }
     return {
-        ...BTMParameter1ToJSON(value),
-        'btType': value.btType,
-        'blobImport': BTMImport136ToJSON(value.blobImport),
-        'namespace': value.namespace,
+        ...BTMParameter1SuperToJSON(value),
+        btType: value.btType,
+        blobImport: BTMImport136ToJSON(value.blobImport),
+        namespace: value.namespace,
     };
 }
-

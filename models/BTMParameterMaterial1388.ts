@@ -13,7 +13,7 @@
  */
 
 import { exists, mapValues } from '../runtime';
-import type { BTMParameter1 } from './BTMParameter1';
+import { BTMParameter1, BTMParameter1SuperToJSON } from './BTMParameter1';
 import {
     BTMParameter1FromJSON,
     BTMParameter1FromJSONTyped,
@@ -27,19 +27,19 @@ import {
 } from './BTPartMaterial1445';
 
 /**
- * 
+ *
  * @export
  * @interface BTMParameterMaterial1388
  */
 export interface BTMParameterMaterial1388 extends BTMParameter1 {
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTMParameterMaterial1388
      */
     btType?: string;
     /**
-     * 
+     *
      * @type {BTPartMaterial1445}
      * @memberof BTMParameterMaterial1388
      */
@@ -55,22 +55,31 @@ export function instanceOfBTMParameterMaterial1388(value: object): boolean {
     return isInstance;
 }
 
-export function BTMParameterMaterial1388FromJSON(json: any): BTMParameterMaterial1388 {
+export function BTMParameterMaterial1388FromJSON(
+    json: any
+): BTMParameterMaterial1388 {
     return BTMParameterMaterial1388FromJSONTyped(json, false);
 }
 
-export function BTMParameterMaterial1388FromJSONTyped(json: any, ignoreDiscriminator: boolean): BTMParameterMaterial1388 {
-    if ((json === undefined) || (json === null)) {
+export function BTMParameterMaterial1388FromJSONTyped(
+    json: any,
+    ignoreDiscriminator: boolean
+): BTMParameterMaterial1388 {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
         ...BTMParameter1FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
-        'material': !exists(json, 'material') ? undefined : BTPartMaterial1445FromJSON(json['material']),
+        btType: !exists(json, 'btType') ? undefined : json['btType'],
+        material: !exists(json, 'material')
+            ? undefined
+            : BTPartMaterial1445FromJSON(json['material']),
     };
 }
 
-export function BTMParameterMaterial1388ToJSON(value?: BTMParameterMaterial1388 | null): any {
+export function BTMParameterMaterial1388ToJSON(
+    value?: BTMParameterMaterial1388 | null
+): any {
     if (value === undefined) {
         return undefined;
     }
@@ -78,9 +87,8 @@ export function BTMParameterMaterial1388ToJSON(value?: BTMParameterMaterial1388 
         return null;
     }
     return {
-        ...BTMParameter1ToJSON(value),
-        'btType': value.btType,
-        'material': BTPartMaterial1445ToJSON(value.material),
+        ...BTMParameter1SuperToJSON(value),
+        btType: value.btType,
+        material: BTPartMaterial1445ToJSON(value.material),
     };
 }
-

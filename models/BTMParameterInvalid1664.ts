@@ -13,7 +13,7 @@
  */
 
 import { exists, mapValues } from '../runtime';
-import type { BTMParameter1 } from './BTMParameter1';
+import { BTMParameter1, BTMParameter1SuperToJSON } from './BTMParameter1';
 import {
     BTMParameter1FromJSON,
     BTMParameter1FromJSONTyped,
@@ -21,13 +21,13 @@ import {
 } from './BTMParameter1';
 
 /**
- * 
+ *
  * @export
  * @interface BTMParameterInvalid1664
  */
 export interface BTMParameterInvalid1664 extends BTMParameter1 {
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTMParameterInvalid1664
      */
@@ -43,21 +43,28 @@ export function instanceOfBTMParameterInvalid1664(value: object): boolean {
     return isInstance;
 }
 
-export function BTMParameterInvalid1664FromJSON(json: any): BTMParameterInvalid1664 {
+export function BTMParameterInvalid1664FromJSON(
+    json: any
+): BTMParameterInvalid1664 {
     return BTMParameterInvalid1664FromJSONTyped(json, false);
 }
 
-export function BTMParameterInvalid1664FromJSONTyped(json: any, ignoreDiscriminator: boolean): BTMParameterInvalid1664 {
-    if ((json === undefined) || (json === null)) {
+export function BTMParameterInvalid1664FromJSONTyped(
+    json: any,
+    ignoreDiscriminator: boolean
+): BTMParameterInvalid1664 {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
         ...BTMParameter1FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
+        btType: !exists(json, 'btType') ? undefined : json['btType'],
     };
 }
 
-export function BTMParameterInvalid1664ToJSON(value?: BTMParameterInvalid1664 | null): any {
+export function BTMParameterInvalid1664ToJSON(
+    value?: BTMParameterInvalid1664 | null
+): any {
     if (value === undefined) {
         return undefined;
     }
@@ -65,8 +72,7 @@ export function BTMParameterInvalid1664ToJSON(value?: BTMParameterInvalid1664 | 
         return null;
     }
     return {
-        ...BTMParameter1ToJSON(value),
-        'btType': value.btType,
+        ...BTMParameter1SuperToJSON(value),
+        btType: value.btType,
     };
 }
-

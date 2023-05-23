@@ -13,49 +13,47 @@
  */
 
 import { exists, mapValues } from '../runtime';
-import type { BTMParameter1 } from './BTMParameter1';
+import { BTMParameter1, BTMParameter1SuperToJSON } from './BTMParameter1';
 import {
     BTMParameter1FromJSON,
     BTMParameter1FromJSONTyped,
     BTMParameter1ToJSON,
 } from './BTMParameter1';
 
-import {
-     BTMParameterNullableQuantity807FromJSONTyped
-} from './';
+import { BTMParameterNullableQuantity807FromJSONTyped } from './';
 
 /**
- * 
+ *
  * @export
  * @interface BTMParameterQuantity147
  */
 export interface BTMParameterQuantity147 extends BTMParameter1 {
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTMParameterQuantity147
      */
     btType?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTMParameterQuantity147
      */
     expression?: string;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof BTMParameterQuantity147
      */
     isInteger?: boolean;
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTMParameterQuantity147
      */
     units?: string;
     /**
-     * 
+     *
      * @type {number}
      * @memberof BTMParameterQuantity147
      */
@@ -71,12 +69,17 @@ export function instanceOfBTMParameterQuantity147(value: object): boolean {
     return isInstance;
 }
 
-export function BTMParameterQuantity147FromJSON(json: any): BTMParameterQuantity147 {
+export function BTMParameterQuantity147FromJSON(
+    json: any
+): BTMParameterQuantity147 {
     return BTMParameterQuantity147FromJSONTyped(json, false);
 }
 
-export function BTMParameterQuantity147FromJSONTyped(json: any, ignoreDiscriminator: boolean): BTMParameterQuantity147 {
-    if ((json === undefined) || (json === null)) {
+export function BTMParameterQuantity147FromJSONTyped(
+    json: any,
+    ignoreDiscriminator: boolean
+): BTMParameterQuantity147 {
+    if (json === undefined || json === null) {
         return json;
     }
     if (!ignoreDiscriminator) {
@@ -86,15 +89,19 @@ export function BTMParameterQuantity147FromJSONTyped(json: any, ignoreDiscrimina
     }
     return {
         ...BTMParameter1FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
-        'expression': !exists(json, 'expression') ? undefined : json['expression'],
-        'isInteger': !exists(json, 'isInteger') ? undefined : json['isInteger'],
-        'units': !exists(json, 'units') ? undefined : json['units'],
-        'value': !exists(json, 'value') ? undefined : json['value'],
+        btType: !exists(json, 'btType') ? undefined : json['btType'],
+        expression: !exists(json, 'expression')
+            ? undefined
+            : json['expression'],
+        isInteger: !exists(json, 'isInteger') ? undefined : json['isInteger'],
+        units: !exists(json, 'units') ? undefined : json['units'],
+        value: !exists(json, 'value') ? undefined : json['value'],
     };
 }
 
-export function BTMParameterQuantity147ToJSON(value?: BTMParameterQuantity147 | null): any {
+export function BTMParameterQuantity147ToJSON(
+    value?: BTMParameterQuantity147 | null
+): any {
     if (value === undefined) {
         return undefined;
     }
@@ -102,12 +109,11 @@ export function BTMParameterQuantity147ToJSON(value?: BTMParameterQuantity147 | 
         return null;
     }
     return {
-        ...BTMParameter1ToJSON(value),
-        'btType': value.btType,
-        'expression': value.expression,
-        'isInteger': value.isInteger,
-        'units': value.units,
-        'value': value.value,
+        ...BTMParameter1SuperToJSON(value),
+        btType: value.btType,
+        expression: value.expression,
+        isInteger: value.isInteger,
+        units: value.units,
+        value: value.value,
     };
 }
-

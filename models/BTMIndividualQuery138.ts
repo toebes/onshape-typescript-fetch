@@ -13,7 +13,10 @@
  */
 
 import { exists, mapValues } from '../runtime';
-import type { BTMIndividualQueryBase139 } from './BTMIndividualQueryBase139';
+import {
+    BTMIndividualQueryBase139,
+    BTMIndividualQuerySuper139ToJSON,
+} from './BTMIndividualQueryBase139';
 import {
     BTMIndividualQueryBase139FromJSON,
     BTMIndividualQueryBase139FromJSONTyped,
@@ -133,7 +136,7 @@ export function BTMIndividualQuery138BaseToJSON(
         return null;
     }
     return {
-        ...BTMIndividualQueryBase139ToJSON(value),
+        ...BTMIndividualQuerySuper139ToJSON(value),
         btType: value.btType,
         persistentQuery: BTPStatement269ToJSON(value.persistentQuery),
         queryStatement: BTPStatement269ToJSON(value.queryStatement),

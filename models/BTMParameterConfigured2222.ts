@@ -19,7 +19,7 @@ import {
     BTMConfiguredValue1341FromJSONTyped,
     BTMConfiguredValue1341ToJSON,
 } from './BTMConfiguredValue1341';
-import type { BTMParameter1 } from './BTMParameter1';
+import { BTMParameter1, BTMParameter1SuperToJSON } from './BTMParameter1';
 import {
     BTMParameter1FromJSON,
     BTMParameter1FromJSONTyped,
@@ -27,37 +27,37 @@ import {
 } from './BTMParameter1';
 
 /**
- * 
+ *
  * @export
  * @interface BTMParameterConfigured2222
  */
 export interface BTMParameterConfigured2222 extends BTMParameter1 {
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTMParameterConfigured2222
      */
     btType?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTMParameterConfigured2222
      */
     configurationParameterId?: string;
     /**
-     * 
+     *
      * @type {number}
      * @memberof BTMParameterConfigured2222
      */
     configurationParameterIdFieldIndex?: number;
     /**
-     * 
+     *
      * @type {Array<BTMConfiguredValue1341>}
      * @memberof BTMParameterConfigured2222
      */
     values?: Array<BTMConfiguredValue1341>;
     /**
-     * 
+     *
      * @type {number}
      * @memberof BTMParameterConfigured2222
      */
@@ -73,25 +73,45 @@ export function instanceOfBTMParameterConfigured2222(value: object): boolean {
     return isInstance;
 }
 
-export function BTMParameterConfigured2222FromJSON(json: any): BTMParameterConfigured2222 {
+export function BTMParameterConfigured2222FromJSON(
+    json: any
+): BTMParameterConfigured2222 {
     return BTMParameterConfigured2222FromJSONTyped(json, false);
 }
 
-export function BTMParameterConfigured2222FromJSONTyped(json: any, ignoreDiscriminator: boolean): BTMParameterConfigured2222 {
-    if ((json === undefined) || (json === null)) {
+export function BTMParameterConfigured2222FromJSONTyped(
+    json: any,
+    ignoreDiscriminator: boolean
+): BTMParameterConfigured2222 {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
         ...BTMParameter1FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
-        'configurationParameterId': !exists(json, 'configurationParameterId') ? undefined : json['configurationParameterId'],
-        'configurationParameterIdFieldIndex': !exists(json, 'configurationParameterIdFieldIndex') ? undefined : json['configurationParameterIdFieldIndex'],
-        'values': !exists(json, 'values') ? undefined : ((json['values'] as Array<any>).map(BTMConfiguredValue1341FromJSON)),
-        'valuesFieldIndex': !exists(json, 'valuesFieldIndex') ? undefined : json['valuesFieldIndex'],
+        btType: !exists(json, 'btType') ? undefined : json['btType'],
+        configurationParameterId: !exists(json, 'configurationParameterId')
+            ? undefined
+            : json['configurationParameterId'],
+        configurationParameterIdFieldIndex: !exists(
+            json,
+            'configurationParameterIdFieldIndex'
+        )
+            ? undefined
+            : json['configurationParameterIdFieldIndex'],
+        values: !exists(json, 'values')
+            ? undefined
+            : (json['values'] as Array<any>).map(
+                  BTMConfiguredValue1341FromJSON
+              ),
+        valuesFieldIndex: !exists(json, 'valuesFieldIndex')
+            ? undefined
+            : json['valuesFieldIndex'],
     };
 }
 
-export function BTMParameterConfigured2222ToJSON(value?: BTMParameterConfigured2222 | null): any {
+export function BTMParameterConfigured2222ToJSON(
+    value?: BTMParameterConfigured2222 | null
+): any {
     if (value === undefined) {
         return undefined;
     }
@@ -99,12 +119,17 @@ export function BTMParameterConfigured2222ToJSON(value?: BTMParameterConfigured2
         return null;
     }
     return {
-        ...BTMParameter1ToJSON(value),
-        'btType': value.btType,
-        'configurationParameterId': value.configurationParameterId,
-        'configurationParameterIdFieldIndex': value.configurationParameterIdFieldIndex,
-        'values': value.values === undefined ? undefined : ((value.values as Array<any>).map(BTMConfiguredValue1341ToJSON)),
-        'valuesFieldIndex': value.valuesFieldIndex,
+        ...BTMParameter1SuperToJSON(value),
+        btType: value.btType,
+        configurationParameterId: value.configurationParameterId,
+        configurationParameterIdFieldIndex:
+            value.configurationParameterIdFieldIndex,
+        values:
+            value.values === undefined
+                ? undefined
+                : (value.values as Array<any>).map(
+                      BTMConfiguredValue1341ToJSON
+                  ),
+        valuesFieldIndex: value.valuesFieldIndex,
     };
 }
-

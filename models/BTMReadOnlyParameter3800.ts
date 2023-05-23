@@ -13,7 +13,7 @@
  */
 
 import { exists, mapValues } from '../runtime';
-import type { BTMParameter1 } from './BTMParameter1';
+import { BTMParameter1, BTMParameter1SuperToJSON } from './BTMParameter1';
 import {
     BTMParameter1FromJSON,
     BTMParameter1FromJSONTyped,
@@ -21,18 +21,18 @@ import {
 } from './BTMParameter1';
 
 import {
-     BTMParameterProgress3232FromJSONTyped,
-     BTMParameterStringWithTolerances4286FromJSONTyped
+    BTMParameterProgress3232FromJSONTyped,
+    BTMParameterStringWithTolerances4286FromJSONTyped,
 } from './';
 
 /**
- * 
+ *
  * @export
  * @interface BTMReadOnlyParameter3800
  */
 export interface BTMReadOnlyParameter3800 extends BTMParameter1 {
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTMReadOnlyParameter3800
      */
@@ -48,12 +48,17 @@ export function instanceOfBTMReadOnlyParameter3800(value: object): boolean {
     return isInstance;
 }
 
-export function BTMReadOnlyParameter3800FromJSON(json: any): BTMReadOnlyParameter3800 {
+export function BTMReadOnlyParameter3800FromJSON(
+    json: any
+): BTMReadOnlyParameter3800 {
     return BTMReadOnlyParameter3800FromJSONTyped(json, false);
 }
 
-export function BTMReadOnlyParameter3800FromJSONTyped(json: any, ignoreDiscriminator: boolean): BTMReadOnlyParameter3800 {
-    if ((json === undefined) || (json === null)) {
+export function BTMReadOnlyParameter3800FromJSONTyped(
+    json: any,
+    ignoreDiscriminator: boolean
+): BTMReadOnlyParameter3800 {
+    if (json === undefined || json === null) {
         return json;
     }
     if (!ignoreDiscriminator) {
@@ -61,16 +66,21 @@ export function BTMReadOnlyParameter3800FromJSONTyped(json: any, ignoreDiscrimin
             return BTMParameterProgress3232FromJSONTyped(json, true);
         }
         if (json['btType'] === 'BTMParameterStringWithTolerances-4286') {
-            return BTMParameterStringWithTolerances4286FromJSONTyped(json, true);
+            return BTMParameterStringWithTolerances4286FromJSONTyped(
+                json,
+                true
+            );
         }
     }
     return {
         ...BTMParameter1FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
+        btType: !exists(json, 'btType') ? undefined : json['btType'],
     };
 }
 
-export function BTMReadOnlyParameter3800ToJSON(value?: BTMReadOnlyParameter3800 | null): any {
+export function BTMReadOnlyParameter3800ToJSON(
+    value?: BTMReadOnlyParameter3800 | null
+): any {
     if (value === undefined) {
         return undefined;
     }
@@ -78,8 +88,7 @@ export function BTMReadOnlyParameter3800ToJSON(value?: BTMReadOnlyParameter3800 
         return null;
     }
     return {
-        ...BTMParameter1ToJSON(value),
-        'btType': value.btType,
+        ...BTMParameter1SuperToJSON(value),
+        btType: value.btType,
     };
 }
-

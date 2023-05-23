@@ -13,7 +13,7 @@
  */
 
 import { exists, mapValues } from '../runtime';
-import type { BTMParameter1 } from './BTMParameter1';
+import { BTMParameter1, BTMParameter1SuperToJSON } from './BTMParameter1';
 import {
     BTMParameter1FromJSON,
     BTMParameter1FromJSONTyped,
@@ -21,50 +21,59 @@ import {
 } from './BTMParameter1';
 
 /**
- * 
+ *
  * @export
  * @interface BTMParameterLookupTablePath1419
  */
 export interface BTMParameterLookupTablePath1419 extends BTMParameter1 {
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTMParameterLookupTablePath1419
      */
     btType?: string;
     /**
-     * 
+     *
      * @type {{ [key: string]: string; }}
      * @memberof BTMParameterLookupTablePath1419
      */
-    value?: { [key: string]: string; };
+    value?: { [key: string]: string };
 }
 
 /**
  * Check if a given object implements the BTMParameterLookupTablePath1419 interface.
  */
-export function instanceOfBTMParameterLookupTablePath1419(value: object): boolean {
+export function instanceOfBTMParameterLookupTablePath1419(
+    value: object
+): boolean {
     let isInstance = true;
 
     return isInstance;
 }
 
-export function BTMParameterLookupTablePath1419FromJSON(json: any): BTMParameterLookupTablePath1419 {
+export function BTMParameterLookupTablePath1419FromJSON(
+    json: any
+): BTMParameterLookupTablePath1419 {
     return BTMParameterLookupTablePath1419FromJSONTyped(json, false);
 }
 
-export function BTMParameterLookupTablePath1419FromJSONTyped(json: any, ignoreDiscriminator: boolean): BTMParameterLookupTablePath1419 {
-    if ((json === undefined) || (json === null)) {
+export function BTMParameterLookupTablePath1419FromJSONTyped(
+    json: any,
+    ignoreDiscriminator: boolean
+): BTMParameterLookupTablePath1419 {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
         ...BTMParameter1FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
-        'value': !exists(json, 'value') ? undefined : json['value'],
+        btType: !exists(json, 'btType') ? undefined : json['btType'],
+        value: !exists(json, 'value') ? undefined : json['value'],
     };
 }
 
-export function BTMParameterLookupTablePath1419ToJSON(value?: BTMParameterLookupTablePath1419 | null): any {
+export function BTMParameterLookupTablePath1419ToJSON(
+    value?: BTMParameterLookupTablePath1419 | null
+): any {
     if (value === undefined) {
         return undefined;
     }
@@ -72,9 +81,8 @@ export function BTMParameterLookupTablePath1419ToJSON(value?: BTMParameterLookup
         return null;
     }
     return {
-        ...BTMParameter1ToJSON(value),
-        'btType': value.btType,
-        'value': value.value,
+        ...BTMParameter1SuperToJSON(value),
+        btType: value.btType,
+        value: value.value,
     };
 }
-

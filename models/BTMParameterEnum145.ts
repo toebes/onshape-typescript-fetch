@@ -13,7 +13,7 @@
  */
 
 import { exists, mapValues } from '../runtime';
-import type { BTMParameter1 } from './BTMParameter1';
+import { BTMParameter1, BTMParameter1SuperToJSON } from './BTMParameter1';
 import {
     BTMParameter1FromJSON,
     BTMParameter1FromJSONTyped,
@@ -21,31 +21,31 @@ import {
 } from './BTMParameter1';
 
 /**
- * 
+ *
  * @export
  * @interface BTMParameterEnum145
  */
 export interface BTMParameterEnum145 extends BTMParameter1 {
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTMParameterEnum145
      */
     btType?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTMParameterEnum145
      */
     enumName?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTMParameterEnum145
      */
     namespace?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTMParameterEnum145
      */
@@ -65,20 +65,25 @@ export function BTMParameterEnum145FromJSON(json: any): BTMParameterEnum145 {
     return BTMParameterEnum145FromJSONTyped(json, false);
 }
 
-export function BTMParameterEnum145FromJSONTyped(json: any, ignoreDiscriminator: boolean): BTMParameterEnum145 {
-    if ((json === undefined) || (json === null)) {
+export function BTMParameterEnum145FromJSONTyped(
+    json: any,
+    ignoreDiscriminator: boolean
+): BTMParameterEnum145 {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
         ...BTMParameter1FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
-        'enumName': !exists(json, 'enumName') ? undefined : json['enumName'],
-        'namespace': !exists(json, 'namespace') ? undefined : json['namespace'],
-        'value': !exists(json, 'value') ? undefined : json['value'],
+        btType: !exists(json, 'btType') ? undefined : json['btType'],
+        enumName: !exists(json, 'enumName') ? undefined : json['enumName'],
+        namespace: !exists(json, 'namespace') ? undefined : json['namespace'],
+        value: !exists(json, 'value') ? undefined : json['value'],
     };
 }
 
-export function BTMParameterEnum145ToJSON(value?: BTMParameterEnum145 | null): any {
+export function BTMParameterEnum145ToJSON(
+    value?: BTMParameterEnum145 | null
+): any {
     if (value === undefined) {
         return undefined;
     }
@@ -86,11 +91,10 @@ export function BTMParameterEnum145ToJSON(value?: BTMParameterEnum145 | null): a
         return null;
     }
     return {
-        ...BTMParameter1ToJSON(value),
-        'btType': value.btType,
-        'enumName': value.enumName,
-        'namespace': value.namespace,
-        'value': value.value,
+        ...BTMParameter1SuperToJSON(value),
+        btType: value.btType,
+        enumName: value.enumName,
+        namespace: value.namespace,
+        value: value.value,
     };
 }
-

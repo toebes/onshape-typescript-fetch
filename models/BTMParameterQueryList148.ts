@@ -19,7 +19,7 @@ import {
     BTMIndividualQueryBase139FromJSONTyped,
     BTMIndividualQueryBase139ToJSON,
 } from './BTMIndividualQueryBase139';
-import type { BTMParameter1 } from './BTMParameter1';
+import { BTMParameter1, BTMParameter1SuperToJSON } from './BTMParameter1';
 import {
     BTMParameter1FromJSON,
     BTMParameter1FromJSONTyped,
@@ -27,19 +27,19 @@ import {
 } from './BTMParameter1';
 
 /**
- * 
+ *
  * @export
  * @interface BTMParameterQueryList148
  */
 export interface BTMParameterQueryList148 extends BTMParameter1 {
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTMParameterQueryList148
      */
     btType?: string;
     /**
-     * 
+     *
      * @type {Array<BTMIndividualQueryBase139>}
      * @memberof BTMParameterQueryList148
      */
@@ -55,22 +55,33 @@ export function instanceOfBTMParameterQueryList148(value: object): boolean {
     return isInstance;
 }
 
-export function BTMParameterQueryList148FromJSON(json: any): BTMParameterQueryList148 {
+export function BTMParameterQueryList148FromJSON(
+    json: any
+): BTMParameterQueryList148 {
     return BTMParameterQueryList148FromJSONTyped(json, false);
 }
 
-export function BTMParameterQueryList148FromJSONTyped(json: any, ignoreDiscriminator: boolean): BTMParameterQueryList148 {
-    if ((json === undefined) || (json === null)) {
+export function BTMParameterQueryList148FromJSONTyped(
+    json: any,
+    ignoreDiscriminator: boolean
+): BTMParameterQueryList148 {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
         ...BTMParameter1FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
-        'queries': !exists(json, 'queries') ? undefined : ((json['queries'] as Array<any>).map(BTMIndividualQueryBase139FromJSON)),
+        btType: !exists(json, 'btType') ? undefined : json['btType'],
+        queries: !exists(json, 'queries')
+            ? undefined
+            : (json['queries'] as Array<any>).map(
+                  BTMIndividualQueryBase139FromJSON
+              ),
     };
 }
 
-export function BTMParameterQueryList148ToJSON(value?: BTMParameterQueryList148 | null): any {
+export function BTMParameterQueryList148ToJSON(
+    value?: BTMParameterQueryList148 | null
+): any {
     if (value === undefined) {
         return undefined;
     }
@@ -78,9 +89,13 @@ export function BTMParameterQueryList148ToJSON(value?: BTMParameterQueryList148 
         return null;
     }
     return {
-        ...BTMParameter1ToJSON(value),
-        'btType': value.btType,
-        'queries': value.queries === undefined ? undefined : ((value.queries as Array<any>).map(BTMIndividualQueryBase139ToJSON)),
+        ...BTMParameter1SuperToJSON(value),
+        btType: value.btType,
+        queries:
+            value.queries === undefined
+                ? undefined
+                : (value.queries as Array<any>).map(
+                      BTMIndividualQueryBase139ToJSON
+                  ),
     };
 }
-
