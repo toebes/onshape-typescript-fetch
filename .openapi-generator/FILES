@@ -241,6 +241,8 @@ models/BTCurveGeometrySpline118AllOf.ts
 models/BTCurveLengthDimensionDisplayData322.ts
 models/BTCylinderDescription686.ts
 models/BTCylinderDescription686AllOf.ts
+models/BTCylindricalImageMapping1640.ts
+models/BTCylindricalImageMapping1640AllOf.ts
 models/BTDebugGeometry2059.ts
 models/BTDebugGeometry2059AllOf.ts
 models/BTDecal2404.ts
@@ -287,6 +289,7 @@ models/BTEditingLogic2350.ts
 models/BTElementDisplayData326.ts
 models/BTElementLibraryPurpose3353.ts
 models/BTElementLibraryReferenceData3133.ts
+models/BTElementLibrarySummaryInfo.ts
 models/BTElementLocationParams.ts
 models/BTElementMergeInfo.ts
 models/BTElementReference725.ts
