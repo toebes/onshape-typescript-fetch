@@ -35623,6 +35623,12 @@
               },
               "namespace": {
                 "type": "string"
+              },
+              "configuration": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/BTMParameter-1"
+                }
               }
             }
           }

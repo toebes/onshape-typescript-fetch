@@ -62,6 +62,12 @@ export interface BTMParameterDerived864 extends BTMParameter1 {
      * @memberof BTMParameterDerived864
      */
     namespace?: string;
+    /**
+     *
+     * @type {Array<BTMParameter1>}
+     * @memberof BTMParameterDerived864
+     */
+    _configuration?: Array<BTMParameter1>;
 }
 
 /**
@@ -96,6 +102,9 @@ export function BTMParameterDerived864FromJSONTyped(
             ? undefined
             : BTPModuleId235FromJSON(json['moduleId']),
         namespace: !exists(json, 'namespace') ? undefined : json['namespace'],
+        _configuration: !exists(json, 'configuration')
+            ? undefined
+            : (json['configuration'] as Array<any>).map(BTMParameter1FromJSON),
     };
 }
 

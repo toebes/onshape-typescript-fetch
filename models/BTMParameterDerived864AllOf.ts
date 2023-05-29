@@ -19,6 +19,12 @@ import {
     BTMImport136FromJSONTyped,
     BTMImport136ToJSON,
 } from './BTMImport136';
+import type { BTMParameter1 } from './BTMParameter1';
+import {
+    BTMParameter1FromJSON,
+    BTMParameter1FromJSONTyped,
+    BTMParameter1ToJSON,
+} from './BTMParameter1';
 import type { BTPModuleId235 } from './BTPModuleId235';
 import {
     BTPModuleId235FromJSON,
@@ -56,6 +62,12 @@ export interface BTMParameterDerived864AllOf {
      * @memberof BTMParameterDerived864AllOf
      */
     namespace?: string;
+    /**
+     * 
+     * @type {Array<BTMParameter1>}
+     * @memberof BTMParameterDerived864AllOf
+     */
+    _configuration?: Array<BTMParameter1>;
 }
 
 /**
@@ -81,6 +93,7 @@ export function BTMParameterDerived864AllOfFromJSONTyped(json: any, ignoreDiscri
         'imports': !exists(json, 'imports') ? undefined : ((json['imports'] as Array<any>).map(BTMImport136FromJSON)),
         'moduleId': !exists(json, 'moduleId') ? undefined : BTPModuleId235FromJSON(json['moduleId']),
         'namespace': !exists(json, 'namespace') ? undefined : json['namespace'],
+        '_configuration': !exists(json, 'configuration') ? undefined : ((json['configuration'] as Array<any>).map(BTMParameter1FromJSON)),
     };
 }
 
@@ -97,6 +110,7 @@ export function BTMParameterDerived864AllOfToJSON(value?: BTMParameterDerived864
         'imports': value.imports === undefined ? undefined : ((value.imports as Array<any>).map(BTMImport136ToJSON)),
         'moduleId': BTPModuleId235ToJSON(value.moduleId),
         'namespace': value.namespace,
+        'configuration': value._configuration === undefined ? undefined : ((value._configuration as Array<any>).map(BTMParameter1ToJSON)),
     };
 }
 

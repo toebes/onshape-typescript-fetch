@@ -1772,6 +1772,16 @@
                     "description": "File to upload.",
                     "format": "binary"
                 }
+            },
+            {
+                "key": "components.schemas['BTMParameterDerived-864'].allOf[1].properties.configuration",
+                "type": "update",
+                "value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/components/schemas/BTMParameter-1"
+                    }
+                }
             }
         ]
     }
