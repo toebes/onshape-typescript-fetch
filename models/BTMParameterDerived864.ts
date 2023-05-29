@@ -126,5 +126,9 @@ export function BTMParameterDerived864ToJSON(
                 : (value.imports as Array<any>).map(BTMImport136ToJSON),
         moduleId: BTPModuleId235ToJSON(value.moduleId),
         namespace: value.namespace,
+        configuration:
+            value._configuration === undefined
+                ? undefined
+                : (value._configuration as Array<any>).map(BTMParameter1ToJSON),
     };
 }
