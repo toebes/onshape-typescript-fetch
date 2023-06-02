@@ -1,0 +1,144 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Example Inheritence",
+        "description": "Example showing inheritance issue",
+        "contact": {
+            "email": "john@toebes.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": ""
+    },
+    "servers": [
+        {
+            "url": "https://sample.com/"
+        }
+    ],
+    "security": [
+        {
+            "BasicAuth": []
+        }
+    ],
+    "paths": {
+        "/example": {
+            "post": {
+                "operationId": "postExample",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/json;charset=UTF-8; qs=0.09": {
+                            "schema": {
+                                "$ref": "#/components/schemas/POSTBody"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "default response",
+                        "content": {
+                            "application/json;charset=UTF-8; qs=0.09": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ExampleResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "POSTBody": {
+                "type": "object",
+                "properties": {
+                    "base": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Base"
+                        }
+                    }
+                }
+            },
+            "ExampleResponse": {
+                "type": "object",
+                "properties": {
+                    "base": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Base"
+                        }
+                    }
+                }
+            },
+            "Base": {
+                "type": "object",
+                "properties": {
+                    "discrim": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    }
+                },
+                "discriminator": {
+                    "propertyName": "discrim",
+                    "mapping": {
+                        "Sub1": "#/components/schemas/Sub1",
+                        "Sub2": "#/components/schemas/Sub2"
+                    }
+                }
+            },
+            "Sub1": {
+                "type": "object",
+                "properties": {
+                    "discrim": {
+                        "type": "string"
+                    },
+                    "Sub1Field1": {
+                        "type": "string"
+                    }
+                },
+                "discriminator": {
+                    "propertyName": "discrim",
+                    "mapping": {
+                        "Sub1": "#/components/schemas/Sub1",
+                        "Sub2": "#/components/schemas/Sub2"
+                    }
+                },
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/Base"
+                    }
+                ]
+            },
+            "Sub2": {
+                "type": "object",
+                "properties": {
+                    "discrim": {
+                        "type": "string"
+                    },
+                    "Sub1Field2": {
+                        "type": "string"
+                    }
+                },
+                "discriminator": {
+                    "propertyName": "discrim",
+                    "mapping": {
+                        "Sub1": "#/components/schemas/Sub1",
+                        "Sub2": "#/components/schemas/Sub2"
+                    }
+                },
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/Base"
+                    }
+                ]
+            }
+        }
+    }
+}
