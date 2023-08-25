@@ -19,6 +19,7 @@ apis/GlobalTreeNodesApi.ts
 apis/InsertableApi.ts
 apis/MetadataApi.ts
 apis/MetadataCategoryApi.ts
+apis/NumberingSchemeApi.ts
 apis/OpenApiApi.ts
 apis/PartApi.ts
 apis/PartNumberApi.ts
@@ -517,6 +518,8 @@ models/BTMFeatureQueryWithOccurrence157.ts
 models/BTMFeatureQueryWithOccurrence157AllOf.ts
 models/BTMFolder3208.ts
 models/BTMFolder3208AllOf.ts
+models/BTMGenerativeDesignFeature3195.ts
+models/BTMGenerativeDesignFeature3195AllOf.ts
 models/BTMGeometryMate1260.ts
 models/BTMImport136.ts
 models/BTMInContextQuery2254.ts
@@ -576,6 +579,8 @@ models/BTMParameterLookupTablePath1419.ts
 models/BTMParameterLookupTablePath1419AllOf.ts
 models/BTMParameterMaterial1388.ts
 models/BTMParameterMaterial1388AllOf.ts
+models/BTMParameterMultiEnum3411.ts
+models/BTMParameterMultiEnum3411AllOf.ts
 models/BTMParameterNullableQuantity807.ts
 models/BTMParameterNullableQuantity807AllOf.ts
 models/BTMParameterProgress3232.ts
@@ -659,6 +664,7 @@ models/BTMetadataEnumValueInfo.ts
 models/BTMetadataObjectInfo.ts
 models/BTMetadataObjectListInfoBTMetadataElementInfo.ts
 models/BTMetadataObjectListInfoBTMetadataPartInfo.ts
+models/BTMetadataObjectType.ts
 models/BTMetadataPartInfo.ts
 models/BTMetadataPartInfoAllOf.ts
 models/BTMetadataPropertyInfo.ts
@@ -833,6 +839,8 @@ models/BTParameterSpecAppearance1740.ts
 models/BTParameterSpecArray2600.ts
 models/BTParameterSpecArray2600AllOf.ts
 models/BTParameterSpecBoolean170.ts
+models/BTParameterSpecCategories4083.ts
+models/BTParameterSpecCategories4083AllOf.ts
 models/BTParameterSpecDatabase1071.ts
 models/BTParameterSpecDerived736.ts
 models/BTParameterSpecEnum171.ts
@@ -842,6 +850,8 @@ models/BTParameterSpecForeignId172.ts
 models/BTParameterSpecLookupTablePath761.ts
 models/BTParameterSpecLookupTablePath761AllOf.ts
 models/BTParameterSpecMaterial2700.ts
+models/BTParameterSpecMultiEnum3118.ts
+models/BTParameterSpecMultiEnum3118AllOf.ts
 models/BTParameterSpecNullableQuantity715.ts
 models/BTParameterSpecNullableQuantity715AllOf.ts
 models/BTParameterSpecProgress3078.ts
@@ -1169,7 +1179,6 @@ models/GBTEntityInferenceType.ts
 models/GBTEntityType.ts
 models/GBTErrorStringEnum.ts
 models/GBTFeatureFilterExclusion.ts
-models/GBTFeatureScriptVersionNumber.ts
 models/GBTFilterFlattenedGeometryOptions.ts
 models/GBTGeometryType.ts
 models/GBTInsertableType.ts
@@ -1192,6 +1201,7 @@ models/GBTPartStudioInstanceType.ts
 models/GBTPartStudioItemType.ts
 models/GBTPartVisibility.ts
 models/GBTPatternType.ts
+models/GBTPreProcessParasolidOption.ts
 models/GBTQuantityType.ts
 models/GBTRadiusDisplay.ts
 models/GBTSimulationContactBehavior.ts

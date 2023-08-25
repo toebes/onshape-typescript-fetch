@@ -4,9 +4,10 @@
   "description": "Onshape Typescript-fetch library",
   "main": "index.ts",
   "scripts": {
-    "build": "npm install && npm run genmodspec && npm run compilespec",
+    "build": "npm install && npm run genmodspec && npm run compilespec && npm run patchspec",
     "genmodspec": "node gen_modified_openapi.js",
     "compilespec": "npx @openapitools/openapi-generator-cli generate -i modified_openapi.json -g typescript-fetch",
+    "patchspec": "node fix_tojson.js --dir models",
     "test": "echo \"Error: no test specified\" && exit 1",
     "docs": "npx typedoc --out docs index.ts"
   },
@@ -27,6 +28,7 @@
   "devDependencies": {
     "@openapitools/openapi-generator-cli": "^2.5.2",
     "json": "^11.0.0",
-    "typedoc": "^0.23.26"
+    "typedoc": "^0.23.26",
+    "yargs": "^17.7.2"
   }
 }

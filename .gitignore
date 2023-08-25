@@ -1,4 +1,11 @@
 node_modules
 openapi.out
 todo.txt
-minimal.json
+minimal*.json
+testing/models
+testing/*.jar
+testing/o*.json
+testing/*.ts
+testing/.openapi-generator
+testing/apis
+testing/.openapi-generator-ignore
