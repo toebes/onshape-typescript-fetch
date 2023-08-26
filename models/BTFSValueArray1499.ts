@@ -18,22 +18,23 @@ import {
     BTFSValue1888FromJSON,
     BTFSValue1888FromJSONTyped,
     BTFSValue1888SuperToJSON,
+    BTFSValue1888ToJSON,
 } from './BTFSValue1888';
 
 /**
- * 
+ *
  * @export
  * @interface BTFSValueArray1499
  */
 export interface BTFSValueArray1499 extends BTFSValue1888 {
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTFSValueArray1499
      */
     btType: string;
     /**
-     * 
+     *
      * @type {Array<BTFSValue1888>}
      * @memberof BTFSValueArray1499
      */
@@ -45,7 +46,7 @@ export interface BTFSValueArray1499 extends BTFSValue1888 {
  */
 export function instanceOfBTFSValueArray1499(value: object): boolean {
     let isInstance = true;
-    isInstance = isInstance && "btType" in value;
+    isInstance = isInstance && 'btType' in value;
 
     return isInstance;
 }
@@ -54,18 +55,25 @@ export function BTFSValueArray1499FromJSON(json: any): BTFSValueArray1499 {
     return BTFSValueArray1499FromJSONTyped(json, false);
 }
 
-export function BTFSValueArray1499FromJSONTyped(json: any, ignoreDiscriminator: boolean): BTFSValueArray1499 {
-    if ((json === undefined) || (json === null)) {
+export function BTFSValueArray1499FromJSONTyped(
+    json: any,
+    ignoreDiscriminator: boolean
+): BTFSValueArray1499 {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
         ...BTFSValue1888FromJSONTyped(json, ignoreDiscriminator),
-        'btType': json['btType'],
-        'value': !exists(json, 'value') ? undefined : ((json['value'] as Array<any>).map(BTFSValue1888FromJSON)),
+        btType: json['btType'],
+        value: !exists(json, 'value')
+            ? undefined
+            : (json['value'] as Array<any>).map(BTFSValue1888FromJSON),
     };
 }
 
-export function BTFSValueArray1499ToJSON(value?: BTFSValueArray1499 | null): any {
+export function BTFSValueArray1499ToJSON(
+    value?: BTFSValueArray1499 | null
+): any {
     if (value === undefined) {
         return undefined;
     }
@@ -74,8 +82,10 @@ export function BTFSValueArray1499ToJSON(value?: BTFSValueArray1499 | null): any
     }
     return {
         ...BTFSValue1888SuperToJSON(value),
-        'btType': value.btType,
-        'value': value.value === undefined ? undefined : ((value.value as Array<any>).map(BTFSValue1888ToJSON)),
+        btType: value.btType,
+        value:
+            value.value === undefined
+                ? undefined
+                : (value.value as Array<any>).map(BTFSValue1888ToJSON),
     };
 }
-

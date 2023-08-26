@@ -24,22 +24,23 @@ import {
     BTMSketchEntity3FromJSON,
     BTMSketchEntity3FromJSONTyped,
     BTMSketchEntity3SuperToJSON,
+    BTMSketchEntity3ToJSON,
 } from './BTMSketchEntity3';
 
 /**
- * 
+ *
  * @export
  * @interface BTMSketchCompositeEntity893
  */
 export interface BTMSketchCompositeEntity893 extends BTMSketchEntity3 {
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTMSketchCompositeEntity893
      */
     btType?: string;
     /**
-     * 
+     *
      * @type {Array<BTMSketchEntity3>}
      * @memberof BTMSketchCompositeEntity893
      */
@@ -55,22 +56,31 @@ export function instanceOfBTMSketchCompositeEntity893(value: object): boolean {
     return isInstance;
 }
 
-export function BTMSketchCompositeEntity893FromJSON(json: any): BTMSketchCompositeEntity893 {
+export function BTMSketchCompositeEntity893FromJSON(
+    json: any
+): BTMSketchCompositeEntity893 {
     return BTMSketchCompositeEntity893FromJSONTyped(json, false);
 }
 
-export function BTMSketchCompositeEntity893FromJSONTyped(json: any, ignoreDiscriminator: boolean): BTMSketchCompositeEntity893 {
-    if ((json === undefined) || (json === null)) {
+export function BTMSketchCompositeEntity893FromJSONTyped(
+    json: any,
+    ignoreDiscriminator: boolean
+): BTMSketchCompositeEntity893 {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
         ...BTMSketchEntity3FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
-        'subEntities': !exists(json, 'subEntities') ? undefined : ((json['subEntities'] as Array<any>).map(BTMSketchEntity3FromJSON)),
+        btType: !exists(json, 'btType') ? undefined : json['btType'],
+        subEntities: !exists(json, 'subEntities')
+            ? undefined
+            : (json['subEntities'] as Array<any>).map(BTMSketchEntity3FromJSON),
     };
 }
 
-export function BTMSketchCompositeEntity893ToJSON(value?: BTMSketchCompositeEntity893 | null): any {
+export function BTMSketchCompositeEntity893ToJSON(
+    value?: BTMSketchCompositeEntity893 | null
+): any {
     if (value === undefined) {
         return undefined;
     }
@@ -79,8 +89,10 @@ export function BTMSketchCompositeEntity893ToJSON(value?: BTMSketchCompositeEnti
     }
     return {
         ...BTMSketchEntity3SuperToJSON(value),
-        'btType': value.btType,
-        'subEntities': value.subEntities === undefined ? undefined : ((value.subEntities as Array<any>).map(BTMSketchEntity3ToJSON)),
+        btType: value.btType,
+        subEntities:
+            value.subEntities === undefined
+                ? undefined
+                : (value.subEntities as Array<any>).map(BTMSketchEntity3ToJSON),
     };
 }
-

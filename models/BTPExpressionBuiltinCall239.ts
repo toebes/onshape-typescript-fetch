@@ -24,6 +24,7 @@ import {
     BTPExpression9FromJSON,
     BTPExpression9FromJSONTyped,
     BTPExpression9SuperToJSON,
+    BTPExpression9ToJSON,
 } from './BTPExpression9';
 import type { BTPSpace10 } from './BTPSpace10';
 import {
@@ -39,31 +40,31 @@ import {
 } from './GBTPDefinitionType';
 
 /**
- * 
+ *
  * @export
  * @interface BTPExpressionBuiltinCall239
  */
 export interface BTPExpressionBuiltinCall239 extends BTPExpression9 {
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTPExpressionBuiltinCall239
      */
     btType?: string;
     /**
-     * 
+     *
      * @type {Array<BTPExpression9>}
      * @memberof BTPExpressionBuiltinCall239
      */
     arguments?: Array<BTPExpression9>;
     /**
-     * 
+     *
      * @type {BTPBuiltinIdentifier233}
      * @memberof BTPExpressionBuiltinCall239
      */
     name?: BTPBuiltinIdentifier233;
     /**
-     * 
+     *
      * @type {BTPSpace10}
      * @memberof BTPExpressionBuiltinCall239
      */
@@ -79,24 +80,37 @@ export function instanceOfBTPExpressionBuiltinCall239(value: object): boolean {
     return isInstance;
 }
 
-export function BTPExpressionBuiltinCall239FromJSON(json: any): BTPExpressionBuiltinCall239 {
+export function BTPExpressionBuiltinCall239FromJSON(
+    json: any
+): BTPExpressionBuiltinCall239 {
     return BTPExpressionBuiltinCall239FromJSONTyped(json, false);
 }
 
-export function BTPExpressionBuiltinCall239FromJSONTyped(json: any, ignoreDiscriminator: boolean): BTPExpressionBuiltinCall239 {
-    if ((json === undefined) || (json === null)) {
+export function BTPExpressionBuiltinCall239FromJSONTyped(
+    json: any,
+    ignoreDiscriminator: boolean
+): BTPExpressionBuiltinCall239 {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
         ...BTPExpression9FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
-        'arguments': !exists(json, 'arguments') ? undefined : ((json['arguments'] as Array<any>).map(BTPExpression9FromJSON)),
-        'name': !exists(json, 'name') ? undefined : BTPBuiltinIdentifier233FromJSON(json['name']),
-        'spaceInEmptyList': !exists(json, 'spaceInEmptyList') ? undefined : BTPSpace10FromJSON(json['spaceInEmptyList']),
+        btType: !exists(json, 'btType') ? undefined : json['btType'],
+        arguments: !exists(json, 'arguments')
+            ? undefined
+            : (json['arguments'] as Array<any>).map(BTPExpression9FromJSON),
+        name: !exists(json, 'name')
+            ? undefined
+            : BTPBuiltinIdentifier233FromJSON(json['name']),
+        spaceInEmptyList: !exists(json, 'spaceInEmptyList')
+            ? undefined
+            : BTPSpace10FromJSON(json['spaceInEmptyList']),
     };
 }
 
-export function BTPExpressionBuiltinCall239ToJSON(value?: BTPExpressionBuiltinCall239 | null): any {
+export function BTPExpressionBuiltinCall239ToJSON(
+    value?: BTPExpressionBuiltinCall239 | null
+): any {
     if (value === undefined) {
         return undefined;
     }
@@ -105,10 +119,12 @@ export function BTPExpressionBuiltinCall239ToJSON(value?: BTPExpressionBuiltinCa
     }
     return {
         ...BTPExpression9SuperToJSON(value),
-        'btType': value.btType,
-        'arguments': value.arguments === undefined ? undefined : ((value.arguments as Array<any>).map(BTPExpression9ToJSON)),
-        'name': BTPBuiltinIdentifier233ToJSON(value.name),
-        'spaceInEmptyList': BTPSpace10ToJSON(value.spaceInEmptyList),
+        btType: value.btType,
+        arguments:
+            value.arguments === undefined
+                ? undefined
+                : (value.arguments as Array<any>).map(BTPExpression9ToJSON),
+        name: BTPBuiltinIdentifier233ToJSON(value.name),
+        spaceInEmptyList: BTPSpace10ToJSON(value.spaceInEmptyList),
     };
 }
-

@@ -18,6 +18,7 @@ import {
     BTPExpression9FromJSON,
     BTPExpression9FromJSONTyped,
     BTPExpression9SuperToJSON,
+    BTPExpression9ToJSON,
 } from './BTPExpression9';
 import type { BTPIdentifier8 } from './BTPIdentifier8';
 import {
@@ -45,85 +46,85 @@ import {
 } from './GBTPOperator';
 
 /**
- * 
+ *
  * @export
  * @interface BTPExpressionOperator244
  */
 export interface BTPExpressionOperator244 extends BTPExpression9 {
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTPExpressionOperator244
      */
     btType?: string;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof BTPExpressionOperator244
      */
     forExport?: boolean;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof BTPExpressionOperator244
      */
     globalNamespace?: boolean;
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTPExpressionOperator244
      */
     importMicroversion?: string;
     /**
-     * 
+     *
      * @type {Array<BTPIdentifier8>}
      * @memberof BTPExpressionOperator244
      */
     namespace?: Array<BTPIdentifier8>;
     /**
-     * 
+     *
      * @type {BTPExpression9}
      * @memberof BTPExpressionOperator244
      */
     operand1?: BTPExpression9;
     /**
-     * 
+     *
      * @type {BTPExpression9}
      * @memberof BTPExpressionOperator244
      */
     operand2?: BTPExpression9;
     /**
-     * 
+     *
      * @type {BTPExpression9}
      * @memberof BTPExpressionOperator244
      */
     operand3?: BTPExpression9;
     /**
-     * 
+     *
      * @type {GBTPOperator}
      * @memberof BTPExpressionOperator244
      */
     operator?: GBTPOperator;
     /**
-     * 
+     *
      * @type {BTPSpace10}
      * @memberof BTPExpressionOperator244
      */
     spaceAfterNamespace?: BTPSpace10;
     /**
-     * 
+     *
      * @type {BTPSpace10}
      * @memberof BTPExpressionOperator244
      */
     spaceAfterOperator?: BTPSpace10;
     /**
-     * 
+     *
      * @type {BTPSpace10}
      * @memberof BTPExpressionOperator244
      */
     spaceBeforeOperator?: BTPSpace10;
     /**
-     * 
+     *
      * @type {boolean}
      * @memberof BTPExpressionOperator244
      */
@@ -139,33 +140,62 @@ export function instanceOfBTPExpressionOperator244(value: object): boolean {
     return isInstance;
 }
 
-export function BTPExpressionOperator244FromJSON(json: any): BTPExpressionOperator244 {
+export function BTPExpressionOperator244FromJSON(
+    json: any
+): BTPExpressionOperator244 {
     return BTPExpressionOperator244FromJSONTyped(json, false);
 }
 
-export function BTPExpressionOperator244FromJSONTyped(json: any, ignoreDiscriminator: boolean): BTPExpressionOperator244 {
-    if ((json === undefined) || (json === null)) {
+export function BTPExpressionOperator244FromJSONTyped(
+    json: any,
+    ignoreDiscriminator: boolean
+): BTPExpressionOperator244 {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
         ...BTPExpression9FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
-        'forExport': !exists(json, 'forExport') ? undefined : json['forExport'],
-        'globalNamespace': !exists(json, 'globalNamespace') ? undefined : json['globalNamespace'],
-        'importMicroversion': !exists(json, 'importMicroversion') ? undefined : json['importMicroversion'],
-        'namespace': !exists(json, 'namespace') ? undefined : ((json['namespace'] as Array<any>).map(BTPIdentifier8FromJSON)),
-        'operand1': !exists(json, 'operand1') ? undefined : BTPExpression9FromJSON(json['operand1']),
-        'operand2': !exists(json, 'operand2') ? undefined : BTPExpression9FromJSON(json['operand2']),
-        'operand3': !exists(json, 'operand3') ? undefined : BTPExpression9FromJSON(json['operand3']),
-        'operator': !exists(json, 'operator') ? undefined : GBTPOperatorFromJSON(json['operator']),
-        'spaceAfterNamespace': !exists(json, 'spaceAfterNamespace') ? undefined : BTPSpace10FromJSON(json['spaceAfterNamespace']),
-        'spaceAfterOperator': !exists(json, 'spaceAfterOperator') ? undefined : BTPSpace10FromJSON(json['spaceAfterOperator']),
-        'spaceBeforeOperator': !exists(json, 'spaceBeforeOperator') ? undefined : BTPSpace10FromJSON(json['spaceBeforeOperator']),
-        'writtenAsFunctionCall': !exists(json, 'writtenAsFunctionCall') ? undefined : json['writtenAsFunctionCall'],
+        btType: !exists(json, 'btType') ? undefined : json['btType'],
+        forExport: !exists(json, 'forExport') ? undefined : json['forExport'],
+        globalNamespace: !exists(json, 'globalNamespace')
+            ? undefined
+            : json['globalNamespace'],
+        importMicroversion: !exists(json, 'importMicroversion')
+            ? undefined
+            : json['importMicroversion'],
+        namespace: !exists(json, 'namespace')
+            ? undefined
+            : (json['namespace'] as Array<any>).map(BTPIdentifier8FromJSON),
+        operand1: !exists(json, 'operand1')
+            ? undefined
+            : BTPExpression9FromJSON(json['operand1']),
+        operand2: !exists(json, 'operand2')
+            ? undefined
+            : BTPExpression9FromJSON(json['operand2']),
+        operand3: !exists(json, 'operand3')
+            ? undefined
+            : BTPExpression9FromJSON(json['operand3']),
+        operator: !exists(json, 'operator')
+            ? undefined
+            : GBTPOperatorFromJSON(json['operator']),
+        spaceAfterNamespace: !exists(json, 'spaceAfterNamespace')
+            ? undefined
+            : BTPSpace10FromJSON(json['spaceAfterNamespace']),
+        spaceAfterOperator: !exists(json, 'spaceAfterOperator')
+            ? undefined
+            : BTPSpace10FromJSON(json['spaceAfterOperator']),
+        spaceBeforeOperator: !exists(json, 'spaceBeforeOperator')
+            ? undefined
+            : BTPSpace10FromJSON(json['spaceBeforeOperator']),
+        writtenAsFunctionCall: !exists(json, 'writtenAsFunctionCall')
+            ? undefined
+            : json['writtenAsFunctionCall'],
     };
 }
 
-export function BTPExpressionOperator244ToJSON(value?: BTPExpressionOperator244 | null): any {
+export function BTPExpressionOperator244ToJSON(
+    value?: BTPExpressionOperator244 | null
+): any {
     if (value === undefined) {
         return undefined;
     }
@@ -174,19 +204,21 @@ export function BTPExpressionOperator244ToJSON(value?: BTPExpressionOperator244 
     }
     return {
         ...BTPExpression9SuperToJSON(value),
-        'btType': value.btType,
-        'forExport': value.forExport,
-        'globalNamespace': value.globalNamespace,
-        'importMicroversion': value.importMicroversion,
-        'namespace': value.namespace === undefined ? undefined : ((value.namespace as Array<any>).map(BTPIdentifier8ToJSON)),
-        'operand1': BTPExpression9ToJSON(value.operand1),
-        'operand2': BTPExpression9ToJSON(value.operand2),
-        'operand3': BTPExpression9ToJSON(value.operand3),
-        'operator': GBTPOperatorToJSON(value.operator),
-        'spaceAfterNamespace': BTPSpace10ToJSON(value.spaceAfterNamespace),
-        'spaceAfterOperator': BTPSpace10ToJSON(value.spaceAfterOperator),
-        'spaceBeforeOperator': BTPSpace10ToJSON(value.spaceBeforeOperator),
-        'writtenAsFunctionCall': value.writtenAsFunctionCall,
+        btType: value.btType,
+        forExport: value.forExport,
+        globalNamespace: value.globalNamespace,
+        importMicroversion: value.importMicroversion,
+        namespace:
+            value.namespace === undefined
+                ? undefined
+                : (value.namespace as Array<any>).map(BTPIdentifier8ToJSON),
+        operand1: BTPExpression9ToJSON(value.operand1),
+        operand2: BTPExpression9ToJSON(value.operand2),
+        operand3: BTPExpression9ToJSON(value.operand3),
+        operator: GBTPOperatorToJSON(value.operator),
+        spaceAfterNamespace: BTPSpace10ToJSON(value.spaceAfterNamespace),
+        spaceAfterOperator: BTPSpace10ToJSON(value.spaceAfterOperator),
+        spaceBeforeOperator: BTPSpace10ToJSON(value.spaceBeforeOperator),
+        writtenAsFunctionCall: value.writtenAsFunctionCall,
     };
 }
-

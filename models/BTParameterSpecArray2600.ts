@@ -24,6 +24,7 @@ import {
     BTParameterSpec6FromJSON,
     BTParameterSpec6FromJSONTyped,
     BTParameterSpec6SuperToJSON,
+    BTParameterSpec6ToJSON,
 } from './BTParameterSpec6';
 import type { BTParameterVisibilityCondition177 } from './BTParameterVisibilityCondition177';
 import {
@@ -45,43 +46,43 @@ import {
 } from './GBTUIHint';
 
 /**
- * 
+ *
  * @export
  * @interface BTParameterSpecArray2600
  */
 export interface BTParameterSpecArray2600 extends BTParameterSpec6 {
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTParameterSpecArray2600
      */
     btType?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTParameterSpecArray2600
      */
     drivenQuery?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTParameterSpecArray2600
      */
     itemLabelTemplate?: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTParameterSpecArray2600
      */
     itemName?: string;
     /**
-     * 
+     *
      * @type {number}
      * @memberof BTParameterSpecArray2600
      */
     maxNumberOfPicks?: number;
     /**
-     * 
+     *
      * @type {Array<BTParameterSpec6>}
      * @memberof BTParameterSpecArray2600
      */
@@ -97,26 +98,41 @@ export function instanceOfBTParameterSpecArray2600(value: object): boolean {
     return isInstance;
 }
 
-export function BTParameterSpecArray2600FromJSON(json: any): BTParameterSpecArray2600 {
+export function BTParameterSpecArray2600FromJSON(
+    json: any
+): BTParameterSpecArray2600 {
     return BTParameterSpecArray2600FromJSONTyped(json, false);
 }
 
-export function BTParameterSpecArray2600FromJSONTyped(json: any, ignoreDiscriminator: boolean): BTParameterSpecArray2600 {
-    if ((json === undefined) || (json === null)) {
+export function BTParameterSpecArray2600FromJSONTyped(
+    json: any,
+    ignoreDiscriminator: boolean
+): BTParameterSpecArray2600 {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
         ...BTParameterSpec6FromJSONTyped(json, ignoreDiscriminator),
-        'btType': !exists(json, 'btType') ? undefined : json['btType'],
-        'drivenQuery': !exists(json, 'drivenQuery') ? undefined : json['drivenQuery'],
-        'itemLabelTemplate': !exists(json, 'itemLabelTemplate') ? undefined : json['itemLabelTemplate'],
-        'itemName': !exists(json, 'itemName') ? undefined : json['itemName'],
-        'maxNumberOfPicks': !exists(json, 'maxNumberOfPicks') ? undefined : json['maxNumberOfPicks'],
-        'parameters': !exists(json, 'parameters') ? undefined : ((json['parameters'] as Array<any>).map(BTParameterSpec6FromJSON)),
+        btType: !exists(json, 'btType') ? undefined : json['btType'],
+        drivenQuery: !exists(json, 'drivenQuery')
+            ? undefined
+            : json['drivenQuery'],
+        itemLabelTemplate: !exists(json, 'itemLabelTemplate')
+            ? undefined
+            : json['itemLabelTemplate'],
+        itemName: !exists(json, 'itemName') ? undefined : json['itemName'],
+        maxNumberOfPicks: !exists(json, 'maxNumberOfPicks')
+            ? undefined
+            : json['maxNumberOfPicks'],
+        parameters: !exists(json, 'parameters')
+            ? undefined
+            : (json['parameters'] as Array<any>).map(BTParameterSpec6FromJSON),
     };
 }
 
-export function BTParameterSpecArray2600ToJSON(value?: BTParameterSpecArray2600 | null): any {
+export function BTParameterSpecArray2600ToJSON(
+    value?: BTParameterSpecArray2600 | null
+): any {
     if (value === undefined) {
         return undefined;
     }
@@ -125,12 +141,14 @@ export function BTParameterSpecArray2600ToJSON(value?: BTParameterSpecArray2600 
     }
     return {
         ...BTParameterSpec6SuperToJSON(value),
-        'btType': value.btType,
-        'drivenQuery': value.drivenQuery,
-        'itemLabelTemplate': value.itemLabelTemplate,
-        'itemName': value.itemName,
-        'maxNumberOfPicks': value.maxNumberOfPicks,
-        'parameters': value.parameters === undefined ? undefined : ((value.parameters as Array<any>).map(BTParameterSpec6ToJSON)),
+        btType: value.btType,
+        drivenQuery: value.drivenQuery,
+        itemLabelTemplate: value.itemLabelTemplate,
+        itemName: value.itemName,
+        maxNumberOfPicks: value.maxNumberOfPicks,
+        parameters:
+            value.parameters === undefined
+                ? undefined
+                : (value.parameters as Array<any>).map(BTParameterSpec6ToJSON),
     };
 }
-

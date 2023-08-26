@@ -18,6 +18,7 @@ import {
     BTJEdit3734FromJSON,
     BTJEdit3734FromJSONTyped,
     BTJEdit3734SuperToJSON,
+    BTJEdit3734ToJSON,
 } from './BTJEdit3734';
 
 /**
@@ -27,13 +28,13 @@ import {
  */
 export interface BTJEditList2707 extends BTJEdit3734 {
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTJEditList2707
      */
     btType: string;
     /**
-     * 
+     *
      * @type {Array<BTJEdit3734>}
      * @memberof BTJEditList2707
      */
@@ -45,7 +46,7 @@ export interface BTJEditList2707 extends BTJEdit3734 {
  */
 export function instanceOfBTJEditList2707(value: object): boolean {
     let isInstance = true;
-    isInstance = isInstance && "btType" in value;
+    isInstance = isInstance && 'btType' in value;
 
     return isInstance;
 }
@@ -54,14 +55,19 @@ export function BTJEditList2707FromJSON(json: any): BTJEditList2707 {
     return BTJEditList2707FromJSONTyped(json, false);
 }
 
-export function BTJEditList2707FromJSONTyped(json: any, ignoreDiscriminator: boolean): BTJEditList2707 {
-    if ((json === undefined) || (json === null)) {
+export function BTJEditList2707FromJSONTyped(
+    json: any,
+    ignoreDiscriminator: boolean
+): BTJEditList2707 {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
         ...BTJEdit3734FromJSONTyped(json, ignoreDiscriminator),
-        'btType': json['btType'],
-        'edits': !exists(json, 'edits') ? undefined : ((json['edits'] as Array<any>).map(BTJEdit3734FromJSON)),
+        btType: json['btType'],
+        edits: !exists(json, 'edits')
+            ? undefined
+            : (json['edits'] as Array<any>).map(BTJEdit3734FromJSON),
     };
 }
 
@@ -74,8 +80,10 @@ export function BTJEditList2707ToJSON(value?: BTJEditList2707 | null): any {
     }
     return {
         ...BTJEdit3734SuperToJSON(value),
-        'btType': value.btType,
-        'edits': value.edits === undefined ? undefined : ((value.edits as Array<any>).map(BTJEdit3734ToJSON)),
+        btType: value.btType,
+        edits:
+            value.edits === undefined
+                ? undefined
+                : (value.edits as Array<any>).map(BTJEdit3734ToJSON),
     };
 }
-

@@ -18,6 +18,7 @@ import {
     BTParameterVisibilityCondition177FromJSON,
     BTParameterVisibilityCondition177FromJSONTyped,
     BTParameterVisibilityCondition177SuperToJSON,
+    BTParameterVisibilityCondition177ToJSON,
 } from './BTParameterVisibilityCondition177';
 import type { GBTParameterVisibilityLogicalOp } from './GBTParameterVisibilityLogicalOp';
 import {
@@ -27,25 +28,26 @@ import {
 } from './GBTParameterVisibilityLogicalOp';
 
 /**
- * 
+ *
  * @export
  * @interface BTParameterVisibilityLogical178
  */
-export interface BTParameterVisibilityLogical178 extends BTParameterVisibilityCondition177 {
+export interface BTParameterVisibilityLogical178
+    extends BTParameterVisibilityCondition177 {
     /**
-     * 
+     *
      * @type {string}
      * @memberof BTParameterVisibilityLogical178
      */
     btType: string;
     /**
-     * 
+     *
      * @type {Array<BTParameterVisibilityCondition177>}
      * @memberof BTParameterVisibilityLogical178
      */
     children?: Array<BTParameterVisibilityCondition177>;
     /**
-     * 
+     *
      * @type {GBTParameterVisibilityLogicalOp}
      * @memberof BTParameterVisibilityLogical178
      */
@@ -55,30 +57,48 @@ export interface BTParameterVisibilityLogical178 extends BTParameterVisibilityCo
 /**
  * Check if a given object implements the BTParameterVisibilityLogical178 interface.
  */
-export function instanceOfBTParameterVisibilityLogical178(value: object): boolean {
+export function instanceOfBTParameterVisibilityLogical178(
+    value: object
+): boolean {
     let isInstance = true;
-    isInstance = isInstance && "btType" in value;
+    isInstance = isInstance && 'btType' in value;
 
     return isInstance;
 }
 
-export function BTParameterVisibilityLogical178FromJSON(json: any): BTParameterVisibilityLogical178 {
+export function BTParameterVisibilityLogical178FromJSON(
+    json: any
+): BTParameterVisibilityLogical178 {
     return BTParameterVisibilityLogical178FromJSONTyped(json, false);
 }
 
-export function BTParameterVisibilityLogical178FromJSONTyped(json: any, ignoreDiscriminator: boolean): BTParameterVisibilityLogical178 {
-    if ((json === undefined) || (json === null)) {
+export function BTParameterVisibilityLogical178FromJSONTyped(
+    json: any,
+    ignoreDiscriminator: boolean
+): BTParameterVisibilityLogical178 {
+    if (json === undefined || json === null) {
         return json;
     }
     return {
-        ...BTParameterVisibilityCondition177FromJSONTyped(json, ignoreDiscriminator),
-        'btType': json['btType'],
-        'children': !exists(json, 'children') ? undefined : ((json['children'] as Array<any>).map(BTParameterVisibilityCondition177FromJSON)),
-        'operation': !exists(json, 'operation') ? undefined : GBTParameterVisibilityLogicalOpFromJSON(json['operation']),
+        ...BTParameterVisibilityCondition177FromJSONTyped(
+            json,
+            ignoreDiscriminator
+        ),
+        btType: json['btType'],
+        children: !exists(json, 'children')
+            ? undefined
+            : (json['children'] as Array<any>).map(
+                  BTParameterVisibilityCondition177FromJSON
+              ),
+        operation: !exists(json, 'operation')
+            ? undefined
+            : GBTParameterVisibilityLogicalOpFromJSON(json['operation']),
     };
 }
 
-export function BTParameterVisibilityLogical178ToJSON(value?: BTParameterVisibilityLogical178 | null): any {
+export function BTParameterVisibilityLogical178ToJSON(
+    value?: BTParameterVisibilityLogical178 | null
+): any {
     if (value === undefined) {
         return undefined;
     }
@@ -87,9 +107,13 @@ export function BTParameterVisibilityLogical178ToJSON(value?: BTParameterVisibil
     }
     return {
         ...BTParameterVisibilityCondition177SuperToJSON(value),
-        'btType': value.btType,
-        'children': value.children === undefined ? undefined : ((value.children as Array<any>).map(BTParameterVisibilityCondition177ToJSON)),
-        'operation': GBTParameterVisibilityLogicalOpToJSON(value.operation),
+        btType: value.btType,
+        children:
+            value.children === undefined
+                ? undefined
+                : (value.children as Array<any>).map(
+                      BTParameterVisibilityCondition177ToJSON
+                  ),
+        operation: GBTParameterVisibilityLogicalOpToJSON(value.operation),
     };
 }
-
