@@ -112,7 +112,10 @@ function fixFiles(filesDir) {
             for (let ref of references[file]) {
                 // Fix all the import references
                 let re = new RegExp(` ${ref}ToJSON,`, 'g');
-                content = content.replace(re, ` ${ref}SuperToJSON,`);
+                content = content.replace(
+                    re,
+                    ` ${ref}ToJSON,\n ${ref}SuperToJSON,`
+                );
                 // Fix the actual reference
                 let re2 = new RegExp(`\\.\\.\\.${ref}ToJSON`, 'g');
                 content = content.replace(re2, `...${ref}SuperToJSON`);
