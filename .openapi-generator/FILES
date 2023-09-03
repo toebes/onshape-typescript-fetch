@@ -136,6 +136,8 @@ models/BTAssemblyTransformedInstancesDefinitionParams.ts
 models/BTAssociativeDataInfo.ts
 models/BTBExportModelParams.ts
 models/BTBSMatrix386.ts
+models/BTBaseEntityAppearanceEntry3607.ts
+models/BTBaseEntityAppearanceSettings1391.ts
 models/BTBaseEntityData33.ts
 models/BTBaseInfo.ts
 models/BTBasePartColorCycle2614.ts
@@ -831,6 +833,7 @@ models/BTPTypeName290.ts
 models/BTPTypeNameStandard291.ts
 models/BTPTypeNameUser292.ts
 models/BTPTypeNameUser292AllOf.ts
+models/BTParameterExpressionErrorInfo2037.ts
 models/BTParameterGroupSpec3469.ts
 models/BTParameterLookupTableEntry1667.ts
 models/BTParameterLookupTableListEntry1916.ts
@@ -1100,6 +1103,7 @@ models/BTUserSettingsInfo.ts
 models/BTUserState.ts
 models/BTUserSummaryInfo.ts
 models/BTUserSummaryInfoAllOf.ts
+models/BTValueAndUse4696.ts
 models/BTVariableInfo.ts
 models/BTVariableParams.ts
 models/BTVariableStudioReferenceInfo.ts
@@ -1214,6 +1218,7 @@ models/GBTTableTextAlignment.ts
 models/GBTTessellationSettingEnum.ts
 models/GBTUIHint.ts
 models/GBTUiSelectionType.ts
+models/GBTValueUse.ts
 models/GBTVariableType.ts
 models/GlobalPermissionInfo.ts
 models/Item.ts
