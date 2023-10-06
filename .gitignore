@@ -1,4 +1,7 @@
+wwwroot/*.js
 node_modules
+typings
+dist
 openapi.out
 todo.txt
 minimal*.json
@@ -9,3 +12,4 @@ testing/*.ts
 testing/.openapi-generator
 testing/apis
 testing/.openapi-generator-ignore
+

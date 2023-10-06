@@ -6,7 +6,8 @@
   "scripts": {
     "build": "npm install && npm run genmodspec && npm run compilespec && npm run patchspec",
     "genmodspec": "node gen_modified_openapi.js",
-    "compilespec": "npx @openapitools/openapi-generator-cli generate -i modified_openapi.json -g typescript-fetch",
+    "compilespec0": "npx @openapitools/openapi-generator-cli generate -i modified_openapi.json -o gen/ -t custom_template/ --skip-validate-spec --additional-properties=npmName=onshape_ts_client,legacyDiscriminatorBehavior=false -g typescript-fetch",
+    "compilespec": "npx @openapitools/openapi-generator-cli generate -i modified_openapi.json --skip-validate-spec -g typescript-fetch",
     "patchspec": "node fix_tojson.js --dir models",
     "test": "echo \"Error: no test specified\" && exit 1",
     "docs": "npx typedoc --out docs index.ts"

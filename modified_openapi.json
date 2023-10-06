@@ -11,7 +11,7 @@
       "name": "Apache 2.0",
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "version": "1.169.21702-242da806ef2a",
+    "version": "1.170.23367-59c3c9f9feef",
     "x-logo": {
       "url": "images/logo-onshape-gray-green.svg",
       "backgroundColor": "#ffffff",
@@ -43,39 +43,39 @@
   "tags": [
     {
       "name": "APIApplication",
-      "description": "Manage application settings"
+      "description": "Manage application preferences."
     },
     {
       "name": "Account",
-      "description": "Modify and access user account information, such as plan subscription and App Store purchases. Cancel recurring subscriptions. Mark purchases consumed by the user."
+      "description": "Manage user purchases, subscriptions, and consumables."
     },
     {
       "name": "Alias",
-      "description": "Create and manage enterprise aliases. Aliases are distribution lists for the Release management workflow. They are defined and managed by administrators at the enterprise level only. Users and Teams can be assigned to an alias."
+      "description": "Create and manage enterprise aliases. (Enterprise admins only.)"
     },
     {
       "name": "AppAssociativeData",
-      "description": "Manage application-specific metadata that is used to associate application data to Onshape data"
+      "description": "Manage the application-specific metadata that associates application data with Onshape data."
     },
     {
       "name": "AppElement",
-      "description": "Modify and access application elements."
+      "description": "Access and modify application elements."
     },
     {
       "name": "Assembly",
-      "description": "Access and manipulate assembly elements."
+      "description": "Create and manage assemblies."
     },
     {
       "name": "Billing",
-      "description": "Access billing plan information for applications"
+      "description": "Get billing plan data for applications."
     },
     {
       "name": "BlobElement",
-      "description": "Save and access Blob Elements."
+      "description": "Create, modify, and translate blob elements."
     },
     {
       "name": "Comment",
-      "description": "CRUD for comments."
+      "description": "Create, read, update, and delete comments."
     },
     {
       "name": "Company",
@@ -83,91 +83,111 @@
     },
     {
       "name": "Document",
-      "description": "Manage documents."
+      "description": "Create and manage documents."
     },
     {
       "name": "Drawing",
-      "description": "Access and manipulate drawing elements."
+      "description": "Access, create, and translate drawings."
     },
     {
       "name": "Element",
-      "description": "Access and manipulate Elements."
+      "description": "Access and manage Elements."
+    },
+    {
+      "name": "ExportRule",
+      "description": "Access valid export rules."
     },
     {
       "name": "FeatureStudio",
-      "description": "Access and write to Feature Studio Elements."
+      "description": "Access and manage Feature Studio Elements."
     },
     {
       "name": "Folder",
-      "description": "Access Folders."
+      "description": "Access and modify folder sharing permissions."
+    },
+    {
+      "name": "Insertable",
+      "description": "Access the list of things that can be inserted into a document."
     },
     {
       "name": "Metadata",
-      "description": "Manipulate and access metadata."
+      "description": "Access and modify metadata."
+    },
+    {
+      "name": "MetadataCategory",
+      "description": "Access properties associated with metadata categories."
+    },
+    {
+      "name": "NumberingScheme",
+      "description": "Manage the set of valid Part numbers."
     },
     {
       "name": "OpenApi",
-      "description": "Endpoints for getting the OpenAPI specification for the Onshape API."
+      "description": "Get the OpenAPI specification for the Onshape API."
     },
     {
       "name": "Part",
-      "description": "Get details about specific parts."
+      "description": "Export Parts and access Part details."
+    },
+    {
+      "name": "PartNumber",
+      "description": "Create valid part numbers."
     },
     {
       "name": "PartStudio",
-      "description": "Modify, change, and get PartStudios."
+      "description": "Access and modify Part Studios."
     },
     {
       "name": "PropertiesTableTemplate",
-      "description": "Access and manipulate properties table templates."
+      "description": "Create, access, and delete templates for properties tables."
     },
     {
       "name": "Publication",
-      "description": "Modify and access publication information."
+      "description": "Access publication information."
     },
     {
       "name": "ReleasePackage",
-      "description": "Manage Release Management workflows."
+      "description": "Access and update Release Management workflows."
     },
     {
       "name": "Revision",
-      "description": "Access revisions."
+      "description": "Access, delete, and enumerate revisions."
+    },
+    {
+      "name": "Sketch",
+      "description": "Access sketch information."
     },
     {
       "name": "Team",
-      "description": "Access team details."
+      "description": "Access team information."
     },
     {
       "name": "Thumbnail",
-      "description": "Get Thumbnails."
+      "description": "Access, modify, and delete thumbnails."
     },
     {
       "name": "Translation",
-      "description": "Export an Onshape surface, part, Part Studio, Assembly, or subassembly to a supported file format, such as STL, PARASOLID, or SOLIDWORKS"
+      "description": "Import and export Onshape surfaces, parts, Part Studios, Assemblies, and subassemblies to/from other file formats (STL, PARASOLID, SOLIDWORKS, etc)."
     },
     {
       "name": "User",
-      "description": "Get details about users."
+      "description": "Access user information."
     },
     {
       "name": "Variables",
-      "description": "Variables REST API"
+      "description": "Create, modify, and access variables."
     },
     {
       "name": "Version",
-      "description": "Example of API version management."
+      "description": "Get all versions of the Onshape REST APIs."
     },
     {
       "name": "Webhook",
-      "description": "Create and manage webhooks.",
-      "externalDocs": {
-        "description": "Developer Documentation",
-        "url": "https://onshape-public.github.io/docs/webhook/"
-      }
+      "description": "Create and manage [webhooks](https://onshape-public.github.io/docs/app-dev/webhook/)."
     },
     {
       "name": "Workflow",
-      "description": "Access Release Management workflows."
+      "description": "Access and modify workflows."
     },
     {
       "name": "GlobalTreeNodes",
@@ -398,7 +418,7 @@
         "tags": [
           "Alias"
         ],
-        "summary": "Retrieve an array of aliases for the enterprise.",
+        "summary": "Get a list of all aliases that exist for your enterprise.",
         "operationId": "getAliasesInCompany",
         "parameters": [
           {
@@ -476,7 +496,8 @@
         "tags": [
           "Alias"
         ],
-        "summary": "Create an alias that contains users and/or teams.",
+        "summary": "Create an alias in your enterprise.",
+        "description": "`Manage users and teams` global permission is required to call this API.",
         "operationId": "createAlias",
         "requestBody": {
           "content": {
@@ -519,7 +540,8 @@
         "tags": [
           "Alias"
         ],
-        "summary": "Retrieve an alias by alias ID.",
+        "summary": "Get an alias by ID.",
+        "description": "Get the information for an alias ID.",
         "operationId": "getAlias",
         "parameters": [
           {
@@ -560,7 +582,8 @@
         "tags": [
           "Alias"
         ],
-        "summary": "Update alias by alias ID.",
+        "summary": "Add, remove, replace, or rename entries in an alias list.",
+        "description": "`Manage users and teams` global permission is required to call this API. \n* Add new users in the `additions` array. \n* Remove existing users in the `removals` array. Attempts to remove a user that does not exist in the Alias list will have no effect.\n* Replace the entire Alias list with the `entries` array. \n* You can also update the alias' `name` and `description`. \nFor example, given an Alias with members userA and userB: \n* `additions: [userC]` results in [userA, userB, userC] \n* `removals: [userB]` results in [userA] \n* `entries: [userC, user D]` results in [userC, userD]",
         "operationId": "updateAlias",
         "parameters": [
           {
@@ -611,7 +634,8 @@
         "tags": [
           "Alias"
         ],
-        "summary": "Delete alias by alias ID.",
+        "summary": "Delete an alias from your enterprise.",
+        "description": "`Manage users and teams` global permission is required to call this API.",
         "operationId": "deleteAlias",
         "parameters": [
           {
@@ -654,7 +678,8 @@
         "tags": [
           "Alias"
         ],
-        "summary": "Retrieve all alias members by alias ID.",
+        "summary": "Get all users and teams assigned to an alias.",
+        "description": "This is a search-like endpoint that returns a subset of the member list. Use `getAlias` to return all members every time it's called.",
         "operationId": "getAliasMembers",
         "parameters": [
           {
@@ -742,7 +767,7 @@
         "tags": [
           "AppElement"
         ],
-        "summary": "Create application tab by document ID and workspace ID.",
+        "summary": "Create a new application element.",
         "operationId": "createElement",
         "parameters": [
           {
@@ -814,8 +839,8 @@
         "tags": [
           "AppElement"
         ],
-        "summary": "Create multiple empty application tabs by document ID and workspace ID.",
-        "description": "Creates several new empty application elements in the document.",
+        "summary": "Create multiple empty application elements at once.",
+        "description": "Call this faster API instead of creating multiple app elements one at a time or in parallel.",
         "operationId": "bulkCreateElement",
         "parameters": [
           {
@@ -887,7 +912,8 @@
         "tags": [
           "AppElement"
         ],
-        "summary": "Download blob subelement as a file by document ID, workspace ID, tab ID, and blob ID. A Subelement is used to store and organize data.",
+        "summary": "Download the blob element (i.e., a file) stored in an app element in a document's workspace.",
+        "description": "The downloaded file can be used to retrieve stored subelements.",
         "operationId": "downloadBlobSubelementWorkspace",
         "parameters": [
           {
@@ -981,7 +1007,8 @@
         "tags": [
           "AppElement"
         ],
-        "summary": "Upload blob subelement file by document ID, workspace ID, tab ID, and blob ID. A Subelement is used to store and organize data.",
+        "summary": "Create a new blob subelement from an uploaded file.",
+        "description": "Request body parameters are multipart fields, so you must use `\"Content-Type\":\"multipart/form-data\"` in the request header.",
         "operationId": "uploadBlobSubelement",
         "parameters": [
           {
@@ -1076,7 +1103,7 @@
         "tags": [
           "AppElement"
         ],
-        "summary": "Delete blob subelement file by document ID, workspace ID, tab ID, and blob ID. A Subelement is used to store and organize data.",
+        "summary": "Delete a blob subelement from an app element.",
         "operationId": "deleteBlobSubelement",
         "parameters": [
           {
@@ -1226,7 +1253,7 @@
         "tags": [
           "AppElement"
         ],
-        "summary": "Retrieve an array of tab transactions by document ID, workspace ID, and tab ID.",
+        "summary": "Get a list of all transactions performed on an element.",
         "operationId": "getElementTransactions",
         "parameters": [
           {
@@ -1283,7 +1310,8 @@
         "tags": [
           "AppElement"
         ],
-        "summary": "Start application tab transaction by document ID, workspace ID, and tab ID.",
+        "summary": "Start a transaction",
+        "description": "Creates a microbranch (i.e., a branch for a new microversion).",
         "operationId": "startTransaction",
         "parameters": [
           {
@@ -1352,7 +1380,8 @@
         "tags": [
           "AppElement"
         ],
-        "summary": "Abort transaction by document ID, workspace ID, tab ID, and transaction ID.",
+        "summary": "Abort a transaction.",
+        "description": "Deletes a microbranch (i.e., the branch with the microversion for the transaction).",
         "operationId": "abortTransaction",
         "parameters": [
           {
@@ -1427,7 +1456,8 @@
         "tags": [
           "AppElement"
         ],
-        "summary": "Commit transactions by document ID and workspace ID.",
+        "summary": "Merge multiple transactions into one microversion.",
+        "description": "If successful, all transactions will be committed to a single microversion. If the call raises an error, nothing will be committed.",
         "operationId": "commitTransactions",
         "parameters": [
           {
@@ -1499,7 +1529,8 @@
         "tags": [
           "AppElement"
         ],
-        "summary": "Download blob subelement file by document ID, version or microversion ID, tab ID, and blob ID. A Subelement is used to store and organize data.",
+        "summary": "Download a blob subelement from the specified app element.",
+        "description": "Download a blob subelement as a file.",
         "operationId": "downloadBlobSubelement",
         "parameters": [
           {
@@ -2028,7 +2059,7 @@
         "tags": [
           "AppElement"
         ],
-        "summary": "Retrieve an array of blob subelement IDs by document ID and workspace or microversion ID. A Subelement is used to store and organize data.",
+        "summary": "Get a list of all blob subelement IDs for the specified workspace, version, or microversion.",
         "operationId": "getBlobSubelementIds",
         "parameters": [
           {
@@ -2109,7 +2140,8 @@
         "tags": [
           "AppElement"
         ],
-        "summary": "Compare JSON by document ID, workspace or version or microversion ID, and tab ID.",
+        "summary": "Compare app element JSON trees between workspaces/versions/microversions in a document.",
+        "description": "Specify the source workspace/version/microversion in the URL and specify the target workspace/version/microversion in the query parameters.",
         "operationId": "compareAppElementJson",
         "parameters": [
           {
@@ -2211,7 +2243,7 @@
         "tags": [
           "AppElement"
         ],
-        "summary": "Retrieve subelement content by document ID, tab ID, and workspace or version or microversion ID. A Subelement is used to store and organize data.",
+        "summary": "Get a list of all subelement IDs in a specified workspace/version/microversion.",
         "operationId": "getSubElementContent",
         "parameters": [
           {
@@ -2322,7 +2354,7 @@
         "tags": [
           "AppElement"
         ],
-        "summary": "Update application tab by document ID, workspace or version or microversion ID, and tab ID.",
+        "summary": "Update the content for the specified app element.",
         "operationId": "updateAppElement",
         "parameters": [
           {
@@ -2400,7 +2432,7 @@
         "tags": [
           "AppElement"
         ],
-        "summary": "Retrieve history by document ID, workspace or version or microversion ID, and tab ID.",
+        "summary": "Get the history of the specified all element.",
         "operationId": "getAppElementHistory",
         "parameters": [
           {
@@ -2467,7 +2499,7 @@
         "tags": [
           "AppElement"
         ],
-        "summary": "Retrieve subelement IDs by document ID, workspace or version or microversion ID, and tab ID. A Subelement is used to store and organize data.",
+        "summary": "Get a list of all subelement IDs in a specified workspace/version/microversion.",
         "operationId": "getSubelementIds",
         "parameters": [
           {
@@ -2548,7 +2580,7 @@
         "tags": [
           "AppElement"
         ],
-        "summary": "Retrieve JSON by document ID, workspace or version or microversion ID, and tab ID.",
+        "summary": "Get the full JSON tree for the specified workspace/version/microversion.",
         "operationId": "getJson",
         "parameters": [
           {
@@ -2649,7 +2681,8 @@
         "tags": [
           "AppElement"
         ],
-        "summary": "Retrieve JSON paths by document ID, workspace or version or microversion ID, and tab ID.",
+        "summary": "Get the JSON at specified paths for an element.",
+        "description": "Use this endpoint to return the JSON at the specified path instead of returning the entire JSON for the element. This POST endpoint does not write any information.",
         "operationId": "getJsonPaths",
         "parameters": [
           {
@@ -2752,12 +2785,110 @@
         "x-BTVisibility": "PRODUCTION"
       }
     },
+    "/appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/subelements": {
+      "delete": {
+        "tags": [
+          "AppElement"
+        ],
+        "summary": "Delete multiple subelements array by document ID, workspace or version or microversion ID, tab ID, and subelement IDs.",
+        "operationId": "deleteAppElementContentBatch",
+        "parameters": [
+          {
+            "name": "did",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "eid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "wvm",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "wvmid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "subelementIds",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "transactionId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "parentChangeId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "description",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default response",
+            "content": {
+              "application/json;charset=UTF-8; qs=0.09": {
+                "schema": {
+                  "$ref": "#/components/schemas/BTAppElementModifyInfo"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "OAuth2": [
+              "OAuth2Write"
+            ],
+            "BasicAuth": [
+              "OAuth2Write"
+            ]
+          }
+        ],
+        "x-BTVisibility": "PRODUCTION"
+      }
+    },
     "/appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/subelements/{sid}": {
       "delete": {
         "tags": [
           "AppElement"
         ],
-        "summary": "Delete subelement array by document ID, workspace or version or microversion ID, tab ID, and subelement ID. A Subelement is used to store and organize data.",
+        "summary": "Deletes the content from the specified app element.",
         "operationId": "deleteAppElementContent",
         "parameters": [
           {
@@ -2853,7 +2984,7 @@
         "tags": [
           "AppElement"
         ],
-        "summary": "Create references by document ID, workspace or version or microversion ID, and tab ID.",
+        "summary": "Creates a reference to an app element.",
         "operationId": "createReference",
         "parameters": [
           {
@@ -2932,7 +3063,8 @@
         "tags": [
           "AppElement"
         ],
-        "summary": "Resolve references by document ID, workspace or version or microversion ID, tab ID and resolve ID.",
+        "summary": "Resolves a single reference to an app element.",
+        "description": "For single operations only. Use `resolveReferences` for bulk operations.",
         "operationId": "resolveReference",
         "parameters": [
           {
@@ -3034,7 +3166,7 @@
         "tags": [
           "AppElement"
         ],
-        "summary": "Update references by document ID, workspace or version or microversion ID, tab ID, and resolve ID.",
+        "summary": "Update an app element reference.",
         "operationId": "updateReference",
         "parameters": [
           {
@@ -3119,7 +3251,7 @@
         "tags": [
           "AppElement"
         ],
-        "summary": "Delete references by document ID, workspace or version or microversion ID, tab ID, and resolve ID.",
+        "summary": "Delete an app element reference.",
         "operationId": "deleteReference",
         "parameters": [
           {
@@ -3215,7 +3347,8 @@
         "tags": [
           "AppElement"
         ],
-        "summary": "Resolve references by document ID, workspace or version or microversion ID, and tab ID.",
+        "summary": "Resolves bulk app element references.",
+        "description": "For bulk operations only. Use `resolveReference` for a single operation.",
         "operationId": "resolveReferences",
         "parameters": [
           {
@@ -4102,7 +4235,7 @@
         "tags": [
           "Assembly"
         ],
-        "summary": "Insert an instance of a part, sketch, assembly, or Part Studio into a document.",
+        "summary": "Insert an instance of a part, sketch, assembly, or Part Studio into an assembly.",
         "description": "Part Studio instances may include multiple parts.",
         "operationId": "createInstance",
         "parameters": [
@@ -5582,7 +5715,7 @@
           "Assembly"
         ],
         "summary": "Translate the assembly to another format for export.",
-        "description": "Refer to the [Export dialog][https://cad.onshape.com/help/Content/exporting-files.htm] for a list of valid formats.",
+        "description": "Refer to the [Export dialog](https://cad.onshape.com/help/Content/exporting-files.htm) for a list of valid formats.",
         "operationId": "translateFormat",
         "parameters": [
           {
@@ -5659,7 +5792,8 @@
         "tags": [
           "Billing"
         ],
-        "summary": "Retrieve billing plans and their information for an application by client ID.",
+        "summary": "Get all billing plans and their information for an application by client ID.",
+        "description": "This API should be used within the context of an OAuth-enabled application.",
         "operationId": "getClientPlans",
         "parameters": [
           {
@@ -6306,7 +6440,7 @@
         "tags": [
           "Comment"
         ],
-        "summary": "Retrieve a list of comments for a document.",
+        "summary": "Get a list of comments in a document.",
         "operationId": "getComments",
         "parameters": [
           {
@@ -6453,7 +6587,7 @@
         "tags": [
           "Comment"
         ],
-        "summary": "Retrieve details for a comment by comment ID.",
+        "summary": "Get details for a comment.",
         "operationId": "getComment",
         "parameters": [
           {
@@ -6494,7 +6628,7 @@
         "tags": [
           "Comment"
         ],
-        "summary": "Update a user’s comment by comment ID.",
+        "summary": "Update the content of an existing comment.",
         "operationId": "updateComment",
         "parameters": [
           {
@@ -6545,7 +6679,7 @@
         "tags": [
           "Comment"
         ],
-        "summary": "Delete a comment by comment ID.",
+        "summary": "Delete a comment from a document.",
         "operationId": "deleteComment",
         "parameters": [
           {
@@ -6588,7 +6722,7 @@
         "tags": [
           "Comment"
         ],
-        "summary": "Update a user’s comment by comment ID.",
+        "summary": "Add an attachment to a comment.",
         "operationId": "addAttachment",
         "parameters": [
           {
@@ -6648,7 +6782,7 @@
         "tags": [
           "Comment"
         ],
-        "summary": "Delete an attachment from a comment by comment ID.",
+        "summary": "Delete all attachments from a comment.",
         "operationId": "deleteAttachments",
         "parameters": [
           {
@@ -6691,7 +6825,8 @@
         "tags": [
           "Comment"
         ],
-        "summary": "Retrieve an attachment associated with a comment by comment ID and file document ID (and extension).",
+        "summary": "Get the attachment with the specified file extension that is associated with the specified comment.",
+        "description": "Returns only a single attachment.",
         "operationId": "getAttachment",
         "parameters": [
           {
@@ -6750,7 +6885,7 @@
         "tags": [
           "Comment"
         ],
-        "summary": "Reopen a resolved comment by comment ID.",
+        "summary": "Reopen a resolved comment.",
         "operationId": "reopen",
         "parameters": [
           {
@@ -6793,7 +6928,7 @@
         "tags": [
           "Comment"
         ],
-        "summary": "Resolve a comment by comment ID.",
+        "summary": "Resolve a comment.",
         "operationId": "resolve",
         "parameters": [
           {
@@ -6836,7 +6971,8 @@
         "tags": [
           "Company"
         ],
-        "summary": "Retrieve user companies.",
+        "summary": "Get all companies to which the specified user belongs.",
+        "description": "If no user is specified, will return all companies associated with the current user.",
         "operationId": "findCompany",
         "parameters": [
           {
@@ -6884,7 +7020,7 @@
         "tags": [
           "Company"
         ],
-        "summary": "Retrieve company by company ID.",
+        "summary": "Get company information by company ID.",
         "operationId": "getCompany",
         "parameters": [
           {
@@ -6917,7 +7053,8 @@
         "tags": [
           "Company"
         ],
-        "summary": "Retrieve a list of company owned documents by document name. Accessible only by company admins.",
+        "summary": "Get document by exact document name.",
+        "description": "This API can only be called by company admins. Use the `name` field for the exact document name string.",
         "operationId": "getDocumentsByName",
         "parameters": [
           {
@@ -6960,6 +7097,187 @@
             ],
             "BasicAuth": [
               "OAuth2Read"
+            ]
+          }
+        ],
+        "x-BTVisibility": "PRODUCTION"
+      }
+    },
+    "/companies/{cid}/users": {
+      "post": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Add a user to a company.",
+        "description": "Returns the company user info.",
+        "operationId": "addUserToCompany",
+        "parameters": [
+          {
+            "name": "cid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json;charset=UTF-8; qs=0.09": {
+              "schema": {
+                "$ref": "#/components/schemas/BTCompanyUserParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "default": {
+            "description": "default response",
+            "content": {
+              "application/json;charset=UTF-8; qs=0.09": {
+                "schema": {
+                  "$ref": "#/components/schemas/BTCompanyUserInfo"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "OAuth2": [
+              "OAuth2Write"
+            ],
+            "BasicAuth": [
+              "OAuth2Write"
+            ]
+          }
+        ],
+        "x-BTVisibility": "PRODUCTION"
+      }
+    },
+    "/companies/{cid}/users/{uid}": {
+      "post": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Update the company's information for a user.",
+        "description": "Returns updated company user info. Global permissions can only be updated by the company admin.",
+        "operationId": "updateCompanyUser",
+        "parameters": [
+          {
+            "name": "cid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "uid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json;charset=UTF-8; qs=0.09": {
+              "schema": {
+                "$ref": "#/components/schemas/BTCompanyUserParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "default": {
+            "description": "default response",
+            "content": {
+              "application/json;charset=UTF-8; qs=0.09": {
+                "schema": {
+                  "$ref": "#/components/schemas/BTCompanyUserInfo"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "OAuth2": [
+              "OAuth2Write"
+            ],
+            "BasicAuth": [
+              "OAuth2Write"
+            ]
+          }
+        ],
+        "x-BTVisibility": "PRODUCTION"
+      },
+      "delete": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Remove a user from a company, company teams, and all the direct shares.",
+        "operationId": "removeUserFromCompany",
+        "parameters": [
+          {
+            "name": "cid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "uid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "removeFromTeams",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": true
+            }
+          },
+          {
+            "name": "removeDirectShares",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": true
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default response",
+            "content": {
+              "application/json;charset=UTF-8; qs=0.09": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "OAuth2": [
+              "OAuth2Delete"
+            ],
+            "BasicAuth": [
+              "OAuth2Delete"
             ]
           }
         ],
@@ -9226,12 +9544,93 @@
         "x-BTVisibility": "PRODUCTION"
       }
     },
+    "/drawings/d/{did}/w/{wid}/e/{eid}/modify": {
+      "post": {
+        "tags": [
+          "Drawing"
+        ],
+        "summary": "Modify a drawing via JSON payload.",
+        "operationId": "modifyDrawing",
+        "parameters": [
+          {
+            "name": "did",
+            "in": "path",
+            "description": "The id of the document in which to perform the operation.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "linkDocumentId",
+            "in": "query",
+            "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.",
+            "schema": {
+              "type": "string",
+              "default": ""
+            }
+          },
+          {
+            "name": "wid",
+            "in": "path",
+            "description": "The id of the workspace in which to perform the operation.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "eid",
+            "in": "path",
+            "description": "The id of the element in which to perform the operation.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json;charset=UTF-8; qs=0.09": {
+              "schema": {
+                "$ref": "#/components/schemas/BTDrawingModificationParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "default": {
+            "description": "default response",
+            "content": {
+              "application/json;charset=UTF-8; qs=0.09": {
+                "schema": {
+                  "$ref": "#/components/schemas/BTAppModificationRequestInfo"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "OAuth2": [
+              "OAuth2Write"
+            ],
+            "BasicAuth": [
+              "OAuth2Write"
+            ]
+          }
+        ],
+        "x-BTVisibility": "PRODUCTION"
+      }
+    },
     "/drawings/d/{did}/w/{wid}/e/{eid}/translationformats": {
       "get": {
         "tags": [
           "Drawing"
         ],
-        "summary": "Get a list of all valid formats the drawing can be translated to.",
+        "summary": "Get a list of all valid formats the drawing can be translated (exported) to.",
         "operationId": "getDrawingTranslatorFormats",
         "parameters": [
           {
@@ -9283,8 +9682,8 @@
         "tags": [
           "Drawing"
         ],
-        "summary": "Translate a drawing to a different format.",
-        "description": "Starts a drawing translation into a neutral file format (i.e., DWG, DWT, DXF, or PDF) and returns a translation ID that can be used to poll the status. If set to add a new tab, creates a new tab in the document. Otherwise, returns an ID to download the translated field.",
+        "summary": "Translate (export) a drawing to a different format.",
+        "description": "Export a drawing to a different format within a document. Use `getDrawingTranslatorFormats` for a list of supported translation (i.e., import/export) formats.",
         "operationId": "createDrawingTranslation",
         "parameters": [
           {
@@ -9337,6 +9736,49 @@
               "application/json;charset=UTF-8; qs=0.09": {
                 "schema": {
                   "$ref": "#/components/schemas/BTTranslationRequestInfo"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "OAuth2": [
+              "OAuth2Read"
+            ],
+            "BasicAuth": [
+              "OAuth2Read"
+            ]
+          }
+        ],
+        "x-BTVisibility": "PRODUCTION"
+      }
+    },
+    "/drawings/modify/status/{mrid}": {
+      "get": {
+        "tags": [
+          "Drawing"
+        ],
+        "summary": "Get the status of a drawing modification operation.",
+        "operationId": "getModificationStatus",
+        "parameters": [
+          {
+            "name": "mrid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default response",
+            "content": {
+              "application/json;charset=UTF-8; qs=0.09": {
+                "schema": {
+                  "$ref": "#/components/schemas/BTAppModificationRequestInfo"
                 }
               }
             }
@@ -9957,7 +10399,8 @@
         "tags": [
           "ExportRule"
         ],
-        "summary": "Retrieve a list of the valid export rule options by object type and owner ID.",
+        "summary": " Get a list of valid export rule options for the user or company.",
+        "description": "Does NOT get the rules themselves; it gets the information used to create them.",
         "operationId": "getValidRuleOptions",
         "parameters": [
           {
@@ -10015,6 +10458,7 @@
           "FeatureStudio"
         ],
         "summary": "Create a new Feature Studio tab in a document.",
+        "description": "Specify the name for the new tab in the request body.",
         "operationId": "createFeatureStudio",
         "parameters": [
           {
@@ -10283,7 +10727,8 @@
         "tags": [
           "Folder"
         ],
-        "summary": "Get access control list (ACL) by folder ID.",
+        "summary": "Get the Access Control List (ACL) for a folder to view permissions.",
+        "description": "Returns the ACL of permission objects. Each object contains: \n* The type of entity  \n    * 0 (User)  \n    * 1 (Company) \n    * 2 (Team) \n    * 3 (Document) \n    * 4 (Application) \n * The ID of the entity for the specified type. \n* The permissions for that entity. \n    *  OWNER (100): All permissions, including those not listed, such as permission to transfer ownership. \n    * DELETE (90) \n    * RESHARE (80) \n    * WRITE (70) \n    * READ (60) \n    * LINK (50) \n    * COPY (30): Can copy workspace \n    * EXPORT (20): Can export geometry \n    * COMMENT (10) \n    * ANONYMOUS_ACCESS (5): Special, restricted read access",
         "operationId": "getFolderAcl",
         "parameters": [
           {
@@ -10326,7 +10771,8 @@
         "tags": [
           "Folder"
         ],
-        "summary": "Share folder by folder ID.",
+        "summary": "Share folder with an entity.",
+        "description": "* Specify the type of entity to share with using `entries.entryType`: \n    * 0 (User)  \n    * 1 (Company) \n    * 2 (Team) \n    * 3 (Document) \n    * 4 (Application) \n* Provide one of the identifiers in the `entries` object in the request body.  \n    * You can share with non-Onshape users with the `email` field when `entryType=0`.  \n * Provide the string for the permission set. Do not include the integer in parentheses: \n    * OWNER (100): Object owner. Implies all permissions including those not listed such as permission to transfer ownership. \n    * DELETE (90) \n    * RESHARE (80) \n    * WRITE (70) \n    * READ (60) \n    * LINK (50) \n    * COPY (30): Can copy workspace \n    * EXPORT (20): Can export geometry \n    * COMMENT (10) \n    * ANONYMOUS_ACCESS (5): Special, restricted read access",
         "operationId": "share",
         "parameters": [
           {
@@ -10381,7 +10827,8 @@
         "tags": [
           "Folder"
         ],
-        "summary": "Unshare folder by folder ID and tab ID.",
+        "summary": "Remove permissions from the folder for the specified Access Control List (ACL) entry.",
+        "description": "* Provide the folder ID for the folder to unshare.  \n * Provide the `entityType` for the type of entity to remove. \n    * 0 (User)  \n    * 1 (Company) \n    * 2 (Team) \n    * 3 (Document) \n    * 4 (Application) \n* Provide the entity ID in the `eid` param.",
         "operationId": "unShare",
         "parameters": [
           {
@@ -10445,7 +10892,8 @@
         "tags": [
           "Insertable"
         ],
-        "summary": "Get a list of all insertables for the document.",
+        "summary": "Get a list of things in this document that can be inserted elsewhere.",
+        "description": "* Returns only the latest revision of released insertables. \n* Use the document ID (`did`) parameter to specify the source document, not the insertion target. \n* For example, you can insert a custom Feature library into another custom Feature library, insert Parts into an Assembly or a Drawing, etc.",
         "operationId": "getLatestInDocument",
         "parameters": [
           {
@@ -10672,7 +11120,7 @@
         "tags": [
           "Metadata"
         ],
-        "summary": "Get the metadata for all elements in a document with given document id and version or microversion id.",
+        "summary": "Get the metadata for all elements in a document.",
         "description": "* You can specify the optional `depth` query parameter to get multiple levels in an assembly. Default `depth` is `1`. \n* `linkDocumentId` can be specified where applicable. Combined with `inferMetadataOwner` (default value is `false`), this is used to infer metadata owner. \n* `includeComputedProperties` can be used to include or omit computed properties. Default value is `true`. \n* `includeComputedAssemblyProperties` can be used to query computed assembly properties which are generally expensive. Default value is `false`. \n* You can also choose to include a `thumbnail`. Default value is `false`.",
         "operationId": "getWMVEsMetadata",
         "parameters": [
@@ -10779,7 +11227,7 @@
         "tags": [
           "Metadata"
         ],
-        "summary": "Get the metadata for an element in a document, version or micro version.",
+        "summary": "Get the metadata for an element.",
         "description": "* `linkDocumentId` can be specified where applicable and this combined with the query param `inferMetadataOwner` (default value is `false`) will be used to infer metadata owner. \n* `configuration` optional query parameter defaults to default configuration. \n* You can specify an optional `depth` query parameter to get multiple levels in an assembly. Default `depth` is `1`. \n* `includeComputedProperties` can be used to include or omit computed properties. Default value is `true`. \n* `includeComputedAssemblyProperties` can be used to query computed assembly properties which are generally expensive. Default value is `false`. \n* You can also choose to include a `thumbnail`. Default value is `false`.",
         "operationId": "getWMVEMetadata",
         "parameters": [
@@ -10910,7 +11358,7 @@
         "tags": [
           "Metadata"
         ],
-        "summary": "Update the metadata for an element in a document workspace or version",
+        "summary": "Update the metadata for an element.",
         "description": "* Microversion (`m`) in `wvm` path parameter option is not supported. \n* Specify the property metadata to update in the Request body.",
         "operationId": "updateWVEMetadata",
         "parameters": [
@@ -10995,7 +11443,7 @@
         "tags": [
           "Metadata"
         ],
-        "summary": "Get the metadata for all parts in a document workspace or version or microversion, element and configuration.",
+        "summary": "Get the metadata for all parts in a document.",
         "description": "* The `configuration` optional query parameter uses the default configuration unless otherwise specified. \n* You can specify an optional `depth` query parameter to get multiple levels in an assembly. Default `depth` is `1`. \n* `linkDocumentId` can be specified where applicable. Combined with `inferMetadataOwner` (default value is `false`), this is used to infer metadata owner. \n* `includeComputedProperties` can be used to include or omit computed properties. Default value is `true`. \n* `includeComputedAssemblyProperties` can be used to query computed assembly properties which are generally expensive. Default value is `false`. \n* You can also choose to include a `thumbnail`. Default value is `false`.",
         "operationId": "getWMVEPsMetadata",
         "parameters": [
@@ -11121,7 +11569,7 @@
         "tags": [
           "Metadata"
         ],
-        "summary": "Get the metadata for a part in a document workspace or version or microversion, element.",
+        "summary": "Get the metadata for a part.",
         "description": "* Specify the part in the `iden` or `pid` path parameter. \n* The `configuration` optional query parameter uses the default configuration unless otherwise specified. \n* `linkDocumentId` can be specified where applicable. Combined with `inferMetadataOwner` (default value is `false`), this is used to infer metadata owner. \n* `includeComputedProperties` can be used to include or omit computed properties. Default value is `true`. \n* `includeComputedAssemblyProperties` can be used to query computed assembly properties which are generally expensive. Default value is `false`. \n* You can also choose to include a `thumbnail`. Default value is `false`.",
         "operationId": "getWMVEPMetadata",
         "parameters": [
@@ -11284,7 +11732,7 @@
         "tags": [
           "Metadata"
         ],
-        "summary": "Update the metadata for a part in a document workspace or version or microversion, element.",
+        "summary": "Update the metadata for a part.",
         "description": "* Specify the part in the `iden` or `pid` path parameter. \n* The `configuration` optional query parameter uses the default configuration unless otherwise specified. \n* `linkDocumentId` can be specified where applicable. Combined with `inferMetadataOwner` (default value is `false`), this is used to infer metadata owner. \n* Specify the property metadata to update in the Request body.",
         "operationId": "updateWVEPMetadata",
         "parameters": [
@@ -11427,7 +11875,7 @@
         "tags": [
           "Metadata"
         ],
-        "summary": "Get the metadata for a workspace or version in a document.",
+        "summary": "Get the metadata for a workspace or version.",
         "description": "* `linkDocumentId` can be specified where applicable. Combined with `inferMetadataOwner` (default value is `false`), this is used to infer metadata owner. \n* You can specify an optional `depth` query parameter to get multiple levels in an assembly. Default `depth` is `1`. \n* `includeComputedProperties` can be used to include or omit computed properties. Default value is `true`. \n* `includeComputedAssemblyProperties` can be used to query computed assembly properties which are generally expensive. Default value is `false`. \n* You can also choose to include a `thumbnail`. Default value is `false`.",
         "operationId": "getWVMetadata",
         "parameters": [
@@ -11532,7 +11980,7 @@
         "tags": [
           "Metadata"
         ],
-        "summary": "Update the metadata for a workspace or version in a document.",
+        "summary": "Update the metadata for a workspace or version.",
         "description": "Specify the property metadata to update in the Request body.",
         "operationId": "updateWVMetadata",
         "parameters": [
@@ -11602,7 +12050,7 @@
         "tags": [
           "Metadata"
         ],
-        "summary": "Update the metadata in a document for a standard content part.",
+        "summary": "Update the metadata for a standard content part.",
         "description": "* Specify the document ID to update in the `did` path param. \n* Specify the document in which you have inserted the standard content part in the `linkDocumentId` query param. \n* Specify the property metadata to update in the Request body.",
         "operationId": "updateVEOPStandardContentPartMetadata",
         "parameters": [
@@ -11770,7 +12218,8 @@
         "tags": [
           "MetadataCategory"
         ],
-        "summary": "Retrieve category properties for metadata.",
+        "summary": "Get properties associated with the specified metadata categories.",
+        "description": "An object's category specifies its type: Part, Assembly, Drawing, etc. Available properties depend on the object's category.",
         "operationId": "getCategoryProperties",
         "parameters": [
           {
@@ -11894,7 +12343,7 @@
         "tags": [
           "NumberingScheme"
         ],
-        "summary": "Update a set of valid part numbers for the supplied parts.",
+        "summary": "Send the items to generate numbers for, and return the next valid available part numbers.",
         "operationId": "nextNumbers",
         "parameters": [
           {
@@ -12111,7 +12560,7 @@
         "tags": [
           "PartNumber"
         ],
-        "summary": "Update a set of valid part numbers for the supplied parts.",
+        "summary": "Send the items to generate numbers for, and return the next valid available part numbers.",
         "operationId": "updateNextNumbers",
         "parameters": [
           {
@@ -12176,7 +12625,7 @@
         "tags": [
           "Part"
         ],
-        "summary": "Retrieve a list of parts by document ID, and workspace or version or microversion ID.",
+        "summary": "Get all parts in a workspace, version, or microversion.",
         "operationId": "getPartsWMV",
         "parameters": [
           {
@@ -12297,7 +12746,7 @@
         "tags": [
           "Part"
         ],
-        "summary": "Retrieve a list of parts from a tab by document ID, workspace or version or microversion ID, and tab ID.",
+        "summary": "Get all parts in an element.",
         "operationId": "getPartsWMVE",
         "parameters": [
           {
@@ -12412,8 +12861,8 @@
         "tags": [
           "Part"
         ],
-        "summary": "Retrieve part body details by document ID, workspace or version or microversion ID, tab ID, and part ID.",
-        "description": "All coordinates are in meters.",
+        "summary": "Get a part's body details.",
+        "description": "All coordinates are in meters (m).",
         "operationId": "getBodyDetails",
         "parameters": [
           {
@@ -12541,7 +12990,7 @@
         "tags": [
           "Part"
         ],
-        "summary": "Retrieve part bounding boxes by document ID, workspace or version or microversion ID, tab ID, and part ID.",
+        "summary": "Get a part's bounding box details.",
         "operationId": "getBoundingBoxes",
         "parameters": [
           {
@@ -12638,7 +13087,7 @@
         "tags": [
           "Part"
         ],
-        "summary": "Retrieve GLTF for part by document ID, workspace or version or microversion ID, tab ID, and part ID.",
+        "summary": "Export a part as a glTF file.",
         "operationId": "exportPartGltf",
         "parameters": [
           {
@@ -12817,7 +13266,8 @@
         "tags": [
           "Part"
         ],
-        "summary": "Retrieve mass properties of a part document ID, workspace or version or microversion ID, tab ID, and part ID.",
+        "summary": "Get a part's mass properties.",
+        "description": "Parts must have density. If three mass properties are returned, the first is the calculated mass; the second and third are the minimum and maximum possible values considering tolerance.",
         "operationId": "getMassProperties",
         "parameters": [
           {
@@ -12953,7 +13403,7 @@
         "tags": [
           "Part"
         ],
-        "summary": "Export part to Parasolid by document ID, workspace or version or microversion ID, tab ID, and part ID.",
+        "summary": "Export a part as a Parasolid file.",
         "operationId": "exportPS",
         "parameters": [
           {
@@ -13051,7 +13501,7 @@
         "tags": [
           "Part"
         ],
-        "summary": "Retrieve shaded views of a part by document ID, workspace or version or microversion ID, tab ID, and part ID.",
+        "summary": "Get a part's shaded views.",
         "operationId": "getPartShadedViews",
         "parameters": [
           {
@@ -13191,7 +13641,7 @@
         "tags": [
           "Part"
         ],
-        "summary": "Retrieve sheet metal bend table by document ID, workspace or version or microversion ID, tab ID, and part ID.",
+        "summary": "Get a part's sheet metal bend table.",
         "operationId": "getBendTable",
         "parameters": [
           {
@@ -13273,7 +13723,8 @@
         "tags": [
           "Part"
         ],
-        "summary": "Retrieve part STL by document ID, workspace or version or microversion ID, tab ID, and part ID.",
+        "summary": "Export a part to an STL file.",
+        "description": "Returns a 307 redirect.",
         "operationId": "exportStl",
         "parameters": [
           {
@@ -13427,7 +13878,8 @@
         "tags": [
           "Part"
         ],
-        "summary": "Retrieve tessellated edges of a part by document ID, workspace or version or microversion ID, tab ID, and part ID.",
+        "summary": "Get a list of a part's tessellation edges.",
+        "description": "Returns the coordinates (in meters) of each edge's endpoints.",
         "operationId": "getEdges",
         "parameters": [
           {
@@ -13579,7 +14031,8 @@
         "tags": [
           "Part"
         ],
-        "description": "Get the tessellated faces of a part. The accuracy of the tessellation approximation to exact",
+        "summary": "Get a list of a part's tessellation faces.",
+        "description": "Coordinates are in meters (m).",
         "operationId": "getFaces_1",
         "parameters": [
           {
@@ -13795,6 +14248,7 @@
         "tags": [
           "PartStudio"
         ],
+        "summary": "Get a list of all named views that exist in the Part Studio.",
         "description": "Returns a map from view name to view data for the given element",
         "operationId": "getPartStudioNamedViews",
         "parameters": [
@@ -13872,7 +14326,7 @@
         "tags": [
           "PartStudio"
         ],
-        "summary": "Create Part Studio by document ID and workspace ID.",
+        "summary": "Create a new Part Studio in a document.",
         "operationId": "createPartStudio",
         "parameters": [
           {
@@ -13935,7 +14389,7 @@
         "tags": [
           "PartStudio"
         ],
-        "summary": "Update feature by document ID, workspace ID, tab ID, and feature ID.",
+        "summary": "Update the definition of a Part Studio feature.",
         "operationId": "updatePartStudioFeature",
         "parameters": [
           {
@@ -14014,7 +14468,7 @@
         "tags": [
           "PartStudio"
         ],
-        "summary": "Delete feature by document ID, workspace ID, tab ID, and feature ID.",
+        "summary": "Delete a Part Studio feature.",
         "operationId": "deletePartStudioFeature",
         "parameters": [
           {
@@ -14085,7 +14539,8 @@
         "tags": [
           "PartStudio"
         ],
-        "summary": "Update feature rollback by document ID, workspace ID, and tab ID.",
+        "summary": "Move the Feature List rollback bar in the Part Studio.",
+        "description": "Set to -1 to move the rollback bar to the end of the list.",
         "operationId": "updateRollback",
         "parameters": [
           {
@@ -14158,7 +14613,8 @@
         "tags": [
           "PartStudio"
         ],
-        "summary": "Update features by document ID, workspace ID, and tab ID.",
+        "summary": "Update existing features' parameters.",
+        "description": "You can update multiple features with a single call.",
         "operationId": "updateFeatures",
         "parameters": [
           {
@@ -14230,7 +14686,7 @@
         "tags": [
           "PartStudio"
         ],
-        "summary": "Retrieve an array of body details by document ID, workspace or version or microversion ID, and tab ID.",
+        "summary": "Get the body details for a Part Studio.",
         "operationId": "getPartStudioBodyDetails",
         "parameters": [
           {
@@ -14379,7 +14835,7 @@
         "tags": [
           "PartStudio"
         ],
-        "summary": "Retrieve an array of Mass properties of parts or a Part Studio by document ID, workspace or version or microversion ID, and tab ID.",
+        "summary": "Get the bounding boxes for a Part Studio.",
         "operationId": "getPartStudioBoundingBoxes",
         "parameters": [
           {
@@ -14484,7 +14940,7 @@
         "tags": [
           "PartStudio"
         ],
-        "summary": "Compare Part Studios by document ID, workspace or version or microversion ID, and tab ID.",
+        "summary": "Get the differences between two Part Studios in a single document.",
         "operationId": "comparePartStudios",
         "parameters": [
           {
@@ -14734,7 +15190,8 @@
         "tags": [
           "PartStudio"
         ],
-        "summary": "Add feature to the feature list for a Part Studio by document ID, workspace or version or microversion ID, and tab ID.",
+        "summary": "Add a feature to the Part Studio's Feature List.",
+        "description": "See Feature List APIs in the [developer documentation](https://onshape-public.github.io/docs/api-adv/featureaccess/) for additional information.",
         "operationId": "addPartStudioFeature",
         "parameters": [
           {
@@ -14810,7 +15267,7 @@
         "tags": [
           "PartStudio"
         ],
-        "summary": "Evaluate FeatureScript for a Part Studio by document ID, workspace or version or microversion ID, and tab ID.",
+        "summary": "Evaluate the FeatureScript snippet for a Part Studio.",
         "operationId": "evalFeatureScript",
         "parameters": [
           {
@@ -14930,7 +15387,7 @@
         "tags": [
           "PartStudio"
         ],
-        "summary": "Retrieve FeatureScript representation of the Part Studio by document ID, workspace or version or microversion ID, and tab ID.",
+        "summary": "Get the FeatureScript representation of a Part Studio.",
         "operationId": "getFeatureScriptRepresentation",
         "parameters": [
           {
@@ -15041,7 +15498,7 @@
         "tags": [
           "PartStudio"
         ],
-        "summary": "Retrieve feature specifications of the Part Studio by document ID, workspace or version or microversion ID, and tab ID.",
+        "summary": "Get the specs for a Part Studio feature.",
         "operationId": "getPartStudioFeatureSpecs",
         "parameters": [
           {
@@ -15112,7 +15569,7 @@
         "tags": [
           "PartStudio"
         ],
-        "summary": "Retrieve FeatureScript table of the Part Studio or part by document ID, workspace or version or microversion ID, and tab ID.",
+        "summary": "Compute and return a FeatureScript table for a Part Studio.",
         "operationId": "getFeatureScriptTable",
         "parameters": [
           {
@@ -15222,7 +15679,7 @@
         "tags": [
           "PartStudio"
         ],
-        "summary": "Export GLTF representation for parts in a Part Studio by document ID, workspace or version or microversion ID, and tab ID.",
+        "summary": "Export the Part Studio as a glTF file.",
         "operationId": "exportPartStudioGltf",
         "parameters": [
           {
@@ -15403,7 +15860,8 @@
         "tags": [
           "PartStudio"
         ],
-        "summary": "Create Part Studio ID translation by document ID, workspace or version or microversion ID, and tab ID.",
+        "summary": "Find corresponding deterministic IDs from a source document microversion at the target version.",
+        "description": "* Deterministic IDs are only valid for one microversion. \n* This maps deterministic IDs between microversions in an attempt to find the corresponding entities in each version.",
         "operationId": "translateIds",
         "parameters": [
           {
@@ -15484,7 +15942,8 @@
         "tags": [
           "PartStudio"
         ],
-        "summary": "Retrieve mass properties of the Part Studio by document ID, workspace or version or microversion ID, and tab ID.",
+        "summary": "Get the mass properties for a Part Studio.",
+        "description": "If three mass properties are returned, the first is the calculated mass; the second and third are the minimum and maximum possible values considering tolerance.",
         "operationId": "getPartStudioMassProperties",
         "parameters": [
           {
@@ -15623,7 +16082,8 @@
         "tags": [
           "PartStudio"
         ],
-        "summary": "Export Part Studio to Parasolid by document ID, workspace or version or microversion ID, and tab ID.",
+        "summary": "Export the Part Studio as a Parasolid file.",
+        "description": "Returns a 307 redirect.",
         "operationId": "exportParasolid",
         "parameters": [
           {
@@ -15738,7 +16198,7 @@
         "tags": [
           "PartStudio"
         ],
-        "summary": "Retrieve shaded views of the Part Studio by document ID, workspace or version or microversion ID, and tab ID.",
+        "summary": "Get a list of shaded views for a Part Studio.",
         "operationId": "getPartStudioShadedViews",
         "parameters": [
           {
@@ -15908,7 +16368,7 @@
         "tags": [
           "Sketch"
         ],
-        "summary": "Get information on all sketches in part studio.",
+        "summary": "Get information for all sketches in Part Studio.",
         "operationId": "getSketchInfo",
         "parameters": [
           {
@@ -16228,7 +16688,7 @@
         "tags": [
           "PartStudio"
         ],
-        "summary": "Export Part Studio to STL by document ID, workspace or version or microversion ID, and tab ID.",
+        "summary": "Export the Part Studio as an STL file.",
         "operationId": "exportPartStudioStl",
         "parameters": [
           {
@@ -16389,7 +16849,8 @@
         "tags": [
           "PartStudio"
         ],
-        "summary": "Retrieve tessellated edges of the parts in the Part Studio by document ID, workspace or version or microversion ID, and tab ID.",
+        "summary": "Get a list of all edges in a Part Studio.",
+        "description": "Returns the edges as tessellated data and includes display data. \nCoordinates are in meters (m).",
         "operationId": "getPartStudioEdges",
         "parameters": [
           {
@@ -16543,6 +17004,8 @@
         "tags": [
           "PartStudio"
         ],
+        "summary": "Get a list of all faces in a Part Studio.",
+        "description": "Coordinates are in meters (m).",
         "operationId": "getPartStudioFaces",
         "parameters": [
           {
@@ -16760,7 +17223,7 @@
         "tags": [
           "PartStudio"
         ],
-        "summary": "Create Part Studio translation by document ID, workspace or version ID, and tab ID.",
+        "summary": "Translate (export) a Part Studio.",
         "operationId": "createPartStudioTranslation",
         "parameters": [
           {
@@ -16842,7 +17305,6 @@
           "Publication"
         ],
         "summary": "Get all items in a publication.",
-        "description": "Get items in a publication",
         "operationId": "getPublicationItems",
         "parameters": [
           {
@@ -17166,8 +17628,7 @@
         "tags": [
           "Revision"
         ],
-        "summary": "Get Navigation URL",
-        "description": "Get Navigation URL for part number and revision.",
+        "summary": "Get a list of revisions by part number.",
         "operationId": "getRevisionByPartNumber",
         "parameters": [
           {
@@ -17237,8 +17698,8 @@
         "tags": [
           "Revision"
         ],
-        "summary": "Enumerate all revisions created in a company.",
-        "description": "Enumerate all revisions in a company by creation time. Caller must be a company admin. Specify after and use the next URI to do complete enumeration.",
+        "summary": "Enumerate all of a company's revisions.",
+        "description": "* Returns a slice of all revisions per API call. \n* To get the next set of results, use the `next` URL from the response body. \n* This API can only be called by company admins.",
         "operationId": "enumerateRevisions",
         "parameters": [
           {
@@ -17322,7 +17783,7 @@
         "tags": [
           "Revision"
         ],
-        "summary": "Retrieve a list of all revisions for a part in a company by company ID, document ID, workspace or version ID, and tab ID.",
+        "summary": "Get a list of all revisions for an element in a company-owned document.",
         "operationId": "getRevisionHistoryInCompanyByElementId",
         "parameters": [
           {
@@ -17446,7 +17907,7 @@
         "tags": [
           "Revision"
         ],
-        "summary": "Retrieve a list of all revisions for a part in a company by company ID, document ID, workspace or version ID, tab ID, and part ID.",
+        "summary": "Get a list of all revisions for a part in a company-owned document by part ID.",
         "operationId": "getRevisionHistoryInCompanyByPartId",
         "parameters": [
           {
@@ -17559,7 +18020,8 @@
         "tags": [
           "Revision"
         ],
-        "summary": "Retrieve a list of all revisions for a part number in a company by company ID.",
+        "summary": "Get a list of all revisions for a part or element in a company-owned document by part number.",
+        "description": "You can also request `elementType` in addition to `partNumber` since companies may or may not allow drawings to share part numbers with their parts/assemblies. ",
         "operationId": "getRevisionHistoryInCompanyByPartNumber",
         "parameters": [
           {
@@ -17634,7 +18096,7 @@
         "tags": [
           "Revision"
         ],
-        "summary": "Delete all revisions for the specified part number.",
+        "summary": "Delete all revisions for a part number.",
         "description": "Only company admins can call this API. All documents that contain or use the part number must be deleted first. This operation cannot be undone.",
         "operationId": "deleteRevisionHistory",
         "parameters": [
@@ -17702,7 +18164,7 @@
         "tags": [
           "Revision"
         ],
-        "summary": "Retrieve a list of all revisions that exist in a document.",
+        "summary": "Get all revisions for the specified document.",
         "description": "Retrieve a list of all revisions that exist in a document and are owned by the document's owning company.",
         "operationId": "getAllInDocument",
         "parameters": [
@@ -17746,7 +18208,7 @@
         "tags": [
           "Revision"
         ],
-        "summary": "Retrieve a list of all revisions that exist in a document version.",
+        "summary": "Get all revisions for a version.",
         "description": "Retrieve a list of all revisions that exist in a document version and are owned by the document's owning company.",
         "operationId": "getAllInDocumentVersion",
         "parameters": [
@@ -17798,7 +18260,8 @@
         "tags": [
           "Revision"
         ],
-        "summary": "Retrieve latest revisions for a part number in a document or company by document ID, workspace or version or microversion ID, and tab ID.",
+        "summary": "Get the latest revision for a part number in a document or company.",
+        "description": "Returns 204 if no revisions are found.",
         "operationId": "getLatestInDocumentOrCompany",
         "parameters": [
           {
@@ -18146,7 +18609,7 @@
         "tags": [
           "Team"
         ],
-        "summary": "Retrieve list of teams for current user.",
+        "summary": "Get a list of all teams the current user belongs to.",
         "operationId": "find",
         "parameters": [
           {
@@ -18211,7 +18674,7 @@
         "tags": [
           "Team"
         ],
-        "summary": "Retrieve team information by team ID.",
+        "summary": "Get team information by team ID.",
         "operationId": "getTeam",
         "parameters": [
           {
@@ -18254,7 +18717,8 @@
         "tags": [
           "Team"
         ],
-        "summary": "Retrieve team members by team ID.",
+        "summary": "Get a list of a team's members.",
+        "description": "Returns a maximum of 20 per page.",
         "operationId": "getMembers",
         "parameters": [
           {
@@ -18341,7 +18805,7 @@
         "tags": [
           "Thumbnail"
         ],
-        "summary": "Get the thumbnail info for the specified document in the default workspace.",
+        "summary": "Get the thumbnail info for a document in the default workspace.",
         "description": "* By default, returns thumbnail info for the element with the most-recently generated image. If you pinned an element for the document thumbnail, that element will always be used for the document-level thumbnail, if it exists in the workspace.\n* The default workspace may vary by user; the image served depends on the signed-in user.\n* See also: [Tech tip on how to change a document thumbnail in onshape](https://www.onshape.com/en/resource-center/tech-tips/tech-tip-how-to-change-a-document-thumbnail-in-onshape)",
         "operationId": "getThumbnailForDocument",
         "parameters": [
@@ -18385,7 +18849,7 @@
         "tags": [
           "Thumbnail"
         ],
-        "summary": "Get the thumbnail info for the specified version of a document.",
+        "summary": "Get the thumbnail info for a version of a document.",
         "description": "* By default, returns thumbnail info for the element with the most-recently generated image. If you pinned an element for the document thumbnail, that element will always be used for the document-level thumbnail, if it exists in the workspace.\n* See also: [Tech tip on how to change a document thumbnail in onshape](https://www.onshape.com/en/resource-center/tech-tips/tech-tip-how-to-change-a-document-thumbnail-in-onshape)",
         "operationId": "getThumbnailForDocumentAndVersion",
         "parameters": [
@@ -18444,7 +18908,7 @@
         "tags": [
           "Thumbnail"
         ],
-        "summary": "Get the thumbnail info for the specified workspace of a document.",
+        "summary": "Get the thumbnail info for a workspace.",
         "description": "* By default, returns thumbnail info for the element with the most-recently generated image. If you pinned an element for the document thumbnail, that element will always be used for the document-level thumbnail, if it exists in the workspace.\n* See also: [Tech tip on how to change a document thumbnail in onshape](https://www.onshape.com/en/resource-center/tech-tips/tech-tip-how-to-change-a-document-thumbnail-in-onshape)",
         "operationId": "getDocumentThumbnail",
         "parameters": [
@@ -18496,7 +18960,7 @@
         "tags": [
           "Thumbnail"
         ],
-        "summary": "Get the thumbnail image with the given configuration for the specified element.",
+        "summary": "Get the thumbnail image with the given configuration for an element.",
         "description": "Returns the thumbnail image for an element at a specified version, with the given configuration.",
         "operationId": "getElementThumbnailWithApiConfiguration",
         "parameters": [
@@ -18618,7 +19082,7 @@
         "tags": [
           "Thumbnail"
         ],
-        "summary": "Get the thumbnail image with the given size for the specified document and workspace.",
+        "summary": "Get the thumbnail image with the given size for a document.",
         "description": "* By default, returns thumbnail image for the element with the most-recently generated image. If you pinned an element for the document thumbnail, that element will always be used for the document-level thumbnail, if it exists in the workspace.\n* See also: [Tech tip on how to change a document thumbnail in onshape](https://www.onshape.com/en/resource-center/tech-tips/tech-tip-how-to-change-a-document-thumbnail-in-onshape)",
         "operationId": "getDocumentThumbnailWithSize",
         "parameters": [
@@ -18708,7 +19172,7 @@
         "tags": [
           "Thumbnail"
         ],
-        "summary": "Get the thumbnail info structure for the specified element.",
+        "summary": "Get the thumbnail info structure for an element.",
         "description": "Returns thumbnail info for the given document, workspace or version, and element.",
         "operationId": "getElementThumbnail",
         "parameters": [
@@ -18893,7 +19357,7 @@
           "Thumbnail"
         ],
         "summary": "Delete an element's thumbnail.",
-        "description": "Deletes an application element’s thumbnail and images for the given document, workspace or version, and element combination.",
+        "description": "Deletes an application element's thumbnail and images for the given document, workspace or version, and element combination.",
         "operationId": "deleteApplicationThumbnails",
         "parameters": [
           {
@@ -18977,7 +19441,7 @@
         "tags": [
           "Thumbnail"
         ],
-        "summary": "Get the thumbnail image with the given size for the specified element.",
+        "summary": "Get the thumbnail image with the given size for an element.",
         "operationId": "getElementThumbnailWithSize",
         "parameters": [
           {
@@ -19107,7 +19571,7 @@
         "tags": [
           "Thumbnail"
         ],
-        "summary": "This endpoint will be deprecated soon. Use `getThumbnailForDocument`.",
+        "summary": "This endpoint will be deprecated soon. Use `getThumbnailForDocument` instead.",
         "description": "This API exists for historical reasons. It uses `/document/` in the path, rather than the standard `/d/` to specify the document.",
         "operationId": "getThumbnailForDocumentOld",
         "parameters": [
@@ -19151,7 +19615,7 @@
         "tags": [
           "Thumbnail"
         ],
-        "summary": "This endpoint will be deprecated soon. Use `getThumbnailForDocumentAndVersion`.",
+        "summary": "This endpoint will be deprecated soon. Use `getThumbnailForDocumentAndVersion` instead.",
         "description": "This API exists for historical reasons. It uses `/document/` in the path, rather than the standard `/d/` to specify the document.",
         "operationId": "getThumbnailForDocumentAndVersionOld",
         "parameters": [
@@ -19203,7 +19667,7 @@
         "tags": [
           "Translation"
         ],
-        "summary": "Get information on an in-progress or completed translation by documentID.",
+        "summary": "Get information on an in-progress or completed translation by document ID.",
         "operationId": "getDocumentTranslations",
         "parameters": [
           {
@@ -19267,7 +19731,7 @@
         "tags": [
           "Translation"
         ],
-        "summary": "Upload a foreign file into Onshape and translate the data into parts, part studios, assemblies, and subassemblies.",
+        "summary": "Upload a foreign file into Onshape and translate the data into parts, Part Studios, assemblies, and subassemblies.",
         "description": "The API call may complete before the translation is finished. If `requestState = ACTIVE`, the translation can be polled until the state is either DONE or FAILED. Alternatively, a webhook callback can be registered for notification of translation completion (requires `Write` scope if `storeInDocument` is `true`).",
         "operationId": "createTranslation",
         "parameters": [
@@ -19428,7 +19892,7 @@
           "Translation"
         ],
         "summary": "Get a list of formats this translation can use.",
-        "description": "Note that we don’t necessarily support both import and export for any given format. Please use specific export APIs, such as `exportPartStudioStl`, for STL and Parasolid exports.",
+        "description": "Note that we don't necessarily support both import and export for any given format. Please use specific export APIs, such as `exportPartStudioStl`, for STL and Parasolid exports.",
         "operationId": "getAllTranslatorFormats",
         "responses": {
           "default": {
@@ -19672,7 +20136,6 @@
           "Variables"
         ],
         "summary": "Assign variables to a Variable Studio",
-        "description": "Assign variables to a variable studio",
         "operationId": "setVariables",
         "parameters": [
           {
@@ -19756,7 +20219,6 @@
           "Variables"
         ],
         "summary": "Set the Variable Studio references for an element.",
-        "description": "Set an element's variable studio references",
         "operationId": "setVariableStudioReferences",
         "parameters": [
           {
@@ -19837,7 +20299,6 @@
           "Variables"
         ],
         "summary": "Set the scope the Variable Studio.",
-        "description": "Set the scope of a variable studio",
         "operationId": "setVariableStudioScope",
         "parameters": [
           {
@@ -19918,7 +20379,6 @@
           "Variables"
         ],
         "summary": "Create a new Variable Studio in a document and workspace.",
-        "description": "Create a Variable studio",
         "operationId": "createVariableStudio",
         "parameters": [
           {
@@ -19991,7 +20451,6 @@
           "Variables"
         ],
         "summary": "Get the contents of all variable tables in an element.",
-        "description": "Gets contents of variable tables",
         "operationId": "getVariables",
         "parameters": [
           {
@@ -20092,7 +20551,6 @@
           "Variables"
         ],
         "summary": "Get the Variable Studio references for an element.",
-        "description": "Get an element's variable studio references",
         "operationId": "getVariableStudioReferences",
         "parameters": [
           {
@@ -20177,7 +20635,6 @@
           "Variables"
         ],
         "summary": "Get the scope of a Variable Studio.",
-        "description": "Get the scope of a variable studio",
         "operationId": "getVariableStudioScope",
         "parameters": [
           {
@@ -20354,7 +20811,6 @@
           "Webhook"
         ],
         "summary": "Create a new webhook.",
-        "description": "Create a webhook",
         "operationId": "createWebhook",
         "requestBody": {
           "content": {
@@ -21046,7 +21502,6 @@
           "Webhook"
         ],
         "summary": "Ping a webhook.",
-        "description": "Ping a webhook",
         "operationId": "pingWebhook",
         "parameters": [
           {
@@ -21089,7 +21544,8 @@
         "tags": [
           "Workflow"
         ],
-        "summary": "Retrieve active workflow.",
+        "summary": "Get all active workflows for the currently logged in user's company.",
+        "description": "Optionally takes a document ID to return all workflows for that document's owning company.",
         "operationId": "getActiveWorkflows",
         "parameters": [
           {
@@ -21132,7 +21588,8 @@
         "tags": [
           "Workflow"
         ],
-        "description": "Get identities (users and/or teams) allowed to be approvers on a workflow object for the company. Not object- or property-specific; used for delegation and company settings",
+        "summary": "Get all identities allowed to be approvers on a workflow object.",
+        "description": "* Identities can be users and/or teams. \n* For Enterprise accounts, also includes roles and any aliases that contain allowed users/teams. \n* Not object- or property-specific. \n* Used for delegation and company settings.",
         "operationId": "getAllowedApprovers",
         "parameters": [
           {
@@ -21199,8 +21656,8 @@
         "tags": [
           "Workflow"
         ],
-        "summary": "Enumerate workflowable objects created in a company.",
-        "description": "Enumerate all workflowable objects like RELEASES, TASKS in a company by last modified time. Caller must be a company admin. Specify modifiedAfter and use the next URI to do complete enumeration.",
+        "summary": "Enumerate all of a company's workflowable objects.",
+        "description": "* For example, you can enumerate RELEASES, TASKS, etc in a company by last modified time. \n* Caller must be a company admin. \n* Specify `modifiedAfter` and use the `next` URI for complete enumeration.",
         "operationId": "enumerateObjectWorkflows",
         "parameters": [
           {
@@ -21289,6 +21746,7 @@
         "tags": [
           "Workflow"
         ],
+        "summary": "Get all audit log entries for a workflowable object.",
         "description": "Get identities (users and/or teams) allowed to be approvers on a workflow object for the company. Not object- or property-specific; used for delegation and company settings",
         "operationId": "getAuditLog",
         "parameters": [
@@ -24096,6 +24554,67 @@
           }
         }
       },
+      "BTAppModificationRequestInfo": {
+        "type": "object",
+        "properties": {
+          "documentId": {
+            "type": "string"
+          },
+          "elementId": {
+            "type": "string"
+          },
+          "failureReason": {
+            "type": "string"
+          },
+          "href": {
+            "type": "string",
+            "description": "URI to fetch complete information of the resource.",
+            "format": "uri"
+          },
+          "id": {
+            "type": "string",
+            "description": "Id of the resource."
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the resource."
+          },
+          "output": {
+            "type": "string"
+          },
+          "parentDocumentMicroversionId": {
+            "type": "string"
+          },
+          "parentElementMicroversionId": {
+            "type": "string"
+          },
+          "requestState": {
+            "$ref": "#/components/schemas/BTAppModificationRequestState"
+          },
+          "resultDocumentMicroversionId": {
+            "type": "string"
+          },
+          "resultElementMicroversionId": {
+            "type": "string"
+          },
+          "viewRef": {
+            "type": "string",
+            "description": "URI to visualize the resource in a webclient if applicable.",
+            "format": "uri"
+          },
+          "workspaceId": {
+            "type": "string"
+          }
+        }
+      },
+      "BTAppModificationRequestState": {
+        "type": "string",
+        "enum": [
+          "ACTIVE",
+          "DONE",
+          "FAILED"
+        ]
+      },
       "BTAppearanceOverride-2517": {
         "type": "object",
         "properties": {
@@ -24949,6 +25468,9 @@
           "angleTolerance": {
             "type": "number",
             "format": "double"
+          },
+          "batchAllFlatPatterns": {
+            "type": "boolean"
           },
           "batchFlatPatterns": {
             "type": "boolean"
@@ -26246,7 +26768,7 @@
         },
         "allOf": [
           {
-            "$ref": "#/components/schemas/BTInstanceBase-2263"
+            "$ref": "#/components/schemas/BTParametricOutputInstance-2288"
           },
           {
             "type": "object",
@@ -26832,6 +27354,135 @@
             "format": "uri"
           }
         }
+      },
+      "BTCompanyUserInfo": {
+        "type": "object",
+        "properties": {
+          "admin": {
+            "type": "boolean"
+          },
+          "company": {
+            "$ref": "#/components/schemas/BTCompanySummaryInfo"
+          },
+          "documentationNameOverride": {
+            "type": "string"
+          },
+          "guest": {
+            "type": "boolean"
+          },
+          "href": {
+            "type": "string",
+            "description": "URI to fetch complete information of the resource.",
+            "format": "uri"
+          },
+          "id": {
+            "type": "string",
+            "description": "Id of the resource."
+          },
+          "lastLoginTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "light": {
+            "type": "boolean"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the resource."
+          },
+          "state": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "user": {
+            "$ref": "#/components/schemas/BTUserBasicSummaryInfo"
+          },
+          "viewRef": {
+            "type": "string",
+            "description": "URI to visualize the resource in a webclient if applicable.",
+            "format": "uri"
+          }
+        }
+      },
+      "BTCompanyUserParams": {
+        "type": "object",
+        "properties": {
+          "admin": {
+            "type": "boolean",
+            "description": "Indicates the user is an admin if true."
+          },
+          "companyId": {
+            "type": "string",
+            "description": "Company ID of the user."
+          },
+          "documentationNameOverride": {
+            "type": "string",
+            "description": "String to override documentation name."
+          },
+          "email": {
+            "type": "string",
+            "description": "Email ID of the company user."
+          },
+          "globalPermissions": {
+            "type": "array",
+            "description": "List of global permissions to grant.",
+            "items": {
+              "type": "integer",
+              "description": "List of global permissions to grant.",
+              "format": "int32"
+            }
+          },
+          "guest": {
+            "type": "boolean",
+            "description": "Indicates the user is a guest user if true."
+          },
+          "light": {
+            "type": "boolean",
+            "description": "Indicates the user is a light user if true."
+          }
+        }
+      },
+      "BTCompanyUserSummaryAdminInfo": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BTCompanyUserSummaryInfo"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "totpEnabled": {
+                "type": "boolean"
+              }
+            }
+          }
+        ]
+      },
+      "BTCompanyUserSummaryInfo": {
+        "type": "object",
+        "discriminator": {
+          "propertyName": "jsonType",
+          "mapping": {
+            "companyuser": "#/components/schemas/BTCompanyUserSummaryInfo",
+            "companyuseradmin": "#/components/schemas/BTCompanyUserSummaryAdminInfo"
+          }
+        },
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BTUserSummaryInfo"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "admin": {
+                "type": "boolean"
+              },
+              "cls": {
+                "type": "string"
+              }
+            }
+          }
+        ]
       },
       "BTComputedAssemblyPropertyAggregationOperator": {
         "type": "string",
@@ -27988,6 +28639,22 @@
           }
         }
       },
+      "BTDeviceLoginSecretInfo": {
+        "type": "object",
+        "properties": {
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "modifiedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "randomToken": {
+            "type": "string"
+          }
+        }
+      },
       "BTDiffInfo": {
         "type": "object",
         "properties": {
@@ -28121,6 +28788,77 @@
           }
         }
       },
+      "BTDiscount": {
+        "type": "object",
+        "properties": {
+          "accountBalance": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "amountOff": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "amountOffCurrency": {
+            "type": "string"
+          },
+          "couponType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "couponValidMonths": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdBy": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "expiresAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "id": {
+            "$ref": "#/components/schemas/BTDiscountOwnerIdPlanId"
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "modifiedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "modifiedBy": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "new": {
+            "type": "boolean"
+          },
+          "percentOff": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "trialEndDate": {
+            "type": "string"
+          },
+          "usedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
       "BTDiscountInfo": {
         "type": "object",
         "properties": {
@@ -28185,6 +28923,17 @@
             "type": "string",
             "description": "URI to visualize the resource in a webclient if applicable.",
             "format": "uri"
+          }
+        }
+      },
+      "BTDiscountOwnerIdPlanId": {
+        "type": "object",
+        "properties": {
+          "ownerId": {
+            "type": "string"
+          },
+          "planId": {
+            "type": "string"
           }
         }
       },
@@ -28425,195 +29174,215 @@
       },
       "BTDocumentInfo": {
         "type": "object",
-        "properties": {
-          "anonymousAccessAllowed": {
-            "type": "boolean"
-          },
-          "anonymousAllowsExport": {
-            "type": "boolean"
-          },
-          "canMove": {
-            "type": "boolean"
-          },
-          "canUnshare": {
-            "type": "boolean"
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "createdBy": {
-            "$ref": "#/components/schemas/BTUserBasicSummaryInfo"
-          },
-          "createdWithEducationPlan": {
-            "type": "boolean"
-          },
-          "defaultElementId": {
-            "type": "string"
-          },
-          "defaultWorkspace": {
-            "$ref": "#/components/schemas/BTWorkspaceInfo"
-          },
-          "description": {
-            "type": "string"
-          },
-          "documentLabels": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BTDocumentLabelInfo"
-            }
-          },
-          "documentThumbnailElementId": {
-            "type": "string"
-          },
-          "documentType": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "duplicateNameViolationError": {
-            "type": "string"
-          },
-          "forceExportRules": {
-            "type": "boolean"
-          },
-          "hasReleaseRevisionableObjects": {
-            "type": "boolean"
-          },
-          "hasRelevantInsertables": {
-            "type": "boolean"
-          },
-          "href": {
-            "type": "string",
-            "description": "URI to fetch complete information of the resource.",
-            "format": "uri"
-          },
-          "id": {
-            "type": "string",
-            "description": "Id of the resource."
-          },
-          "isContainer": {
-            "type": "boolean"
-          },
-          "isEnterpriseOwned": {
-            "type": "boolean"
-          },
-          "isMutable": {
-            "type": "boolean"
-          },
-          "isUpgradedToLatestVersion": {
-            "type": "boolean"
-          },
-          "isUsingManagedWorkflow": {
-            "type": "boolean"
-          },
-          "likedByCurrentUser": {
-            "type": "boolean"
-          },
-          "likes": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "modifiedAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "modifiedBy": {
-            "$ref": "#/components/schemas/BTUserBasicSummaryInfo"
-          },
-          "name": {
-            "type": "string",
-            "description": "Name of the resource."
-          },
-          "notRevisionManaged": {
-            "type": "boolean"
-          },
-          "notes": {
-            "type": "string"
-          },
-          "numberOfTimesCopied": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "numberOfTimesReferenced": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "owner": {
-            "$ref": "#/components/schemas/BTOwnerInfo"
-          },
-          "parentId": {
-            "type": "string"
-          },
-          "permission": {
-            "$ref": "#/components/schemas/BTOldPermission"
-          },
-          "permissionSet": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "projectId": {
-            "type": "string"
-          },
-          "public": {
-            "type": "boolean"
-          },
-          "publishedVersionId": {
-            "type": "string"
-          },
-          "recentVersion": {
-            "$ref": "#/components/schemas/BTBaseInfo"
-          },
-          "resourceType": {
-            "type": "string"
-          },
-          "sequence": {
-            "type": "string"
-          },
-          "supportTeamUserAndShared": {
-            "type": "boolean"
-          },
-          "tags": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "thumbnail": {
-            "$ref": "#/components/schemas/BTThumbnailInfo"
-          },
-          "trash": {
-            "type": "boolean"
-          },
-          "trashedAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "treeHref": {
-            "type": "string"
-          },
-          "unparentHref": {
-            "type": "string"
-          },
-          "userAccountLimitsBreached": {
-            "type": "boolean"
-          },
-          "viewRef": {
-            "type": "string",
-            "description": "URI to visualize the resource in a webclient if applicable.",
-            "format": "uri"
-          },
-          "jsonType": {
-            "type": "string"
-          }
-        },
         "discriminator": {
           "propertyName": "jsonType",
           "mapping": {
+            "document": "#/components/schemas/BTDocumentInfo",
             "document-processing": "#/components/schemas/BTDocumentProcessingInfo"
           }
         },
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BTDocumentSummaryInfo"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "anonymousAccessAllowed": {
+                "type": "boolean"
+              },
+              "anonymousAllowsExport": {
+                "type": "boolean"
+              },
+              "canMove": {
+                "type": "boolean"
+              },
+              "canUnshare": {
+                "type": "boolean"
+              },
+              "createdAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "createdBy": {
+                "$ref": "#/components/schemas/BTUserBasicSummaryInfo"
+              },
+              "createdWithEducationPlan": {
+                "type": "boolean"
+              },
+              "defaultElementId": {
+                "type": "string"
+              },
+              "defaultWorkspace": {
+                "$ref": "#/components/schemas/BTWorkspaceInfo"
+              },
+              "description": {
+                "type": "string"
+              },
+              "documentLabels": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/BTDocumentLabelInfo"
+                }
+              },
+              "documentThumbnailElementId": {
+                "type": "string"
+              },
+              "documentType": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "duplicateNameViolationError": {
+                "type": "string"
+              },
+              "forceExportRules": {
+                "type": "boolean"
+              },
+              "hasReleaseRevisionableObjects": {
+                "type": "boolean"
+              },
+              "hasRelevantInsertables": {
+                "type": "boolean"
+              },
+              "href": {
+                "type": "string",
+                "description": "URI to fetch complete information of the resource.",
+                "format": "uri"
+              },
+              "id": {
+                "type": "string",
+                "description": "Id of the resource."
+              },
+              "isContainer": {
+                "type": "boolean"
+              },
+              "isEnterpriseOwned": {
+                "type": "boolean"
+              },
+              "isMutable": {
+                "type": "boolean"
+              },
+              "isOrphaned": {
+                "type": "boolean"
+              },
+              "isUpgradedToLatestVersion": {
+                "type": "boolean"
+              },
+              "isUsingManagedWorkflow": {
+                "type": "boolean"
+              },
+              "likedByCurrentUser": {
+                "type": "boolean"
+              },
+              "likes": {
+                "type": "integer",
+                "format": "int64"
+              },
+              "modifiedAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "modifiedBy": {
+                "$ref": "#/components/schemas/BTUserBasicSummaryInfo"
+              },
+              "name": {
+                "type": "string",
+                "description": "Name of the resource."
+              },
+              "notRevisionManaged": {
+                "type": "boolean"
+              },
+              "notes": {
+                "type": "string"
+              },
+              "numberOfTimesCopied": {
+                "type": "integer",
+                "format": "int64"
+              },
+              "numberOfTimesReferenced": {
+                "type": "integer",
+                "format": "int64"
+              },
+              "owner": {
+                "$ref": "#/components/schemas/BTOwnerInfo"
+              },
+              "parentId": {
+                "type": "string"
+              },
+              "permission": {
+                "$ref": "#/components/schemas/BTOldPermission"
+              },
+              "permissionSet": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "projectId": {
+                "type": "string"
+              },
+              "public": {
+                "type": "boolean"
+              },
+              "publishedVersionId": {
+                "type": "string"
+              },
+              "recentVersion": {
+                "$ref": "#/components/schemas/BTBaseInfo"
+              },
+              "resourceType": {
+                "type": "string"
+              },
+              "sequence": {
+                "type": "string"
+              },
+              "supportTeamUserAndShared": {
+                "type": "boolean"
+              },
+              "tags": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "thumbnail": {
+                "$ref": "#/components/schemas/BTThumbnailInfo"
+              },
+              "totalWorkspacesScheduledForUpdate": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "totalWorkspacesUpdating": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "tracingEnabled": {
+                "type": "boolean"
+              },
+              "trash": {
+                "type": "boolean"
+              },
+              "trashedAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "treeHref": {
+                "type": "string"
+              },
+              "unparentHref": {
+                "type": "string"
+              },
+              "userAccountLimitsBreached": {
+                "type": "boolean"
+              },
+              "viewRef": {
+                "type": "string",
+                "description": "URI to visualize the resource in a webclient if applicable.",
+                "format": "uri"
+              }
+            }
+          }
+        ],
         "x-BTVisibility-properties": {
           "totalWorkspacesUpdating": "INTERNAL",
           "totalWorkspacesScheduledForUpdate": "INTERNAL",
@@ -28626,79 +29395,22 @@
       },
       "BTDocumentLabelInfo": {
         "type": "object",
-        "properties": {
-          "canMove": {
-            "type": "boolean"
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BTGlobalTreeNodeInfo"
           },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "createdBy": {
-            "$ref": "#/components/schemas/BTUserBasicSummaryInfo"
-          },
-          "description": {
-            "type": "string"
-          },
-          "href": {
-            "type": "string",
-            "description": "URI to fetch complete information of the resource.",
-            "format": "uri"
-          },
-          "id": {
-            "type": "string",
-            "description": "Id of the resource."
-          },
-          "isContainer": {
-            "type": "boolean"
-          },
-          "isEnterpriseOwned": {
-            "type": "boolean"
-          },
-          "isMutable": {
-            "type": "boolean"
-          },
-          "modifiedAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "modifiedBy": {
-            "$ref": "#/components/schemas/BTUserBasicSummaryInfo"
-          },
-          "name": {
-            "type": "string",
-            "description": "Name of the resource."
-          },
-          "owner": {
-            "$ref": "#/components/schemas/BTOwnerInfo"
-          },
-          "parentLabelId": {
-            "type": "string"
-          },
-          "path": {
-            "type": "string"
-          },
-          "projectId": {
-            "type": "string"
-          },
-          "resourceType": {
-            "type": "string"
-          },
-          "treeHref": {
-            "type": "string"
-          },
-          "unparentHref": {
-            "type": "string"
-          },
-          "viewRef": {
-            "type": "string",
-            "description": "URI to visualize the resource in a webclient if applicable.",
-            "format": "uri"
-          },
-          "jsonType": {
-            "type": "string"
+          {
+            "type": "object",
+            "properties": {
+              "parentLabelId": {
+                "type": "string"
+              },
+              "path": {
+                "type": "string"
+              }
+            }
           }
-        },
+        ],
         "required": [
           "jsonType"
         ]
@@ -29001,187 +29713,142 @@
       },
       "BTDocumentSummaryInfo": {
         "type": "object",
-        "properties": {
-          "anonymousAccessAllowed": {
-            "type": "boolean"
-          },
-          "anonymousAllowsExport": {
-            "type": "boolean"
-          },
-          "canMove": {
-            "type": "boolean"
-          },
-          "canUnshare": {
-            "type": "boolean"
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "createdBy": {
-            "$ref": "#/components/schemas/BTUserBasicSummaryInfo"
-          },
-          "createdWithEducationPlan": {
-            "type": "boolean"
-          },
-          "defaultElementId": {
-            "type": "string"
-          },
-          "defaultWorkspace": {
-            "$ref": "#/components/schemas/BTWorkspaceInfo"
-          },
-          "description": {
-            "type": "string"
-          },
-          "documentLabels": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BTDocumentLabelInfo"
-            }
-          },
-          "documentType": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "forceExportRules": {
-            "type": "boolean"
-          },
-          "hasReleaseRevisionableObjects": {
-            "type": "boolean"
-          },
-          "hasRelevantInsertables": {
-            "type": "boolean"
-          },
-          "href": {
-            "type": "string",
-            "description": "URI to fetch complete information of the resource.",
-            "format": "uri"
-          },
-          "id": {
-            "type": "string",
-            "description": "Id of the resource."
-          },
-          "isContainer": {
-            "type": "boolean"
-          },
-          "isEnterpriseOwned": {
-            "type": "boolean"
-          },
-          "isMutable": {
-            "type": "boolean"
-          },
-          "isUsingManagedWorkflow": {
-            "type": "boolean"
-          },
-          "likedByCurrentUser": {
-            "type": "boolean"
-          },
-          "likes": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "modifiedAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "modifiedBy": {
-            "$ref": "#/components/schemas/BTUserBasicSummaryInfo"
-          },
-          "name": {
-            "type": "string",
-            "description": "Name of the resource."
-          },
-          "notRevisionManaged": {
-            "type": "boolean"
-          },
-          "notes": {
-            "type": "string"
-          },
-          "numberOfTimesCopied": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "numberOfTimesReferenced": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "owner": {
-            "$ref": "#/components/schemas/BTOwnerInfo"
-          },
-          "parentId": {
-            "type": "string"
-          },
-          "permission": {
-            "$ref": "#/components/schemas/BTOldPermission"
-          },
-          "permissionSet": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "projectId": {
-            "type": "string"
-          },
-          "public": {
-            "type": "boolean"
-          },
-          "publishedVersionId": {
-            "type": "string"
-          },
-          "recentVersion": {
-            "$ref": "#/components/schemas/BTBaseInfo"
-          },
-          "resourceType": {
-            "type": "string"
-          },
-          "sequence": {
-            "type": "string"
-          },
-          "supportTeamUserAndShared": {
-            "type": "boolean"
-          },
-          "tags": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "thumbnail": {
-            "$ref": "#/components/schemas/BTThumbnailInfo"
-          },
-          "trash": {
-            "type": "boolean"
-          },
-          "trashedAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "treeHref": {
-            "type": "string"
-          },
-          "unparentHref": {
-            "type": "string"
-          },
-          "userAccountLimitsBreached": {
-            "type": "boolean"
-          },
-          "viewRef": {
-            "type": "string",
-            "description": "URI to visualize the resource in a webclient if applicable.",
-            "format": "uri"
-          },
-          "jsonType": {
-            "type": "string"
-          }
-        },
         "discriminator": {
           "propertyName": "jsonType",
           "mapping": {
             "document": "#/components/schemas/BTDocumentInfo",
+            "document-summary": "#/components/schemas/BTDocumentSummaryInfo",
             "document-summary-search": "#/components/schemas/BTDocumentSummarySearchInfo"
           }
         },
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BTGlobalTreeNodeInfo"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "anonymousAccessAllowed": {
+                "type": "boolean"
+              },
+              "anonymousAllowsExport": {
+                "type": "boolean"
+              },
+              "canUnshare": {
+                "type": "boolean"
+              },
+              "createdWithEducationPlan": {
+                "type": "boolean"
+              },
+              "defaultElementId": {
+                "type": "string"
+              },
+              "defaultWorkspace": {
+                "$ref": "#/components/schemas/BTWorkspaceInfo"
+              },
+              "documentLabels": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/BTDocumentLabelInfo"
+                }
+              },
+              "documentType": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "forceExportRules": {
+                "type": "boolean"
+              },
+              "hasReleaseRevisionableObjects": {
+                "type": "boolean"
+              },
+              "hasRelevantInsertables": {
+                "type": "boolean"
+              },
+              "isOrphaned": {
+                "type": "boolean"
+              },
+              "isUsingManagedWorkflow": {
+                "type": "boolean"
+              },
+              "likedByCurrentUser": {
+                "type": "boolean"
+              },
+              "likes": {
+                "type": "integer",
+                "format": "int64"
+              },
+              "notRevisionManaged": {
+                "type": "boolean"
+              },
+              "notes": {
+                "type": "string"
+              },
+              "numberOfTimesCopied": {
+                "type": "integer",
+                "format": "int64"
+              },
+              "numberOfTimesReferenced": {
+                "type": "integer",
+                "format": "int64"
+              },
+              "parentId": {
+                "type": "string"
+              },
+              "permission": {
+                "$ref": "#/components/schemas/BTOldPermission"
+              },
+              "permissionSet": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "public": {
+                "type": "boolean"
+              },
+              "publishedVersionId": {
+                "type": "string"
+              },
+              "recentVersion": {
+                "$ref": "#/components/schemas/BTBaseInfo"
+              },
+              "sequence": {
+                "type": "string"
+              },
+              "supportTeamUserAndShared": {
+                "type": "boolean"
+              },
+              "tags": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "thumbnail": {
+                "$ref": "#/components/schemas/BTThumbnailInfo"
+              },
+              "totalWorkspacesScheduledForUpdate": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "totalWorkspacesUpdating": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "trash": {
+                "type": "boolean"
+              },
+              "trashedAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "userAccountLimitsBreached": {
+                "type": "boolean"
+              }
+            }
+          }
+        ],
         "x-BTVisibility-properties": {
           "totalWorkspacesUpdating": "INTERNAL",
           "totalWorkspacesScheduledForUpdate": "INTERNAL",
@@ -29299,6 +29966,17 @@
           "excluded",
           "marked"
         ]
+      },
+      "BTDrawingModificationParams": {
+        "type": "object",
+        "properties": {
+          "editDescription": {
+            "type": "string"
+          },
+          "jsonRequests": {
+            "type": "object"
+          }
+        }
       },
       "BTDrawingParams": {
         "type": "object",
@@ -32131,7 +32809,6 @@
             "format": "uri"
           }
         },
-        "description": "Document Items array. Array entries are the same as that returned from \"/api/documents/{did}\".",
         "discriminator": {
           "propertyName": "jsonType",
           "mapping": {
@@ -32899,10 +33576,10 @@
         "discriminator": {
           "propertyName": "btType",
           "mapping": {
-            "BTClonedInstance-2505": "#/components/schemas/BTClonedInstance-2505",
             "BTInstance-642": "#/components/schemas/BTInstance-642",
             "BTInstanceFolder-3627": "#/components/schemas/BTInstanceFolder-3627",
-            "BTParametricInstance-2641": "#/components/schemas/BTParametricInstance-2641"
+            "BTParametricInstance-2641": "#/components/schemas/BTParametricInstance-2641",
+            "BTParametricOutputInstance-2288": "#/components/schemas/BTParametricOutputInstance-2288"
           }
         },
         "allOf": [
@@ -32949,6 +33626,15 @@
                 "$ref": "#/components/schemas/BTMicroversionId-366"
               },
               "parametricInstance": {
+                "type": "boolean"
+              },
+              "parametricOutputInstance": {
+                "type": "boolean"
+              },
+              "parametricPartStudioChildInstance": {
+                "type": "boolean"
+              },
+              "parametricPartStudioInstance": {
                 "type": "boolean"
               },
               "partInstance": {
@@ -34131,7 +34817,8 @@
             "BTMMateConnector-66": "#/components/schemas/BTMMateConnector-66",
             "BTMMateGroup-65": "#/components/schemas/BTMMateGroup-65",
             "BTMMateRelation-1412": "#/components/schemas/BTMMateRelation-1412",
-            "BTMNonGeometricItem-1864": "#/components/schemas/BTMNonGeometricItem-1864"
+            "BTMNonGeometricItem-1864": "#/components/schemas/BTMNonGeometricItem-1864",
+            "BTMParametricPartStudioFeature-3883": "#/components/schemas/BTMParametricPartStudioFeature-3883"
           }
         },
         "allOf": [
@@ -36568,6 +37255,27 @@
           }
         ]
       },
+      "BTMParametricPartStudioFeature-3883": {
+        "type": "object",
+        "properties": {
+          "btType": {
+            "type": "string"
+          }
+        },
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BTMAssemblyFeature-887"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "btType": {
+                "type": "string"
+              }
+            }
+          }
+        ]
+      },
       "BTMPartStudioMateConnectorQuery-1324": {
         "type": "object",
         "properties": {
@@ -37272,7 +37980,6 @@
               },
               "configuration": {
                 "type": "array",
-                "writeOnly": true,
                 "items": {
                   "$ref": "#/components/schemas/BTMParameter-1"
                 }
@@ -42873,7 +43580,8 @@
           "propertyName": "btType",
           "mapping": {
             "BTAssemblyPattern-1974": "#/components/schemas/BTAssemblyPattern-1974",
-            "BTAssemblyReplicate-2774": "#/components/schemas/BTAssemblyReplicate-2774"
+            "BTAssemblyReplicate-2774": "#/components/schemas/BTAssemblyReplicate-2774",
+            "BTParametricPartStudioInstance-4374": "#/components/schemas/BTParametricPartStudioInstance-4374"
           }
         },
         "allOf": [
@@ -42897,6 +43605,130 @@
                 "items": {
                   "$ref": "#/components/schemas/BTInstanceControlNode-750"
                 }
+              }
+            }
+          }
+        ]
+      },
+      "BTParametricOutputInstance-2288": {
+        "type": "object",
+        "properties": {
+          "btType": {
+            "type": "string"
+          }
+        },
+        "discriminator": {
+          "propertyName": "btType",
+          "mapping": {
+            "BTClonedInstance-2505": "#/components/schemas/BTClonedInstance-2505",
+            "BTParametricPartStudioChildInstance-3696": "#/components/schemas/BTParametricPartStudioChildInstance-3696"
+          }
+        },
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BTInstanceBase-2263"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "btType": {
+                "type": "string"
+              }
+            }
+          }
+        ]
+      },
+      "BTParametricPartStudioChildInstance-3696": {
+        "type": "object",
+        "properties": {
+          "btType": {
+            "type": "string"
+          }
+        },
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BTParametricOutputInstance-2288"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "btType": {
+                "type": "string"
+              },
+              "partIdentity": {
+                "$ref": "#/components/schemas/BTPSOIdentity-2741"
+              },
+              "sketchFeatureId": {
+                "type": "string"
+              },
+              "type": {
+                "$ref": "#/components/schemas/GBTPartStudioInstanceType"
+              }
+            }
+          }
+        ]
+      },
+      "BTParametricPartStudioInstance-4374": {
+        "type": "object",
+        "properties": {
+          "btType": {
+            "type": "string"
+          }
+        },
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BTParametricInstance-2641"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "btType": {
+                "type": "string"
+              },
+              "configuration": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/BTMParameter-1"
+                }
+              },
+              "documentId": {
+                "type": "string"
+              },
+              "elementId": {
+                "type": "string"
+              },
+              "elementReference": {
+                "$ref": "#/components/schemas/BTElementReference-725"
+              },
+              "externalDocumentWithVersion": {
+                "$ref": "#/components/schemas/BTDocumentWithVersionId"
+              },
+              "externalDocumentWithVersionAndElementId": {
+                "$ref": "#/components/schemas/BTDocumentWithVersionAndElementId"
+              },
+              "lockedState": {
+                "$ref": "#/components/schemas/BTMParameter-1"
+              },
+              "name": {
+                "type": "string"
+              },
+              "parameters": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/BTMParameter-1"
+                }
+              },
+              "parametricPartStudioFeature": {
+                "$ref": "#/components/schemas/BTMParametricPartStudioFeature-3883"
+              },
+              "referenceParameter": {
+                "$ref": "#/components/schemas/BTMParameterReferencePartStudio-3302"
+              },
+              "versionId": {
+                "type": "string"
+              },
+              "versionIdIfExternal": {
+                "type": "string"
               }
             }
           }
@@ -43880,93 +44712,73 @@
           }
         ]
       },
-      "BTProjectInfo": {
+      "BTPrivacyConsentInfo": {
         "type": "object",
         "properties": {
-          "canMove": {
-            "type": "boolean"
-          },
-          "createdAt": {
+          "communicationsOptInDate": {
             "type": "string",
             "format": "date-time"
           },
-          "createdBy": {
-            "$ref": "#/components/schemas/BTUserBasicSummaryInfo"
-          },
-          "description": {
-            "type": "string"
-          },
-          "href": {
-            "type": "string",
-            "description": "URI to fetch complete information of the resource.",
-            "format": "uri"
-          },
-          "id": {
-            "type": "string",
-            "description": "Id of the resource."
-          },
-          "isContainer": {
-            "type": "boolean"
-          },
-          "isEnterpriseOwned": {
-            "type": "boolean"
-          },
-          "isMutable": {
-            "type": "boolean"
-          },
-          "modifiedAt": {
+          "communicationsOptOutDate": {
             "type": "string",
             "format": "date-time"
           },
-          "modifiedBy": {
-            "$ref": "#/components/schemas/BTUserBasicSummaryInfo"
-          },
-          "name": {
-            "type": "string",
-            "description": "Name of the resource."
-          },
-          "owner": {
-            "$ref": "#/components/schemas/BTOwnerInfo"
-          },
-          "permissionScheme": {
-            "$ref": "#/components/schemas/BTRbacPermissionSchemeInfo"
-          },
-          "permissionSet": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "projectId": {
-            "type": "string"
-          },
-          "resourceType": {
-            "type": "string"
-          },
-          "roleMapEntries": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/RoleMapEntry"
-            }
-          },
-          "trash": {
+          "communicationsStatus": {
             "type": "boolean"
           },
-          "treeHref": {
+          "consentVersion": {
             "type": "string"
           },
-          "unparentHref": {
-            "type": "string"
-          },
-          "viewRef": {
+          "dataProcessingOptInDate": {
             "type": "string",
-            "description": "URI to visualize the resource in a webclient if applicable.",
-            "format": "uri"
+            "format": "date-time"
           },
-          "jsonType": {
+          "dataProcessingOptOutDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dataProcessingStatus": {
+            "type": "boolean"
+          },
+          "eulaVersion": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "userId": {
             "type": "string"
           }
-        },
+        }
+      },
+      "BTProjectInfo": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BTGlobalTreeNodeInfo"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "permissionScheme": {
+                "$ref": "#/components/schemas/BTRbacPermissionSchemeInfo"
+              },
+              "permissionSet": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "roleMapEntries": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/RoleMapEntry"
+                }
+              },
+              "trash": {
+                "type": "boolean"
+              }
+            }
+          }
+        ],
         "required": [
           "jsonType"
         ]
@@ -44110,85 +44922,31 @@
       },
       "BTPublicationInfo": {
         "type": "object",
-        "properties": {
-          "canMove": {
-            "type": "boolean"
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BTGlobalTreeNodeInfo"
           },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "createdBy": {
-            "$ref": "#/components/schemas/BTUserBasicSummaryInfo"
-          },
-          "defaultWorkspaceId": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "href": {
-            "type": "string",
-            "description": "URI to fetch complete information of the resource.",
-            "format": "uri"
-          },
-          "id": {
-            "type": "string",
-            "description": "Id of the resource."
-          },
-          "isContainer": {
-            "type": "boolean"
-          },
-          "isEnterpriseOwned": {
-            "type": "boolean"
-          },
-          "isMutable": {
-            "type": "boolean"
-          },
-          "items": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Item"
+          {
+            "type": "object",
+            "properties": {
+              "defaultWorkspaceId": {
+                "type": "string"
+              },
+              "items": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Item"
+                }
+              },
+              "notes": {
+                "type": "string"
+              },
+              "sequence": {
+                "type": "string"
+              }
             }
-          },
-          "modifiedAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "modifiedBy": {
-            "$ref": "#/components/schemas/BTUserBasicSummaryInfo"
-          },
-          "name": {
-            "type": "string",
-            "description": "Name of the resource."
-          },
-          "notes": {
-            "type": "string"
-          },
-          "owner": {
-            "$ref": "#/components/schemas/BTOwnerInfo"
-          },
-          "projectId": {
-            "type": "string"
-          },
-          "resourceType": {
-            "type": "string"
-          },
-          "sequence": {
-            "type": "string"
-          },
-          "treeHref": {
-            "type": "string"
-          },
-          "unparentHref": {
-            "type": "string"
-          },
-          "viewRef": {
-            "type": "string",
-            "description": "URI to visualize the resource in a webclient if applicable.",
-            "format": "uri"
           }
-        }
+        ]
       },
       "BTPublishedWorkflowId": {
         "type": "object",
@@ -44246,10 +45004,20 @@
             "type": "integer",
             "format": "int32"
           },
+          "publishedDate": {
+            "type": "string",
+            "description": "The date of publication of workflow",
+            "format": "date-time"
+          },
+          "usesExternalPlm": {
+            "type": "boolean",
+            "description": "Whether the workflow connects to an external PLM service like Arena"
+          },
           "versionId": {
             "type": "string"
           }
-        }
+        },
+        "description": "Captures information about a published workflow"
       },
       "BTPurchaseInfo": {
         "type": "object",
@@ -44500,6 +45268,7 @@
             "BTOrFilter-167": "#/components/schemas/BTOrFilter-167",
             "BTPlaneOrientationFilter-1700": "#/components/schemas/BTPlaneOrientationFilter-1700",
             "BTSMDefinitionEntityTypeFilter-1651": "#/components/schemas/BTSMDefinitionEntityTypeFilter-1651",
+            "BTSectionGeometryFilter-4161": "#/components/schemas/BTSectionGeometryFilter-4161",
             "BTSketchObjectFilter-184": "#/components/schemas/BTSketchObjectFilter-184",
             "BTSketchSolveStatusFilter-3657": "#/components/schemas/BTSketchSolveStatusFilter-3657",
             "BTSplineControlPolygonFilter-1130": "#/components/schemas/BTSplineControlPolygonFilter-1130",
@@ -45797,6 +46566,30 @@
           "publication"
         ]
       },
+      "BTSectionGeometryFilter-4161": {
+        "type": "object",
+        "properties": {
+          "btType": {
+            "type": "string"
+          }
+        },
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BTQueryFilter-183"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "btType": {
+                "type": "string"
+              },
+              "isSectionGeometry": {
+                "type": "boolean"
+              }
+            }
+          }
+        ]
+      },
       "BTSectionPlaneInfo": {
         "type": "object",
         "properties": {
@@ -45836,6 +46629,17 @@
             }
           },
           "purpose": {
+            "type": "string"
+          }
+        }
+      },
+      "BTSessionCredentialInfo": {
+        "type": "object",
+        "properties": {
+          "provider": {
+            "type": "string"
+          },
+          "type": {
             "type": "string"
           }
         }
@@ -48231,6 +49035,36 @@
           }
         }
       },
+      "BTTrialInfo": {
+        "type": "object",
+        "properties": {
+          "paidCustomerInPast": {
+            "type": "boolean"
+          },
+          "planId": {
+            "type": "string"
+          },
+          "planInterval": {
+            "type": "string"
+          },
+          "seats": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "trialDaysRemaining": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "trialEndDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "trialStartDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
       "BTUiFeatureStudioChecksum-2438": {
         "type": "object",
         "properties": {
@@ -48487,6 +49321,81 @@
           }
         }
       },
+      "BTUserAdminInfo": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BTUserInfo"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "discount": {
+                "$ref": "#/components/schemas/BTDiscount"
+              },
+              "invitationId": {
+                "type": "string"
+              },
+              "invitedByEmail": {
+                "type": "string"
+              },
+              "invitedDocumentId": {
+                "type": "string"
+              },
+              "isTrialRequest": {
+                "type": "boolean"
+              },
+              "privacyConsents": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/BTPrivacyConsentInfo"
+                }
+              },
+              "userMetrics": {
+                "$ref": "#/components/schemas/BTUserMetricsInfo"
+              }
+            }
+          }
+        ]
+      },
+      "BTUserAdminSummaryInfo": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BTUserSummaryInfo"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "activePlanId": {
+                "type": "string"
+              },
+              "billingUpdateRequired": {
+                "type": "boolean"
+              },
+              "companyRoles": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/CompanyRole"
+                }
+              },
+              "createdAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "forumId": {
+                "type": "string"
+              },
+              "systemUser": {
+                "type": "boolean"
+              },
+              "totpEnabled": {
+                "type": "boolean"
+              }
+            }
+          }
+        ]
+      },
       "BTUserAppMessageBody": {
         "type": "object",
         "properties": {
@@ -48543,67 +49452,235 @@
         }
       },
       "BTUserBasicSummaryInfo": {
+        "required": [
+          "jsonType"
+        ],
         "type": "object",
         "properties": {
-          "href": {
-            "type": "string",
-            "description": "URI to fetch complete information of the resource.",
-            "format": "uri"
-          },
-          "id": {
-            "type": "string",
-            "description": "Id of the resource."
-          },
-          "image": {
+          "jsonType": {
             "type": "string"
-          },
-          "name": {
-            "type": "string",
-            "description": "Name of the resource."
-          },
-          "state": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "viewRef": {
-            "type": "string",
-            "description": "URI to visualize the resource in a webclient if applicable.",
-            "format": "uri"
           }
         },
         "discriminator": {
           "propertyName": "jsonType",
           "mapping": {
+            "user-summary": "#/components/schemas/BTUserBasicSummaryInfo",
+            "user-detail-summary": "#/components/schemas/BTUserDetailSummaryInfo"
+          }
+        },
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BTBaseInfo"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "href": {
+                "type": "string",
+                "description": "URI to fetch complete information of the resource.",
+                "format": "uri"
+              },
+              "id": {
+                "type": "string",
+                "description": "Id of the resource."
+              },
+              "image": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string",
+                "description": "Name of the resource."
+              },
+              "state": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "viewRef": {
+                "type": "string",
+                "description": "URI to visualize the resource in a webclient if applicable.",
+                "format": "uri"
+              }
+            }
+          }
+        ]
+      },
+      "BTUserDetailSummaryInfo": {
+        "type": "object",
+        "discriminator": {
+          "propertyName": "jsonType",
+          "mapping": {
+            "user-detail-summary": "#/components/schemas/BTUserDetailSummaryInfo",
             "user-summary": "#/components/schemas/BTUserSummaryInfo"
           }
-        }
+        },
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BTUserBasicSummaryInfo"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "documentationName": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "firstName": {
+                "type": "string"
+              },
+              "lastName": {
+                "type": "string"
+              }
+            }
+          }
+        ]
       },
-      "BTUserOAuth2SummaryInfo": {
+      "BTUserInfo": {
+        "type": "object",
+        "discriminator": {
+          "propertyName": "jsonType",
+          "mapping": {
+            "userinfo": "#/components/schemas/BTUserInfo",
+            "BTUserAdminInfo": "#/components/schemas/BTUserAdminInfo"
+          }
+        },
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BTUserSummaryInfo"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "activePlan": {
+                "$ref": "#/components/schemas/BTBillingPlanInfo"
+              },
+              "activePlanId": {
+                "type": "string"
+              },
+              "activePurchases": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/BTPurchaseInfo"
+                }
+              },
+              "activeTrialInfo": {
+                "$ref": "#/components/schemas/BTTrialInfo"
+              },
+              "b2cId": {
+                "type": "string"
+              },
+              "billingUpdateRequired": {
+                "type": "boolean"
+              },
+              "cadSystemAtSignup": {
+                "type": "string"
+              },
+              "countryCode": {
+                "type": "string"
+              },
+              "createdAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "credential": {
+                "$ref": "#/components/schemas/BTSessionCredentialInfo"
+              },
+              "defaultCompanyName": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "deviceInfo": {
+                "$ref": "#/components/schemas/BTDeviceLoginSecretInfo"
+              },
+              "enterprise": {
+                "type": "boolean"
+              },
+              "eulaId": {
+                "type": "string"
+              },
+              "eulaRequired": {
+                "type": "boolean"
+              },
+              "evalCenter": {
+                "type": "boolean"
+              },
+              "forumId": {
+                "type": "string"
+              },
+              "lastTrialInfo": {
+                "$ref": "#/components/schemas/BTTrialInfo"
+              },
+              "needToShowNewWalkthrough": {
+                "type": "boolean"
+              },
+              "ownPurchase": {
+                "$ref": "#/components/schemas/BTPurchaseInfo"
+              },
+              "phoneNumber": {
+                "type": "string"
+              },
+              "productType": {
+                "uniqueItems": true,
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "redirectUrl": {
+                "type": "string"
+              },
+              "role": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "roles": {
+                "uniqueItems": true,
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/BTRole"
+                }
+              },
+              "startupPage": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "systemUser": {
+                "type": "boolean"
+              },
+              "totpEnabled": {
+                "type": "boolean"
+              },
+              "tracingEnabled": {
+                "type": "boolean"
+              },
+              "trialInfos": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/BTTrialInfo"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "BTUserMetricsInfo": {
         "type": "object",
         "properties": {
-          "clientId": {
-            "type": "string"
+          "createdDocuments": {
+            "type": "integer",
+            "format": "int64"
           },
-          "company": {
-            "$ref": "#/components/schemas/BTCompanySummaryInfo"
-          },
-          "companyPlan": {
+          "hasRecentlyOpenedDocuments": {
             "type": "boolean"
           },
-          "documentationName": {
-            "type": "string"
+          "hasSharedDocuments": {
+            "type": "boolean"
           },
-          "documentationNameOverride": {
-            "type": "string"
-          },
-          "email": {
-            "type": "string"
-          },
-          "firstName": {
-            "type": "string"
-          },
-          "globalPermissions": {
-            "$ref": "#/components/schemas/GlobalPermissionInfo"
+          "hasTrashedDocuments": {
+            "type": "boolean"
           },
           "href": {
             "type": "string",
@@ -48614,54 +49691,24 @@
             "type": "string",
             "description": "Id of the resource."
           },
-          "image": {
-            "type": "string"
-          },
-          "isGuest": {
-            "type": "boolean"
-          },
-          "isLight": {
-            "type": "boolean"
-          },
-          "lastLoginTime": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "lastName": {
-            "type": "string"
-          },
           "name": {
             "type": "string",
             "description": "Name of the resource."
           },
-          "oauth2Scopes": {
+          "privateDocuments": {
             "type": "integer",
             "format": "int64"
           },
-          "personalMessageAllowed": {
+          "publicDocuments": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "sharedDocuments": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "userAccountLimitsCrossed": {
             "type": "boolean"
-          },
-          "planGroup": {
-            "type": "string"
-          },
-          "role": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "roles": {
-            "uniqueItems": true,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BTRole"
-            }
-          },
-          "source": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "state": {
-            "type": "integer",
-            "format": "int32"
           },
           "viewRef": {
             "type": "string",
@@ -48669,6 +49716,43 @@
             "format": "uri"
           }
         }
+      },
+      "BTUserOAuth2SummaryInfo": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BTUserSummaryInfo"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "clientId": {
+                "type": "string"
+              },
+              "companyPlan": {
+                "type": "boolean"
+              },
+              "oauth2Scopes": {
+                "type": "integer",
+                "format": "int64"
+              },
+              "planGroup": {
+                "type": "string"
+              },
+              "role": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "roles": {
+                "uniqueItems": true,
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/BTRole"
+                }
+              }
+            }
+          }
+        ]
       },
       "BTUserSettingsInfo": {
         "type": "object",
@@ -48784,9 +49868,19 @@
       },
       "BTUserSummaryInfo": {
         "type": "object",
+        "discriminator": {
+          "propertyName": "jsonType",
+          "mapping": {
+            "user-summary": "#/components/schemas/BTUserSummaryInfo",
+            "companyuser": "#/components/schemas/BTCompanyUserSummaryInfo",
+            "BTUserAdminSummaryInfo": "#/components/schemas/BTUserAdminSummaryInfo",
+            "userinfo": "#/components/schemas/BTUserInfo",
+            "BTUserOAuth2SummaryInfo": "#/components/schemas/BTUserOAuth2SummaryInfo"
+          }
+        },
         "allOf": [
           {
-            "$ref": "#/components/schemas/BTUserBasicSummaryInfo"
+            "$ref": "#/components/schemas/BTUserDetailSummaryInfo"
           },
           {
             "type": "object",
@@ -48794,16 +49888,7 @@
               "company": {
                 "$ref": "#/components/schemas/BTCompanySummaryInfo"
               },
-              "documentationName": {
-                "type": "string"
-              },
               "documentationNameOverride": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "firstName": {
                 "type": "string"
               },
               "globalPermissions": {
@@ -48818,9 +49903,6 @@
               "lastLoginTime": {
                 "type": "string",
                 "format": "date-time"
-              },
-              "lastName": {
-                "type": "string"
               },
               "personalMessageAllowed": {
                 "type": "boolean"
@@ -50304,6 +51386,26 @@
           },
           "plmId": {
             "type": "string"
+          }
+        }
+      },
+      "CompanyRole": {
+        "type": "object",
+        "properties": {
+          "admin": {
+            "type": "boolean"
+          },
+          "companyId": {
+            "type": "string"
+          },
+          "companyName": {
+            "type": "string"
+          },
+          "guest": {
+            "type": "boolean"
+          },
+          "light": {
+            "type": "boolean"
           }
         }
       },
@@ -52337,6 +53439,7 @@
           "PARAMETER_EXPRESSION_UNKNOWN_VARIABLE",
           "REVOLVE_NOT_COPLANAR_WITH_AXIS",
           "FRAME_ANGLE_REFERENCE_INVALID_ENTITY",
+          "AMBIGUOUS_GEOMETRY_FOR_GUSSET_DEFINITION",
           "UNKNOWN"
         ]
       },
