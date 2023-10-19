@@ -11,7 +11,7 @@
       "name": "Apache 2.0",
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "version": "1.170.23367-59c3c9f9feef",
+    "version": "1.171.24257-687de06de652",
     "x-logo": {
       "url": "images/logo-onshape-gray-green.svg",
       "backgroundColor": "#ffffff",
@@ -981,6 +981,12 @@
           "default": {
             "description": "File download.",
             "content": {
+              "application/json;charset=UTF-8; qs=0.09": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              },
               "application/octet-stream": {
                 "schema": {
                   "type": "string",
@@ -1613,6 +1619,12 @@
           "default": {
             "description": "File download.",
             "content": {
+              "application/json;charset=UTF-8; qs=0.09": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              },
               "application/octet-stream": {
                 "schema": {
                   "type": "string",
@@ -4274,8 +4286,15 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "Success!"
+          "default": {
+            "description": "default response",
+            "content": {
+              "application/json;charset=UTF-8; qs=0.09": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
           }
         },
         "deprecated": false,
@@ -6055,6 +6074,12 @@
                   "type": "string",
                   "format": "binary"
                 }
+              },
+              "application/json;charset=UTF-8; qs=0.09": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
               }
             }
           }
@@ -6507,7 +6532,7 @@
             "name": "limit",
             "in": "query",
             "schema": {
-              "maximum": 20,
+              "maximum": 200,
               "minimum": 1,
               "type": "integer",
               "format": "int32",
@@ -6858,6 +6883,11 @@
           "default": {
             "description": "default response",
             "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "type": "object"
+                }
+              },
               "image/*": {
                 "schema": {
                   "type": "object"
@@ -7498,6 +7528,12 @@
           "200": {
             "description": "Success!",
             "content": {
+              "application/json;charset=UTF-8; qs=0.09": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              },
               "application/octet-stream": {
                 "schema": {
                   "type": "string",
@@ -8464,6 +8500,11 @@
             "description": "default response",
             "content": {
               "application/octet-stream": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/json;charset=UTF-8; qs=0.09": {
                 "schema": {
                   "type": "object"
                 }
@@ -12530,7 +12571,18 @@
         "responses": {
           "default": {
             "description": "default response",
-            "content": {}
+            "content": {
+              "application/json;charset=UTF-8; qs=0.09": {
+                "schema": {
+                  "$ref": "#/components/schemas/OpenAPI"
+                }
+              },
+              "application/yaml;charset=UTF-8; qs=0.09": {
+                "schema": {
+                  "$ref": "#/components/schemas/OpenAPI"
+                }
+              }
+            }
           }
         },
         "deprecated": false,
@@ -12548,7 +12600,24 @@
         "responses": {
           "default": {
             "description": "default response",
-            "content": {}
+            "content": {
+              "application/json;charset=UTF-8; qs=0.09": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Tag"
+                  }
+                }
+              },
+              "application/yaml;charset=UTF-8; qs=0.09": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Tag"
+                  }
+                }
+              }
+            }
           }
         },
         "deprecated": false,
@@ -13236,6 +13305,11 @@
           "200": {
             "description": "Success!",
             "content": {
+              "model/gltf+json;charset=UTF-8;qs=0.08": {
+                "schema": {
+                  "$ref": "#/components/schemas/GlTF"
+                }
+              },
               "model/gltf-binary;qs=0.08": {
                 "schema": {
                   "type": "string",
@@ -13474,6 +13548,12 @@
             "description": "Success!",
             "content": {
               "application/octet-stream": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              },
+              "application/json;charset=UTF-8; qs=0.09": {
                 "schema": {
                   "type": "string",
                   "format": "binary"
@@ -13852,6 +13932,11 @@
             "description": "default response",
             "content": {
               "application/octet-stream": {
+                "schema": {
+                  "type": "object"
+                }
+              },
+              "application/json;charset=UTF-8; qs=0.09": {
                 "schema": {
                   "type": "object"
                 }
@@ -15830,6 +15915,11 @@
           "200": {
             "description": "Success!",
             "content": {
+              "model/gltf+json;charset=UTF-8;qs=0.08": {
+                "schema": {
+                  "$ref": "#/components/schemas/GlTF"
+                }
+              },
               "model/gltf-binary;qs=0.08": {
                 "schema": {
                   "type": "string",
@@ -19055,6 +19145,11 @@
           "default": {
             "description": "default response",
             "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "type": "object"
+                }
+              },
               "image/*": {
                 "schema": {
                   "type": "object"
@@ -19145,6 +19240,11 @@
           "default": {
             "description": "default response",
             "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "type": "object"
+                }
+              },
               "image/*": {
                 "schema": {
                   "type": "object"
@@ -19544,6 +19644,11 @@
           "default": {
             "description": "default response",
             "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "type": "object"
+                }
+              },
               "image/*": {
                 "schema": {
                   "type": "object"
@@ -20002,7 +20107,8 @@
         "tags": [
           "User"
         ],
-        "summary": "Returned information depends on caller's OAuth2ReadPll scope.",
+        "summary": "Authenticate a user's Onshape credentials, and create a session.",
+        "description": "Returned information depends on caller's `OAuth2ReadPll` scope.",
         "operationId": "session",
         "requestBody": {
           "content": {
@@ -20035,8 +20141,8 @@
         "tags": [
           "User"
         ],
-        "summary": "Check to see if a user is signed in to a current session.",
-        "description": "Returned information depends on caller's OAuth2ReadPll scope.",
+        "summary": "Get the session information for an authenticated (signed-in) user.",
+        "description": "Returned information depends on caller's `OAuth2ReadPll` scope.",
         "operationId": "sessionInfo",
         "responses": {
           "default": {
@@ -20059,8 +20165,8 @@
         "tags": [
           "User"
         ],
-        "summary": "Get the user settings for currently signed in user.",
-        "description": "* Mouse button settings are contained in `reverseScrollWheelZoomDirection` and `viewManipulationMouseKeyMapping`. \n* For each action in `viewManipulationMouseKeyMapping`, an array of modifier key/mouse combos is provided that performs that action. \n* Possible modifier keys include SHIFT and CTRL. \n* Possible mouse buttons include MMB (middle), RMB (right), and SCROLLWHEEL. \n* The scroll wheel is used in zoom operations, where scrolling forward causes the view to zoom in unless `reverseScrollWheelZoomDirection` is set to true.",
+        "summary": "Get the user settings for the signed-in user (i.e., you) for the current session.",
+        "description": "* Non-admins can call this API for their own user ID. \n* Mouse button settings are contained in `reverseScrollWheelZoomDirection` and `viewManipulationMouseKeyMapping`. \n* For each action in `viewManipulationMouseKeyMapping`, an array of modifier key/mouse combos is provided that performs that action. \n* Possible modifier keys include `SHIFT` and `CTRL`. \n* Possible mouse buttons include `MMB` (middle mouse button), `RMB` (right mouse button), and `SCROLLWHEEL`. \n* Scrolling forward zooms in, unless `reverseScrollWheelZoomDirection` is set to `true`.",
         "operationId": "getUserSettingsCurrentLoggedInUser",
         "parameters": [
           {
@@ -20093,8 +20199,8 @@
         "tags": [
           "User"
         ],
-        "summary": "Get the default user settings that are used when the user creates a new document.",
-        "description": "* Mouse button settings are contained in `reverseScrollWheelZoomDirection` and `viewManipulationMouseKeyMapping`. \n* For each action in `viewManipulationMouseKeyMapping`, an array of modifier key/mouse combos is provided that performs that action. \n* Possible modifier keys include SHIFT and CTRL. \n* Possible mouse buttons include MMB (middle), RMB (right), and SCROLLWHEEL. \n* The scroll wheel is used in zoom operations, where scrolling forward causes the view to zoom in unless `reverseScrollWheelZoomDirection` is set to true.",
+        "summary": "Get the user settings for any user in your organization (admins only).",
+        "description": "* Mouse button settings are contained in `reverseScrollWheelZoomDirection` and `viewManipulationMouseKeyMapping`. \n* For each action in `viewManipulationMouseKeyMapping`, an array of modifier key/mouse combos is provided that performs that action. \n* Possible modifier keys include `SHIFT` and `CTRL`. \n* Possible mouse buttons include `MMB` (middle mouse button), `RMB` (right mouse button), and `SCROLLWHEEL`. \n* Scrolling forward zooms in, unless `reverseScrollWheelZoomDirection` is set to `true`.",
         "operationId": "getUserSettings",
         "parameters": [
           {
@@ -23042,6 +23148,202 @@
   },
   "components": {
     "schemas": {
+      "Accessor": {
+        "type": "object",
+        "properties": {
+          "bufferView": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "byteOffset": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "componentType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "count": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "extras": {
+            "type": "object"
+          },
+          "max": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "min": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "name": {
+            "type": "string"
+          },
+          "normalized": {
+            "type": "boolean"
+          },
+          "sparse": {
+            "$ref": "#/components/schemas/AccessorSparse"
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      },
+      "AccessorData": {
+        "type": "object",
+        "properties": {
+          "numComponentsPerElement": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numElements": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalNumComponents": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "AccessorModel": {
+        "type": "object",
+        "properties": {
+          "accessorData": {
+            "$ref": "#/components/schemas/AccessorData"
+          },
+          "bufferViewModel": {
+            "$ref": "#/components/schemas/BufferViewModel"
+          },
+          "byteOffset": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "byteStride": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "componentSizeInBytes": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "componentType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "count": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "elementSizeInBytes": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "elementType": {
+            "$ref": "#/components/schemas/ElementType"
+          },
+          "max": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "min": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "AccessorSparse": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "extras": {
+            "type": "object"
+          },
+          "indices": {
+            "$ref": "#/components/schemas/AccessorSparseIndices"
+          },
+          "values": {
+            "$ref": "#/components/schemas/AccessorSparseValues"
+          }
+        }
+      },
+      "AccessorSparseIndices": {
+        "type": "object",
+        "properties": {
+          "bufferView": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "byteOffset": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "componentType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "extras": {
+            "type": "object"
+          }
+        }
+      },
+      "AccessorSparseValues": {
+        "type": "object",
+        "properties": {
+          "bufferView": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "byteOffset": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "extras": {
+            "type": "object"
+          }
+        }
+      },
       "Address": {
         "type": "object",
         "properties": {
@@ -23061,6 +23363,168 @@
             "type": "string"
           },
           "state": {
+            "type": "string"
+          }
+        }
+      },
+      "Animation": {
+        "type": "object",
+        "properties": {
+          "channels": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AnimationChannel"
+            }
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "extras": {
+            "type": "object"
+          },
+          "name": {
+            "type": "string"
+          },
+          "samplers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AnimationSampler"
+            }
+          }
+        }
+      },
+      "AnimationChannel": {
+        "type": "object",
+        "properties": {
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "extras": {
+            "type": "object"
+          },
+          "sampler": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "target": {
+            "$ref": "#/components/schemas/AnimationChannelTarget"
+          }
+        }
+      },
+      "AnimationChannelTarget": {
+        "type": "object",
+        "properties": {
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "extras": {
+            "type": "object"
+          },
+          "node": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "path": {
+            "type": "string"
+          }
+        }
+      },
+      "AnimationSampler": {
+        "type": "object",
+        "properties": {
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "extras": {
+            "type": "object"
+          },
+          "input": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "interpolation": {
+            "type": "string"
+          },
+          "output": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "ApiResponse": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "object",
+            "properties": {
+              "empty": {
+                "type": "boolean"
+              }
+            },
+            "additionalProperties": {
+              "$ref": "#/components/schemas/MediaType"
+            }
+          },
+          "description": {
+            "type": "string"
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "get$ref": {
+            "type": "string"
+          },
+          "headers": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Header"
+            }
+          },
+          "links": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Link"
+            }
+          }
+        }
+      },
+      "Asset": {
+        "type": "object",
+        "properties": {
+          "copyright": {
+            "type": "string"
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "extras": {
+            "type": "object"
+          },
+          "generator": {
+            "type": "string"
+          },
+          "minVersion": {
+            "type": "string"
+          },
+          "version": {
             "type": "string"
           }
         }
@@ -23330,10 +23794,10 @@
           "canCurrentUserSyncRevisionsToArena": {
             "type": "boolean"
           },
-          "canCurrentUserSyncToArena": {
+          "canCurrentUserSyncStandardContentToArena": {
             "type": "boolean"
           },
-          "canCurrentUserSyncVersionsToArena": {
+          "canCurrentUserSyncToArena": {
             "type": "boolean"
           },
           "companyId": {
@@ -33544,6 +34008,9 @@
               "lockedState": {
                 "$ref": "#/components/schemas/BTMParameter-1"
               },
+              "microversionId": {
+                "$ref": "#/components/schemas/BTMicroversionId-366"
+              },
               "name": {
                 "type": "string"
               },
@@ -33621,9 +34088,6 @@
               },
               "locked": {
                 "type": "boolean"
-              },
-              "microversionId": {
-                "$ref": "#/components/schemas/BTMicroversionId-366"
               },
               "parametricInstance": {
                 "type": "boolean"
@@ -38678,7 +39142,8 @@
           "TASK",
           "CHANGE_ORDER",
           "CHANGE_TASK",
-          "VARIABLE_STUDIO"
+          "VARIABLE_STUDIO",
+          "DRAWING_ANNOTATIONS"
         ]
       },
       "BTMetadataPartInfo": {
@@ -38845,6 +39310,25 @@
           "OBSOLETE",
           "REJECTED",
           "DISCARDED"
+        ]
+      },
+      "BTMetadataValueType": {
+        "type": "string",
+        "enum": [
+          "STRING",
+          "BOOL",
+          "INT",
+          "DOUBLE",
+          "DATE",
+          "ENUM",
+          "OBJECT",
+          "BLOB",
+          "USER",
+          "LIST",
+          "FOREIGN",
+          "CATEGORY",
+          "COMPUTED",
+          "VALUE_WITH_UNITS"
         ]
       },
       "BTMicroversionId-366": {
@@ -42738,12 +43222,6 @@
               "maxNumberOfPicks": {
                 "type": "integer",
                 "format": "int32"
-              },
-              "parameters": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/BTParameterSpec-6"
-                }
               }
             }
           }
@@ -43708,6 +44186,9 @@
               },
               "lockedState": {
                 "$ref": "#/components/schemas/BTMParameter-1"
+              },
+              "microversionId": {
+                "$ref": "#/components/schemas/BTMicroversionId-366"
               },
               "name": {
                 "type": "string"
@@ -46818,6 +47299,9 @@
           "publishState": {
             "type": "integer",
             "format": "int32"
+          },
+          "valueType": {
+            "$ref": "#/components/schemas/BTMetadataValueType"
           }
         }
       },
@@ -47940,16 +48424,26 @@
       "BTTableAssemblyCrossHighlightData-2675": {
         "type": "object",
         "properties": {
-          "assemblyCrossHighlightItems": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BTTableAssemblyCrossHighlightDataItem-2659"
-            }
-          },
           "btType": {
             "type": "string"
           }
-        }
+        },
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BTTableBaseCrossHighlightData-2609"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "assemblyCrossHighlightItems": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/BTTableAssemblyCrossHighlightDataItem-2659"
+                }
+              }
+            }
+          }
+        ]
       },
       "BTTableAssemblyCrossHighlightDataItem-2659": {
         "type": "object",
@@ -48100,6 +48594,9 @@
               "isUnchanged": {
                 "type": "boolean"
               },
+              "overrideStatusType": {
+                "$ref": "#/components/schemas/GBTMetadataOverrideStatusType"
+              },
               "propertySourceType": {
                 "$ref": "#/components/schemas/GBTMetadataSourceType"
               }
@@ -48166,20 +48663,30 @@
         "properties": {
           "btType": {
             "type": "string"
+          }
+        },
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BTTableBaseCrossHighlightData-2609"
           },
-          "deterministicIdList": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "featureIdList": {
-            "type": "array",
-            "items": {
-              "type": "string"
+          {
+            "type": "object",
+            "properties": {
+              "deterministicIdList": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "featureIdList": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
             }
           }
-        }
+        ]
       },
       "BTTableResponse-1546": {
         "type": "object",
@@ -48789,6 +49296,9 @@
           "grouping": {
             "type": "boolean"
           },
+          "hideInspectionItems": {
+            "type": "boolean"
+          },
           "ignoreExportRulesForContents": {
             "type": "boolean"
           },
@@ -48912,6 +49422,9 @@
           },
           "textAsGeometry": {
             "type": "boolean"
+          },
+          "textOption": {
+            "type": "string"
           },
           "triggerAutoDownload": {
             "type": "boolean"
@@ -51257,6 +51770,283 @@
           }
         ]
       },
+      "Buffer": {
+        "type": "object",
+        "properties": {
+          "byteLength": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "extras": {
+            "type": "object"
+          },
+          "name": {
+            "type": "string"
+          },
+          "uri": {
+            "type": "string"
+          }
+        }
+      },
+      "BufferModel": {
+        "type": "object",
+        "properties": {
+          "bufferData": {
+            "type": "object",
+            "properties": {
+              "short": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "char": {
+                "type": "string"
+              },
+              "int": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "long": {
+                "type": "integer",
+                "format": "int64"
+              },
+              "float": {
+                "type": "number",
+                "format": "float"
+              },
+              "double": {
+                "type": "number",
+                "format": "double"
+              },
+              "direct": {
+                "type": "boolean"
+              },
+              "readOnly": {
+                "type": "boolean"
+              }
+            }
+          },
+          "byteLength": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string"
+          },
+          "uri": {
+            "type": "string"
+          }
+        }
+      },
+      "BufferView": {
+        "type": "object",
+        "properties": {
+          "buffer": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "byteLength": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "byteOffset": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "byteStride": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "extras": {
+            "type": "object"
+          },
+          "name": {
+            "type": "string"
+          },
+          "target": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "BufferViewModel": {
+        "type": "object",
+        "properties": {
+          "bufferModel": {
+            "$ref": "#/components/schemas/BufferModel"
+          },
+          "bufferViewData": {
+            "type": "object",
+            "properties": {
+              "short": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "char": {
+                "type": "string"
+              },
+              "int": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "long": {
+                "type": "integer",
+                "format": "int64"
+              },
+              "float": {
+                "type": "number",
+                "format": "float"
+              },
+              "double": {
+                "type": "number",
+                "format": "double"
+              },
+              "direct": {
+                "type": "boolean"
+              },
+              "readOnly": {
+                "type": "boolean"
+              }
+            }
+          },
+          "byteLength": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "byteOffset": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "byteStride": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string"
+          },
+          "target": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Callback": {
+        "type": "object",
+        "properties": {
+          "empty": {
+            "type": "boolean"
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "get$ref": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": {
+          "$ref": "#/components/schemas/PathItem"
+        }
+      },
+      "Camera": {
+        "type": "object",
+        "properties": {
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "extras": {
+            "type": "object"
+          },
+          "name": {
+            "type": "string"
+          },
+          "orthographic": {
+            "$ref": "#/components/schemas/CameraOrthographic"
+          },
+          "perspective": {
+            "$ref": "#/components/schemas/CameraPerspective"
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      },
+      "CameraOrthographic": {
+        "type": "object",
+        "properties": {
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "extras": {
+            "type": "object"
+          },
+          "xmag": {
+            "type": "number",
+            "format": "float"
+          },
+          "ymag": {
+            "type": "number",
+            "format": "float"
+          },
+          "zfar": {
+            "type": "number",
+            "format": "float"
+          },
+          "znear": {
+            "type": "number",
+            "format": "float"
+          }
+        }
+      },
+      "CameraPerspective": {
+        "type": "object",
+        "properties": {
+          "aspectRatio": {
+            "type": "number",
+            "format": "float"
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "extras": {
+            "type": "object"
+          },
+          "yfov": {
+            "type": "number",
+            "format": "float"
+          },
+          "zfar": {
+            "type": "number",
+            "format": "float"
+          },
+          "znear": {
+            "type": "number",
+            "format": "float"
+          }
+        }
+      },
       "Card": {
         "type": "object",
         "properties": {
@@ -51409,6 +52199,77 @@
           }
         }
       },
+      "Components": {
+        "type": "object",
+        "properties": {
+          "callbacks": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Callback"
+            }
+          },
+          "examples": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Example"
+            }
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "headers": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Header"
+            }
+          },
+          "links": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Link"
+            }
+          },
+          "parameters": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Parameter"
+            }
+          },
+          "pathItems": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/PathItem"
+            }
+          },
+          "requestBodies": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/RequestBody"
+            }
+          },
+          "responses": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ApiResponse"
+            }
+          },
+          "schemas": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Schema"
+            }
+          },
+          "securitySchemes": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/SecurityScheme"
+            }
+          }
+        }
+      },
       "ConfigurationEntry": {
         "type": "object",
         "properties": {
@@ -51443,6 +52304,26 @@
             "format": "int32"
           },
           "parameterValue": {
+            "type": "string"
+          }
+        }
+      },
+      "Contact": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "name": {
+            "type": "string"
+          },
+          "url": {
             "type": "string"
           }
         }
@@ -51680,6 +52561,26 @@
           }
         }
       },
+      "Discriminator": {
+        "type": "object",
+        "properties": {
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "mapping": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "propertyName": {
+            "type": "string"
+          }
+        }
+      },
       "EditType": {
         "type": "string",
         "enum": [
@@ -51693,6 +52594,47 @@
           "LIST"
         ]
       },
+      "ElementType": {
+        "type": "string",
+        "enum": [
+          "SCALAR",
+          "VEC2",
+          "VEC3",
+          "VEC4",
+          "MAT2",
+          "MAT3",
+          "MAT4"
+        ]
+      },
+      "Encoding": {
+        "type": "object",
+        "properties": {
+          "allowReserved": {
+            "type": "boolean"
+          },
+          "contentType": {
+            "type": "string"
+          },
+          "explode": {
+            "type": "boolean"
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "headers": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Header"
+            }
+          },
+          "style": {
+            "$ref": "#/components/schemas/StyleEnum"
+          }
+        }
+      },
       "Entry": {
         "type": "object",
         "properties": {
@@ -51704,6 +52646,35 @@
           },
           "role": {
             "$ref": "#/components/schemas/BTRbacRoleInfo"
+          }
+        }
+      },
+      "Example": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "externalValue": {
+            "type": "string"
+          },
+          "get$ref": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "value": {
+            "type": "object"
+          },
+          "valueSetFlag": {
+            "type": "boolean"
           }
         }
       },
@@ -51761,6 +52732,23 @@
           "totalCount": {
             "type": "integer",
             "format": "int32"
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      },
+      "ExternalDocumentation": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
           },
           "url": {
             "type": "string"
@@ -53440,6 +54428,26 @@
           "REVOLVE_NOT_COPLANAR_WITH_AXIS",
           "FRAME_ANGLE_REFERENCE_INVALID_ENTITY",
           "AMBIGUOUS_GEOMETRY_FOR_GUSSET_DEFINITION",
+          "HOLE_START_BOUND_INVALID",
+          "HOLE_NO_START_BOUND",
+          "BODY_DRAFT_FAILED",
+          "BODY_DRAFT_NO_REFERENCES",
+          "BODY_DRAFT_NO_ANGLES",
+          "BODY_DRAFT_INVALID_ABOVE_ANGLE",
+          "BODY_DRAFT_INVALID_BELOW_ANGLE",
+          "BODY_DRAFT_INVALID_PARTING_ENTITY",
+          "BODY_DRAFT_INVALID_PULL_DIRECTION",
+          "BODY_DRAFT_MITER_NEED_BOTH_SIDES",
+          "BODY_DRAFT_EDGE_SEPARATION_FAILED",
+          "BODY_DRAFT_EDGE_SPLIT_FAILED",
+          "BODY_DRAFT_ISOCLINE_SPLIT_FAILED",
+          "BODY_DRAFT_PARTING_PLANE_SHEET_ERROR",
+          "BODY_DRAFT_INVALID_REFERENCE",
+          "BODY_DRAFT_REFERENCE_LOOP",
+          "BODY_DRAFT_TOO_STEEP",
+          "BODY_DRAFT_BAD_PULL_DIRECTION",
+          "BODY_DRAFT_MITER_FAILED",
+          "DECAL_HORIZONTAL_REFERENCE_INVALID_ENTITY",
           "UNKNOWN"
         ]
       },
@@ -53541,6 +54549,17 @@
           "MIXED",
           "ALL_MESH",
           "UNKNOWN"
+        ]
+      },
+      "GBTMetadataOverrideStatusType": {
+        "type": "string",
+        "enum": [
+          "UNKNOWN",
+          "PROPERTY_NOT_COMPUTED",
+          "COMPUTED_WITH_NO_OVERRIDES",
+          "COMPUTED_WITH_OVERRIDES",
+          "COMPUTED_WITH_SUBASSEMBLY_OVERRIDES",
+          "OVERRIDDEN"
         ]
       },
       "GBTMetadataSourceType": {
@@ -53941,6 +54960,117 @@
           "UNKNOWN"
         ]
       },
+      "GlTF": {
+        "type": "object",
+        "properties": {
+          "accessors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Accessor"
+            }
+          },
+          "animations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Animation"
+            }
+          },
+          "asset": {
+            "$ref": "#/components/schemas/Asset"
+          },
+          "bufferViews": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BufferView"
+            }
+          },
+          "buffers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Buffer"
+            }
+          },
+          "cameras": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Camera"
+            }
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "extensionsRequired": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "extensionsUsed": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "extras": {
+            "type": "object"
+          },
+          "images": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Image"
+            }
+          },
+          "materials": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Material"
+            }
+          },
+          "meshes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Mesh"
+            }
+          },
+          "nodes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Node"
+            }
+          },
+          "samplers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Sampler"
+            }
+          },
+          "scene": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "scenes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Scene"
+            }
+          },
+          "skins": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Skin"
+            }
+          },
+          "textures": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Texture"
+            }
+          }
+        }
+      },
       "GlobalPermissionInfo": {
         "type": "object",
         "properties": {
@@ -54012,6 +55142,123 @@
           }
         }
       },
+      "Header": {
+        "type": "object",
+        "properties": {
+          "deprecated": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string"
+          },
+          "example": {
+            "type": "object"
+          },
+          "examples": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Example"
+            }
+          },
+          "explode": {
+            "type": "boolean"
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "get$ref": {
+            "type": "string"
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "schema": {
+            "$ref": "#/components/schemas/Schema"
+          },
+          "style": {
+            "$ref": "#/components/schemas/StyleEnum"
+          }
+        }
+      },
+      "Image": {
+        "type": "object",
+        "properties": {
+          "bufferView": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "extras": {
+            "type": "object"
+          },
+          "mimeType": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "uri": {
+            "type": "string"
+          }
+        }
+      },
+      "In": {
+        "type": "string",
+        "enum": [
+          "COOKIE",
+          "HEADER",
+          "QUERY"
+        ]
+      },
+      "Info": {
+        "type": "object",
+        "properties": {
+          "contact": {
+            "$ref": "#/components/schemas/Contact"
+          },
+          "description": {
+            "type": "string"
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "license": {
+            "$ref": "#/components/schemas/License"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "termsOfService": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          }
+        }
+      },
+      "Interpolation": {
+        "type": "string",
+        "enum": [
+          "STEP",
+          "LINEAR",
+          "CATMULLROMSPLINE",
+          "CUBICSPLINE"
+        ]
+      },
       "Item": {
         "required": [
           "jsonType"
@@ -54020,11 +55267,6 @@
         "properties": {
           "applicationTarget": {
             "$ref": "#/components/schemas/BTApplicationTargetInfo"
-          },
-          "baseHref": {
-            "type": "string",
-            "format": "uri",
-            "readOnly": true
           },
           "dataType": {
             "type": "string"
@@ -54080,8 +55322,307 @@
           }
         }
       },
+      "License": {
+        "type": "object",
+        "properties": {
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "identifier": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      },
       "Lines": {
         "type": "object"
+      },
+      "Link": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "get$ref": {
+            "type": "string"
+          },
+          "headers": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Header"
+            }
+          },
+          "operationId": {
+            "type": "string"
+          },
+          "operationRef": {
+            "type": "string"
+          },
+          "parameters": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "requestBody": {
+            "type": "object"
+          },
+          "server": {
+            "$ref": "#/components/schemas/Server"
+          }
+        }
+      },
+      "Material": {
+        "type": "object",
+        "properties": {
+          "alphaCutoff": {
+            "type": "number",
+            "format": "float"
+          },
+          "alphaMode": {
+            "type": "string"
+          },
+          "doubleSided": {
+            "type": "boolean"
+          },
+          "emissiveFactor": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "format": "float"
+            }
+          },
+          "emissiveTexture": {
+            "$ref": "#/components/schemas/TextureInfo"
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "extras": {
+            "type": "object"
+          },
+          "name": {
+            "type": "string"
+          },
+          "normalTexture": {
+            "$ref": "#/components/schemas/MaterialNormalTextureInfo"
+          },
+          "occlusionTexture": {
+            "$ref": "#/components/schemas/MaterialOcclusionTextureInfo"
+          },
+          "pbrMetallicRoughness": {
+            "$ref": "#/components/schemas/MaterialPbrMetallicRoughness"
+          }
+        }
+      },
+      "MaterialNormalTextureInfo": {
+        "type": "object",
+        "properties": {
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "extras": {
+            "type": "object"
+          },
+          "index": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "scale": {
+            "type": "number",
+            "format": "float"
+          },
+          "texCoord": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "MaterialOcclusionTextureInfo": {
+        "type": "object",
+        "properties": {
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "extras": {
+            "type": "object"
+          },
+          "index": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "strength": {
+            "type": "number",
+            "format": "float"
+          },
+          "texCoord": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "MaterialPbrMetallicRoughness": {
+        "type": "object",
+        "properties": {
+          "baseColorFactor": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "format": "float"
+            }
+          },
+          "baseColorTexture": {
+            "$ref": "#/components/schemas/TextureInfo"
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "extras": {
+            "type": "object"
+          },
+          "metallicFactor": {
+            "type": "number",
+            "format": "float"
+          },
+          "metallicRoughnessTexture": {
+            "$ref": "#/components/schemas/TextureInfo"
+          },
+          "roughnessFactor": {
+            "type": "number",
+            "format": "float"
+          }
+        }
+      },
+      "MediaType": {
+        "type": "object",
+        "properties": {
+          "encoding": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Encoding"
+            }
+          },
+          "example": {
+            "type": "object"
+          },
+          "exampleSetFlag": {
+            "type": "boolean"
+          },
+          "examples": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Example"
+            }
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "schema": {
+            "$ref": "#/components/schemas/Schema"
+          }
+        }
+      },
+      "Mesh": {
+        "type": "object",
+        "properties": {
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "extras": {
+            "type": "object"
+          },
+          "name": {
+            "type": "string"
+          },
+          "primitives": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MeshPrimitive"
+            }
+          },
+          "weights": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "format": "float"
+            }
+          }
+        }
+      },
+      "MeshPrimitive": {
+        "type": "object",
+        "properties": {
+          "attributes": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "extras": {
+            "type": "object"
+          },
+          "indices": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "material": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "mode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "targets": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          }
+        }
       },
       "NextCharge": {
         "type": "object",
@@ -54115,6 +55656,137 @@
           }
         }
       },
+      "Node": {
+        "type": "object",
+        "properties": {
+          "camera": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "children": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "extras": {
+            "type": "object"
+          },
+          "matrix": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "format": "float"
+            }
+          },
+          "mesh": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string"
+          },
+          "rotation": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "format": "float"
+            }
+          },
+          "scale": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "format": "float"
+            }
+          },
+          "skin": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "translation": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "format": "float"
+            }
+          },
+          "weights": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "format": "float"
+            }
+          }
+        }
+      },
+      "OAuthFlow": {
+        "type": "object",
+        "properties": {
+          "authorizationUrl": {
+            "type": "string"
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "refreshUrl": {
+            "type": "string"
+          },
+          "scopes": {
+            "type": "object",
+            "properties": {
+              "extensions": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object"
+                }
+              },
+              "empty": {
+                "type": "boolean"
+              }
+            },
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "tokenUrl": {
+            "type": "string"
+          }
+        }
+      },
+      "OAuthFlows": {
+        "type": "object",
+        "properties": {
+          "authorizationCode": {
+            "$ref": "#/components/schemas/OAuthFlow"
+          },
+          "clientCredentials": {
+            "$ref": "#/components/schemas/OAuthFlow"
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "implicit": {
+            "$ref": "#/components/schemas/OAuthFlow"
+          },
+          "password": {
+            "$ref": "#/components/schemas/OAuthFlow"
+          }
+        }
+      },
       "ObjectId": {
         "type": "object",
         "properties": {
@@ -54125,6 +55797,272 @@
           "timestamp": {
             "type": "integer",
             "format": "int32"
+          }
+        }
+      },
+      "OpenAPI": {
+        "type": "object",
+        "properties": {
+          "components": {
+            "$ref": "#/components/schemas/Components"
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "externalDocs": {
+            "$ref": "#/components/schemas/ExternalDocumentation"
+          },
+          "info": {
+            "$ref": "#/components/schemas/Info"
+          },
+          "jsonSchemaDialect": {
+            "type": "string"
+          },
+          "openapi": {
+            "type": "string"
+          },
+          "paths": {
+            "type": "object",
+            "properties": {
+              "extensions": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object"
+                }
+              },
+              "empty": {
+                "type": "boolean"
+              }
+            },
+            "additionalProperties": {
+              "$ref": "#/components/schemas/PathItem"
+            }
+          },
+          "security": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SecurityRequirement"
+            }
+          },
+          "servers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Server"
+            }
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Tag"
+            }
+          },
+          "webhooks": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/PathItem"
+            }
+          }
+        }
+      },
+      "Operation": {
+        "type": "object",
+        "properties": {
+          "callbacks": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Callback"
+            }
+          },
+          "deprecated": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string"
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "externalDocs": {
+            "$ref": "#/components/schemas/ExternalDocumentation"
+          },
+          "operationId": {
+            "type": "string"
+          },
+          "parameters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Parameter"
+            }
+          },
+          "requestBody": {
+            "$ref": "#/components/schemas/RequestBody"
+          },
+          "responses": {
+            "type": "object",
+            "properties": {
+              "extensions": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object"
+                }
+              },
+              "default": {
+                "$ref": "#/components/schemas/ApiResponse"
+              },
+              "empty": {
+                "type": "boolean"
+              }
+            },
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ApiResponse"
+            }
+          },
+          "security": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SecurityRequirement"
+            }
+          },
+          "servers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Server"
+            }
+          },
+          "summary": {
+            "type": "string"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "Parameter": {
+        "type": "object",
+        "properties": {
+          "allowEmptyValue": {
+            "type": "boolean"
+          },
+          "allowReserved": {
+            "type": "boolean"
+          },
+          "content": {
+            "type": "object",
+            "properties": {
+              "empty": {
+                "type": "boolean"
+              }
+            },
+            "additionalProperties": {
+              "$ref": "#/components/schemas/MediaType"
+            }
+          },
+          "deprecated": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string"
+          },
+          "example": {
+            "type": "object"
+          },
+          "examples": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Example"
+            }
+          },
+          "explode": {
+            "type": "boolean"
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "get$ref": {
+            "type": "string"
+          },
+          "in": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "schema": {
+            "$ref": "#/components/schemas/Schema"
+          },
+          "style": {
+            "$ref": "#/components/schemas/StyleEnum"
+          }
+        }
+      },
+      "PathItem": {
+        "type": "object",
+        "properties": {
+          "delete": {
+            "$ref": "#/components/schemas/Operation"
+          },
+          "description": {
+            "type": "string"
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "get": {
+            "$ref": "#/components/schemas/Operation"
+          },
+          "get$ref": {
+            "type": "string"
+          },
+          "head": {
+            "$ref": "#/components/schemas/Operation"
+          },
+          "options": {
+            "$ref": "#/components/schemas/Operation"
+          },
+          "parameters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Parameter"
+            }
+          },
+          "patch": {
+            "$ref": "#/components/schemas/Operation"
+          },
+          "post": {
+            "$ref": "#/components/schemas/Operation"
+          },
+          "put": {
+            "$ref": "#/components/schemas/Operation"
+          },
+          "servers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Server"
+            }
+          },
+          "summary": {
+            "type": "string"
+          },
+          "trace": {
+            "$ref": "#/components/schemas/Operation"
           }
         }
       },
@@ -54195,6 +56133,37 @@
           }
         }
       },
+      "RequestBody": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "object",
+            "properties": {
+              "empty": {
+                "type": "boolean"
+              }
+            },
+            "additionalProperties": {
+              "$ref": "#/components/schemas/MediaType"
+            }
+          },
+          "description": {
+            "type": "string"
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "get$ref": {
+            "type": "string"
+          },
+          "required": {
+            "type": "boolean"
+          }
+        }
+      },
       "RequestOptions": {
         "type": "object",
         "properties": {
@@ -54234,6 +56203,655 @@
           }
         }
       },
+      "Sampler": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "$ref": "#/components/schemas/AccessorModel"
+          },
+          "interpolation": {
+            "$ref": "#/components/schemas/Interpolation"
+          },
+          "output": {
+            "$ref": "#/components/schemas/AccessorModel"
+          }
+        }
+      },
+      "Scene": {
+        "type": "object",
+        "properties": {
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "extras": {
+            "type": "object"
+          },
+          "name": {
+            "type": "string"
+          },
+          "nodes": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        }
+      },
+      "Schema": {
+        "type": "object",
+        "properties": {
+          "additionalItems": {
+            "$ref": "#/components/schemas/Schema"
+          },
+          "additionalProperties": {
+            "type": "object"
+          },
+          "allOf": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Schema"
+            }
+          },
+          "anyOf": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Schema"
+            }
+          },
+          "booleanSchemaValue": {
+            "type": "boolean"
+          },
+          "const": {
+            "type": "object"
+          },
+          "contains": {
+            "$ref": "#/components/schemas/Schema"
+          },
+          "contentEncoding": {
+            "type": "string"
+          },
+          "contentMediaType": {
+            "type": "string"
+          },
+          "contentSchema": {
+            "$ref": "#/components/schemas/Schema"
+          },
+          "default": {
+            "type": "object"
+          },
+          "dependentRequired": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "dependentSchemas": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Schema"
+            }
+          },
+          "deprecated": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string"
+          },
+          "discriminator": {
+            "$ref": "#/components/schemas/Discriminator"
+          },
+          "else": {
+            "$ref": "#/components/schemas/Schema"
+          },
+          "enum": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "example": {
+            "type": "object"
+          },
+          "exampleSetFlag": {
+            "type": "boolean"
+          },
+          "examples": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "exclusiveMaximum": {
+            "type": "boolean"
+          },
+          "exclusiveMaximumValue": {
+            "type": "number"
+          },
+          "exclusiveMinimum": {
+            "type": "boolean"
+          },
+          "exclusiveMinimumValue": {
+            "type": "number"
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "externalDocs": {
+            "$ref": "#/components/schemas/ExternalDocumentation"
+          },
+          "format": {
+            "type": "string"
+          },
+          "get$anchor": {
+            "type": "string"
+          },
+          "get$comment": {
+            "type": "string"
+          },
+          "get$id": {
+            "type": "string"
+          },
+          "get$ref": {
+            "type": "string"
+          },
+          "get$schema": {
+            "type": "string"
+          },
+          "if": {
+            "$ref": "#/components/schemas/Schema"
+          },
+          "items": {
+            "$ref": "#/components/schemas/SchemaObject"
+          },
+          "jsonSchema": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "jsonSchemaImpl": {
+            "type": "object"
+          },
+          "maxContains": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maxItems": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maxLength": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maxProperties": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maximum": {
+            "type": "number"
+          },
+          "minContains": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "minItems": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "minLength": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "minProperties": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "minimum": {
+            "type": "number"
+          },
+          "multipleOf": {
+            "type": "number"
+          },
+          "not": {
+            "$ref": "#/components/schemas/Schema"
+          },
+          "nullable": {
+            "type": "boolean"
+          },
+          "oneOf": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Schema"
+            }
+          },
+          "pattern": {
+            "type": "string"
+          },
+          "patternProperties": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Schema"
+            }
+          },
+          "prefixItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Schema"
+            }
+          },
+          "properties": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Schema"
+            }
+          },
+          "propertyNames": {
+            "$ref": "#/components/schemas/Schema"
+          },
+          "readOnly": {
+            "type": "boolean"
+          },
+          "required": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "then": {
+            "$ref": "#/components/schemas/Schema"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "types": {
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "unevaluatedItems": {
+            "$ref": "#/components/schemas/Schema"
+          },
+          "unevaluatedProperties": {
+            "$ref": "#/components/schemas/Schema"
+          },
+          "uniqueItems": {
+            "type": "boolean"
+          },
+          "writeOnly": {
+            "type": "boolean"
+          },
+          "xml": {
+            "$ref": "#/components/schemas/XML"
+          }
+        }
+      },
+      "SchemaObject": {
+        "type": "object",
+        "properties": {
+          "additionalItems": {
+            "$ref": "#/components/schemas/Schema"
+          },
+          "additionalProperties": {
+            "type": "object"
+          },
+          "allOf": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Schema"
+            }
+          },
+          "anyOf": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Schema"
+            }
+          },
+          "booleanSchemaValue": {
+            "type": "boolean"
+          },
+          "const": {
+            "type": "object"
+          },
+          "contains": {
+            "$ref": "#/components/schemas/Schema"
+          },
+          "contentEncoding": {
+            "type": "string"
+          },
+          "contentMediaType": {
+            "type": "string"
+          },
+          "contentSchema": {
+            "$ref": "#/components/schemas/Schema"
+          },
+          "default": {
+            "type": "object"
+          },
+          "dependentRequired": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "deprecated": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string"
+          },
+          "discriminator": {
+            "$ref": "#/components/schemas/Discriminator"
+          },
+          "else": {
+            "$ref": "#/components/schemas/Schema"
+          },
+          "enum": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "example": {
+            "type": "object"
+          },
+          "exampleSetFlag": {
+            "type": "boolean"
+          },
+          "examples": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "exclusiveMaximum": {
+            "type": "boolean"
+          },
+          "exclusiveMaximumValue": {
+            "type": "number"
+          },
+          "exclusiveMinimum": {
+            "type": "boolean"
+          },
+          "exclusiveMinimumValue": {
+            "type": "number"
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "externalDocs": {
+            "$ref": "#/components/schemas/ExternalDocumentation"
+          },
+          "format": {
+            "type": "string"
+          },
+          "get$anchor": {
+            "type": "string"
+          },
+          "get$comment": {
+            "type": "string"
+          },
+          "get$id": {
+            "type": "string"
+          },
+          "get$ref": {
+            "type": "string"
+          },
+          "get$schema": {
+            "type": "string"
+          },
+          "if": {
+            "$ref": "#/components/schemas/Schema"
+          },
+          "items": {
+            "$ref": "#/components/schemas/SchemaObject"
+          },
+          "jsonSchema": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "jsonSchemaImpl": {
+            "type": "object"
+          },
+          "maxContains": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maxItems": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maxLength": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maxProperties": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maximum": {
+            "type": "number"
+          },
+          "minContains": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "minItems": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "minLength": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "minProperties": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "minimum": {
+            "type": "number"
+          },
+          "multipleOf": {
+            "type": "number"
+          },
+          "not": {
+            "$ref": "#/components/schemas/Schema"
+          },
+          "nullable": {
+            "type": "boolean"
+          },
+          "oneOf": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Schema"
+            }
+          },
+          "pattern": {
+            "type": "string"
+          },
+          "prefixItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Schema"
+            }
+          },
+          "propertyNames": {
+            "$ref": "#/components/schemas/Schema"
+          },
+          "readOnly": {
+            "type": "boolean"
+          },
+          "required": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "then": {
+            "$ref": "#/components/schemas/Schema"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "types": {
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "unevaluatedItems": {
+            "$ref": "#/components/schemas/Schema"
+          },
+          "unevaluatedProperties": {
+            "$ref": "#/components/schemas/Schema"
+          },
+          "uniqueItems": {
+            "type": "boolean"
+          },
+          "writeOnly": {
+            "type": "boolean"
+          },
+          "xml": {
+            "$ref": "#/components/schemas/XML"
+          }
+        }
+      },
+      "SecurityRequirement": {
+        "type": "object",
+        "properties": {
+          "empty": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "SecurityScheme": {
+        "type": "object",
+        "properties": {
+          "bearerFormat": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "flows": {
+            "$ref": "#/components/schemas/OAuthFlows"
+          },
+          "get$ref": {
+            "type": "string"
+          },
+          "in": {
+            "$ref": "#/components/schemas/In"
+          },
+          "name": {
+            "type": "string"
+          },
+          "openIdConnectUrl": {
+            "type": "string"
+          },
+          "scheme": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/Type"
+          }
+        }
+      },
+      "Server": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "url": {
+            "type": "string"
+          },
+          "variables": {
+            "type": "object",
+            "properties": {
+              "extensions": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object"
+                }
+              },
+              "empty": {
+                "type": "boolean"
+              }
+            },
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ServerVariable"
+            }
+          }
+        }
+      },
+      "ServerVariable": {
+        "type": "object",
+        "properties": {
+          "default": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "enum": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          }
+        }
+      },
       "ShippingDetails": {
         "type": "object",
         "properties": {
@@ -54248,6 +56866,38 @@
           }
         }
       },
+      "Skin": {
+        "type": "object",
+        "properties": {
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "extras": {
+            "type": "object"
+          },
+          "inverseBindMatrices": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "joints": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "name": {
+            "type": "string"
+          },
+          "skeleton": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
       "Status": {
         "type": "string",
         "enum": [
@@ -54257,6 +56907,15 @@
           "EVP",
           "UNSET",
           "INTERNAL"
+        ]
+      },
+      "StyleEnum": {
+        "type": "string",
+        "enum": [
+          "FORM",
+          "SPACE_DELIMITED",
+          "PIPE_DELIMITED",
+          "DEEP_OBJECT"
         ]
       },
       "Subscription": {
@@ -54404,6 +57063,73 @@
           }
         }
       },
+      "Tag": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "externalDocs": {
+            "$ref": "#/components/schemas/ExternalDocumentation"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "Texture": {
+        "type": "object",
+        "properties": {
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "extras": {
+            "type": "object"
+          },
+          "name": {
+            "type": "string"
+          },
+          "sampler": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "source": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "TextureInfo": {
+        "type": "object",
+        "properties": {
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "extras": {
+            "type": "object"
+          },
+          "index": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "texCoord": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
       "ThreeDSecure": {
         "type": "object",
         "properties": {
@@ -54459,6 +57185,16 @@
           }
         }
       },
+      "Type": {
+        "type": "string",
+        "enum": [
+          "APIKEY",
+          "HTTP",
+          "OAUTH2",
+          "OPENIDCONNECT",
+          "MUTUALTLS"
+        ]
+      },
       "UpdateParams": {
         "type": "object",
         "properties": {
@@ -54497,6 +57233,32 @@
           },
           "specifiedVersion": {
             "$ref": "#/components/schemas/BTApiVersion"
+          }
+        }
+      },
+      "XML": {
+        "type": "object",
+        "properties": {
+          "attribute": {
+            "type": "boolean"
+          },
+          "extensions": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "name": {
+            "type": "string"
+          },
+          "namespace": {
+            "type": "string"
+          },
+          "prefix": {
+            "type": "string"
+          },
+          "wrapped": {
+            "type": "boolean"
           }
         }
       },
