@@ -6,8 +6,9 @@
   "scripts": {
     "build": "npm install && npm run genmodspec && npm run compilespec && npm run patchspec",
     "genmodspec": "node gen_modified_openapi.js",
-    "compilespec0": "npx @openapitools/openapi-generator-cli generate -i modified_openapi.json -o gen/ -t custom_template/ --skip-validate-spec --additional-properties=npmName=onshape_ts_client,legacyDiscriminatorBehavior=false -g typescript-fetch",
-    "compilespec": "npx @openapitools/openapi-generator-cli generate -i modified_openapi.json --skip-validate-spec -g typescript-fetch",
+    "compilespect": "npx @openapitools/openapi-generator-cli generate -i modified_openapi.json -o gen --additional-properties=useObjectParameters=true -g typescript",
+    "compilespec0": "npx @openapitools/openapi-generator-cli generate -i modified_openapi.json -o gen/ -t custom_template/ --additional-properties=npmName=onshape_ts_client,legacyDiscriminatorBehavior=false -g typescript-fetch",
+    "compilespec": "npx @openapitools/openapi-generator-cli generate -i modified_openapi.json -g typescript-fetch",
     "patchspec": "node fix_tojson.js --dir models",
     "test": "echo \"Error: no test specified\" && exit 1",
     "docs": "npx typedoc --out docs index.ts"
@@ -27,9 +28,11 @@
   },
   "homepage": "https://github.com/toebes/onshape-typescript-fetch#readme",
   "devDependencies": {
-    "@openapitools/openapi-generator-cli": "^2.5.2",
     "json": "^11.0.0",
     "typedoc": "^0.23.26",
     "yargs": "^17.7.2"
+  },
+  "dependencies": {
+    "@openapitools/openapi-generator-cli": "^2.7.0"
   }
 }

@@ -148,6 +148,7 @@ models/BTAssemblySimulationTable3236.ts
 models/BTAssemblyTransformDefinitionParams.ts
 models/BTAssemblyTransformedInstancesDefinitionParams.ts
 models/BTAssociativeDataInfo.ts
+models/BTBDrawingOperationParams.ts
 models/BTBExportModelParams.ts
 models/BTBSMatrix386.ts
 models/BTBaseEntityAppearanceEntry3607.ts
@@ -451,6 +452,8 @@ models/BTImmutableDoubleArray.ts
 models/BTImmutableFloatArray.ts
 models/BTImmutableIntArray.ts
 models/BTImport.ts
+models/BTInContextObjectFilter3810.ts
+models/BTInContextObjectFilter3810AllOf.ts
 models/BTIndividualTableProperties3760.ts
 models/BTInheritedAclInfo.ts
 models/BTInnerArrayParameterLocation2368.ts
@@ -1168,6 +1171,7 @@ models/BTVariableTableRowMetadata3912.ts
 models/BTVariableTableRowMetadata3912AllOf.ts
 models/BTVector2d1812.ts
 models/BTVector3d389.ts
+models/BTVersionGraphMode.ts
 models/BTVersionInfo.ts
 models/BTVersionOrWorkspaceMergeInfo.ts
 models/BTVersionOrWorkspaceParams.ts
@@ -1195,6 +1199,7 @@ models/BTWorkflowableObjectObserver.ts
 models/BTWorkspaceInfo.ts
 models/BTWorkspaceMessageBody.ts
 models/BTWorkspaceMessageBodyAllOf.ts
+models/BTWorkspaceProtectionRuleOptions.ts
 models/BTZipFileInfo.ts
 models/BlobItem.ts
 models/BlobItemAllOf.ts
@@ -1230,6 +1235,7 @@ models/ExternalAccountCollection.ts
 models/ExternalDocumentation.ts
 models/GBTAppElementAssociativeDataType.ts
 models/GBTAppElementReferenceType.ts
+models/GBTAppearanceType.ts
 models/GBTAssemblyFeatureDisplayStatus.ts
 models/GBTAssemblySimulationType.ts
 models/GBTBSFeatureVisibility.ts

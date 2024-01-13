@@ -10,6 +10,15 @@
         "customGeneratorUrl": "https://github.com/onshape-public/openapi-utilities/raw/main/go-oapi-codegen/release/go-oapi-codegen-latest.jar",
         "preprocess": [
             {
+                "key": "paths['/assemblies/d/{did}/w/{wid}/e/{eid}/instances'].post.responses",
+                "type": "update",
+                "value": {
+                    "200": {
+                        "description": "Success!"
+                    }
+                }
+            },
+            {
                 "key": "paths['/appelements/d/{did}/w/{wid}/e/{eid}/blob/{bid}'].post.requestBody.content['multipart/form-data'].schema.properties.file.type",
                 "type": "update",
                 "value": "string"
@@ -25,17 +34,17 @@
                 "value": {}
             },
             {
-                "key": "components.schemas['BTJEditInsert-2523'].allOf[1].properties.value.additionalProperties",
+                "key": "components.schemas['BTJEditInsert-2523XX'].allOf[1].properties.value.additionalProperties",
                 "type": "update",
                 "value": true
             },
             {
-                "key": "components.schemas['BTGetJsonResponse-2137'].properties.tree.additionalProperties",
+                "key": "components.schemas['BTGetJsonResponse-2137XX'].properties.tree.additionalProperties",
                 "type": "update",
                 "value": true
             },
             {
-                "key": "components.schemas['BTJEditChange-2636'].allOf[1].properties.value.additionalProperties",
+                "key": "components.schemas['BTJEditChange-2636XX'].allOf[1].properties.value.additionalProperties",
                 "type": "update",
                 "value": true
             },
@@ -1453,25 +1462,11 @@
                 }
             },
             {
-                "key": "components.schemas['BTDocumentSummaryInfo'].properties.jsonType",
-                "type": "update",
-                "value": {
-                    "type": "string"
-                }
-            },
-            {
                 "key": "components.schemas['BTDocumentSummaryInfo'].required",
                 "type": "update",
                 "value": [
                     "jsonType"
                 ]
-            },
-            {
-                "key": "components.schemas['BTDocumentInfo'].properties.jsonType",
-                "type": "update",
-                "value": {
-                    "type": "string"
-                }
             },
             {
                 "key": "components.schemas['BTDocumentInfo'].required",
@@ -1481,25 +1476,11 @@
                 ]
             },
             {
-                "key": "components.schemas['BTDocumentLabelInfo'].properties.jsonType",
-                "type": "update",
-                "value": {
-                    "type": "string"
-                }
-            },
-            {
                 "key": "components.schemas['BTDocumentLabelInfo'].required",
                 "type": "update",
                 "value": [
                     "jsonType"
                 ]
-            },
-            {
-                "key": "components.schemas['BTProjectInfo'].properties.jsonType",
-                "type": "update",
-                "value": {
-                    "type": "string"
-                }
             },
             {
                 "key": "components.schemas['BTProjectInfo'].required",
@@ -1731,10 +1712,6 @@
             },
             {
                 "key": "components.schemas['BTMSketchCurveSegment-155'].discriminator",
-                "type": "remove"
-            },
-            {
-                "key": "paths['/assemblies/d/{did}/w/{wid}/e/{eid}/instances'].post.responses['200'].content",
                 "type": "remove"
             },
             {

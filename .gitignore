@@ -12,4 +12,5 @@ testing/*.ts
 testing/.openapi-generator
 testing/apis
 testing/.openapi-generator-ignore
-
+test*.json
+openapi-generator-cli.jar

@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "Onshape REST API",
-    "description": "The Onshape REST API consumed by all client.\n# Authorization\nThe simplest way to authorize and enable the **Try it out** functionality is to sign in to Onshape and use the current session. The **Authorize** button enables other authorization techniques. To ensure the current session isn't used when trying other authentication techniques, make sure to remove the Onshape cookie as per the instructions for your particular browser. Alternatively, a private or incognito window may be used. Here's [how to remove a specific cookie on Chrome](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site).\n- **Current Session** authorization is enabled by default if the browser is already signed in to [Onshape](/).\n- **OAuth2** authorization uses an Onshape OAuth2 app created on the [Onshape Developer Portal](https://dev-portal.onshape.com/oauthApps). The redirect URL field should include `https://cad.onshape.com/glassworks/explorer/oauth2-redirect.html`.\n- **API Key** authorization using basic authentication is also available. The keys can be generated in the [Onshape Developer Portal](https://dev-portal.onshape.com/keys). In the authentication dialog, enter the access key in the `Username` field, and enter the secret key in the `Password` field. Basic authentication should only be used during the development process since sharing API Keys provides the same level of access as a username and password.",
+    "description": "## Welcome to the Onshape REST API Explorer\n\nTo use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).\n\nSee the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.\n\n**Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.\n\n## See Also\n\n* [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.\n* [Onshape Developer Portal](https://dev-portal.onshape.com/): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.\n* [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.",
     "termsOfService": "https://www.onshape.com/legal/terms-of-use",
     "contact": {
       "email": "api-support@onshape.zendesk.com"
@@ -11,7 +11,7 @@
       "name": "Apache 2.0",
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "version": "1.171.24804-920f3dc76f2b",
+    "version": "1.175.28944-54786a5810c9",
     "x-logo": {
       "url": "images/logo-onshape-gray-green.svg",
       "backgroundColor": "#ffffff",
@@ -25,7 +25,8 @@
       "NodeModel",
       "BTPFunctionDeclaration-246",
       "BTPFunctionOrPredicateDeclaration-247",
-      "BTPExpression-9"
+      "BTPExpression-9",
+      "SkinModel"
     ],
     "x-filter-info": "?restUserRole=PUBLIC"
   },
@@ -1804,6 +1805,14 @@
               "type": "boolean",
               "default": false
             }
+          },
+          {
+            "name": "referenceId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": ""
+            }
           }
         ],
         "responses": {
@@ -2033,6 +2042,14 @@
           },
           {
             "name": "occurrenceId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": ""
+            }
+          },
+          {
+            "name": "referenceId",
             "in": "query",
             "schema": {
               "type": "string",
@@ -4286,15 +4303,8 @@
           }
         },
         "responses": {
-          "default": {
-            "description": "default response",
-            "content": {
-              "application/json;charset=UTF-8; qs=0.09": {
-                "schema": {
-                  "type": "object"
-                }
-              }
-            }
+          "200": {
+            "description": "Success!"
           }
         },
         "deprecated": false,
@@ -5733,8 +5743,8 @@
         "tags": [
           "Assembly"
         ],
-        "summary": "Translate the assembly to another format for export.",
-        "description": "Refer to the [Export dialog](https://cad.onshape.com/help/Content/exporting-files.htm) for a list of valid formats.",
+        "summary": "Export the assembly to another format.",
+        "description": "* Use `formatName` in the JSON request body to specify the export file type. Use [Translations/getAllTranslatorFormats](https://cad.onshape.com/glassworks/explorer/#/Translation/getAllTranslatorFormats) to get a list of valid export file formats. Confirm that `couldBeAssembly=true.`\n* Set `storeInDocument` to `true` to export to a data file. Set to `false` to export to a blob element in the same document. \n* See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/) for more details.",
         "operationId": "translateFormat",
         "parameters": [
           {
@@ -6010,6 +6020,7 @@
           "BlobElement"
         ],
         "summary": "Download a file from a blob element for the specified workspace/version/microversion.",
+        "description": "See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/) for more details.",
         "operationId": "downloadFileWorkspace",
         "parameters": [
           {
@@ -6370,8 +6381,8 @@
         "tags": [
           "BlobElement"
         ],
-        "summary": "Export a blob element.",
-        "description": "Translate (i.e., export) a blob element to a different format.",
+        "summary": "Export a blob element to another format.",
+        "description": "* Use `formatName` in the JSON request body to specify the export file type. Use [Translations/getAllTranslatorFormats](https://cad.onshape.com/glassworks/explorer/#/Translation/getAllTranslatorFormats) to get a list of valid export file formats. \n* Set `storeInDocument` to `true` to export to a data file. Set to `false` to export to a blob element in the same document. \n* See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/) for more details.",
         "operationId": "createBlobTranslation",
         "parameters": [
           {
@@ -6516,6 +6527,22 @@
             "schema": {
               "type": "boolean",
               "default": true
+            }
+          },
+          {
+            "name": "sortColumn",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": "createdAt"
+            }
+          },
+          {
+            "name": "sortOrder",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": "asc"
             }
           },
           {
@@ -7497,7 +7524,8 @@
         "tags": [
           "Document"
         ],
-        "summary": "Retrieve external data by document ID and foreign ID.",
+        "summary": "Download external data file(s) associated with the document.",
+        "description": "* See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/) for more details.\n* If downloading an exported file, poll the `requestState` in the translation response and wait for a result of `DONE` before attempting to download the file. \n* Use the `resultExternalDataIds` from the translation response as the foreign id (`{fid}`) in this API.",
         "operationId": "downloadExternalData",
         "parameters": [
           {
@@ -9530,11 +9558,13 @@
           "Drawing"
         ],
         "summary": "Create a new drawing in a document.",
+        "description": "This endpoint takes a JSON Schema as input. See the schema docs below for details, and see [API Guide: Drawings](https://onshape-public.github.io/docs/api-adv/drawings/) for more information.",
         "operationId": "createDrawingAppElement",
         "parameters": [
           {
             "name": "did",
             "in": "path",
+            "description": "ID of the document in which to create the drawing.",
             "required": true,
             "schema": {
               "type": "string"
@@ -9543,6 +9573,7 @@
           {
             "name": "wid",
             "in": "path",
+            "description": "ID of the workspace in which to create the drawing.",
             "required": true,
             "schema": {
               "type": "string"
@@ -13157,6 +13188,7 @@
           "Part"
         ],
         "summary": "Export a part as a glTF file.",
+        "description": "Returns a 307 redirect from which to download the exported file. See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/) for more details.",
         "operationId": "exportPartGltf",
         "parameters": [
           {
@@ -13478,6 +13510,7 @@
           "Part"
         ],
         "summary": "Export a part as a Parasolid file.",
+        "description": "Returns a 307 redirect from which to download the exported file. See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/) for more details.",
         "operationId": "exportPS",
         "parameters": [
           {
@@ -13544,8 +13577,8 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "Success!",
+          "307": {
+            "description": "A Redirect!",
             "content": {
               "application/octet-stream": {
                 "schema": {
@@ -13803,8 +13836,8 @@
         "tags": [
           "Part"
         ],
-        "summary": "Export a part to an STL file.",
-        "description": "Returns a 307 redirect.",
+        "summary": "Export a part as an STL file.",
+        "description": "Returns a 307 redirect from which to download the exported file. See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/) for more details.",
         "operationId": "exportStl",
         "parameters": [
           {
@@ -15765,6 +15798,7 @@
           "PartStudio"
         ],
         "summary": "Export the Part Studio as a glTF file.",
+        "description": "Returns the glTF representation. See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/)",
         "operationId": "exportPartStudioGltf",
         "parameters": [
           {
@@ -16173,7 +16207,7 @@
           "PartStudio"
         ],
         "summary": "Export the Part Studio as a Parasolid file.",
-        "description": "Returns a 307 redirect.",
+        "description": "Returns a 307 redirect from which to download the exported file. See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/) for more details.",
         "operationId": "exportParasolid",
         "parameters": [
           {
@@ -16779,6 +16813,7 @@
           "PartStudio"
         ],
         "summary": "Export the Part Studio as an STL file.",
+        "description": "Returns a 307 redirect from which to download the exported file. See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/)",
         "operationId": "exportPartStudioStl",
         "parameters": [
           {
@@ -16856,7 +16891,7 @@
           {
             "name": "units",
             "in": "query",
-            "description": "Name of base unit (meter, centimeter, millimeter, inch, foot, or yard)",
+            "description": "Units for the element: `METER` | `CENTIMETER` | `MILLIMETER` | `INCH` | `FOOT` | `YARD`",
             "schema": {
               "type": "string",
               "default": "inch"
@@ -17313,7 +17348,8 @@
         "tags": [
           "PartStudio"
         ],
-        "summary": "Translate (export) a Part Studio.",
+        "summary": "Export a Part Studio to another format.",
+        "description": "* Use `formatName` in the JSON request body to specify the export file type. Use [Translations/getAllTranslatorFormats](https://cad.onshape.com/glassworks/explorer/#/Translation/getAllTranslatorFormats) to get a list of valid export file formats. `\n* Set `storeInDocument` to `true` to export to a data file. Set to `false` to export to a blob element in the same document. \n* See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/) for more details.",
         "operationId": "createPartStudioTranslation",
         "parameters": [
           {
@@ -19837,7 +19873,7 @@
           "Translation"
         ],
         "summary": "Upload a foreign file into Onshape and translate the data into parts, Part Studios, assemblies, and subassemblies.",
-        "description": "The API call may complete before the translation is finished. If `requestState = ACTIVE`, the translation can be polled until the state is either DONE or FAILED. Alternatively, a webhook callback can be registered for notification of translation completion (requires `Write` scope if `storeInDocument` is `true`).",
+        "description": "The API call may complete before the translation is finished. If `requestState = ACTIVE`, the translation can be polled until the state is either `DONE` or `FAILED`. Alternatively, a webhook callback can be registered for notification of translation completion (requires `Write` scope if `storeInDocument` is `true`). See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/) for more details.",
         "operationId": "createTranslation",
         "parameters": [
           {
@@ -19997,7 +20033,7 @@
           "Translation"
         ],
         "summary": "Get a list of formats this translation can use.",
-        "description": "Note that we don't necessarily support both import and export for any given format. Please use specific export APIs, such as `exportPartStudioStl`, for STL and Parasolid exports.",
+        "description": "Note that we don't necessarily support both import and export for any given format. See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/) for more details.",
         "operationId": "getAllTranslatorFormats",
         "responses": {
           "default": {
@@ -20024,6 +20060,7 @@
           "Translation"
         ],
         "summary": "Get information on an in-progress or completed translation by translation ID.",
+        "description": "When the translation is complete, `requestState` changes from `ACTIVE` to `DONE` or `FAILED`. See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/) for more details.",
         "operationId": "getTranslation",
         "parameters": [
           {
@@ -21891,555 +21928,6 @@
         "x-BTVisibility": "PRODUCTION"
       }
     },
-    "/events": {
-      "post": {
-        "tags": [
-          "Event"
-        ],
-        "summary": "Fire an asynchronous event.",
-        "operationId": "fireEvent",
-        "requestBody": {
-          "content": {
-            "application/vnd.onshape.v2+json;charset=UTF-8;qs=0.2": {
-              "schema": {
-                "$ref": "#/components/schemas/BTEventParams"
-              }
-            }
-          }
-        },
-        "responses": {
-          "default": {
-            "description": "default response",
-            "content": {
-              "application/vnd.onshape.v2+json;charset=UTF-8;qs=0.2": {
-                "schema": {
-                  "type": "object"
-                }
-              }
-            }
-          }
-        },
-        "deprecated": false,
-        "security": [
-          {
-            "OAuth2": [
-              "OAuth2Read"
-            ],
-            "BasicAuth": [
-              "OAuth2Read"
-            ]
-          }
-        ]
-      }
-    },
-    "/globaltreenodes/folder/{fid}": {
-      "get": {
-        "deprecated": false,
-        "operationId": "globalTreeNodesFolder",
-        "parameters": [
-          {
-            "description": "ID of the folder to traverse.",
-            "explode": false,
-            "in": "path",
-            "name": "fid",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "style": "simple"
-          },
-          {
-            "description": "When true, requests that the path of all nodes up to the root are to be returned.",
-            "explode": true,
-            "in": "query",
-            "name": "getPathToRoot",
-            "required": false,
-            "schema": {
-              "default": false,
-              "type": "boolean"
-            },
-            "style": "form"
-          },
-          {
-            "description": "Starting offset in the sorted list of items to return.",
-            "explode": true,
-            "in": "query",
-            "name": "offset",
-            "required": false,
-            "schema": {
-              "default": 0,
-              "format": "int32",
-              "type": "integer"
-            },
-            "style": "form"
-          },
-          {
-            "description": "Maximum number of items in the list to return.",
-            "explode": true,
-            "in": "query",
-            "name": "limit",
-            "required": false,
-            "schema": {
-              "default": 20,
-              "format": "int32",
-              "type": "integer"
-            },
-            "style": "form"
-          },
-          {
-            "description": "Field to sort the items in the list by.",
-            "explode": true,
-            "in": "query",
-            "name": "sortColumn",
-            "required": false,
-            "schema": {
-              "default": "modifiedAt",
-              "type": "string"
-            },
-            "style": "form"
-          },
-          {
-            "description": "Which way to sort the list (asc/desc).  Defaults to asc.",
-            "explode": true,
-            "in": "query",
-            "name": "sortOrder",
-            "required": false,
-            "schema": {
-              "default": "asc",
-              "type": "string"
-            },
-            "style": "form"
-          }
-        ],
-        "responses": {
-          "default": {
-            "content": {
-              "application/json;charset=UTF-8; qs=0.09": {
-                "schema": {
-                  "$ref": "#/components/schemas/BTGlobalTreeNodesInfo"
-                }
-              }
-            },
-            "description": "default response"
-          }
-        },
-        "summary": "Get Tree Node List",
-        "security": [
-          {
-            "OAuth2": [
-              "OAuth2Read"
-            ],
-            "BasicAuth": [
-              "OAuth2Read"
-            ]
-          }
-        ],
-        "tags": [
-          "GlobalTreeNodes"
-        ],
-        "x-BTVisibility": "PRODUCTION"
-      }
-    },
-    "/globaltreenodes/team/{teamId}": {
-      "get": {
-        "tags": [
-          "GlobalTreeNodes"
-        ],
-        "summary": "Retrieve List of folders by Team id.",
-        "operationId": "globalTreeNodesTeam",
-        "parameters": [
-          {
-            "description": "ID of team to get data for",
-            "name": "teamId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "When true, requests that the path of all nodes up to the root are to be returned.",
-            "explode": true,
-            "in": "query",
-            "name": "getPathToRoot",
-            "required": false,
-            "schema": {
-              "default": false,
-              "type": "boolean"
-            },
-            "style": "form"
-          },
-          {
-            "description": "Starting offset in the sorted list of items to return.",
-            "explode": true,
-            "in": "query",
-            "name": "offset",
-            "required": false,
-            "schema": {
-              "default": 0,
-              "format": "int32",
-              "type": "integer"
-            },
-            "style": "form"
-          },
-          {
-            "description": "Maximum number of items in the list to return.",
-            "explode": true,
-            "in": "query",
-            "name": "limit",
-            "required": false,
-            "schema": {
-              "default": 20,
-              "format": "int32",
-              "type": "integer"
-            },
-            "style": "form"
-          },
-          {
-            "description": "Field to sort the items in the list by.",
-            "explode": true,
-            "in": "query",
-            "name": "sortColumn",
-            "required": false,
-            "schema": {
-              "default": "modifiedAt",
-              "type": "string"
-            },
-            "style": "form"
-          },
-          {
-            "description": "Which way to sort the list (asc/desc).  Defaults to asc.",
-            "explode": true,
-            "in": "query",
-            "name": "sortOrder",
-            "required": false,
-            "schema": {
-              "default": "asc",
-              "type": "string"
-            },
-            "style": "form"
-          }
-        ],
-        "responses": {
-          "default": {
-            "content": {
-              "application/json;charset=UTF-8; qs=0.09": {
-                "schema": {
-                  "$ref": "#/components/schemas/BTGlobalTreeNodesInfo"
-                }
-              }
-            },
-            "description": "default response"
-          }
-        },
-        "deprecated": false,
-        "security": [
-          {
-            "OAuth2": [
-              "OAuth2Read"
-            ],
-            "BasicAuth": [
-              "OAuth2Read"
-            ]
-          }
-        ],
-        "x-BTVisibility": "PRODUCTION"
-      }
-    },
-    "/globaltreenodes/insertable/team/{teamId}": {
-      "get": {
-        "tags": [
-          "GlobalTreeNodes"
-        ],
-        "summary": "Retrieve insertables by Team id.",
-        "operationId": "globalTreeNodesTeamInsertables",
-        "parameters": [
-          {
-            "description": "ID of team to get data for",
-            "name": "teamId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "includeParts",
-            "in": "query",
-            "schema": {
-              "type": "boolean",
-              "default": false
-            }
-          },
-          {
-            "name": "includeSurfaces",
-            "in": "query",
-            "schema": {
-              "type": "boolean",
-              "default": false
-            }
-          },
-          {
-            "name": "includeSketches",
-            "in": "query",
-            "schema": {
-              "type": "boolean",
-              "default": false
-            }
-          },
-          {
-            "name": "includeReferenceFeatures",
-            "in": "query",
-            "schema": {
-              "type": "boolean",
-              "default": false
-            }
-          },
-          {
-            "name": "includeAssemblies",
-            "in": "query",
-            "schema": {
-              "type": "boolean",
-              "default": false
-            }
-          },
-          {
-            "name": "includeFeatureStudios",
-            "in": "query",
-            "schema": {
-              "type": "boolean",
-              "default": false
-            }
-          },
-          {
-            "name": "includeBlobs",
-            "in": "query",
-            "schema": {
-              "type": "boolean",
-              "default": false
-            }
-          },
-          {
-            "name": "allowedBlobMimeTypes",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "default": ""
-            }
-          },
-          {
-            "name": "includePartStudios",
-            "in": "query",
-            "schema": {
-              "type": "boolean",
-              "default": false
-            }
-          },
-          {
-            "name": "includeFeatures",
-            "in": "query",
-            "schema": {
-              "type": "boolean",
-              "default": false
-            }
-          },
-          {
-            "name": "includeWires",
-            "in": "query",
-            "schema": {
-              "type": "boolean",
-              "default": false
-            }
-          },
-          {
-            "name": "includeFlattenedBodies",
-            "in": "query",
-            "schema": {
-              "type": "boolean",
-              "default": false
-            }
-          },
-          {
-            "name": "includeApplications",
-            "in": "query",
-            "schema": {
-              "type": "boolean",
-              "default": false
-            }
-          },
-          {
-            "name": "allowedApplicationMimeTypes",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "default": ""
-            }
-          },
-          {
-            "name": "includeFSTables",
-            "in": "query",
-            "schema": {
-              "type": "boolean",
-              "default": false
-            }
-          },
-          {
-            "name": "includeFSComputedPartPropertyFunctions",
-            "in": "query",
-            "schema": {
-              "type": "boolean",
-              "default": false
-            }
-          },
-          {
-            "name": "includeVariables",
-            "in": "query",
-            "schema": {
-              "type": "boolean",
-              "default": false
-            }
-          },
-          {
-            "name": "includeVariableStudios",
-            "in": "query",
-            "schema": {
-              "type": "boolean",
-              "default": false
-            }
-          },
-          {
-            "name": "allowedBlobExtensions",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "default": ""
-            }
-          },
-          {
-            "description": "Is this actually supported?",
-            "name": "excludeNewerFSVersions",
-            "in": "query",
-            "schema": {
-              "type": "boolean",
-              "default": false
-            }
-          },
-          {
-            "description": "Is this actually supported?",
-            "name": "maxFeatureScriptVersion",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "description": "Is this actually supported?",
-            "name": "includeMeshes",
-            "in": "query",
-            "schema": {
-              "type": "boolean",
-              "default": false
-            }
-          },
-          {
-            "description": "Is this actually supported?",
-            "name": "includeCompositeParts",
-            "in": "query",
-            "schema": {
-              "type": "boolean",
-              "default": false
-            }
-          },
-          {
-            "description": "When true, requests that the path of all nodes up to the root are to be returned.",
-            "explode": true,
-            "in": "query",
-            "name": "getPathToRoot",
-            "required": false,
-            "schema": {
-              "default": false,
-              "type": "boolean"
-            },
-            "style": "form"
-          },
-          {
-            "description": "Starting offset in the sorted list of items to return.",
-            "explode": true,
-            "in": "query",
-            "name": "offset",
-            "required": false,
-            "schema": {
-              "default": 0,
-              "format": "int32",
-              "type": "integer"
-            },
-            "style": "form"
-          },
-          {
-            "description": "Maximum number of items in the list to return.",
-            "explode": true,
-            "in": "query",
-            "name": "limit",
-            "required": false,
-            "schema": {
-              "default": 20,
-              "format": "int32",
-              "type": "integer"
-            },
-            "style": "form"
-          },
-          {
-            "description": "Field to sort the items in the list by.",
-            "explode": true,
-            "in": "query",
-            "name": "sortColumn",
-            "required": false,
-            "schema": {
-              "default": "modifiedAt",
-              "type": "string"
-            },
-            "style": "form"
-          },
-          {
-            "description": "Which way to sort the list (asc/desc).  Defaults to asc.",
-            "explode": true,
-            "in": "query",
-            "name": "sortOrder",
-            "required": false,
-            "schema": {
-              "default": "asc",
-              "type": "string"
-            },
-            "style": "form"
-          }
-        ],
-        "responses": {
-          "default": {
-            "content": {
-              "application/json;charset=UTF-8; qs=0.09": {
-                "schema": {
-                  "$ref": "#/components/schemas/BTGlobalTreeNodesInfo"
-                }
-              }
-            },
-            "description": "default response"
-          }
-        },
-        "deprecated": false,
-        "security": [
-          {
-            "OAuth2": [
-              "OAuth2Read"
-            ],
-            "BasicAuth": [
-              "OAuth2Read"
-            ]
-          }
-        ],
-        "x-BTVisibility": "PRODUCTION"
-      }
-    },
     "/globaltreenodes/insertable/folder/{fid}": {
       "get": {
         "tags": [
@@ -23144,6 +22632,555 @@
         ],
         "x-BTVisibility": "PRODUCTION"
       }
+    },
+    "/events": {
+      "post": {
+        "tags": [
+          "Event"
+        ],
+        "summary": "Fire an asynchronous event.",
+        "operationId": "fireEvent",
+        "requestBody": {
+          "content": {
+            "application/vnd.onshape.v2+json;charset=UTF-8;qs=0.2": {
+              "schema": {
+                "$ref": "#/components/schemas/BTEventParams"
+              }
+            }
+          }
+        },
+        "responses": {
+          "default": {
+            "description": "default response",
+            "content": {
+              "application/vnd.onshape.v2+json;charset=UTF-8;qs=0.2": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "OAuth2": [
+              "OAuth2Read"
+            ],
+            "BasicAuth": [
+              "OAuth2Read"
+            ]
+          }
+        ]
+      }
+    },
+    "/globaltreenodes/folder/{fid}": {
+      "get": {
+        "deprecated": false,
+        "operationId": "globalTreeNodesFolder",
+        "parameters": [
+          {
+            "description": "ID of the folder to traverse.",
+            "explode": false,
+            "in": "path",
+            "name": "fid",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "style": "simple"
+          },
+          {
+            "description": "When true, requests that the path of all nodes up to the root are to be returned.",
+            "explode": true,
+            "in": "query",
+            "name": "getPathToRoot",
+            "required": false,
+            "schema": {
+              "default": false,
+              "type": "boolean"
+            },
+            "style": "form"
+          },
+          {
+            "description": "Starting offset in the sorted list of items to return.",
+            "explode": true,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "format": "int32",
+              "type": "integer"
+            },
+            "style": "form"
+          },
+          {
+            "description": "Maximum number of items in the list to return.",
+            "explode": true,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 20,
+              "format": "int32",
+              "type": "integer"
+            },
+            "style": "form"
+          },
+          {
+            "description": "Field to sort the items in the list by.",
+            "explode": true,
+            "in": "query",
+            "name": "sortColumn",
+            "required": false,
+            "schema": {
+              "default": "modifiedAt",
+              "type": "string"
+            },
+            "style": "form"
+          },
+          {
+            "description": "Which way to sort the list (asc/desc).  Defaults to asc.",
+            "explode": true,
+            "in": "query",
+            "name": "sortOrder",
+            "required": false,
+            "schema": {
+              "default": "asc",
+              "type": "string"
+            },
+            "style": "form"
+          }
+        ],
+        "responses": {
+          "default": {
+            "content": {
+              "application/json;charset=UTF-8; qs=0.09": {
+                "schema": {
+                  "$ref": "#/components/schemas/BTGlobalTreeNodesInfo"
+                }
+              }
+            },
+            "description": "default response"
+          }
+        },
+        "summary": "Get Tree Node List",
+        "security": [
+          {
+            "OAuth2": [
+              "OAuth2Read"
+            ],
+            "BasicAuth": [
+              "OAuth2Read"
+            ]
+          }
+        ],
+        "tags": [
+          "GlobalTreeNodes"
+        ],
+        "x-BTVisibility": "PRODUCTION"
+      }
+    },
+    "/globaltreenodes/team/{teamId}": {
+      "get": {
+        "tags": [
+          "GlobalTreeNodes"
+        ],
+        "summary": "Retrieve List of folders by Team id.",
+        "operationId": "globalTreeNodesTeam",
+        "parameters": [
+          {
+            "description": "ID of team to get data for",
+            "name": "teamId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "When true, requests that the path of all nodes up to the root are to be returned.",
+            "explode": true,
+            "in": "query",
+            "name": "getPathToRoot",
+            "required": false,
+            "schema": {
+              "default": false,
+              "type": "boolean"
+            },
+            "style": "form"
+          },
+          {
+            "description": "Starting offset in the sorted list of items to return.",
+            "explode": true,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "format": "int32",
+              "type": "integer"
+            },
+            "style": "form"
+          },
+          {
+            "description": "Maximum number of items in the list to return.",
+            "explode": true,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 20,
+              "format": "int32",
+              "type": "integer"
+            },
+            "style": "form"
+          },
+          {
+            "description": "Field to sort the items in the list by.",
+            "explode": true,
+            "in": "query",
+            "name": "sortColumn",
+            "required": false,
+            "schema": {
+              "default": "modifiedAt",
+              "type": "string"
+            },
+            "style": "form"
+          },
+          {
+            "description": "Which way to sort the list (asc/desc).  Defaults to asc.",
+            "explode": true,
+            "in": "query",
+            "name": "sortOrder",
+            "required": false,
+            "schema": {
+              "default": "asc",
+              "type": "string"
+            },
+            "style": "form"
+          }
+        ],
+        "responses": {
+          "default": {
+            "content": {
+              "application/json;charset=UTF-8; qs=0.09": {
+                "schema": {
+                  "$ref": "#/components/schemas/BTGlobalTreeNodesInfo"
+                }
+              }
+            },
+            "description": "default response"
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "OAuth2": [
+              "OAuth2Read"
+            ],
+            "BasicAuth": [
+              "OAuth2Read"
+            ]
+          }
+        ],
+        "x-BTVisibility": "PRODUCTION"
+      }
+    },
+    "/globaltreenodes/insertable/team/{teamId}": {
+      "get": {
+        "tags": [
+          "GlobalTreeNodes"
+        ],
+        "summary": "Retrieve insertables by Team id.",
+        "operationId": "globalTreeNodesTeamInsertables",
+        "parameters": [
+          {
+            "description": "ID of team to get data for",
+            "name": "teamId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "includeParts",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "includeSurfaces",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "includeSketches",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "includeReferenceFeatures",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "includeAssemblies",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "includeFeatureStudios",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "includeBlobs",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "allowedBlobMimeTypes",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": ""
+            }
+          },
+          {
+            "name": "includePartStudios",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "includeFeatures",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "includeWires",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "includeFlattenedBodies",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "includeApplications",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "allowedApplicationMimeTypes",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": ""
+            }
+          },
+          {
+            "name": "includeFSTables",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "includeFSComputedPartPropertyFunctions",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "includeVariables",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "includeVariableStudios",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "allowedBlobExtensions",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": ""
+            }
+          },
+          {
+            "description": "Is this actually supported?",
+            "name": "excludeNewerFSVersions",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "description": "Is this actually supported?",
+            "name": "maxFeatureScriptVersion",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "description": "Is this actually supported?",
+            "name": "includeMeshes",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "description": "Is this actually supported?",
+            "name": "includeCompositeParts",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "description": "When true, requests that the path of all nodes up to the root are to be returned.",
+            "explode": true,
+            "in": "query",
+            "name": "getPathToRoot",
+            "required": false,
+            "schema": {
+              "default": false,
+              "type": "boolean"
+            },
+            "style": "form"
+          },
+          {
+            "description": "Starting offset in the sorted list of items to return.",
+            "explode": true,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "format": "int32",
+              "type": "integer"
+            },
+            "style": "form"
+          },
+          {
+            "description": "Maximum number of items in the list to return.",
+            "explode": true,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 20,
+              "format": "int32",
+              "type": "integer"
+            },
+            "style": "form"
+          },
+          {
+            "description": "Field to sort the items in the list by.",
+            "explode": true,
+            "in": "query",
+            "name": "sortColumn",
+            "required": false,
+            "schema": {
+              "default": "modifiedAt",
+              "type": "string"
+            },
+            "style": "form"
+          },
+          {
+            "description": "Which way to sort the list (asc/desc).  Defaults to asc.",
+            "explode": true,
+            "in": "query",
+            "name": "sortOrder",
+            "required": false,
+            "schema": {
+              "default": "asc",
+              "type": "string"
+            },
+            "style": "form"
+          }
+        ],
+        "responses": {
+          "default": {
+            "content": {
+              "application/json;charset=UTF-8; qs=0.09": {
+                "schema": {
+                  "$ref": "#/components/schemas/BTGlobalTreeNodesInfo"
+                }
+              }
+            },
+            "description": "default response"
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "OAuth2": [
+              "OAuth2Read"
+            ],
+            "BasicAuth": [
+              "OAuth2Read"
+            ]
+          }
+        ],
+        "x-BTVisibility": "PRODUCTION"
+      }
     }
   },
   "components": {
@@ -23683,6 +23720,10 @@
             "items": {
               "type": "string"
             }
+          },
+          "proCompanySubtype": {
+            "type": "integer",
+            "format": "int32"
           },
           "teamName": {
             "type": "string"
@@ -24474,7 +24515,8 @@
             "type": "boolean"
           },
           "description": {
-            "type": "string"
+            "type": "string",
+            "description": "The label that will appear in the document's edit history for this operation. If blank, a value will be auto-generated."
           },
           "returnError": {
             "type": "boolean"
@@ -24934,7 +24976,8 @@
         "type": "object",
         "properties": {
           "description": {
-            "type": "string"
+            "type": "string",
+            "description": "The label that will appear in the document's edit history for this operation. If blank, a value will be auto-generated."
           },
           "parentChangeId": {
             "type": "string"
@@ -25921,6 +25964,26 @@
             "type": "string"
           }
         }
+      },
+      "BTBDrawingOperationParams": {
+        "required": [
+          "formatVersion",
+          "messageName"
+        ],
+        "type": "object",
+        "properties": {
+          "formatVersion": {
+            "type": "string",
+            "description": "Version of drawing entity format.",
+            "example": "2021-01-01"
+          },
+          "messageName": {
+            "type": "string",
+            "description": "Type of drawing modification operation: `onshapeCreateAnnotations` | `onshapeEditAnnotations`",
+            "example": "onshapeCreateAnnotations"
+          }
+        },
+        "description": "A single drawing entity creation or modification definition"
       },
       "BTBExportModelParams": {
         "required": [
@@ -29047,6 +29110,9 @@
           "btType": {
             "type": "string"
           },
+          "imageForeignId": {
+            "type": "string"
+          },
           "imageSourceId": {
             "type": "string"
           },
@@ -29411,7 +29477,8 @@
             "type": "integer",
             "format": "int32"
           }
-        }
+        },
+        "description": "List of element IDs to include in the document."
       },
       "BTDocumentElementInfo": {
         "type": "object",
@@ -29677,6 +29744,9 @@
               "defaultElementId": {
                 "type": "string"
               },
+              "defaultVersionGraphMode": {
+                "$ref": "#/components/schemas/BTVersionGraphMode"
+              },
               "defaultWorkspace": {
                 "$ref": "#/components/schemas/BTWorkspaceInfo"
               },
@@ -29849,6 +29919,7 @@
         ],
         "x-BTVisibility-properties": {
           "totalWorkspacesUpdating": "INTERNAL",
+          "defaultVersionGraphMode": "INTERNAL",
           "totalWorkspacesScheduledForUpdate": "INTERNAL",
           "isOrphaned": "INTERNAL",
           "tracingEnabled": "INTERNAL"
@@ -29968,58 +30039,79 @@
         }
       },
       "BTDocumentParams": {
+        "required": [
+          "name"
+        ],
         "type": "object",
         "properties": {
           "description": {
-            "type": "string"
+            "type": "string",
+            "description": "Document description."
           },
           "elements": {
             "type": "array",
+            "description": "List of element IDs to include in the document.",
             "items": {
               "$ref": "#/components/schemas/BTDocumentElementCreationDescriptor"
             }
           },
           "forceExportRules": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "`true` if the current user can toggle the Force Export Rule flag on a document."
           },
           "generateUnknownMessages": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` for debugging."
           },
           "isEmptyContent": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` to generate an empty document."
           },
           "isPublic": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` to make the document public."
           },
           "name": {
-            "type": "string"
+            "type": "string",
+            "description": "Document name.",
+            "example": "myDocument"
           },
           "notRevisionManaged": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` to indicate that revisions are not managed for this document."
           },
           "ownerEmail": {
-            "type": "string"
+            "type": "string",
+            "description": "The document owner's email address."
           },
           "ownerId": {
-            "type": "string"
+            "type": "string",
+            "description": "If `ownerType=USER`, this is the user ID. If `ownerType=COMPANY`, this is the company ID."
           },
           "ownerType": {
             "type": "integer",
-            "format": "int32"
+            "description": "The document's owner type. `USER=0` | `COMPANY=1` | `ONSHAPE=2`",
+            "format": "int32",
+            "example": 0
           },
           "parentId": {
-            "type": "string"
+            "type": "string",
+            "description": "Document ID of this document's parent."
           },
           "projectId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the project this document belongs to."
           },
           "tags": {
             "type": "array",
+            "description": "Array of strings to set as tags for the document.",
             "items": {
-              "type": "string"
+              "type": "string",
+              "description": "Array of strings to set as tags for the document."
             }
           }
-        }
+        },
+        "description": "Parameters for creating and updating documents."
       },
       "BTDocumentProcessingInfo": {
         "type": "object",
@@ -30041,6 +30133,7 @@
         ],
         "x-BTVisibility-properties": {
           "totalWorkspacesUpdating": "INTERNAL",
+          "defaultVersionGraphMode": "INTERNAL",
           "totalWorkspacesScheduledForUpdate": "INTERNAL",
           "isOrphaned": "INTERNAL",
           "tracingEnabled": "INTERNAL"
@@ -30207,6 +30300,9 @@
               "defaultElementId": {
                 "type": "string"
               },
+              "defaultVersionGraphMode": {
+                "$ref": "#/components/schemas/BTVersionGraphMode"
+              },
               "defaultWorkspace": {
                 "$ref": "#/components/schemas/BTWorkspaceInfo"
               },
@@ -30315,6 +30411,7 @@
         ],
         "x-BTVisibility-properties": {
           "totalWorkspacesUpdating": "INTERNAL",
+          "defaultVersionGraphMode": "INTERNAL",
           "totalWorkspacesScheduledForUpdate": "INTERNAL",
           "isOrphaned": "INTERNAL"
         },
@@ -30342,6 +30439,7 @@
         ],
         "x-BTVisibility-properties": {
           "totalWorkspacesUpdating": "INTERNAL",
+          "defaultVersionGraphMode": "INTERNAL",
           "totalWorkspacesScheduledForUpdate": "INTERNAL",
           "isOrphaned": "INTERNAL"
         }
@@ -30434,11 +30532,16 @@
       "BTDrawingModificationParams": {
         "type": "object",
         "properties": {
-          "editDescription": {
-            "type": "string"
+          "description": {
+            "type": "string",
+            "description": "The label that will appear in the document's edit history for this operation. If blank, a value will be auto-generated."
           },
           "jsonRequests": {
-            "type": "object"
+            "type": "array",
+            "description": "Array of drawing modification operations.",
+            "items": {
+              "$ref": "#/components/schemas/BTBDrawingOperationParams"
+            }
           }
         }
       },
@@ -30446,169 +30549,236 @@
         "type": "object",
         "properties": {
           "border": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` to include a border in the drawing.",
+            "example": false
           },
           "computeIntersection": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` to compute and display virtual edges (curves drawn where parts intersect). Leave as `false` to improve performance.",
+            "example": false
           },
           "decimalSeparator": {
-            "type": "string"
+            "type": "string",
+            "description": "`PERIOD` | `COMMA`",
+            "example": "PERIOD"
           },
           "displayStateId": {
-            "type": "string"
+            "type": "string",
+            "description": "Apply this display state's properties to the drawing."
           },
           "documentId": {
-            "type": "string"
+            "type": "string",
+            "description": "The document in which to create the drawing. If used, this value must match the document ID (`did`) value provided in the URL."
           },
           "documentMicroversionId": {
-            "type": "string"
+            "type": "string",
+            "description": "Create a drawing of a part or assembly from this microversion."
           },
           "drawingName": {
-            "type": "string"
+            "type": "string",
+            "description": "Provide a name for the drawing."
           },
           "elementConfiguration": {
-            "type": "string"
+            "type": "string",
+            "description": "Apply this configuration from the source element to the drawing."
           },
           "elementId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the element in which to perform the operation."
           },
           "elementMicroversionId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the element microversion in which to perform the operation."
           },
           "explosionId": {
-            "type": "string"
+            "type": "string",
+            "description": "Apply this exploded view to the drawing."
           },
           "externalDocumentId": {
-            "type": "string"
+            "type": "string",
+            "description": "Create a drawing of an element from this external document."
           },
           "externalDocumentVersionId": {
-            "type": "string"
+            "type": "string",
+            "description": "Create a drawing of an element from this external document version."
           },
           "hiddenLines": {
             "$ref": "#/components/schemas/BTDrawingHiddenLineOption"
           },
           "includeSurfaces": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` to include surfaces in the drawing.",
+            "example": false
           },
           "includeWires": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` to include wires in the drawing.",
+            "example": false
           },
           "isFlattenedPart": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` if creating a drawing from a flattened part.",
+            "example": false
           },
           "isSketchOnly": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` if creating a drawing of a sketch.",
+            "example": false
           },
           "isSurface": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` if creating a drawing from a surface.",
+            "example": false
           },
           "language": {
-            "type": "string"
+            "type": "string",
+            "description": "Set the language for the drawing. Accepts any ISO 639-1 standard language code.",
+            "example": "en-us"
           },
           "location": {
             "$ref": "#/components/schemas/BTElementLocationParams"
           },
           "modelType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of model to include in the drawing: `partstudio` | `assembly`"
           },
           "namedPositionId": {
-            "type": "string"
+            "type": "string",
+            "description": "Apply this named view to the drawing."
           },
           "numberHorizontalZones": {
             "type": "integer",
-            "format": "int32"
+            "description": "The number of horizontal zones to include in the drawing's graphics area.",
+            "format": "int32",
+            "example": 2
           },
           "numberVerticalZones": {
             "type": "integer",
-            "format": "int32"
+            "description": "The number of vertical zones to include in the drawing's graphics area.",
+            "format": "int32",
+            "example": 2
           },
           "partId": {
-            "type": "string"
+            "type": "string",
+            "description": "Include this part in the drawing."
           },
           "partNumber": {
-            "type": "string"
+            "type": "string",
+            "description": "Include this part in the drawing."
           },
           "partQuery": {
-            "type": "string"
+            "type": "string",
+            "description": "Include all parts found by the query in the drawing."
           },
           "projection": {
-            "type": "string"
+            "type": "string",
+            "description": "Apply this projection to the drawing."
           },
           "pureSketch": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` if creating the drawing of an empty sketch.",
+            "example": false
           },
           "qualityOption": {
-            "type": "string"
+            "type": "string",
+            "description": "`BEST_PERFORMANCE` | `BEST_QUALITY` | `BALANCED` | `ADAPTIVE`"
           },
           "referenceType": {
             "type": "integer",
+            "description": "Specify the type of element to create the drawing from. `0: UNKNOWN` | `1: PARTSTUDIO` | `2: ASSEMBLY` | `3: PART` | `4: FLATTENED_PART` | `5: COMPOSITE_PART` | `6: MESH_PART` | `7: SURFACE` | `8: SKETCH` | `9: CURVE`",
             "format": "int32"
           },
           "referenceTypeEnum": {
             "$ref": "#/components/schemas/GBTAppElementReferenceType"
           },
           "revision": {
-            "type": "string"
+            "type": "string",
+            "description": "Create the drawing from this specific revision."
           },
           "showCutGeomOnly": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` to show only cut geometry in the drawing.",
+            "example": false
           },
           "simplificationOption": {
-            "type": "string"
+            "type": "string",
+            "description": "`NONE` | `ABSOLUTE` | `RATIO_TO_MODEL` | `RATIO_TO_BODY` | `AUTOMATIC`"
           },
           "simplificationThreshold": {
             "type": "number",
+            "description": "`NONE` | `UNKNOWN` | `SMOOTH` | `DRAFTING`",
             "format": "double"
           },
           "size": {
-            "type": "string"
+            "type": "string",
+            "description": "Provide a size for the drawing."
           },
           "sketchIds": {
             "type": "array",
+            "description": "Include these sketches in the drawing.",
             "items": {
-              "type": "string"
+              "type": "string",
+              "description": "Include these sketches in the drawing."
             }
           },
           "standard": {
-            "type": "string"
+            "type": "string",
+            "description": "Provide the Standard to use in the drawing.",
+            "example": "ANSI"
           },
           "startZones": {
-            "type": "string"
+            "type": "string",
+            "description": "The zone in which to start the drawing.",
+            "example": "A1"
           },
           "templateArgs": {
             "type": "array",
+            "description": "Provide any additional arguments for the template being used for this drawing.",
             "items": {
-              "type": "string"
+              "type": "string",
+              "description": "Provide any additional arguments for the template being used for this drawing."
             }
           },
           "templateDocumentId": {
-            "type": "string"
+            "type": "string",
+            "description": "Apply the template from this document to the drawing."
           },
           "templateElementId": {
-            "type": "string"
+            "type": "string",
+            "description": "Apply the template from this element to the drawing."
           },
           "templateName": {
-            "type": "string"
+            "type": "string",
+            "description": "Apply this template to the drawing."
           },
           "templateVersionId": {
-            "type": "string"
+            "type": "string",
+            "description": "Apply the template from this version to the drawing."
           },
           "templateWorkspaceId": {
-            "type": "string"
+            "type": "string",
+            "description": "Apply the template from this workspace to the drawing."
           },
           "titleblock": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` to include a title block in the drawing.",
+            "example": false
           },
           "units": {
-            "type": "string"
+            "type": "string",
+            "description": "Units for the element: `METER` | `CENTIMETER` | `MILLIMETER` | `INCH` | `FOOT` | `YARD`"
           },
           "views": {
-            "type": "string"
+            "type": "string",
+            "description": "Add these views to the drawing."
           },
           "workspaceId": {
-            "type": "string"
+            "type": "string",
+            "description": "Create a drawing of a part or assembly from this workspace."
           }
-        }
+        },
+        "description": "JSON schema for creating or updating a drawing."
       },
       "BTESResultsFilter": {
         "type": "string",
@@ -32054,6 +32224,9 @@
         }
       },
       "BTFSValueArray-1499": {
+        "required": [
+          "btType"
+        ],
         "type": "object",
         "properties": {
           "btType": {
@@ -32078,12 +32251,12 @@
               }
             }
           }
-        ],
-        "required": [
-          "btType"
         ]
       },
       "BTFSValueBoolean-1195": {
+        "required": [
+          "btType"
+        ],
         "type": "object",
         "properties": {
           "btType": {
@@ -32105,9 +32278,6 @@
               }
             }
           }
-        ],
-        "required": [
-          "btType"
         ]
       },
       "BTFSValueMap-2062": {
@@ -32136,6 +32306,9 @@
         }
       },
       "BTFSValueNumber-772": {
+        "required": [
+          "btType"
+        ],
         "type": "object",
         "properties": {
           "btType": {
@@ -32158,12 +32331,12 @@
               }
             }
           }
-        ],
-        "required": [
-          "btType"
         ]
       },
       "BTFSValueOther-1124": {
+        "required": [
+          "btType"
+        ],
         "type": "object",
         "properties": {
           "btType": {
@@ -32185,12 +32358,12 @@
               }
             }
           }
-        ],
-        "required": [
-          "btType"
         ]
       },
       "BTFSValueString-1422": {
+        "required": [
+          "btType"
+        ],
         "type": "object",
         "properties": {
           "btType": {
@@ -32212,12 +32385,12 @@
               }
             }
           }
-        ],
-        "required": [
-          "btType"
         ]
       },
       "BTFSValueTooBig-1247": {
+        "required": [
+          "btType"
+        ],
         "type": "object",
         "properties": {
           "btType": {
@@ -32236,12 +32409,12 @@
               }
             }
           }
-        ],
-        "required": [
-          "btType"
         ]
       },
       "BTFSValueUndefined-2003": {
+        "required": [
+          "btType"
+        ],
         "type": "object",
         "properties": {
           "btType": {
@@ -32260,12 +32433,12 @@
               }
             }
           }
-        ],
-        "required": [
-          "btType"
         ]
       },
       "BTFSValueWithUnits-1817": {
+        "required": [
+          "btType"
+        ],
         "type": "object",
         "properties": {
           "btType": {
@@ -32295,9 +32468,6 @@
               }
             }
           }
-        ],
-        "required": [
-          "btType"
         ]
       },
       "BTFeatureApiBase-1430": {
@@ -33177,7 +33347,14 @@
                 "type": "string"
               }
             },
-            "additionalProperties": true
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "btType": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
@@ -33369,6 +33546,9 @@
               "type": "string",
               "format": "byte"
             }
+          },
+          "type": {
+            "$ref": "#/components/schemas/GBTAppearanceType"
           },
           "usableAppearance": {
             "type": "boolean"
@@ -33613,6 +33793,30 @@
             "writeOnly": true
           }
         }
+      },
+      "BTInContextObjectFilter-3810": {
+        "type": "object",
+        "properties": {
+          "btType": {
+            "type": "string"
+          }
+        },
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BTQueryFilter-183"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "btType": {
+                "type": "string"
+              },
+              "isInContext": {
+                "type": "boolean"
+              }
+            }
+          }
+        ]
       },
       "BTIndividualTableProperties-3760": {
         "type": "object",
@@ -34296,8 +34500,7 @@
                   "btType": {
                     "type": "string"
                   }
-                },
-                "additionalProperties": true
+                }
               }
             }
           }
@@ -34360,8 +34563,7 @@
                   "btType": {
                     "type": "string"
                   }
-                },
-                "additionalProperties": true
+                }
               }
             }
           }
@@ -36192,6 +36394,12 @@
               "type": "string"
             }
           },
+          "generateSectionEntityQuery": {
+            "type": "boolean"
+          },
+          "generatedSectionQueryId": {
+            "type": "string"
+          },
           "importMicroversion": {
             "type": "string",
             "writeOnly": true
@@ -36261,6 +36469,12 @@
             }
           },
           "fullPathAsString": {
+            "type": "string"
+          },
+          "generateSectionEntityQuery": {
+            "type": "boolean"
+          },
+          "generatedSectionQueryId": {
             "type": "string"
           },
           "importMicroversion": {
@@ -38460,9 +38674,6 @@
               "isAutomatic": {
                 "type": "boolean"
               },
-              "lockedState": {
-                "$ref": "#/components/schemas/BTMParameter-1"
-              },
               "microversionId": {
                 "$ref": "#/components/schemas/BTMicroversionId-366"
               },
@@ -39187,6 +39398,9 @@
           "computedPropertyError": {
             "type": "string"
           },
+          "dateFormat": {
+            "type": "string"
+          },
           "defaultValue": {},
           "dirty": {
             "type": "boolean"
@@ -39214,6 +39428,10 @@
           },
           "propertyId": {
             "type": "string"
+          },
+          "propertyOverrideStatus": {
+            "type": "integer",
+            "format": "int32"
           },
           "propertySource": {
             "type": "integer",
@@ -40149,6 +40367,12 @@
                 "type": "string"
               },
               "excludeFlattenedParts": {
+                "type": "boolean"
+              },
+              "excludeParametricPartStudioChildInstance": {
+                "type": "boolean"
+              },
+              "excludeParametricPartStudioInstance": {
                 "type": "boolean"
               },
               "excludePatternInstances": {
@@ -43356,6 +43580,12 @@
               "namespace": {
                 "type": "string"
               },
+              "optionIconUris": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "optionNames": {
                 "type": "array",
                 "items": {
@@ -44191,19 +44421,10 @@
                 "$ref": "#/components/schemas/BTDocumentWithVersionAndElementId"
               },
               "lockedState": {
-                "$ref": "#/components/schemas/BTMParameter-1"
+                "type": "boolean"
               },
               "microversionId": {
                 "$ref": "#/components/schemas/BTMicroversionId-366"
-              },
-              "name": {
-                "type": "string"
-              },
-              "parameters": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/BTMParameter-1"
-                }
               },
               "parametricPartStudioFeature": {
                 "$ref": "#/components/schemas/BTMParametricPartStudioFeature-3883"
@@ -45747,6 +45968,7 @@
             "BTFlatSheetMetalFilter-3018": "#/components/schemas/BTFlatSheetMetalFilter-3018",
             "BTGeometryFilter-130": "#/components/schemas/BTGeometryFilter-130",
             "BTImageFilter-853": "#/components/schemas/BTImageFilter-853",
+            "BTInContextObjectFilter-3810": "#/components/schemas/BTInContextObjectFilter-3810",
             "BTMateConnectorFilter-163": "#/components/schemas/BTMateConnectorFilter-163",
             "BTMateFilter-162": "#/components/schemas/BTMateFilter-162",
             "BTModifiableEntityOnlyFilter-1593": "#/components/schemas/BTModifiableEntityOnlyFilter-1593",
@@ -46297,6 +46519,9 @@
             "type": "boolean"
           },
           "partId": {
+            "type": "string"
+          },
+          "partIdentity": {
             "type": "string"
           },
           "partNumber": {
@@ -47222,7 +47447,8 @@
               }
             }
           }
-        }
+        },
+        "description": "Images are returned as base64-encoded strings."
       },
       "BTShareEntryParams": {
         "type": "object",
@@ -49135,6 +49361,9 @@
           "btType": {
             "type": "string"
           },
+          "classification": {
+            "type": "string"
+          },
           "importMicroversion": {
             "type": "string",
             "writeOnly": true
@@ -49367,6 +49596,9 @@
           },
           "passwordRequired": {
             "type": "boolean"
+          },
+          "pdfVersion": {
+            "type": "string"
           },
           "processedForeignId": {
             "type": "string"
@@ -50141,6 +50373,9 @@
               "phoneNumber": {
                 "type": "string"
               },
+              "proDiscoveryTrialRejected": {
+                "type": "boolean"
+              },
               "productType": {
                 "uniqueItems": true,
                 "type": "array",
@@ -50413,6 +50648,10 @@
               "globalPermissions": {
                 "$ref": "#/components/schemas/GlobalPermissionInfo"
               },
+              "invitationState": {
+                "type": "integer",
+                "format": "int32"
+              },
               "isGuest": {
                 "type": "boolean"
               },
@@ -50652,6 +50891,14 @@
             "format": "double"
           }
         }
+      },
+      "BTVersionGraphMode": {
+        "type": "string",
+        "enum": [
+          "ALL_BRANCHES",
+          "ACTIVE_BRANCH",
+          "ALL_BRANCHES_WITH_WORKSPACES"
+        ]
       },
       "BTVersionInfo": {
         "type": "object",
@@ -51383,6 +51630,9 @@
           "computedPropertyError": {
             "type": "string"
           },
+          "dateFormat": {
+            "type": "string"
+          },
           "defaultValue": {
             "type": "object"
           },
@@ -51428,6 +51678,10 @@
           },
           "propertyId": {
             "type": "string"
+          },
+          "propertyOverrideStatus": {
+            "type": "integer",
+            "format": "int32"
           },
           "propertySource": {
             "type": "integer",
@@ -51698,6 +51952,9 @@
               "$ref": "#/components/schemas/BTVersionInfo"
             }
           },
+          "protectionRule": {
+            "$ref": "#/components/schemas/BTWorkspaceProtectionRuleOptions"
+          },
           "thumbnail": {
             "$ref": "#/components/schemas/BTThumbnailInfo"
           },
@@ -51726,6 +51983,14 @@
               }
             }
           }
+        ]
+      },
+      "BTWorkspaceProtectionRuleOptions": {
+        "type": "string",
+        "enum": [
+          "OPEN",
+          "MERGE",
+          "FAST_FORWARD_MERGE"
         ]
       },
       "BTZipFileInfo": {
@@ -52786,6 +53051,13 @@
           "CURVE"
         ]
       },
+      "GBTAppearanceType": {
+        "type": "string",
+        "enum": [
+          "UNKNOWN",
+          "SKETCH"
+        ]
+      },
       "GBTAssemblyFeatureDisplayStatus": {
         "type": "string",
         "enum": [
@@ -53056,6 +53328,7 @@
           "ORIGIN_Y",
           "ORIGIN_Z",
           "LOOP_CENTER",
+          "VIRTUAL_SHARP",
           "UNKNOWN"
         ]
       },
@@ -54454,6 +54727,83 @@
           "BODY_DRAFT_BAD_PULL_DIRECTION",
           "BODY_DRAFT_MITER_FAILED",
           "DECAL_HORIZONTAL_REFERENCE_INVALID_ENTITY",
+          "OFFSET_WIRE_SHEET_CREATION_FAILED",
+          "REPLACE_FACE_SHEET_SMALL",
+          "REPLACE_FACES_NOT_ADJACENT",
+          "SHEET_METAL_HOLE_REBUILD_FAILED",
+          "CPLANE_TANGENT_INPUT",
+          "CPLANE_TANGENT_SELECT_REFERENCE",
+          "CPLANE_TANGENT_PLANE_INVALID",
+          "CPLANE_TANGENT_POINT_INVALID",
+          "REPLACE_FACES_NOT_SAME_BODY",
+          "MUST_USE_DEFAULT_RADIUS_WITH_FACE_BEND",
+          "CANNOT_RIP_A_FACE_BEND",
+          "CANNOT_MAKE_A_FACE_BEND_TANGENT",
+          "SKETCH_HAS_PATTERN_TOO_LARGE",
+          "SKETCH_LINEAR_PATTERN_FAILED",
+          "DECAL_PROJECTED_OFF_FACE",
+          "FIT_TOLERANCE_LIMITS_NOT_FOUND",
+          "FIT_TOLERANCE_SIZE_TOO_LARGE_ISO",
+          "FIT_TOLERANCE_SIZE_TOO_LARGE_ANSI",
+          "DECAL_NO_FACE_SELECTION",
+          "DECAL_NO_IMAGE_SELECTION",
+          "DECAL_IMAGE_TOO_LARGE",
+          "FGS_SIMULATION_ASSEMBLY_HAS_NO_INSTANCES",
+          "FGS_SIMULATION_ASSEMBLY_HAS_TOO_FEW_INSTANCES",
+          "FGS_MODAL_SIMULATION_HAS_ALL_FIXED_PARTS",
+          "BODY_DRAFT_STRAY_NONMITER_EDGES",
+          "MASS_PROPERTY_FACES_NOT_COPLANAR",
+          "PARAMETER_VALUE_INVALID",
+          "SHEET_METAL_CHAMFER_NO_TANGENT_BASED",
+          "CHAMFER_DIRECTION_OVERRIDE_NO_EFFECT",
+          "FILLET_CHAMFER_UNSUPPORTED",
+          "LINEAR_PATTERN_SKETCH_REAPPLY_INFO",
+          "CIRCULAR_PATTERN_SKETCH_REAPPLY_INFO",
+          "CURVE_PATTERN_SKETCH_REAPPLY_INFO",
+          "MIRROR_SKETCH_REAPPLY_INFO",
+          "CHAMFER_HELD_BACK",
+          "SWEEP_BAD_LOCK_DIRECTION",
+          "SHEET_METAL_COUNTER_HOLE_UNSUPPORTED",
+          "SPECIFIED_FEATURE_DOES_NOT_EXIST",
+          "SHEET_METAL_BEND_NO_BEND_LINE",
+          "SHEET_METAL_BEND_BAD_BEND_LINE",
+          "SHEET_METAL_BEND_NO_FACE",
+          "SHEET_METAL_BEND_NO_PARALLEL",
+          "SHEET_METAL_BEND_NO_DIRECTION",
+          "SHEET_METAL_BEND_BAD_FACE",
+          "SHEET_METAL_BEND_IMPRINT_FAILED",
+          "SHEET_METAL_BEND_BAD_DECOMPOSITION",
+          "SHEET_METAL_BEND_LINE_PERPENDICULAR_TO_FACE",
+          "SWEEP_SELECT_DIRECTION",
+          "SHEET_METAL_BEND_ROLL_FAILED",
+          "SHEET_METAL_BOTH_SIDES_CONNECTED",
+          "SHEET_METAL_CANNOT_BEND_BUTTS",
+          "SHEET_METAL_BEND_COLLISION",
+          "MISSING_PARAMETER_REFERENCE",
+          "MISSING_IMAGE_PARAMETER_REFERENCE",
+          "BODY_DRAFT_SELECT_EDGES",
+          "BODY_DRAFT_SELECT_FACES",
+          "BODY_DRAFT_SELECT_PARTS",
+          "SPLIT_EDGE_INVALID_SURFACE",
+          "BODY_DRAFT_NO_EFFECT",
+          "OFFSET_CURVE_ON_FACE_SELECT_EDGES",
+          "OFFSET_CURVE_ON_FACE_WIRE_EDGES",
+          "OFFSET_CURVE_ON_FACE_INVALID_TARGETS",
+          "OFFSET_CURVE_ON_FACE_INVALID_DISTANCE",
+          "OFFSET_CURVE_ON_FACE_IMPRINT_NO_EXTEND",
+          "OFFSET_CURVE_ON_FACE_FAILED_TO_CREATE_CHAIN",
+          "OFFSET_CURVE_ON_FACE_BRANCHING_CHAIN",
+          "OFFSET_CURVE_ON_FACE_FAILED",
+          "OFFSET_CURVE_ON_FACE_BAD_DIRECTION",
+          "OFFSET_CURVE_ON_FACE_GEODESIC_OUTSIDE",
+          "OFFSET_CURVE_ON_FACE_EXTENSION_FAILED",
+          "OFFSET_CURVE_ON_FACE_CHAIN_YIELDED_NO_RESULT",
+          "OFFSET_CURVE_ON_FACE_NO_RESULT",
+          "OFFSET_CURVE_ON_FACE_INPUT_WITH_NO_TARGETS",
+          "OFFSET_CURVE_ON_FACE_EUCLIDEAN_SIDE_PICK_FAIL",
+          "OFFSET_CURVE_ON_FACE_SCAR_EDGE",
+          "OFFSET_CURVE_ON_FACE_CLOSED_CURVE_NO_TRIM",
+          "OFFSET_CURVE_ON_FACE_SIDE_DIFF_FAIL",
           "UNKNOWN"
         ]
       },
@@ -54509,6 +54859,7 @@
           "COMPOSITE_PARTS",
           "PART_STUDIOS",
           "WIRES",
+          "PARAMETRIC_PART_STUDIOS",
           "UNKNOWN"
         ]
       },
@@ -54819,6 +55170,7 @@
           "NOT_SKETCH_OBJECT",
           "ANY_SKETCH_OBJECT",
           "USER_ENTITY",
+          "WHOLE_SKETCH",
           "UNKNOWN"
         ]
       },
@@ -57268,36 +57620,6 @@
           }
         }
       },
-      "BTEventParams": {
-        "type": "object",
-        "discriminator": {
-          "propertyName": "jsonType",
-          "mapping": {
-            "DocumentOpenEventInfo": "#/components/schemas/BTDocumentOpenEventParams"
-          }
-        },
-        "properties": {
-          "jsonType": {
-            "type": "string"
-          }
-        }
-      },
-      "BTDocumentOpenEventParams": {
-        "type": "object",
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/BTEventParams"
-          },
-          {
-            "type": "object",
-            "properties": {
-              "documentId": {
-                "type": "string"
-              }
-            }
-          }
-        ]
-      },
       "BTGlobalTreeNodesInfo": {
         "type": "object",
         "properties": {
@@ -57328,6 +57650,36 @@
             "type": "array"
           }
         }
+      },
+      "BTEventParams": {
+        "type": "object",
+        "discriminator": {
+          "propertyName": "jsonType",
+          "mapping": {
+            "DocumentOpenEventInfo": "#/components/schemas/BTDocumentOpenEventParams"
+          }
+        },
+        "properties": {
+          "jsonType": {
+            "type": "string"
+          }
+        }
+      },
+      "BTDocumentOpenEventParams": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BTEventParams"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "documentId": {
+                "type": "string"
+              }
+            }
+          }
+        ]
       }
     },
     "securitySchemes": {
