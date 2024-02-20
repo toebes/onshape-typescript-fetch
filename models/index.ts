@@ -13,6 +13,7 @@ export * from './AnimationChannelTarget';
 export * from './AnimationSampler';
 export * from './ApiResponseContent';
 export * from './Asset';
+export * from './BTACLPublicParams';
 export * from './BTAPIApplicationExtensionInfo';
 export * from './BTAPIApplicationSummaryInfo';
 export * from './BTAPIWorkflowableType';

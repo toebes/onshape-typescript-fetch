@@ -15,6 +15,7 @@
 
 import * as runtime from '../runtime';
 import type {
+  BTACLPublicParams,
   BTAclInfo,
   BTBExportModelParams,
   BTCopyDocumentInfo,
@@ -45,6 +46,8 @@ import type {
   BTWorkspaceInfo,
 } from '../models';
 import {
+    BTACLPublicParamsFromJSON,
+    BTACLPublicParamsToJSON,
     BTAclInfoFromJSON,
     BTAclInfoToJSON,
     BTBExportModelParamsFromJSON,
@@ -249,6 +252,11 @@ export interface GetVersionRequest {
     vid: string;
     parents?: boolean;
     linkDocumentId?: string;
+}
+
+export interface MakeDocumentPublicRequest {
+    did: string;
+    bTACLPublicParams: BTACLPublicParams;
 }
 
 export interface MergeIntoWorkspaceRequest {
@@ -1364,6 +1372,51 @@ export class DocumentApi extends runtime.BaseAPI {
      */
     async getVersion(requestParameters: GetVersionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BTVersionInfo> {
         const response = await this.getVersionRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Make a document public.
+     */
+    async makeDocumentPublicRaw(requestParameters: MakeDocumentPublicRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
+        if (requestParameters.did === null || requestParameters.did === undefined) {
+            throw new runtime.RequiredError('did','Required parameter requestParameters.did was null or undefined when calling makeDocumentPublic.');
+        }
+
+        if (requestParameters.bTACLPublicParams === null || requestParameters.bTACLPublicParams === undefined) {
+            throw new runtime.RequiredError('bTACLPublicParams','Required parameter requestParameters.bTACLPublicParams was null or undefined when calling makeDocumentPublic.');
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json;charset=UTF-8; qs=0.09';
+
+        if (this.configuration && this.configuration.accessToken) {
+            // oauth required
+            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", ["OAuth2Read"]);
+        }
+
+        if (this.configuration && (this.configuration.username !== undefined || this.configuration.password !== undefined)) {
+            headerParameters["Authorization"] = "Basic " + btoa(this.configuration.username + ":" + this.configuration.password);
+        }
+        const response = await this.request({
+            path: `/documents/{did}/acl/public`.replace(`{${"did"}}`, encodeURIComponent(String(requestParameters.did))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: BTACLPublicParamsToJSON(requestParameters.bTACLPublicParams),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse<any>(response);
+    }
+
+    /**
+     * Make a document public.
+     */
+    async makeDocumentPublic(requestParameters: MakeDocumentPublicRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
+        const response = await this.makeDocumentPublicRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

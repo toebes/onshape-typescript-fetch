@@ -1759,6 +1759,75 @@
                         "$ref": "#/components/schemas/BTMParameter-1"
                     }
                 }
+            },
+            {
+                "key": "paths['/documents/{did}/acl/public']",
+                "type": "update",
+                "value": {
+                    "post": {
+                        "tags": [
+                            "Document"
+                        ],
+                        "summary": "Make a document public.",
+                        "operationId": "makeDocumentPublic",
+                        "parameters": [
+                            {
+                                "name": "did",
+                                "in": "path",
+                                "required": true,
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        ],
+                        "requestBody": {
+                            "content": {
+                                "application/json;charset=UTF-8; qs=0.09": {
+                                    "schema": {
+                                        "$ref": "#/components/schemas/BTACLPublicParams"
+                                    }
+                                }
+                            },
+                            "required": true
+                        },
+                        "responses": {
+                            "default": {
+                                "description": "default response",
+                                "content": {
+                                    "application/json;charset=UTF-8; qs=0.09": {
+                                        "schema": {
+                                            "type": "object"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "deprecated": false,
+                        "security": [
+                            {
+                                "OAuth2": [
+                                    "OAuth2Read"
+                                ],
+                                "BasicAuth": [
+                                    "OAuth2Read"
+                                ]
+                            }
+                        ],
+                        "x-BTVisibility": "PRODUCTION"
+                    }
+                }
+            },
+            {
+                "key": "components.schemas['BTACLPublicParams']",
+                "type": "update",
+                "value": {
+                    "type": "object",
+                    "properties": {
+                        "public": {
+                            "type": "boolean"
+                        }
+                    }
+                }
             }
         ]
     }

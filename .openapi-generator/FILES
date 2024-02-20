@@ -52,6 +52,7 @@ models/AnimationChannelTarget.ts
 models/AnimationSampler.ts
 models/ApiResponseContent.ts
 models/Asset.ts
+models/BTACLPublicParams.ts
 models/BTAPIApplicationExtensionInfo.ts
 models/BTAPIApplicationSummaryInfo.ts
 models/BTAPIWorkflowableType.ts
