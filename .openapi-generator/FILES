@@ -959,8 +959,11 @@ models/BTPropertyTableColumnInfo2161.ts
 models/BTPropertyTableColumnInfo2161AllOf.ts
 models/BTPropertyUpdateInfo.ts
 models/BTPropertyValueParam.ts
+models/BTPublicationBulkItemParams.ts
 models/BTPublicationInfo.ts
 models/BTPublicationInfoAllOf.ts
+models/BTPublicationItemParams.ts
+models/BTPublicationParams.ts
 models/BTPublishedWorkflowId.ts
 models/BTPublishedWorkflowInfo.ts
 models/BTPurchaseInfo.ts
