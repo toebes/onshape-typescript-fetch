@@ -58075,6 +58075,9 @@
       "BTACLPublicParams": {
         "type": "object",
         "properties": {
+          "documentId": {
+            "type": "string"
+          },
           "public": {
             "type": "boolean"
           }

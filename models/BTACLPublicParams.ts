@@ -21,6 +21,12 @@ import { exists, mapValues } from '../runtime';
 export interface BTACLPublicParams {
     /**
      * 
+     * @type {string}
+     * @memberof BTACLPublicParams
+     */
+    documentId?: string;
+    /**
+     * 
      * @type {boolean}
      * @memberof BTACLPublicParams
      */
@@ -46,6 +52,7 @@ export function BTACLPublicParamsFromJSONTyped(json: any, ignoreDiscriminator: b
     }
     return {
         
+        'documentId': !exists(json, 'documentId') ? undefined : json['documentId'],
         '_public': !exists(json, 'public') ? undefined : json['public'],
     };
 }
@@ -59,6 +66,7 @@ export function BTACLPublicParamsToJSON(value?: BTACLPublicParams | null): any {
     }
     return {
         
+        'documentId': value.documentId,
         'public': value._public,
     };
 }
