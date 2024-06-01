@@ -240,6 +240,34 @@ export interface GetInsertablesRequest {
     allowedBlobExtensions?: string;
 }
 
+export interface GetInsertablesQueryRequest {
+    offset?: number;
+    limit?: number;
+    q?: string;
+    filter?: number;
+    owner?: string;
+    getPathToRoot?: boolean;
+    includeParts?: boolean;
+    includeSurfaces?: boolean;
+    includeSketches?: boolean;
+    includeReferenceFeatures?: boolean;
+    includeAssemblies?: boolean;
+    includeFeatureStudios?: boolean;
+    includeBlobs?: boolean;
+    allowedBlobMimeTypes?: string;
+    includePartStudios?: boolean;
+    includeFeatures?: boolean;
+    includeWires?: boolean;
+    includeFlattenedBodies?: boolean;
+    includeApplications?: boolean;
+    allowedApplicationMimeTypes?: string;
+    includeFSTables?: boolean;
+    includeFSComputedPartPropertyFunctions?: boolean;
+    includeVariables?: boolean;
+    includeVariableStudios?: boolean;
+    allowedBlobExtensions?: string;
+}
+
 export interface GetUnitInfoRequest {
     did: string;
     wvm: GetUnitInfoWvmEnum;
@@ -1279,6 +1307,140 @@ export class DocumentApi extends runtime.BaseAPI {
      */
     async getInsertables(requestParameters: GetInsertablesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BTInsertablesListResponse> {
         const response = await this.getInsertablesRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Retrieve insertables by Query.
+     */
+    async getInsertablesQueryRaw(requestParameters: GetInsertablesQueryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BTGlobalTreeNodeListResponse>> {
+        const queryParameters: any = {};
+
+        if (requestParameters.offset !== undefined) {
+            queryParameters['offset'] = requestParameters.offset;
+        }
+
+        if (requestParameters.limit !== undefined) {
+            queryParameters['limit'] = requestParameters.limit;
+        }
+
+        if (requestParameters.q !== undefined) {
+            queryParameters['q'] = requestParameters.q;
+        }
+
+        if (requestParameters.filter !== undefined) {
+            queryParameters['filter'] = requestParameters.filter;
+        }
+
+        if (requestParameters.owner !== undefined) {
+            queryParameters['owner'] = requestParameters.owner;
+        }
+
+        if (requestParameters.getPathToRoot !== undefined) {
+            queryParameters['getPathToRoot'] = requestParameters.getPathToRoot;
+        }
+
+        if (requestParameters.includeParts !== undefined) {
+            queryParameters['includeParts'] = requestParameters.includeParts;
+        }
+
+        if (requestParameters.includeSurfaces !== undefined) {
+            queryParameters['includeSurfaces'] = requestParameters.includeSurfaces;
+        }
+
+        if (requestParameters.includeSketches !== undefined) {
+            queryParameters['includeSketches'] = requestParameters.includeSketches;
+        }
+
+        if (requestParameters.includeReferenceFeatures !== undefined) {
+            queryParameters['includeReferenceFeatures'] = requestParameters.includeReferenceFeatures;
+        }
+
+        if (requestParameters.includeAssemblies !== undefined) {
+            queryParameters['includeAssemblies'] = requestParameters.includeAssemblies;
+        }
+
+        if (requestParameters.includeFeatureStudios !== undefined) {
+            queryParameters['includeFeatureStudios'] = requestParameters.includeFeatureStudios;
+        }
+
+        if (requestParameters.includeBlobs !== undefined) {
+            queryParameters['includeBlobs'] = requestParameters.includeBlobs;
+        }
+
+        if (requestParameters.allowedBlobMimeTypes !== undefined) {
+            queryParameters['allowedBlobMimeTypes'] = requestParameters.allowedBlobMimeTypes;
+        }
+
+        if (requestParameters.includePartStudios !== undefined) {
+            queryParameters['includePartStudios'] = requestParameters.includePartStudios;
+        }
+
+        if (requestParameters.includeFeatures !== undefined) {
+            queryParameters['includeFeatures'] = requestParameters.includeFeatures;
+        }
+
+        if (requestParameters.includeWires !== undefined) {
+            queryParameters['includeWires'] = requestParameters.includeWires;
+        }
+
+        if (requestParameters.includeFlattenedBodies !== undefined) {
+            queryParameters['includeFlattenedBodies'] = requestParameters.includeFlattenedBodies;
+        }
+
+        if (requestParameters.includeApplications !== undefined) {
+            queryParameters['includeApplications'] = requestParameters.includeApplications;
+        }
+
+        if (requestParameters.allowedApplicationMimeTypes !== undefined) {
+            queryParameters['allowedApplicationMimeTypes'] = requestParameters.allowedApplicationMimeTypes;
+        }
+
+        if (requestParameters.includeFSTables !== undefined) {
+            queryParameters['includeFSTables'] = requestParameters.includeFSTables;
+        }
+
+        if (requestParameters.includeFSComputedPartPropertyFunctions !== undefined) {
+            queryParameters['includeFSComputedPartPropertyFunctions'] = requestParameters.includeFSComputedPartPropertyFunctions;
+        }
+
+        if (requestParameters.includeVariables !== undefined) {
+            queryParameters['includeVariables'] = requestParameters.includeVariables;
+        }
+
+        if (requestParameters.includeVariableStudios !== undefined) {
+            queryParameters['includeVariableStudios'] = requestParameters.includeVariableStudios;
+        }
+
+        if (requestParameters.allowedBlobExtensions !== undefined) {
+            queryParameters['allowedBlobExtensions'] = requestParameters.allowedBlobExtensions;
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.accessToken) {
+            // oauth required
+            headerParameters["Authorization"] = await this.configuration.accessToken("OAuth2", ["OAuth2Read"]);
+        }
+
+        if (this.configuration && (this.configuration.username !== undefined || this.configuration.password !== undefined)) {
+            headerParameters["Authorization"] = "Basic " + btoa(this.configuration.username + ":" + this.configuration.password);
+        }
+        const response = await this.request({
+            path: `/documents/insertables`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => BTGlobalTreeNodeListResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * Retrieve insertables by Query.
+     */
+    async getInsertablesQuery(requestParameters: GetInsertablesQueryRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BTGlobalTreeNodeListResponse> {
+        const response = await this.getInsertablesQueryRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
