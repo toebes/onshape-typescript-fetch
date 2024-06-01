@@ -2,6 +2,7 @@ apis/APIApplicationApi.ts
 apis/AccountApi.ts
 apis/AliasApi.ts
 apis/AppAssociativeDataApi.ts
+apis/AppDrawingViewApi.ts
 apis/AppElementApi.ts
 apis/AssemblyApi.ts
 apis/BillingApi.ts
@@ -84,7 +85,9 @@ models/BTApiTableColumn3141.ts
 models/BTApiTableList1223.ts
 models/BTApiTableRow2915.ts
 models/BTApiVersion.ts
+models/BTAppArrayInfoBTAppDrawingViewInfo.ts
 models/BTAppAssociativeDataArrayInfo.ts
+models/BTAppDrawingViewInfo.ts
 models/BTAppElementBasicInfo.ts
 models/BTAppElementBulkCreateInfo.ts
 models/BTAppElementBulkCreateParams.ts
@@ -107,6 +110,7 @@ models/BTAppElementReferencesResolveInfo.ts
 models/BTAppElementStartTransactionParams.ts
 models/BTAppElementTransactionsInfo.ts
 models/BTAppElementUpdateParams.ts
+models/BTAppElementViewGeometryProperties1100.ts
 models/BTAppModificationRequestInfo.ts
 models/BTAppModificationRequestState.ts
 models/BTAppearanceOverride2517.ts
@@ -129,6 +133,8 @@ models/BTAssemblyInstanceOccurrenceInfo.ts
 models/BTAssemblyInstanceStatus.ts
 models/BTAssemblyInstanceType.ts
 models/BTAssemblyMateConnectorInfo.ts
+models/BTAssemblyMirror2996.ts
+models/BTAssemblyMirror2996AllOf.ts
 models/BTAssemblyModificationParams.ts
 models/BTAssemblyOccurrenceInfo.ts
 models/BTAssemblyPartBodyType.ts
@@ -180,6 +186,7 @@ models/BTBodyTypeFilter112.ts
 models/BTBodyTypeFilter112AllOf.ts
 models/BTBoundingBox1052.ts
 models/BTBoundingBoxInfo.ts
+models/BTBrokenOutEndCondition1107.ts
 models/BTCacheDataPath191.ts
 models/BTCardInfo.ts
 models/BTCategoryParam.ts
@@ -522,6 +529,7 @@ models/BTMAssemblyFeature887.ts
 models/BTMAssemblyFeature887AllOf.ts
 models/BTMAssemblyFeatureFolder2543.ts
 models/BTMAssemblyFeatureFolder2543AllOf.ts
+models/BTMAssemblyMirrorFeature3037.ts
 models/BTMAssemblyPatternFeature2241.ts
 models/BTMAssemblyPatternFeature2241AllOf.ts
 models/BTMAssemblyReplicateFeature1351.ts
@@ -690,6 +698,8 @@ models/BTMaterialLibrarySettingsInfo.ts
 models/BTMatrix3x3340.ts
 models/BTMergePreviewInfo.ts
 models/BTMergeStrategy.ts
+models/BTMergeUpgradeInfo.ts
+models/BTMergeUpgradeType.ts
 models/BTMetadataCategorySummaryInfo.ts
 models/BTMetadataElementInfo.ts
 models/BTMetadataElementInfoAllOf.ts
@@ -737,6 +747,7 @@ models/BTNotice227.ts
 models/BTNullableQuantityRange1340.ts
 models/BTNullableQuantityRange1340AllOf.ts
 models/BTObjectId.ts
+models/BTObjectState.ts
 models/BTObjectWorkflowInfo.ts
 models/BTOccurrence74.ts
 models/BTOccurrenceData75.ts
@@ -942,6 +953,7 @@ models/BTPartStudioDisplayDataBase2751.ts
 models/BTPartStudioDisplayDataReference4360.ts
 models/BTPartStudioDisplayDataReference4360AllOf.ts
 models/BTPartWithConfiguredProperties2163.ts
+models/BTPendingUpgradeInfo.ts
 models/BTPlanSubscriberInfo.ts
 models/BTPlanarImageMapping4398.ts
 models/BTPlanarImageMapping4398AllOf.ts
@@ -967,8 +979,8 @@ models/BTPublicationItemParams.ts
 models/BTPublicationParams.ts
 models/BTPublishedWorkflowId.ts
 models/BTPublishedWorkflowInfo.ts
+models/BTPurchaseIdentityParams.ts
 models/BTPurchaseInfo.ts
-models/BTPurchaseUserParams.ts
 models/BTQuantityRange181.ts
 models/BTQueryFilter183.ts
 models/BTRadialDimensionDisplayData348.ts
@@ -1223,6 +1235,8 @@ models/Components.ts
 models/ConfigurationEntry.ts
 models/ConfigurationInfoEntry.ts
 models/Contact.ts
+models/CoordinatesInfo.ts
+models/CoordinatesParams.ts
 models/Coupon.ts
 models/Customer.ts
 models/CustomerCardCollection.ts

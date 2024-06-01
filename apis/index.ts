@@ -4,6 +4,7 @@ export * from './APIApplicationApi';
 export * from './AccountApi';
 export * from './AliasApi';
 export * from './AppAssociativeDataApi';
+export * from './AppDrawingViewApi';
 export * from './AppElementApi';
 export * from './AssemblyApi';
 export * from './BillingApi';
