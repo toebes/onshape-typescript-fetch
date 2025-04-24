@@ -19,10 +19,12 @@ import {
     BTCurveGeometry114FromJSONTyped,
     BTCurveGeometry114ToJSON,
  BTCurveGeometry114SuperToJSON,
+ BTCurveGeometry114SuperSuperToJSON,
 } from './BTCurveGeometry114';
 
 import {
      BTCurveGeometryControlPointSpline2197FromJSONTyped,
+    BTCurveGeometryControlPointSpline2197ToJSON,
     BTCurveGeometryControlPointSpline2197ToJSON
 } from './';
 
@@ -110,7 +112,7 @@ export function BTCurveGeometrySpline118FromJSONTyped(json: any, ignoreDiscrimin
     };
 }
 
-export function BTCurveGeometrySpline118SuperToJSON(value?: BTCurveGeometrySpline118 | null): any {
+export function BTCurveGeometrySpline118SuperSuperToJSON(value?: BTCurveGeometrySpline118 | null): any {
     if (value === undefined) {
         return undefined;
     }
@@ -118,7 +120,7 @@ export function BTCurveGeometrySpline118SuperToJSON(value?: BTCurveGeometrySplin
         return null;
     }
     return {
-        ...BTCurveGeometry114SuperToJSON(value),
+        ...BTCurveGeometry114SuperSuperToJSON(value),
         'btType': value.btType,
         'controlPointCount': value.controlPointCount,
         'controlPoints': value.controlPoints,
@@ -143,4 +145,19 @@ export function BTCurveGeometrySpline118ToJSON(value?: BTCurveGeometrySpline118 
         return BTCurveGeometryControlPointSpline2197ToJSON(value);
     }
     return BTCurveGeometrySpline118SuperToJSON(value);
+}
+
+
+export function BTCurveGeometrySpline118SuperToJSON(value?: BTCurveGeometrySpline118 | null): any {
+    if (value === undefined) {
+        return undefined;
+    }
+    if (value === null) {
+        return null;
+    }
+
+    if (value.btType === 'BTCurveGeometryControlPointSpline-2197') {
+        return BTCurveGeometryControlPointSpline2197ToJSON(value);
+    }
+    return BTCurveGeometrySpline118SuperSuperToJSON(value);
 }

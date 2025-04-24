@@ -19,6 +19,7 @@ import {
     BTCurveGeometryCircle115FromJSONTyped,
     BTCurveGeometryCircle115ToJSON,
  BTCurveGeometryCircle115SuperToJSON,
+ BTCurveGeometryCircle115SuperSuperToJSON,
 } from './BTCurveGeometryCircle115';
 
 /**
@@ -73,7 +74,7 @@ export function BTCurveGeometryEllipse1189ToJSON(value?: BTCurveGeometryEllipse1
         return null;
     }
     return {
-        ...BTCurveGeometryCircle115SuperToJSON(value),
+        ...BTCurveGeometryCircle115SuperSuperToJSON(value),
         'btType': value.btType,
         'minorRadius': value.minorRadius,
     };
